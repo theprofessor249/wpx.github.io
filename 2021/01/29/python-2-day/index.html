@@ -1,0 +1,2298 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/imageshttps:/tenadmin.oss-cn-chengdu.aliyuncs.com/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Alan" href="https://47.97.229.110/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Alan" href="https://47.97.229.110/atom.xml" />
+<link rel="alternate" type="application/json" title="Alan" href="https://47.97.229.110/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC%E2%80%99:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://47.97.229.110/2021/01/29/python-2-day/">
+
+
+
+  <title>
+python_2_day - python |
+Yume Shoka = Alan</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">python_2_day
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-01-29 21:39:01">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-01-29T21:39:01+08:00">2021-01-29</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>36k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>33 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/python/" itemprop="item" rel="index" title="分类于 python"><span itemprop="name">python</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://47.97.229.110/2021/01/29/python-2-day/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="John Doe">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Alan">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>Python 入门 (中)<br />
+ 简介</p>
+<p>列表</p>
+<ol>
+<li>列表的定义</li>
+<li>列表的创建</li>
+<li>向列表中添加元素</li>
+<li>删除列表中的元素</li>
+<li>获取列表中的元素</li>
+<li>列表的常用操作符</li>
+<li>列表的其它方法<br />
+元组</li>
+<li>创建和访问一个元组</li>
+<li>更新和删除一个元组</li>
+<li>元组相关的操作符</li>
+<li>内置方法</li>
+<li>解压元组</li>
+</ol>
+<p>字符串</p>
+<ol>
+<li>字符串的定义</li>
+<li>字符串的切片与拼接</li>
+<li>字符串的常用内置方法</li>
+<li>字符串格式化</li>
+</ol>
+<p>字典</p>
+<ol>
+<li>可变类型与不可变类型</li>
+<li>字典的定义</li>
+<li>创建和访问字典</li>
+<li>字典的内置方法</li>
+</ol>
+<p>集合</p>
+<ol>
+<li>集合的创建</li>
+<li>访问集合中的值</li>
+<li>集合的内置方法</li>
+<li>集合的转换</li>
+<li>不可变集合</li>
+</ol>
+<p>序列</p>
+<ol>
+<li>针对序列的内置函数</li>
+</ol>
+<p>简介<br />
+ Python 是一种通用编程语言，其在科学计算和机器学习领域具有广泛的应用。如果我们打算利用 Python 来执行机器学习，那么对 Python 有一些基本的了解就是至关重要的。本 Python 入门系列体验就是为这样的初学者精心准备的。</p>
+<p>本实验包括以下内容：</p>
+<p>列表<br />
+列表的定义<br />
+列表的创建<br />
+向列表中添加元素<br />
+删除列表中的元素<br />
+获取列表中的元素<br />
+列表的常用操作符<br />
+列表的其他方法<br />
+元组<br />
+创建和访问一个元组<br />
+更新和删除一个元组<br />
+元组相关的操作符<br />
+内置方法<br />
+解压元组<br />
+字符串<br />
+字符串的定义<br />
+字符串的切片与拼接<br />
+字符串的常用内置方法<br />
+字符串格式化<br />
+字典<br />
+可变类型与不可变类型<br />
+字典的定义<br />
+创建和访问字典<br />
+字典的内置方法<br />
+集合<br />
+集合的创建<br />
+访问集合中的值<br />
+集合的内置方法<br />
+集合的转换<br />
+不可变集合<br />
+序列<br />
+针对序列的内置函数<br />
+列表<br />
+简单数据类型</p>
+<figure class="highlight python"><figcaption data-lang="python"><span>n</span></figcaption><table><tr><td data-num="1"></td><td><pre>整型<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'int'</span><span class="token operator">></span></pre></td></tr><tr><td data-num="2"></td><td><pre>浮点型<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'float'</span><span class="token operator">></span></pre></td></tr><tr><td data-num="3"></td><td><pre>布尔型<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'bool'</span><span class="token operator">></span></pre></td></tr><tr><td data-num="4"></td><td><pre>容器数据类型</pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>列表<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'list'</span><span class="token operator">></span></pre></td></tr><tr><td data-num="7"></td><td><pre>元组<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'tuple'</span><span class="token operator">></span></pre></td></tr><tr><td data-num="8"></td><td><pre>字典<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'dict'</span><span class="token operator">></span></pre></td></tr><tr><td data-num="9"></td><td><pre>集合<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'set'</span><span class="token operator">></span></pre></td></tr><tr><td data-num="10"></td><td><pre>字符串<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span></pre></td></tr></table></figure><ol>
+<li>列表的定义<br />
+列表是有序集合，没有固定大小，能够保存任意数量任意类型的 Python 对象，语法为 [元素 1, 元素 2, ..., 元素 n]。</li>
+</ol>
+<p>关键点是「中括号 []」和「逗号，」<br />
+中括号 把所有元素绑在一起<br />
+逗号 将每个元素一一分开<br />
+ 2. 列表的创建<br />
+创建一个普通列表<br />
+【例子】</p>
+<pre><code>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+print(x, type(x))
+# ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] &lt;class 'list'&gt;
+​
+x = [2, 3, 4, 5, 6, 7]
+print(x, type(x))
+# [2, 3, 4, 5, 6, 7] &lt;class 'list'&gt;
+</code></pre>
+<p>['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] &lt;class 'list'&gt;<br />
+[2, 3, 4, 5, 6, 7] &lt;class 'list'&gt;<br />
+ 利用 range () 创建列表<br />
+【例子】</p>
+<pre><code>x = list(range(10))
+print(x, type(x))
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] &lt;class 'list'&gt;
+​
+x = list(range(1, 11, 2))
+print(x, type(x))
+# [1, 3, 5, 7, 9] &lt;class 'list'&gt;
+​
+x = list(range(10, 1, -2))
+print(x, type(x))
+# [10, 8, 6, 4, 2] &lt;class 'list'&gt;
+</code></pre>
+<p>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] &lt;class 'list'&gt;<br />
+[1, 3, 5, 7, 9] &lt;class 'list'&gt;<br />
+[10, 8, 6, 4, 2] &lt;class 'list'&gt;<br />
+ 利用推导式创建列表<br />
+【例子】</p>
+<pre><code>x = [0] * 5
+print(x, type(x))
+# [0, 0, 0, 0, 0] &lt;class 'list'&gt;
+​
+x = [0 for i in range(5)]
+print(x, type(x))
+# [0, 0, 0, 0, 0] &lt;class 'list'&gt;
+​
+x = [i for i in range(10)]
+print(x, type(x))
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] &lt;class 'list'&gt;
+</code></pre>
+<p>​<br />
+x = [i for i in range(1, 10, 2)]<br />
+print(x, type(x))</p>
+<h1 id="1-3-5-7-9-class-list"><a class="anchor" href="#1-3-5-7-9-class-list">#</a> [1, 3, 5, 7, 9] &lt;class 'list'&gt;</h1>
+<p>​<br />
+x = [i for i in range(10, 1, -2)]<br />
+print(x, type(x))</p>
+<h1 id="10-8-6-4-2-class-list"><a class="anchor" href="#10-8-6-4-2-class-list">#</a> [10, 8, 6, 4, 2] &lt;class 'list'&gt;</h1>
+<p>​<br />
+x = [i ** 2 for i in range(1, 10)]<br />
+print(x, type(x))</p>
+<h1 id="1-4-9-16-25-36-49-64-81-class-list"><a class="anchor" href="#1-4-9-16-25-36-49-64-81-class-list">#</a> [1, 4, 9, 16, 25, 36, 49, 64, 81] &lt;class 'list'&gt;</h1>
+<p>​<br />
+x = [i for i in range(100) if (i % 2) != 0 and (i % 3) == 0]<br />
+print(x, type(x))<br />
+​</p>
+<h1 id="3-9-15-21-27-33-39"><a class="anchor" href="#3-9-15-21-27-33-39">#</a> [3, 9, 15, 21, 27, 33, 39,</h1>
+<p>[0, 0, 0, 0, 0] &lt;class 'list'&gt;<br />
+[0, 0, 0, 0, 0] &lt;class 'list'&gt;<br />
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] &lt;class 'list'&gt;<br />
+[1, 3, 5, 7, 9] &lt;class 'list'&gt;<br />
+[10, 8, 6, 4, 2] &lt;class 'list'&gt;<br />
+[1, 4, 9, 16, 25, 36, 49, 64, 81] &lt;class 'list'&gt;<br />
+[3, 9, 15, 21, 27, 33, 39, 45, 51, 57, 63, 69, 75, 81, 87, 93, 99] &lt;class 'list'&gt;<br />
+ 注意：</p>
+<p>由于 list 的元素可以是任何对象，因此列表中所保存的是对象的指针。即使保存一个简单的 [1,2,3]，也有 3 个指针和 3 个整数对象。</p>
+<p>x = [a] * 4 操作中，只是创建 4 个指向 list 的引用，所以一旦 a 改变，x 中 4 个 a 也会随之改变。</p>
+<p>【例子】</p>
+<p>x = [[0] * 3] * 4<br />
+print(x, type(x))</p>
+<h1 id="0-0-0-0-0-0-0-0-0-0-0-0-class-list"><a class="anchor" href="#0-0-0-0-0-0-0-0-0-0-0-0-class-list">#</a> [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] &lt;class 'list'&gt;</h1>
+<p>​<br />
+x[0][0] = 1<br />
+print(x, type(x))</p>
+<h1 id="1-0-0-1-0-0-1-0-0-1-0-0-class-list"><a class="anchor" href="#1-0-0-1-0-0-1-0-0-1-0-0-class-list">#</a> [[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] &lt;class 'list'&gt;</h1>
+<p>​<br />
+a = [0] * 3<br />
+x = [a] * 4<br />
+print(x, type(x))</p>
+<h1 id="0-0-0-0-0-0-0-0-0-0-0-0-class-list-2"><a class="anchor" href="#0-0-0-0-0-0-0-0-0-0-0-0-class-list-2">#</a> [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] &lt;class 'list'&gt;</h1>
+<p>​<br />
+x[0][0] = 1<br />
+print(x, type(x))</p>
+<h1 id="1-0-0-1-0-0-1-0-0-1-0-0-class-list-2"><a class="anchor" href="#1-0-0-1-0-0-1-0-0-1-0-0-class-list-2">#</a> [[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] &lt;class 'list'&gt;</h1>
+<p>[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] &lt;class 'list'&gt;<br />
+[[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] &lt;class 'list'&gt;<br />
+[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] &lt;class 'list'&gt;<br />
+[[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] &lt;class 'list'&gt;<br />
+ 创建一个混合列表<br />
+【例子】</p>
+<p>mix = [1, 'lsgo', 3.14, [1, 2, 3]]<br />
+print(mix, type(mix))</p>
+<h1 id="1-lsgo-314-1-2-3-class-list"><a class="anchor" href="#1-lsgo-314-1-2-3-class-list">#</a> [1, 'lsgo', 3.14, [1, 2, 3]] &lt;class 'list'&gt;</h1>
+<p>[1, 'lsgo', 3.14, [1, 2, 3]] &lt;class 'list'&gt;<br />
+ 创建一个空列表<br />
+【例子】</p>
+<p>empty = []<br />
+print(empty, type(empty))  # [] &lt;class 'list'&gt;<br />
+[] &lt;class 'list'&gt;<br />
+ 列表不像元组，列表内容可更改 (mutable)，因此附加 (append, extend)、插入 (insert)、删除 (remove, pop) 这些操作都可以用在它身上。</p>
+<ol start="3">
+<li>向列表中添加元素<br />
+ list.append (obj) 在列表末尾添加新的对象，只接受一个参数，参数可以是任何数据类型，被追加的元素在 list 中保持着原结构类型。<br />
+【例子】</li>
+</ol>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+x.append('Thursday')<br />
+print(x)</p>
+<h1 id="monday-tuesday-wednesday-thursday-friday-thursday"><a class="anchor" href="#monday-tuesday-wednesday-thursday-friday-thursday">#</a> ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Thursday']</h1>
+<p>​<br />
+print(len(x))  # 6<br />
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Thursday']<br />
+6<br />
+ 此元素如果是一个 list，那么这个 list 将作为一个整体进行追加，注意 append () 和 extend () 的区别。</p>
+<p>【例子】</p>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+x.append(['Thursday', 'Sunday'])<br />
+print(x)</p>
+<h1 id="monday-tuesday-wednesday-thursday-friday-thursday-sunday"><a class="anchor" href="#monday-tuesday-wednesday-thursday-friday-thursday-sunday">#</a> ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', ['Thursday', 'Sunday']]</h1>
+<p>​<br />
+print(len(x))  # 6<br />
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', ['Thursday', 'Sunday']]<br />
+6<br />
+list.extend (seq) 在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）<br />
+【例子】</p>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+x.extend(['Thursday', 'Sunday'])<br />
+print(x)</p>
+<h1 id="monday-tuesday-wednesday-thursday-friday-thursday-sunday-2"><a class="anchor" href="#monday-tuesday-wednesday-thursday-friday-thursday-sunday-2">#</a> ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Thursday', 'Sunday']</h1>
+<p>​<br />
+print(len(x))  # 7<br />
+['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Thursday', 'Sunday']<br />
+7<br />
+ 严格来说 append 是追加，把一个东西整体添加在列表后，而 extend 是扩展，把一个东西里的所有元素添加在列表后。</p>
+<p>list.insert (index, obj) 在编号 index 位置插入 obj。<br />
+【例子】</p>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+x.insert(2, 'Sunday')<br />
+print(x)</p>
+<h1 id="monday-tuesday-sunday-wednesday-thursday-friday"><a class="anchor" href="#monday-tuesday-sunday-wednesday-thursday-friday">#</a> ['Monday', 'Tuesday', 'Sunday', 'Wednesday', 'Thursday', 'Friday']</h1>
+<p>​<br />
+print(len(x))  # 6<br />
+['Monday', 'Tuesday', 'Sunday', 'Wednesday', 'Thursday', 'Friday']<br />
+6<br />
+4. 删除列表中的元素<br />
+ list.remove (obj) 移除列表中某个值的第一个匹配项<br />
+【例子】</p>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+x.remove('Monday')<br />
+print(x)  # ['Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+['Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+ list.pop ([index=-1]) 移除列表中的一个元素（默认最后一个元素），并且返回该元素的值<br />
+【例子】</p>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+y = x.pop()<br />
+print(y)  # Friday<br />
+​<br />
+y = x.pop(0)<br />
+print(y)  # Monday<br />
+​<br />
+y = x.pop(-2)<br />
+print(y)  # Wednesday<br />
+print(x)  # ['Tuesday', 'Thursday']<br />
+Friday<br />
+Monday<br />
+Wednesday<br />
+['Tuesday', 'Thursday']<br />
+ remove 和 pop 都可以删除元素，前者是指定具体要删除的元素，后者是指定一个索引。</p>
+<p>del var1 [, var2 ……] 删除单个或多个对象。<br />
+【例子】</p>
+<p>如果知道要删除的元素在列表中的位置，可使用 del 语句。</p>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+del x[0:2]<br />
+print(x)  # ['Wednesday', 'Thursday', 'Friday']<br />
+['Wednesday', 'Thursday', 'Friday']<br />
+ 如果你要从列表中删除一个元素，且不再以任何方式使用它，就使用 del 语句；如果你要在删除元素后还能继续使用它，就使用方法 pop ()。</p>
+<ol start="5">
+<li>获取列表中的元素<br />
+通过元素的索引值，从列表获取单个元素，注意，列表索引值是从 0 开始的。<br />
+通过将索引指定为 - 1，可让 Python 返回最后一个列表元素，索引 -2 返回倒数第二个列表元素，以此类推。<br />
+【例子】</li>
+</ol>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', ['Thursday', 'Friday']]<br />
+print(x[0], type(x[0]))  # Monday &lt;class 'str'&gt;<br />
+print(x[-1], type(x[-1]))  # ['Thursday', 'Friday'] &lt;class 'list'&gt;<br />
+print(x[-2], type(x[-2]))  # Wednesday &lt;class 'str'&gt;<br />
+Monday &lt;class 'str'&gt;<br />
+['Thursday', 'Friday'] &lt;class 'list'&gt;<br />
+Wednesday &lt;class 'str'&gt;<br />
+ 切片的通用写法是 start : stop : step</p>
+<p>情况 1 - &quot;start :&quot;<br />
+ 以 step 为 1 (默认) 从编号 start 往列表尾部切片。<br />
+【例子】</p>
+<p>x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+print(x[3:])  # ['Thursday', 'Friday']<br />
+print(x[-3:])  # ['Wednesday', 'Thursday', 'Friday']<br />
+['Thursday', 'Friday']<br />
+['Wednesday', 'Thursday', 'Friday']<br />
+ 情况 2 - &quot;: stop&quot;<br />
+ 以 step 为 1 (默认) 从列表头部往编号 stop 切片。<br />
+【例子】</p>
+<p>week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+print(week[:3])  # ['Monday', 'Tuesday', 'Wednesday']<br />
+print(week[:-3])  # ['Monday', 'Tuesday']<br />
+['Monday', 'Tuesday', 'Wednesday']<br />
+['Monday', 'Tuesday']<br />
+ 情况 3 - &quot;start : stop&quot;<br />
+ 以 step 为 1 (默认) 从编号 start 往编号 stop 切片。<br />
+【例子】</p>
+<p>week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+print(week[1:3])  # ['Tuesday', 'Wednesday']<br />
+print(week[-3:-1])  # ['Wednesday', 'Thursday']<br />
+['Tuesday', 'Wednesday']<br />
+['Wednesday', 'Thursday']<br />
+ 情况 4 - &quot;start : stop : step&quot;<br />
+ 以具体的 step 从编号 start 往编号 stop 切片。注意最后把 step 设为 -1，相当于将列表反向排列。<br />
+【例子】</p>
+<p>week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+print(week[1:4:2])  # ['Tuesday', 'Thursday']<br />
+print(week[:4:2])  # ['Monday', 'Wednesday']<br />
+print(week[1::2])  # ['Tuesday', 'Thursday']<br />
+print(week[::-1])</p>
+<h1 id="friday-thursday-wednesday-tuesday-monday"><a class="anchor" href="#friday-thursday-wednesday-tuesday-monday">#</a> ['Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday']</h1>
+<p>['Tuesday', 'Thursday']<br />
+['Monday', 'Wednesday']<br />
+['Tuesday', 'Thursday']<br />
+['Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday']<br />
+ 情况 5 - &quot;:&quot;<br />
+ 复制列表中的所有元素（浅拷贝）。<br />
+【例子】</p>
+<p>eek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+print(week[:])</p>
+<h1 id="monday-tuesday-wednesday-thursday-friday"><a class="anchor" href="#monday-tuesday-wednesday-thursday-friday">#</a> ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']</h1>
+<p>['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br />
+【例子】浅拷贝与深拷贝</p>
+<p>list1 = [123, 456, 789, 213]<br />
+list2 = list1<br />
+list3 = list1[:]<br />
+​<br />
+print(list2)  # [123, 456, 789, 213]<br />
+print(list3)  # [123, 456, 789, 213]<br />
+list1.sort()<br />
+print(list2)  # [123, 213, 456, 789]<br />
+print(list3)  # [123, 456, 789, 213]<br />
+​<br />
+list1 = [[123, 456], [789, 213]]<br />
+list2 = list1<br />
+list3 = list1[:]<br />
+print(list2)  # [[123, 456], [789, 213]]<br />
+print(list3)  # [[123, 456], [789, 213]]<br />
+list1[0][0] = 111<br />
+print(list2)  # [[111, 456], [789, 213]]<br />
+print(list3)  # [[111, 456], [789, 213]]<br />
+[123, 456, 789, 213]<br />
+[123, 456, 789, 213]<br />
+[123, 213, 456, 789]<br />
+[123, 456, 789, 213]<br />
+[[123, 456], [789, 213]]<br />
+[[123, 456], [789, 213]]<br />
+[[111, 456], [789, 213]]<br />
+[[111, 456], [789, 213]]<br />
+ 6. 列表的常用操作符<br />
+等号操作符：==<br />
+ 连接操作符 +<br />
+ 重复操作符 *<br />
+ 成员关系操作符 in、not in<br />
+「等号 ==」，只有成员、成员位置都相同时才返回 True。</p>
+<p>列表拼接有两种方式，用「加号 +」和「乘号 *」，前者首尾拼接，后者复制拼接。</p>
+<p>【例子】</p>
+<p>list1 = [123, 456]<br />
+list2 = [456, 123]<br />
+list3 = [123, 456]<br />
+​<br />
+print(list1 == list2)  # False<br />
+print(list1 == list3)  # True<br />
+​<br />
+list4 = list1 + list2  # extend()<br />
+print(list4)  # [123, 456, 456, 123]<br />
+​<br />
+list5 = list3 * 3<br />
+print(list5)  # [123, 456, 123, 456, 123, 456]<br />
+​<br />
+list3 *= 3<br />
+print(list3)  # [123, 456, 123, 456, 123, 456]<br />
+​<br />
+print(123 in list3)  # True<br />
+print(456 not in list3)  # False<br />
+False<br />
+True<br />
+[123, 456, 456, 123]<br />
+[123, 456, 123, 456, 123, 456]<br />
+[123, 456, 123, 456, 123, 456]<br />
+True<br />
+False<br />
+ 前面三种方法（append, extend, insert）可对列表增加元素，它们没有返回值，是直接修改了原数据对象。 而将两个 list 相加，需要创建新的 list 对象，从而需要消耗额外的内存，特别是当 list 较大时，尽量不要使用 “+” 来添加 list。</p>
+<ol start="7">
+<li>列表的其它方法<br />
+ list.count (obj) 统计某个元素在列表中出现的次数</li>
+</ol>
+<p>【例子】</p>
+<p>list1 = [123, 456] * 3<br />
+print(list1)  # [123, 456, 123, 456, 123, 456]<br />
+num = list1.count(123)<br />
+print(num)  # 3<br />
+[123, 456, 123, 456, 123, 456]<br />
+3<br />
+list.index (x [, start [, end]]) 从列表中找出某个值第一个匹配项的索引位置</p>
+<p>【例子】</p>
+<p>list1 = [123, 456] * 5<br />
+print(list1.index(123))  # 0<br />
+print(list1.index(123, 1))  # 2<br />
+print(list1.index(123, 3, 7))  # 4<br />
+0<br />
+2<br />
+4<br />
+list.reverse () 反向列表中元素</p>
+<p>【例子】</p>
+<p>x = [123, 456, 789]<br />
+x.reverse()<br />
+print(x)  # [789, 456, 123]<br />
+[789, 456, 123]<br />
+ list.sort (key=None, reverse=False) 对原列表进行排序。</p>
+<p>key -- 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。<br />
+reverse -- 排序规则，reverse = True 降序， reverse = False 升序（默认）。<br />
+该方法没有返回值，但是会对列表的对象进行排序。<br />
+【例子】</p>
+<p>x = [123, 456, 789, 213]<br />
+x.sort()<br />
+print(x)</p>
+<h1 id="123-213-456-789"><a class="anchor" href="#123-213-456-789">#</a> [123, 213, 456, 789]</h1>
+<p>​<br />
+x.sort(reverse=True)<br />
+print(x)</p>
+<h1 id="789-456-213-123"><a class="anchor" href="#789-456-213-123">#</a> [789, 456, 213, 123]</h1>
+<p>​<br />
+​</p>
+<h1 id="获取列表的第二个元素"><a class="anchor" href="#获取列表的第二个元素">#</a> 获取列表的第二个元素</h1>
+<p>def takeSecond(elem):<br />
+return elem[1]<br />
+​<br />
+​<br />
+x = [(2, 2), (3, 4), (4, 1), (1, 3)]<br />
+x.sort(key=takeSecond)<br />
+print(x)</p>
+<h1 id="4-1-2-2-1-3-3-4"><a class="anchor" href="#4-1-2-2-1-3-3-4">#</a> [(4, 1), (2, 2), (1, 3), (3, 4)]</h1>
+<p>​<br />
+x.sort(key=lambda a: a[0])<br />
+print(x)</p>
+<h1 id="1-3-2-2-3-4-4-1"><a class="anchor" href="#1-3-2-2-3-4-4-1">#</a> [(1, 3), (2, 2), (3, 4), (4, 1)]</h1>
+<p>[123, 213, 456, 789]<br />
+[789, 456, 213, 123]<br />
+[(4, 1), (2, 2), (1, 3), (3, 4)]<br />
+[(1, 3), (2, 2), (3, 4), (4, 1)]<br />
+ 元组<br />
+「元组」定义语法为：(元素 1, 元素 2, ..., 元素 n)</p>
+<p>小括号把所有元素绑在一起<br />
+逗号将每个元素一一分开</p>
+<ol>
+<li>创建和访问一个元组<br />
+ Python 的元组与列表类似，不同之处在于 tuple 被创建后就不能对其进行修改，类似字符串。<br />
+元组使用小括号，列表使用方括号。<br />
+元组与列表类似，也用整数来对它进行索引 (indexing) 和切片 (slicing)。<br />
+【例子】</li>
+</ol>
+<p>t1 = (1, 10.31, 'python')<br />
+t2 = 1, 10.31, 'python'<br />
+print(t1, type(t1))</p>
+<h1 id="1-1031-python-class-tuple"><a class="anchor" href="#1-1031-python-class-tuple">#</a> (1, 10.31, 'python') &lt;class 'tuple'&gt;</h1>
+<p>​<br />
+print(t2, type(t2))</p>
+<h1 id="1-1031-python-class-tuple-2"><a class="anchor" href="#1-1031-python-class-tuple-2">#</a> (1, 10.31, 'python') &lt;class 'tuple'&gt;</h1>
+<p>​<br />
+tuple1 = (1, 2, 3, 4, 5, 6, 7, 8)<br />
+print(tuple1[1])  # 2<br />
+print(tuple1[5:])  # (6, 7, 8)<br />
+print(tuple1[:5])  # (1, 2, 3, 4, 5)<br />
+tuple2 = tuple1[:]<br />
+print(tuple2)  # (1, 2, 3, 4, 5, 6, 7, 8)<br />
+(1, 10.31, 'python') &lt;class 'tuple'&gt;<br />
+(1, 10.31, 'python') &lt;class 'tuple'&gt;<br />
+2<br />
+(6, 7, 8)<br />
+(1, 2, 3, 4, 5)<br />
+(1, 2, 3, 4, 5, 6, 7, 8)<br />
+ 创建元组可以用小括号 ()，也可以什么都不用，为了可读性，建议还是用 ()。<br />
+元组中只包含一个元素时，需要在元素后面添加逗号，否则括号会被当作运算符使用。<br />
+【例子】</p>
+<p>x = (1)<br />
+print(type(x))  # &lt;class 'int'&gt;<br />
+x = 2, 3, 4, 5<br />
+print(type(x))  # &lt;class 'tuple'&gt;<br />
+x = []<br />
+print(type(x))  # &lt;class 'list'&gt;<br />
+x = ()<br />
+print(type(x))  # &lt;class 'tuple'&gt;<br />
+x = (1,)<br />
+print(type(x))  # &lt;class 'tuple'&gt;<br />
+&lt;class 'int'&gt;<br />
+&lt;class 'tuple'&gt;<br />
+&lt;class 'list'&gt;<br />
+&lt;class 'tuple'&gt;<br />
+&lt;class 'tuple'&gt;<br />
+【例子】</p>
+<p>print(8 * (8))  # 64<br />
+print(8 * (8,))  # (8, 8, 8, 8, 8, 8, 8, 8)<br />
+64<br />
+(8, 8, 8, 8, 8, 8, 8, 8)<br />
+【例子】创建二维元组。</p>
+<p>x = (1, 10.31, 'python'), ('data', 11)<br />
+print(x)</p>
+<h1 id="1-1031-python-data-11"><a class="anchor" href="#1-1031-python-data-11">#</a> ((1, 10.31, 'python'), ('data', 11))</h1>
+<p>​<br />
+print(x[0])</p>
+<h1 id="1-1031-python"><a class="anchor" href="#1-1031-python">#</a> (1, 10.31, 'python')</h1>
+<p>print(x[0][0], x[0][1], x[0][2])</p>
+<h1 id="1-1031-python-2"><a class="anchor" href="#1-1031-python-2">#</a> 1 10.31 python</h1>
+<p>​<br />
+print(x[0][0:2])</p>
+<h1 id="1-1031"><a class="anchor" href="#1-1031">#</a> (1, 10.31)</h1>
+<p>((1, 10.31, 'python'), ('data', 11))<br />
+(1, 10.31, 'python')<br />
+1 10.31 python<br />
+(1, 10.31)<br />
+ 2. 更新和删除一个元组<br />
+【例子】</p>
+<p>week = ('Monday', 'Tuesday', 'Thursday', 'Friday')<br />
+week = week[:2] + ('Wednesday',) + week[2:]<br />
+print(week)  # ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')<br />
+('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')<br />
+【例子】元组有不可更改 (immutable) 的性质，因此不能直接给元组的元素赋值，但是只要元组中的元素可更改 (mutable)，那么我们可以直接更改其元素，注意这跟赋值其元素不同。</p>
+<p>t1 = (1, 2, 3, [4, 5, 6])<br />
+print(t1)  # (1, 2, 3, [4, 5, 6])<br />
+​<br />
+t1[3][0] = 9<br />
+print(t1)  # (1, 2, 3, [9, 5, 6])<br />
+(1, 2, 3, [4, 5, 6])<br />
+(1, 2, 3, [9, 5, 6])<br />
+ 3. 元组相关的操作符<br />
+等号操作符：==<br />
+ 连接操作符 +<br />
+ 重复操作符 *<br />
+ 成员关系操作符 in、not in<br />
+「等号 ==」，只有成员、成员位置都相同时才返回 True。</p>
+<p>元组拼接有两种方式，用「加号 +」和「乘号 *」，前者首尾拼接，后者复制拼接。</p>
+<p>【例子】</p>
+<p>t1 = (123, 456)<br />
+t2 = (456, 123)<br />
+t3 = (123, 456)<br />
+​<br />
+print(t1 == t2)  # False<br />
+print(t1 == t3)  # True<br />
+​<br />
+t4 = t1 + t2<br />
+print(t4)  # (123, 456, 456, 123)<br />
+​<br />
+t5 = t3 * 3<br />
+print(t5)  # (123, 456, 123, 456, 123, 456)<br />
+​<br />
+t3 *= 3<br />
+print(t3)  # (123, 456, 123, 456, 123, 456)<br />
+​<br />
+print(123 in t3)  # True<br />
+print(456 not in t3)  # False<br />
+False<br />
+True<br />
+(123, 456, 456, 123)<br />
+(123, 456, 123, 456, 123, 456)<br />
+(123, 456, 123, 456, 123, 456)<br />
+True<br />
+False<br />
+4. 内置方法<br />
+元组大小和内容都不可更改，因此只有 count 和 index 两种方法。</p>
+<p>【例子】</p>
+<p>t = (1, 10.31, 'python')<br />
+print(t.count('python'))  # 1<br />
+print(t.index(10.31))  # 1<br />
+1<br />
+1<br />
+count ('python') 是记录在元组 t 中该元素出现几次，显然是 1 次<br />
+ index (10.31) 是找到该元素在元组 t 的索引，显然是 1<br />
+5. 解压元组<br />
+【例子】解压（unpack）一维元组（有几个元素左边括号定义几个变量）</p>
+<p>t = (1, 10.31, 'python')<br />
+(a, b, c) = t<br />
+print(a, b, c)</p>
+<h1 id="1-1031-python-3"><a class="anchor" href="#1-1031-python-3">#</a> 1 10.31 python</h1>
+<p>1 10.31 python<br />
+【例子】解压二维元组（按照元组里的元组结构来定义变量）</p>
+<p>t = (1, 10.31, ('OK', 'python'))<br />
+(a, b, (c, d)) = t<br />
+print(a, b, c, d)</p>
+<h1 id="1-1031-ok-python"><a class="anchor" href="#1-1031-ok-python">#</a> 1 10.31 OK python</h1>
+<p>1 10.31 OK python<br />
+【例子】如果你只想要元组其中几个元素，用通配符「*」，英文叫 wildcard，在计算机语言中代表一个或多个元素。下例就是把多个元素丢给了 rest 变量。</p>
+<p>t = 1, 2, 3, 4, 5<br />
+a, b, <em>rest, c = t<br />
+print(a, b, c)  # 1 2 5<br />
+print(rest)  # [3, 4]<br />
+1 2 5<br />
+[3, 4]<br />
+【例子】如果你根本不在乎 rest 变量，那么就用通配符「</em>」加上下划线「_」。</p>
+<p>t = 1, 2, 3, 4, 5<br />
+a, b, *_ = t<br />
+print(a, b)  # 1 2<br />
+1 2<br />
+ 字符串</p>
+<ol>
+<li>字符串的定义<br />
+ Python 中字符串被定义为引号之间的字符集合。<br />
+Python 支持使用成对的 单引号 或 双引号。<br />
+【例子】</li>
+</ol>
+<p>t1 = 'i love Python!'<br />
+print(t1, type(t1))</p>
+<h1 id="i-love-python-class-str"><a class="anchor" href="#i-love-python-class-str">#</a> i love Python! &lt;class 'str'&gt;</h1>
+<p>​<br />
+t2 = &quot;I love Python!&quot;<br />
+print(t2, type(t2))</p>
+<h1 id="i-love-python-class-str-2"><a class="anchor" href="#i-love-python-class-str-2">#</a> I love Python! &lt;class 'str'&gt;</h1>
+<p>​<br />
+print(5 + 8)  # 13<br />
+print('5' + '8')  # 58<br />
+i love Python! &lt;class 'str'&gt;<br />
+I love Python! &lt;class 'str'&gt;<br />
+13<br />
+58<br />
+Python 的常用转义字符<br />
+转义字符	描述<br />
+ \	反斜杠符号<br />
+ '	单引号<br />
+ &quot;	双引号<br />
+ \n	换行<br />
+ \t	横向制表符 (TAB)<br />
+\r	回车<br />
+【例子】如果字符串中需要出现单引号或双引号，可以使用转义符号 \ 对字符串中的符号进行转义。</p>
+<p>print('let's go')  # let's go<br />
+print(&quot;let's go&quot;)  # let's go<br />
+print('C:\now')  # C:\now<br />
+print(&quot;C:\Program Files\Intel\Wifi\Help&quot;)</p>
+<h1 id="cprogram-filesintelwifihelp"><a class="anchor" href="#cprogram-filesintelwifihelp">#</a> C:\Program Files\Intel\Wifi\Help</h1>
+<p>let's go<br />
+let's go<br />
+C:\now<br />
+C:\Program Files\Intel\Wifi\Help<br />
+【例子】原始字符串只需要在字符串前边加一个英文字母 r 即可。</p>
+<p>print(r'C:\Program Files\Intel\Wifi\Help')</p>
+<h1 id="cprogram-filesintelwifihelp-2"><a class="anchor" href="#cprogram-filesintelwifihelp-2">#</a> C:\Program Files\Intel\Wifi\Help</h1>
+<p>C:\Program Files\Intel\Wifi\Help<br />
+【例子】三引号允许一个字符串跨多行，字符串中可以包含换行符、制表符以及其他特殊字符。</p>
+<p>para_str = &quot;&quot;&quot; 这是一个多行字符串的实例<br />
+多行字符串可以使用制表符<br />
+ TAB (\t)。<br />
+也可以使用换行符 [\n]。<br />
+&quot;&quot;&quot;<br />
+print(para_str)</p>
+<h1 id="这是一个多行字符串的实例"><a class="anchor" href="#这是一个多行字符串的实例">#</a> 这是一个多行字符串的实例</h1>
+<h1 id="多行字符串可以使用制表符"><a class="anchor" href="#多行字符串可以使用制表符">#</a> 多行字符串可以使用制表符</h1>
+<h1 id="tab"><a class="anchor" href="#tab">#</a> TAB (    )。</h1>
+<h1 id="也可以使用换行符"><a class="anchor" href="#也可以使用换行符">#</a> 也可以使用换行符 [</h1>
+<h1 id=""><a class="anchor" href="#">#</a> ]。</h1>
+<p>​<br />
+para_str = ''' 这是一个多行字符串的实例<br />
+多行字符串可以使用制表符<br />
+ TAB (\t)。<br />
+也可以使用换行符 [\n]。<br />
+'''<br />
+print(para_str)</p>
+<h1 id="这是一个多行字符串的实例-2"><a class="anchor" href="#这是一个多行字符串的实例-2">#</a> 这是一个多行字符串的实例</h1>
+<h1 id="多行字符串可以使用制表符-2"><a class="anchor" href="#多行字符串可以使用制表符-2">#</a> 多行字符串可以使用制表符</h1>
+<h1 id="tab-2"><a class="anchor" href="#tab-2">#</a> TAB (      )。</h1>
+<h1 id="也可以使用换行符-2"><a class="anchor" href="#也可以使用换行符-2">#</a> 也可以使用换行符 [</h1>
+<h1 id="-2"><a class="anchor" href="#-2">#</a> ]。</h1>
+<p>这是一个多行字符串的实例<br />
+多行字符串可以使用制表符<br />
+ TAB (	)。<br />
+也可以使用换行符 [<br />
+]。</p>
+<p>这是一个多行字符串的实例<br />
+多行字符串可以使用制表符<br />
+ TAB (	)。<br />
+也可以使用换行符 [<br />
+]。</p>
+<ol start="2">
+<li>字符串的切片与拼接<br />
+类似于元组具有不可修改性<br />
+从 0 开始 (和 Java 一样)<br />
+ 切片通常写成 start:end 这种形式，包括「start 索引」对应的元素，不包括「end 索引」对应的元素。<br />
+索引值可正可负，正索引从 0 开始，从左往右；负索引从 -1 开始，从右往左。使用负数索引时，会从最后一个元素开始计数。最后一个元素的位置编号是 -1。<br />
+【例子】</li>
+</ol>
+<p>str1 = 'I Love LsgoGroup'<br />
+print(str1[:6])  # I Love<br />
+print(str1[5])  # e<br />
+print (str1 [:6] + &quot;插入的字符串&quot; + str1 [6:])</p>
+<h1 id="i-love-插入的字符串-lsgogroup"><a class="anchor" href="#i-love-插入的字符串-lsgogroup">#</a> I Love 插入的字符串  LsgoGroup</h1>
+<p>​<br />
+s = 'Python'<br />
+print(s)  # Python<br />
+print(s[2:4])  # th<br />
+print(s[-5:-2])  # yth<br />
+print(s[2])  # t<br />
+print(s[-1])  # n<br />
+I Love<br />
+e<br />
+I Love 插入的字符串  LsgoGroup<br />
+Python<br />
+th<br />
+yth<br />
+t<br />
+n<br />
+3. 字符串的常用内置方法<br />
+ capitalize () 将字符串的第一个字符转换为大写。<br />
+【例子】</p>
+<p>str2 = 'xiaoxie'<br />
+print(str2.capitalize())  # Xiaoxie<br />
+Xiaoxie<br />
+lower () 转换字符串中所有大写字符为小写。<br />
+upper () 转换字符串中的小写字母为大写。<br />
+swapcase () 将字符串中大写转换为小写，小写转换为大写。<br />
+【例子】</p>
+<p>str2 = &quot;DAXIExiaoxie&quot;<br />
+print(str2.lower())  # daxiexiaoxie<br />
+print(str2.upper())  # DAXIEXIAOXIE<br />
+print(str2.swapcase())  # daxieXIAOXIE<br />
+daxiexiaoxie<br />
+DAXIEXIAOXIE<br />
+daxieXIAOXIE<br />
+count (str, beg= 0,end=len (string)) 返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数。<br />
+【例子】</p>
+<p>str2 = &quot;DAXIExiaoxie&quot;<br />
+print(str2.count('xi'))  # 2<br />
+2<br />
+endswith (suffix, beg=0, end=len (string)) 检查字符串是否以指定子字符串 suffix 结束，如果是，返回 True，否则返回 False。如果 beg 和 end 指定值，则在指定范围内检查。<br />
+startswith (substr, beg=0,end=len (string)) 检查字符串是否以指定子字符串 substr 开头，如果是，返回 True，否则返回 False。如果 beg 和 end 指定值，则在指定范围内检查。<br />
+【例子】</p>
+<p>str2 = &quot;DAXIExiaoxie&quot;<br />
+print(str2.endswith('ie'))  # True<br />
+print(str2.endswith('xi'))  # False<br />
+print(str2.startswith('Da'))  # False<br />
+print(str2.startswith('DA'))  # True<br />
+True<br />
+False<br />
+False<br />
+True<br />
+find (str, beg=0, end=len (string)) 检测 str 是否包含在字符串中，如果指定范围 beg 和 end，则检查是否包含在指定范围内，如果包含，返回开始的索引值，否则返回 -1。<br />
+rfind (str, beg=0,end=len (string)) 类似于 find () 函数，不过是从右边开始查找。<br />
+【例子】</p>
+<p>str2 = &quot;DAXIExiaoxie&quot;<br />
+print(str2.find('xi'))  # 5<br />
+print(str2.find('ix'))  # -1<br />
+print(str2.rfind('xi'))  # 9<br />
+5<br />
+-1<br />
+9<br />
+isnumeric () 如果字符串中只包含数字字符，则返回 True，否则返回 False。<br />
+【例子】</p>
+<p>str3 = '12345'<br />
+print(str3.isnumeric())  # True<br />
+str3 += 'a'<br />
+print(str3.isnumeric())  # False<br />
+True<br />
+False<br />
+ljust (width [, fillchar]) 返回一个原字符串左对齐，并使用 fillchar（默认空格）填充至长度 width 的新字符串。<br />
+rjust (width [, fillchar]) 返回一个原字符串右对齐，并使用 fillchar（默认空格）填充至长度 width 的新字符串。<br />
+【例子】</p>
+<p>str4 = '1101'<br />
+print(str4.ljust(8, '0'))  # 11010000<br />
+print(str4.rjust(8, '0'))  # 00001101<br />
+11010000<br />
+00001101<br />
+lstrip ([chars]) 截掉字符串左边的空格或指定字符。<br />
+rstrip ([chars]) 删除字符串末尾的空格或指定字符。<br />
+strip ([chars]) 在字符串上执行 lstrip () 和 rstrip ()。<br />
+【例子】</p>
+<p>str5 = ' I Love LsgoGroup '<br />
+print(str5.lstrip())  # 'I Love LsgoGroup '<br />
+print(str5.lstrip().strip('I'))  # ' Love LsgoGroup '<br />
+print(str5.rstrip())  # ' I Love LsgoGroup'<br />
+print(str5.strip())  # 'I Love LsgoGroup'<br />
+print(str5.strip().strip('p'))  # 'I Love LsgoGrou'<br />
+I Love LsgoGroup<br />
+Love LsgoGroup<br />
+I Love LsgoGroup<br />
+I Love LsgoGroup<br />
+I Love LsgoGrou<br />
+partition (sub) 找到子字符串 sub，把字符串分为一个三元组 (pre_sub,sub,fol_sub)，如果字符串中不包含 sub 则返回 (' 原字符串 ','','')。<br />
+rpartition (sub) 类似于 partition () 方法，不过是从右边开始查找。<br />
+【例子】</p>
+<p>str5 = ' I Love LsgoGroup '<br />
+print(str5.strip().partition('o'))  # ('I L', 'o', 've LsgoGroup')<br />
+print(str5.strip().partition('m'))  # ('I Love LsgoGroup', '', '')<br />
+print(str5.strip().rpartition('o'))  # ('I Love LsgoGr', 'o', 'up')<br />
+('I L', 'o', 've LsgoGroup')<br />
+('I Love LsgoGroup', '', '')<br />
+('I Love LsgoGr', 'o', 'up')<br />
+ replace (old, new [, max]) 把 将字符串中的 old 替换成 new，如果 max 指定，则替换不超过 max 次。<br />
+【例子】</p>
+<p>str5 = ' I Love LsgoGroup '<br />
+print(str5.strip().replace('I', 'We'))  # We Love LsgoGroup<br />
+We Love LsgoGroup<br />
+split (str=&quot;&quot;, num) 不带参数默认是以空格为分隔符切片字符串，如果 num 参数有设置，则仅分隔 num 个子字符串，返回切片后的子字符串拼接的列表。<br />
+【例子】</p>
+<p>str5 = ' I Love LsgoGroup '<br />
+print(str5.strip().split())  # ['I', 'Love', 'LsgoGroup']<br />
+print(str5.strip().split('o'))  # ['I L', 've Lsg', 'Gr', 'up']<br />
+['I', 'Love', 'LsgoGroup']<br />
+['I L', 've Lsg', 'Gr', 'up']<br />
+【例子】</p>
+<p>u = &quot;<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20uY24=">www.baidu.com.cn</span>&quot;</p>
+<h1 id="使用默认分隔符"><a class="anchor" href="#使用默认分隔符">#</a> 使用默认分隔符</h1>
+<p>print(u.split())  # ['<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20uY24=">www.baidu.com.cn</span>']<br />
+​</p>
+<h1 id="以为分隔符"><a class="anchor" href="#以为分隔符">#</a> 以 &quot;.&quot; 为分隔符</h1>
+<p>print((u.split('.')))  # ['www', 'baidu', 'com', 'cn']<br />
+​</p>
+<h1 id="分割0次"><a class="anchor" href="#分割0次">#</a> 分割 0 次</h1>
+<p>print((u.split(&quot;.&quot;, 0)))  # ['<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20uY24=">www.baidu.com.cn</span>']<br />
+​</p>
+<h1 id="分割一次"><a class="anchor" href="#分割一次">#</a> 分割一次</h1>
+<p>print((u.split(&quot;.&quot;, 1)))  # ['www', '<span class="exturl" data-url="aHR0cDovL2JhaWR1LmNvbS5jbg==">baidu.com.cn</span>']<br />
+​</p>
+<h1 id="分割两次"><a class="anchor" href="#分割两次">#</a> 分割两次</h1>
+<p>print(u.split(&quot;.&quot;, 2))  # ['www', 'baidu', '<span class="exturl" data-url="aHR0cDovL2NvbS5jbg==">com.cn</span>']<br />
+​</p>
+<h1 id="分割两次并取序列为1的项"><a class="anchor" href="#分割两次并取序列为1的项">#</a> 分割两次，并取序列为 1 的项</h1>
+<p>print((u.split(&quot;.&quot;, 2)[1]))  # baidu<br />
+​</p>
+<h1 id="分割两次并把分割后的三个部分保存到三个变量"><a class="anchor" href="#分割两次并把分割后的三个部分保存到三个变量">#</a> 分割两次，并把分割后的三个部分保存到三个变量</h1>
+<p>u1, u2, u3 = u.split(&quot;.&quot;, 2)<br />
+print(u1)  # www<br />
+print(u2)  # baidu<br />
+print(u3)  # <span class="exturl" data-url="aHR0cDovL2NvbS5jbg==">com.cn</span><br />
+['<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20uY24=">www.baidu.com.cn</span>']<br />
+['www', 'baidu', 'com', 'cn']<br />
+['<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20uY24=">www.baidu.com.cn</span>']<br />
+['www', '<span class="exturl" data-url="aHR0cDovL2JhaWR1LmNvbS5jbg==">baidu.com.cn</span>']<br />
+['www', 'baidu', '<span class="exturl" data-url="aHR0cDovL2NvbS5jbg==">com.cn</span>']<br />
+baidu<br />
+www<br />
+baidu<br />
+<span class="exturl" data-url="aHR0cDovL2NvbS5jbg==">com.cn</span><br />
+【例子】去掉换行符</p>
+<p>c = '''say<br />
+hello<br />
+baby'''<br />
+​<br />
+print(c)</p>
+<h1 id="say"><a class="anchor" href="#say">#</a> say</h1>
+<h1 id="hello"><a class="anchor" href="#hello">#</a> hello</h1>
+<h1 id="baby"><a class="anchor" href="#baby">#</a> baby</h1>
+<p>​<br />
+print(c.split('\n'))  # ['say', 'hello', 'baby']<br />
+say<br />
+hello<br />
+baby<br />
+['say', 'hello', 'baby']<br />
+【例子】</p>
+<p>string = &quot;hello boy&lt;[<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20=">www.baidu.com</span>]&gt;byebye&quot;<br />
+print(string.split('[')[1].split(']')[0])  # <span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20=">www.baidu.com</span><br />
+print(string.split('[')[1].split(']')[0].split('.'))  # ['www', 'baidu', 'com']<br />
+<span class="exturl" data-url="aHR0cDovL3d3dy5iYWlkdS5jb20=">www.baidu.com</span><br />
+['www', 'baidu', 'com']<br />
+ splitlines ([keepends]) 按照行 ('\r', '\r\n', \n') 分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。<br />
+【例子】</p>
+<p>str6 = 'I \n Love \n LsgoGroup'<br />
+print(str6.splitlines())  # ['I ', ' Love ', ' LsgoGroup']<br />
+print(str6.splitlines(True))  # ['I \n', ' Love \n', ' LsgoGroup']<br />
+['I ', ' Love ', ' LsgoGroup']<br />
+['I \n', ' Love \n', ' LsgoGroup']<br />
+ maketrans (intab, outtab) 创建字符映射的转换表，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。<br />
+translate (table, deletechars=&quot;&quot;) 根据参数 table 给出的表，转换字符串的字符，要过滤掉的字符放到 deletechars 参数中。<br />
+【例子】</p>
+<p>str7 = 'this is string example....wow!!!'<br />
+intab = 'aeiou'<br />
+outtab = '12345'<br />
+trantab = str7.maketrans(intab, outtab)<br />
+print(trantab)  # {97: 49, 111: 52, 117: 53, 101: 50, 105: 51}<br />
+print(str7.translate(trantab))  # th3s 3s str3ng 2x1mpl2....w4w!!!<br />
+{97: 49, 101: 50, 105: 51, 111: 52, 117: 53}<br />
+th3s 3s str3ng 2x1mpl2....w4w!!!<br />
+4. 字符串格式化<br />
+ format 格式化函数<br />
+【例子】</p>
+<p>str8 = &quot;{0} Love {1}&quot;.format ('I', 'Lsgogroup')  # 位置参数<br />
+ print (str8)  # I Love Lsgogroup<br />
+​<br />
+str8 = &quot;{a} Love {b}&quot;.format (a='I', b='Lsgogroup')  # 关键字参数<br />
+ print (str8)  # I Love Lsgogroup<br />
+​<br />
+str8 = &quot;{0} Love {b}&quot;.format ('I', b='Lsgogroup')  # 位置参数要在关键字参数之前<br />
+ print (str8)  # I Love Lsgogroup<br />
+​<br />
+str8 = '{0:.2f}{1}'.format (27.658, 'GB')  # 保留小数点后两位<br />
+ print (str8)  # 27.66GB<br />
+I Love Lsgogroup<br />
+I Love Lsgogroup<br />
+I Love Lsgogroup<br />
+27.66GB<br />
+Python 字符串格式化符号<br />
+符 号	描述<br />
+ % c	格式化字符及其 ASCII 码<br />
+ % s	格式化字符串，用 str () 方法处理对象<br />
+ % r	格式化字符串，用 rper () 方法处理对象<br />
+ % d	格式化整数<br />
+ % o	格式化无符号八进制数<br />
+ % x	格式化无符号十六进制数<br />
+ % X	格式化无符号十六进制数（大写）<br />
+% f	格式化浮点数字，可指定小数点后的精度<br />
+ % e	用科学计数法格式化浮点数<br />
+ % E	作用同 % e，用科学计数法格式化浮点数<br />
+ % g	根据值的大小决定使用 % f 或 % e<br />
+% G	作用同 % g，根据值的大小决定使用 % f 或 % E<br />
+【例子】</p>
+<p>print('%c' % 97)  # a<br />
+print('%c %c %c' % (97, 98, 99))  # a b c<br />
+print('%d + %d = %d' % (4, 5, 9))  # 4 + 5 = 9<br />
+print (&quot;我叫 % s 今年 % d 岁！&quot; % (' 小明 ', 10))  # 我叫 小明 今年 10 岁！<br />
+print('%o' % 10)  # 12<br />
+print('%x' % 10)  # a<br />
+print('%X' % 10)  # A<br />
+print('%f' % 27.658)  # 27.658000<br />
+print('%e' % 27.658)  # 2.765800e+01<br />
+print('%E' % 27.658)  # 2.765800E+01<br />
+print('%g' % 27.658)  # 27.658<br />
+text = &quot;I am %d years old.&quot; % 22<br />
+print(&quot;I said: %s.&quot; % text)  # I said: I am 22 years old..<br />
+print(&quot;I said: %r.&quot; % text)  # I said: 'I am 22 years old.'<br />
+a<br />
+a b c<br />
+4 + 5 = 9<br />
+ 我叫 小明 今年 10 岁！<br />
+12<br />
+a<br />
+A<br />
+27.658000<br />
+2.765800e+01<br />
+2.765800E+01<br />
+27.658<br />
+I said: I am 22 years old..<br />
+I said: 'I am 22 years old.'.<br />
+ 格式化操作符辅助指令<br />
+符号	功能<br />
+ m.n	m 是显示的最小总宽度，n 是小数点后的位数（如果可用的话）</p>
+<ul>
+<li>用作左对齐</li>
+</ul>
+<ul>
+<li>在正数前面显示加号 (+)</li>
+</ul>
+<h1 id="在八进制数前面显示零0在十六进制前面显示0x或者0x取决于用的是x还是x"><a class="anchor" href="#在八进制数前面显示零0在十六进制前面显示0x或者0x取决于用的是x还是x">#</a> 在八进制数前面显示零 ('0')，在十六进制前面显示 '0x' 或者 '0X'(取决于用的是 'x' 还是 'X')</h1>
+<p>0	显示的数字前面填充 '0' 而不是默认的空格<br />
+【例子】</p>
+<p>print('%5.1f' % 27.658)  # ' 27.7'<br />
+print('%.2e' % 27.658)  # 2.77e+01<br />
+print('%10d' % 10)  # '        10'<br />
+print('%-10d' % 10)  # '10        '<br />
+print('%+d' % 10)  # +10<br />
+print('%#o' % 10)  # 0o12<br />
+print('%#x' % 108)  # 0x6c<br />
+print('%010d' % 5)  # 0000000005<br />
+27.7<br />
+2.77e+01<br />
+10<br />
+10<br />
++10<br />
+0o12<br />
+0x6c<br />
+0000000005<br />
+ 字典</p>
+<ol>
+<li>可变类型与不可变类型<br />
+序列是以连续的整数为索引，与此不同的是，字典以 &quot;关键字&quot; 为索引，关键字可以是任意不可变类型，通常用字符串或数值。<br />
+字典是 Python 唯一的一个 映射类型，字符串、元组、列表属于序列类型。<br />
+那么如何快速判断一个数据类型 X 是不是可变类型的呢？两种方法：</li>
+</ol>
+<p>麻烦方法：用 id (X) 函数，对 X 进行某种操作，比较操作前后的 id，如果不一样，则 X 不可变，如果一样，则 X 可变。<br />
+便捷方法：用 hash (X)，只要不报错，证明 X 可被哈希，即不可变，反过来不可被哈希，即可变。<br />
+【例子】</p>
+<p>i = 1<br />
+print(id(i))  # 140732167000896<br />
+i = i + 2<br />
+print(id(i))  # 140732167000960<br />
+​<br />
+l = [1, 2]<br />
+print(id(l))  # 4300825160<br />
+l.append('Python')<br />
+print(id(l))  # 4300825160<br />
+140731832701760<br />
+140731832701824<br />
+2131670369800<br />
+2131670369800<br />
+ 整数 i 在加 1 之后的 id 和之前不一样，因此加完之后的这个 i (虽然名字没变)，但不是加之前的那个 i 了，因此整数是不可变类型。<br />
+列表 l 在附加 'Python' 之后的 id 和之前一样，因此列表是可变类型。<br />
+【例子】</p>
+<p>print(hash('Name'))  # 7047218704141848153<br />
+​<br />
+print(hash((1, 2, 'Python')))  # 1704535747474881831<br />
+​<br />
+print(hash([1, 2, 'Python']))</p>
+<h1 id="typeerror-unhashable-type-list"><a class="anchor" href="#typeerror-unhashable-type-list">#</a> TypeError: unhashable type: 'list'</h1>
+<h2 id="-6668157630988609386-1857436431894091236"><a class="anchor" href="#-6668157630988609386-1857436431894091236">#</a> ​<br />
+​<br />
+-6668157630988609386<br />
+-1857436431894091236</h2>
+<p>TypeError                                 Traceback (most recent call last)<br />
+&lt;ipython-input-1-6416367464f8&gt; in &lt;module&gt;()<br />
+3 print(hash((1, 2, 'Python')))  # 1704535747474881831<br />
+4<br />
+----&gt; 5 print(hash([1, 2, 'Python']))<br />
+6 # TypeError: unhashable type: 'list'</p>
+<p>TypeError: unhashable type: 'list'<br />
+print(hash({1, 2, 3}))</p>
+<h1 id="typeerror-unhashable-type-set"><a class="anchor" href="#typeerror-unhashable-type-set">#</a> TypeError: unhashable type: 'set'</h1>
+<p>数值、字符和元组 都能被哈希，因此它们是不可变类型。<br />
+列表、集合、字典不能被哈希，因此它是可变类型。<br />
+2. 字典的定义<br />
+字典 是无序的 键：值（key:value）对集合，键必须是互不相同的（在同一个字典之内）。</p>
+<p 元素1,="" 元素2,="" css-module=".," 元素n="">dict 内部存放的顺序和 key 放入的顺序是没有关系的。<br />
+dict 查找和插入的速度极快，不会随着 key 的增加而增加，但是需要占用大量的内存。<br />
+字典 定义语法为</p>
+<p>其中每一个元素是一个「键值对」-- 键：值 (key:value)<br />
+ 关键点是「大括号 {}」,「逗号，」和「冒号 :」<br />
+大括号 -- 把所有元素绑在一起<br />
+逗号 -- 将每个键值对分开<br />
+冒号 -- 将键和值分开<br />
+ 3. 创建和访问字典<br />
+【例子】</p>
+<p>brand = [' 李宁 ', ' 耐克 ', ' 阿迪达斯 ']<br />
+ slogan = [' 一切皆有可能 ', 'Just do it', 'Impossible is nothing']<br />
+ print (' 耐克的口号是:', slogan [brand.index (' 耐克 ')])</p>
+<h1 id="耐克的口号是-just-do-it"><a class="anchor" href="#耐克的口号是-just-do-it">#</a> 耐克的口号是: Just do it</h1>
+<p>​<br />
+dic = {' 李宁 ': ' 一切皆有可能 ', ' 耐克 ': 'Just do it', ' 阿迪达斯 ': 'Impossible is nothing'}<br />
+ print (' 耐克的口号是:', dic [' 耐克 '])</p>
+<h1 id="耐克的口号是-just-do-it-2"><a class="anchor" href="#耐克的口号是-just-do-it-2">#</a> 耐克的口号是: Just do it</h1>
+<p>耐克的口号是: Just do it<br />
+ 耐克的口号是: Just do it<br />
+【例子】通过字符串或数值作为 key 来创建字典。</p>
+<h2 id="dic1-1-one-2-two-3-threeprintdic1-1-one-2-two-3-threeprintdic11-oneprintdic14-keyerror-41-one-2-two-3-threeone"><a class="anchor" href="#dic1-1-one-2-two-3-threeprintdic1-1-one-2-two-3-threeprintdic11-oneprintdic14-keyerror-41-one-2-two-3-threeone">#</a> dic1 = {1: 'one', 2: 'two', 3: 'three'}<br />
+print(dic1)  # {1: 'one', 2: 'two', 3: 'three'}<br />
+print(dic1[1])  # one<br />
+print(dic1[4])  # KeyError: 4<br />
+​<br />
+{1: 'one', 2: 'two', 3: 'three'}<br />
+one</h2>
+<p>KeyError                                  Traceback (most recent call last)<br />
+&lt;ipython-input-2-bb8d02bd63a3&gt; in &lt;module&gt;()<br />
+2 print(dic1)  # {1: 'one', 2: 'two', 3: 'three'}<br />
+3 print(dic1[1])  # one<br />
+----&gt; 4 print(dic1[4])  # KeyError: 4</p>
+<p>KeyError: 4<br />
+dic2 = {'rice': 35, 'wheat': 101, 'corn': 67}<br />
+print(dic2)  # {'wheat': 101, 'corn': 67, 'rice': 35}<br />
+print(dic2['rice'])  # 35<br />
+{'rice': 35, 'wheat': 101, 'corn': 67}<br />
+35<br />
+ 注意：如果我们取的键在字典中不存在，会直接报错 KeyError。</p>
+<p>【例子】通过元组作为 key 来创建字典，但一般不这样使用。</p>
+<p>dic = {(1, 2, 3): &quot;Tom&quot;, &quot;Age&quot;: 12, 3: [3, 5, 7]}<br />
+print(dic)  # {(1, 2, 3): 'Tom', 'Age': 12, 3: [3, 5, 7]}<br />
+print(type(dic))  # &lt;class 'dict'&gt;<br />
+{(1, 2, 3): 'Tom', 'Age': 12, 3: [3, 5, 7]}<br />
+&lt;class 'dict'&gt;<br />
+ 通过构造函数 dict 来创建字典。</p>
+<p>dict () 创建一个空的字典。<br />
+【例子】通过 key 直接把数据放入字典中，但一个 key 只能对应一个 value，多次对一个 key 放入 value，后面的值会把前面的值冲掉。</p>
+<p>dic = dict()<br />
+dic['a'] = 1<br />
+dic['b'] = 2<br />
+dic['c'] = 3<br />
+​<br />
+print(dic)</p>
+<h1 a:="" 1,="" b:="" 2,="" c:="" 3="" id="-3"><a class="anchor" href="#-3">#</a> </h1>
+<p>​<br />
+dic['a'] = 11<br />
+print(dic)</p>
+<h1 a:="" 11,="" b:="" 2,="" c:="" 3="" id="-4"><a class="anchor" href="#-4">#</a> </h1>
+<p>​<br />
+dic['d'] = 4<br />
+print(dic)</p>
+<h1 a:="" 11,="" b:="" 2,="" c:="" 3,="" d:="" 4="" id="-5"><a class="anchor" href="#-5">#</a> </h1>
+<p>{'a': 1, 'b': 2, 'c': 3}<br />
+{'a': 11, 'b': 2, 'c': 3}<br />
+{'a': 11, 'b': 2, 'c': 3, 'd': 4}<br />
+dict(mapping) new dictionary initialized from a mapping object's (key, value) pairs<br />
+【例子】</p>
+<p>dic1 = dict([('apple', 4139), ('peach', 4127), ('cherry', 4098)])<br />
+print(dic1)  # {'cherry': 4098, 'apple': 4139, 'peach': 4127}<br />
+​<br />
+dic2 = dict((('apple', 4139), ('peach', 4127), ('cherry', 4098)))<br />
+print(dic2)  # {'peach': 4127, 'cherry': 4098, 'apple': 4139}<br />
+{'apple': 4139, 'peach': 4127, 'cherry': 4098}<br />
+{'apple': 4139, 'peach': 4127, 'cherry': 4098}<br />
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs in the keyword argument list. For example: dict(one=1, two=2)<br />
+【例子】这种情况下，键只能为字符串类型，并且创建的时候字符串不能加引号，加上就会直接报语法错误。</p>
+<p>dic = dict(name='Tom', age=10)<br />
+print(dic)  # {'name': 'Tom', 'age': 10}<br />
+print(type(dic))  # &lt;class 'dict'&gt;<br />
+{'name': 'Tom', 'age': 10}<br />
+&lt;class 'dict'&gt;<br />
+4. 字典的内置方法<br />
+ dict.fromkeys (seq [, value]) 用于创建一个新字典，以序列 seq 中元素做字典的键，value 为字典所有键对应的初始值。<br />
+【例子】</p>
+<p>seq = ('name', 'age', 'sex')<br />
+dic1 = dict.fromkeys(seq)<br />
+print(dic1)</p>
+<h1 name:="" None,="" age:="" None,="" sex:="" None="" id="-6"><a class="anchor" href="#-6">#</a> </h1>
+<p>​<br />
+dic2 = dict.fromkeys(seq, 10)<br />
+print(dic2)</p>
+<h1 name:="" 10,="" age:="" 10,="" sex:="" 10="" id="-7"><a class="anchor" href="#-7">#</a> </h1>
+<p>​<br />
+dic3 = dict.fromkeys (seq, (' 小马 ', '8', ' 男 '))<br />
+print(dic3)</p>
+<h1 name:="" (小马,="" 8,="" 男),="" age:="" (小马,="" 8,="" 男),="" sex:="" (小马,="" 8,="" 男)="" id="-8"><a class="anchor" href="#-8">#</a> </h1>
+<p>{'name': None, 'age': None, 'sex': None}<br />
+{'name': 10, 'age': 10, 'sex': 10}<br />
+{'name': (' 小马 ', '8', ' 男 '), 'age': (' 小马 ', '8', ' 男 '), 'sex': (' 小马 ', '8', ' 男 ')}<br />
+ dict.keys () 返回一个可迭代对象，可以使用 list () 来转换为列表，列表为字典中的所有键。<br />
+【例子】</p>
+<p>dic = {'Name': 'lsgogroup', 'Age': 7}<br />
+print(dic.keys())  # dict_keys(['Name', 'Age'])<br />
+ lst = list (dic.keys ())  # 转换为列表<br />
+ print (lst)  # ['Name', 'Age']<br />
+dict_keys(['Name', 'Age'])<br />
+['Name', 'Age']<br />
+ dict.values () 返回一个迭代器，可以使用 list () 来转换为列表，列表为字典中的所有值。<br />
+【例子】</p>
+<p>dic = {'Sex': 'female', 'Age': 7, 'Name': 'Zara'}<br />
+print(dic.values())</p>
+<h1 id="dict_valuesfemale-7-zara"><a class="anchor" href="#dict_valuesfemale-7-zara">#</a> dict_values(['female', 7, 'Zara'])</h1>
+<p>​<br />
+print(list(dic.values()))</p>
+<h1 id="7-female-zara"><a class="anchor" href="#7-female-zara">#</a> [7, 'female', 'Zara']</h1>
+<p>dict_values(['female', 7, 'Zara'])<br />
+['female', 7, 'Zara']<br />
+ dict.items () 以列表返回可遍历的 (键，值) 元组数组。<br />
+【例子】</p>
+<p>dic = {'Name': 'Lsgogroup', 'Age': 7}<br />
+print(dic.items())</p>
+<h1 id="dict_itemsname-lsgogroup-age-7"><a class="anchor" href="#dict_itemsname-lsgogroup-age-7">#</a> dict_items([('Name', 'Lsgogroup'), ('Age', 7)])</h1>
+<p>​<br />
+print(tuple(dic.items()))</p>
+<h1 id="name-lsgogroup-age-7"><a class="anchor" href="#name-lsgogroup-age-7">#</a> (('Name', 'Lsgogroup'), ('Age', 7))</h1>
+<p>​<br />
+print(list(dic.items()))</p>
+<h1 id="name-lsgogroup-age-7-2"><a class="anchor" href="#name-lsgogroup-age-7-2">#</a> [('Name', 'Lsgogroup'), ('Age', 7)]</h1>
+<p>dict_items([('Name', 'Lsgogroup'), ('Age', 7)])<br />
+(('Name', 'Lsgogroup'), ('Age', 7))<br />
+[('Name', 'Lsgogroup'), ('Age', 7)]<br />
+ dict.get (key, default=None) 返回指定键的值，如果值不在字典中返回默认值。<br />
+【例子】</p>
+<p>dic = {'Name': 'Lsgogroup', 'Age': 27}<br />
+ print (&quot;Age 值为 : % s&quot; % dic.get ('Age'))  # Age 值为 : 27<br />
+print (&quot;Sex 值为 : % s&quot; % dic.get ('Sex', &quot;NA&quot;))  # Sex 值为 : NA<br />
+print(dic)  # {'Name': 'Lsgogroup', 'Age': 27}<br />
+ Age 值为 : 27<br />
+Sex 值为 : NA<br />
+{'Name': 'Lsgogroup', 'Age': 27}<br />
+ dict.setdefault (key, default=None) 和 get () 方法 类似，如果键不存在于字典中，将会添加键并将值设为默认值。<br />
+【例子】</p>
+<p>dic = {'Name': 'Lsgogroup', 'Age': 7}<br />
+ print (&quot;Age 键的值为 : % s&quot; % dic.setdefault ('Age', None))  # Age 键的值为 : 7<br />
+print (&quot;Sex 键的值为 : % s&quot; % dic.setdefault ('Sex', None))  # Sex 键的值为 : None<br />
+print(dic)</p>
+<h1 Age:="" 7,="" Name:="" Lsgogroup,="" Sex:="" None="" id="-9"><a class="anchor" href="#-9">#</a> </h1>
+<p>Age 键的值为 : 7<br />
+Sex 键的值为 : None<br />
+{'Name': 'Lsgogroup', 'Age': 7, 'Sex': None}<br />
+ key in dict in 操作符用于判断键是否存在于字典中，如果键在字典 dict 里返回 true，否则返回 false。而 not in 操作符刚好相反，如果键在字典 dict 里返回 false，否则返回 true。<br />
+【例子】</p>
+<p>dic = {'Name': 'Lsgogroup', 'Age': 7}<br />
+​</p>
+<h1 id="in-检测键-age-是否存在"><a class="anchor" href="#in-检测键-age-是否存在">#</a> in 检测键 Age 是否存在</h1>
+<p>if 'Age' in dic:<br />
+print (&quot;键 Age 存在&quot;)<br />
+else:<br />
+print (&quot;键 Age 不存在&quot;)<br />
+​</p>
+<h1 id="检测键-sex-是否存在"><a class="anchor" href="#检测键-sex-是否存在">#</a> 检测键 Sex 是否存在</h1>
+<p>if 'Sex' in dic:<br />
+print (&quot;键 Sex 存在&quot;)<br />
+else:<br />
+print (&quot;键 Sex 不存在&quot;)<br />
+​</p>
+<h1 id="not-in-检测键-age-是否存在"><a class="anchor" href="#not-in-检测键-age-是否存在">#</a> not in 检测键 Age 是否存在</h1>
+<p>if 'Age' not in dic:<br />
+print (&quot;键 Age 不存在&quot;)<br />
+else:<br />
+print (&quot;键 Age 存在&quot;)<br />
+​</p>
+<h1 id="键-age-存在"><a class="anchor" href="#键-age-存在">#</a> 键 Age 存在</h1>
+<h1 id="键-sex-不存在"><a class="anchor" href="#键-sex-不存在">#</a> 键 Sex 不存在</h1>
+<h1 id="键-age-存在-2"><a class="anchor" href="#键-age-存在-2">#</a> 键 Age 存在</h1>
+<p>键 Age 存在<br />
+键 Sex 不存在<br />
+键 Age 存在<br />
+ dict.pop (key [,default]) 删除字典给定键 key 所对应的值，返回值为被删除的值。key 值必须给出。若 key 不存在，则返回 default 值。<br />
+del dict [key] 删除字典给定键 key 所对应的值。<br />
+【例子】</p>
+<p>dic1 = {1: &quot;a&quot;, 2: [1, 2]}<br />
+print(dic1.pop(1), dic1)  # a {2: [1, 2]}<br />
+​</p>
+<h1 id="设置默认值必须添加否则报错"><a class="anchor" href="#设置默认值必须添加否则报错">#</a> 设置默认值，必须添加，否则报错</h1>
+<p>print(dic1.pop(3, &quot;nokey&quot;), dic1)  # nokey {2: [1, 2]}<br />
+​<br />
+del dic1[2]<br />
+print(dic1)  # {}<br />
+a {2: [1, 2]}<br />
+nokey {2: [1, 2]}<br />
+{}<br />
+ dict.popitem () 随机返回并删除字典中的一对键和值，如果字典已经为空，却调用了此方法，就报出 KeyError 异常。<br />
+【例子】</p>
+<p>dic1 = {1: &quot;a&quot;, 2: [1, 2]}<br />
+print(dic1.popitem())  # {2: [1, 2]}<br />
+print(dic1)  # (1, 'a')<br />
+(2, [1, 2])<br />
+{1: 'a'}<br />
+ dict.clear () 用于删除字典内所有元素。<br />
+【例子】</p>
+<p>dic = {'Name': 'Zara', 'Age': 7}<br />
+ print (&quot;字典长度 : % d&quot; % len (dic))  # 字典长度 : 2<br />
+dic.clear()<br />
+ print (&quot;字典删除后长度 : % d&quot; % len (dic))</p>
+<h1 id="字典删除后长度-0"><a class="anchor" href="#字典删除后长度-0">#</a> 字典删除后长度 : 0</h1>
+<p>字典长度 : 2<br />
+ 字典删除后长度 : 0<br />
+dict.copy () 返回一个字典的浅复制。<br />
+【例子】</p>
+<p>dic1 = {'Name': 'Lsgogroup', 'Age': 7, 'Class': 'First'}<br />
+dic2 = dic1.copy()<br />
+print(&quot;dic2&quot;)</p>
+<h1 Age:="" 7,="" Name:="" Lsgogroup,="" Class:="" First="" id="-10"><a class="anchor" href="#-10">#</a> </h1>
+<p>dic2<br />
+【例子】直接赋值和 copy 的区别</p>
+<p>dic1 = {'user': 'lsgogroup', 'num': [1, 2, 3]}<br />
+​</p>
+<h1 id="引用对象"><a class="anchor" href="#引用对象">#</a> 引用对象</h1>
+<p>dic2 = dic1</p>
+<h1 id="浅拷贝父对象一级目录子对象二级目录不拷贝还是引用"><a class="anchor" href="#浅拷贝父对象一级目录子对象二级目录不拷贝还是引用">#</a> 浅拷贝父对象（一级目录），子对象（二级目录）不拷贝，还是引用</h1>
+<p>dic3 = dic1.copy()<br />
+​<br />
+print(id(dic1))  # 148635574728<br />
+print(id(dic2))  # 148635574728<br />
+print(id(dic3))  # 148635574344<br />
+​</p>
+<h1 id="修改-data-数据"><a class="anchor" href="#修改-data-数据">#</a> 修改 data 数据</h1>
+<p>dic1['user'] = 'root'<br />
+dic1['num'].remove(1)<br />
+​</p>
+<h1 id="输出结果"><a class="anchor" href="#输出结果">#</a> 输出结果</h1>
+<p>print(dic1)  # {'user': 'root', 'num': [2, 3]}<br />
+print(dic2)  # {'user': 'root', 'num': [2, 3]}<br />
+print(dic3)  # {'user': 'runoob', 'num': [2, 3]}<br />
+2131669221448<br />
+2131669221448<br />
+2131669225120<br />
+{'user': 'root', 'num': [2, 3]}<br />
+{'user': 'root', 'num': [2, 3]}<br />
+{'user': 'lsgogroup', 'num': [2, 3]}<br />
+ dict.update (dict2) 把字典参数 dict2 的 key:value 对 更新到字典 dict 里。<br />
+【例子】</p>
+<p>dic = {'Name': 'Lsgogroup', 'Age': 7}<br />
+dic2 = {'Sex': 'female', 'Age': 8}<br />
+dic.update(dic2)<br />
+print(dic)</p>
+<h1 Sex:="" female,="" Age:="" 8,="" Name:="" Lsgogroup="" id="-11"><a class="anchor" href="#-11">#</a> </h1>
+<p>{'Name': 'Lsgogroup', 'Age': 8, 'Sex': 'female'}<br />
+ 集合<br />
+ Python 中 set 与 dict 类似，也是一组 key 的集合，但不存储 value。由于 key 不能重复，所以，在 set 中，没有重复的 key。</p>
+<p>注意，key 为不可变类型，即可哈希的值。</p>
+<p>【例子】</p>
+<p>num = {}<br />
+print(type(num))  # &lt;class 'dict'&gt;<br />
+num = {1, 2, 3, 4}<br />
+print(type(num))  # &lt;class 'set'&gt;<br />
+&lt;class 'dict'&gt;<br />
+&lt;class 'set'&gt;</p>
+<ol>
+<li>集合的创建<br />
+先创建对象再加入元素。<br />
+在创建空集合的时候只能使用 s = set ()，因为 s = {} 创建的是空字典。<br />
+【例子】</li>
+</ol>
+<p>basket = set()<br />
+basket.add('apple')<br />
+basket.add('banana')<br />
+print(basket)  # {'banana', 'apple'}<br />
+{'banana', 'apple'}<br />
+ 直接把一堆元素用花括号括起来 {元素 1, 元素 2, ..., 元素 n}。<br />
+重复元素在 set 中会被自动被过滤。<br />
+【例子】</p>
+<p>basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}<br />
+print(basket)  # {'banana', 'apple', 'pear', 'orange'}<br />
+{'pear', 'orange', 'banana', 'apple'}<br />
+ 使用 set (value) 工厂函数，把列表或元组转换成集合。<br />
+【例子】</p>
+<p>a = set('abracadabra')<br />
+print(a)</p>
+<h1 r,="" b,="" d,="" c,="" a="" id="-12"><a class="anchor" href="#-12">#</a> </h1>
+<p>​<br />
+b = set((&quot;Google&quot;, &quot;Lsgogroup&quot;, &quot;Taobao&quot;, &quot;Taobao&quot;))<br />
+print(b)</p>
+<h1 Taobao,="" Lsgogroup,="" Google="" id="-13"><a class="anchor" href="#-13">#</a> </h1>
+<p>​<br />
+c = set([&quot;Google&quot;, &quot;Lsgogroup&quot;, &quot;Taobao&quot;, &quot;Google&quot;])<br />
+print(c)</p>
+<h1 Taobao,="" Lsgogroup,="" Google="" id="-14"><a class="anchor" href="#-14">#</a> </h1>
+<p>{'b', 'r', 'a', 'c', 'd'}<br />
+{'Taobao', 'Google', 'Lsgogroup'}<br />
+{'Taobao', 'Google', 'Lsgogroup'}<br />
+【例子】去掉列表中重复的元素</p>
+<p>lst = [0, 1, 2, 3, 4, 5, 5, 3, 1]<br />
+​<br />
+temp = []<br />
+for item in lst:<br />
+if item not in temp:<br />
+temp.append(item)<br />
+​<br />
+print(temp)  # [0, 1, 2, 3, 4, 5]<br />
+​<br />
+a = set(lst)<br />
+print(list(a))  # [0, 1, 2, 3, 4, 5]<br />
+[0, 1, 2, 3, 4, 5]<br />
+[0, 1, 2, 3, 4, 5]<br />
+ 从结果发现集合的两个特点：无序 (unordered) 和唯一 (unique)。</p>
+<p>由于 set 存储的是无序集合，所以我们不可以为集合创建索引或执行切片 (slice) 操作，也没有键 (keys) 可用来获取集合中元素的值，但是可以判断一个元素是否在集合中。</p>
+<ol start="2">
+<li>访问集合中的值<br />
+可以使用 len () 內建函数得到集合的大小。<br />
+【例子】</li>
+</ol>
+<p>s = set(['Google', 'Baidu', 'Taobao'])<br />
+print(len(s))  # 3<br />
+3<br />
+ 可以使用 for 把集合中的数据一个个读取出来。<br />
+【例子】</p>
+<p>s = set(['Google', 'Baidu', 'Taobao'])<br />
+for item in s:<br />
+print(item)</p>
+<h1 id="baidu"><a class="anchor" href="#baidu">#</a> Baidu</h1>
+<h1 id="google"><a class="anchor" href="#google">#</a> Google</h1>
+<h1 id="taobao"><a class="anchor" href="#taobao">#</a> Taobao</h1>
+<p>Baidu<br />
+Taobao<br />
+Google<br />
+ 可以通过 in 或 not in 判断一个元素是否在集合中已经存在<br />
+【例子】</p>
+<p>s = set(['Google', 'Baidu', 'Taobao'])<br />
+print('Taobao' in s)  # True<br />
+print('Facebook' not in s)  # True<br />
+True<br />
+True<br />
+3. 集合的内置方法<br />
+ set.add (elmnt) 用于给集合添加元素，如果添加的元素在集合中已存在，则不执行任何操作。<br />
+【例子】</p>
+<p>fruits = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br />
+fruits.add(&quot;orange&quot;)<br />
+print(fruits)</p>
+<h1 orange,="" cherry,="" banana,="" apple="" id="-15"><a class="anchor" href="#-15">#</a> </h1>
+<p>​<br />
+fruits.add(&quot;apple&quot;)<br />
+print(fruits)</p>
+<h1 orange,="" cherry,="" banana,="" apple="" id="-16"><a class="anchor" href="#-16">#</a> </h1>
+<p>{'cherry', 'orange', 'banana', 'apple'}<br />
+{'cherry', 'orange', 'banana', 'apple'}<br />
+ set.update (set) 用于修改当前集合，可以添加新的元素或集合到当前集合中，如果添加的元素在集合中已存在，则该元素只会出现一次，重复的会忽略。<br />
+【例子】</p>
+<p>x = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br />
+y = {&quot;google&quot;, &quot;baidu&quot;, &quot;apple&quot;}<br />
+x.update(y)<br />
+print(x)</p>
+<h1 cherry,="" banana,="" apple,="" google,="" baidu="" id="-17"><a class="anchor" href="#-17">#</a> </h1>
+<p>​<br />
+y.update([&quot;lsgo&quot;, &quot;dreamtech&quot;])<br />
+print(y)</p>
+<h1 lsgo,="" baidu,="" dreamtech,="" apple,="" google="" id="-18"><a class="anchor" href="#-18">#</a> </h1>
+<p>{'google', 'banana', 'cherry', 'apple', 'baidu'}<br />
+{'apple', 'dreamtech', 'lsgo', 'google', 'baidu'}<br />
+ set.remove (item) 用于移除集合中的指定元素。如果元素不存在，则会发生错误。<br />
+【例子】</p>
+<p>fruits = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br />
+fruits.remove(&quot;banana&quot;)<br />
+print(fruits)  # {'apple', 'cherry'}<br />
+{'cherry', 'apple'}<br />
+ set.discard (value) 用于移除指定的集合元素。remove () 方法在移除一个不存在的元素时会发生错误，而 discard () 方法不会。<br />
+【例子】</p>
+<p>fruits = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br />
+fruits.discard(&quot;banana&quot;)<br />
+print(fruits)  # {'apple', 'cherry'}<br />
+{'cherry', 'apple'}<br />
+ set.pop () 用于随机移除一个元素。<br />
+【例子】</p>
+<p>fruits = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}<br />
+x = fruits.pop()<br />
+print(fruits)  # {'cherry', 'apple'}<br />
+print(x)  # banana<br />
+{'banana', 'apple'}<br />
+cherry<br />
+ 由于 set 是无序和无重复元素的集合，所以两个或多个 set 可以做数学意义上的集合操作。</p>
+<p>set.intersection (set1, set2) 返回两个集合的交集。<br />
+set1 &amp; set2 返回两个集合的交集。<br />
+set.intersection_update (set1, set2) 交集，在原始的集合上移除不重叠的元素。<br />
+【例子】</p>
+<p>a = set('abracadabra')<br />
+b = set('alacazam')<br />
+print(a)  # {'r', 'a', 'c', 'b', 'd'}<br />
+print(b)  # {'c', 'a', 'l', 'm', 'z'}<br />
+​<br />
+c = a.intersection(b)<br />
+print(c)  # {'a', 'c'}<br />
+print(a &amp; b)  # {'c', 'a'}<br />
+print(a)  # {'a', 'r', 'c', 'b', 'd'}<br />
+​<br />
+a.intersection_update(b)<br />
+print(a)  # {'a', 'c'}<br />
+{'b', 'r', 'a', 'c', 'd'}<br />
+{'l', 'a', 'c', 'z', 'm'}<br />
+{'a', 'c'}<br />
+{'a', 'c'}<br />
+{'b', 'r', 'a', 'c', 'd'}<br />
+{'a', 'c'}<br />
+ set.union (set1, set2) 返回两个集合的并集。<br />
+set1 | set2 返回两个集合的并集。<br />
+【例子】</p>
+<p>a = set('abracadabra')<br />
+b = set('alacazam')<br />
+print(a)  # {'r', 'a', 'c', 'b', 'd'}<br />
+print(b)  # {'c', 'a', 'l', 'm', 'z'}<br />
+​<br />
+print(a | b)</p>
+<h1 l,="" d,="" m,="" b,="" a,="" r,="" z,="" c="" id="-19"><a class="anchor" href="#-19">#</a> </h1>
+<p>​<br />
+c = a.union(b)<br />
+print(c)</p>
+<h1 c,="" a,="" d,="" m,="" r,="" b,="" z,="" l="" id="-20"><a class="anchor" href="#-20">#</a> </h1>
+<p>{'b', 'r', 'a', 'c', 'd'}<br />
+{'l', 'a', 'c', 'z', 'm'}<br />
+{'l', 'b', 'r', 'a', 'c', 'z', 'd', 'm'}<br />
+{'l', 'b', 'r', 'a', 'c', 'z', 'd', 'm'}<br />
+ set.difference (set) 返回集合的差集。<br />
+set1 - set2 返回集合的差集。<br />
+set.difference_update (set) 集合的差集，直接在原来的集合中移除元素，没有返回值。<br />
+【例子】</p>
+<p>a = set('abracadabra')<br />
+b = set('alacazam')<br />
+print(a)  # {'r', 'a', 'c', 'b', 'd'}<br />
+print(b)  # {'c', 'a', 'l', 'm', 'z'}<br />
+​<br />
+c = a.difference(b)<br />
+print(c)  # {'b', 'd', 'r'}<br />
+print(a - b)  # {'d', 'b', 'r'}<br />
+​<br />
+print(a)  # {'r', 'd', 'c', 'a', 'b'}<br />
+a.difference_update(b)<br />
+print(a)  # {'d', 'r', 'b'}<br />
+{'b', 'r', 'a', 'c', 'd'}<br />
+{'l', 'a', 'c', 'z', 'm'}<br />
+{'d', 'b', 'r'}<br />
+{'d', 'b', 'r'}<br />
+{'b', 'r', 'a', 'c', 'd'}<br />
+{'b', 'r', 'd'}<br />
+ set.symmetric_difference (set) 返回集合的异或。<br />
+set1 ^ set2 返回集合的异或。<br />
+set.symmetric_difference_update (set) 移除当前集合中在另外一个指定集合相同的元素，并将另外一个指定集合中不同的元素插入到当前集合中。<br />
+【例子】</p>
+<p>a = set('abracadabra')<br />
+b = set('alacazam')<br />
+print(a)  # <ruby>'r', 'a', 'c', 'b', 'd'}
+print(b)  # {'c', 'a', 'l', 'm', 'z'}
+​
+c = a.symmetric_difference(b)
+print(c)  # {'m', 'r', 'l', 'b', 'z', 'd'}
+print(a <rp>(</rp><rt> b)  # {'m', 'r', 'l', 'b', 'z', 'd'</rt><rp>)</rp></ruby><br />
+​<br />
+print(a)  # {'r', 'd', 'c', 'a', 'b'}<br />
+a.symmetric_difference_update(b)<br />
+print(a)  # {'r', 'b', 'm', 'l', 'z', 'd'}<br />
+{'b', 'r', 'a', 'c', 'd'}<br />
+{'l', 'a', 'c', 'z', 'm'}<br />
+{'l', 'b', 'z', 'r', 'd', 'm'}<br />
+{'l', 'b', 'z', 'r', 'd', 'm'}<br />
+{'b', 'r', 'a', 'c', 'd'}<br />
+{'l', 'b', 'r', 'z', 'd', 'm'}<br />
+ set.issubset (set) 判断集合是不是被其他集合包含，如果是则返回 True，否则返回 False。<br />
+set1 &lt;= set2 判断集合是不是被其他集合包含，如果是则返回 True，否则返回 False。<br />
+【例子】</p>
+<p>x = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}<br />
+y = {&quot;f&quot;, &quot;e&quot;, &quot;d&quot;, &quot;c&quot;, &quot;b&quot;, &quot;a&quot;}<br />
+z = x.issubset(y)<br />
+print(z)  # True<br />
+print(x &lt;= y)  # True<br />
+​<br />
+x = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}<br />
+y = {&quot;f&quot;, &quot;e&quot;, &quot;d&quot;, &quot;c&quot;, &quot;b&quot;}<br />
+z = x.issubset(y)<br />
+print(z)  # False<br />
+print(x &lt;= y)  # False<br />
+True<br />
+True<br />
+False<br />
+False<br />
+set.issuperset (set) 用于判断集合是不是包含其他集合，如果是则返回 True，否则返回 False。<br />
+set1 &gt;= set2 判断集合是不是包含其他集合，如果是则返回 True，否则返回 False。<br />
+【例子】</p>
+<p>x = {&quot;f&quot;, &quot;e&quot;, &quot;d&quot;, &quot;c&quot;, &quot;b&quot;, &quot;a&quot;}<br />
+y = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}<br />
+z = x.issuperset(y)<br />
+print(z)  # True<br />
+print(x &gt;= y)  # True<br />
+​<br />
+x = {&quot;f&quot;, &quot;e&quot;, &quot;d&quot;, &quot;c&quot;, &quot;b&quot;}<br />
+y = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}<br />
+z = x.issuperset(y)<br />
+print(z)  # False<br />
+print(x &gt;= y)  # False<br />
+True<br />
+True<br />
+False<br />
+False<br />
+set.isdisjoint (set) 用于判断两个集合是不是不相交，如果是返回 True，否则返回 False。<br />
+【例子】</p>
+<p>x = {&quot;f&quot;, &quot;e&quot;, &quot;d&quot;, &quot;c&quot;, &quot;b&quot;}<br />
+y = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}<br />
+z = x.isdisjoint(y)<br />
+print(z)  # False<br />
+​<br />
+x = {&quot;f&quot;, &quot;e&quot;, &quot;d&quot;, &quot;m&quot;, &quot;g&quot;}<br />
+y = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}<br />
+z = x.isdisjoint(y)<br />
+print(z)  # True<br />
+False<br />
+True<br />
+4. 集合的转换<br />
+【例子】</p>
+<p>se = set(range(4))<br />
+li = list(se)<br />
+tu = tuple(se)<br />
+​<br />
+print(se, type(se))  # {0, 1, 2, 3} &lt;class 'set'&gt;<br />
+print(li, type(li))  # [0, 1, 2, 3] &lt;class 'list'&gt;<br />
+print(tu, type(tu))  # (0, 1, 2, 3) &lt;class 'tuple'&gt;<br />
+{0, 1, 2, 3} &lt;class 'set'&gt;<br />
+[0, 1, 2, 3] &lt;class 'list'&gt;<br />
+(0, 1, 2, 3) &lt;class 'tuple'&gt;<br />
+5. 不可变集合<br />
+ Python 提供了不能改变元素的集合的实现版本，即不能增加或删除元素，类型名叫 frozenset。需要注意的是 frozenset 仍然可以进行集合操作，只是不能用带有 update 的方法。</p>
+<p>frozenset ([iterable]) 返回一个冻结的集合，冻结后集合不能再添加或删除任何元素。<br />
+【例子】</p>
+<p>a = frozenset (range (10))  # 生成一个新的不可变集合<br />
+ print (a)</p>
+<h1 id="frozenset0-1-2-3-4-5-6-7-8-9"><a class="anchor" href="#frozenset0-1-2-3-4-5-6-7-8-9">#</a> frozenset({0, 1, 2, 3, 4, 5, 6, 7, 8, 9})</h1>
+<p>​<br />
+b = frozenset('lsgogroup')<br />
+print(b)</p>
+<h1 id="frozensetg-s-p-r-u-o-l"><a class="anchor" href="#frozensetg-s-p-r-u-o-l">#</a> frozenset({'g', 's', 'p', 'r', 'u', 'o', 'l'})</h1>
+<p>frozenset({0, 1, 2, 3, 4, 5, 6, 7, 8, 9})<br />
+frozenset({'l', 'g', 'r', 'u', 'o', 's', 'p'})<br />
+ 序列<br />
+在 Python 中，序列类型包括字符串、列表、元组、集合和字典，这些序列支持一些通用的操作，但比较特殊的是，集合和字典不支持索引、切片、相加和相乘操作。</p>
+<ol>
+<li>针对序列的内置函数<br />
+ list (sub) 把一个可迭代对象转换为列表。<br />
+【例子】</li>
+</ol>
+<p>a = list()<br />
+print(a)  # []<br />
+​<br />
+b = 'I Love LsgoGroup'<br />
+b = list(b)<br />
+print(b)</p>
+<h1 id="i-l-o-v-e-l-s-g-o-g-r-o-u-p"><a class="anchor" href="#i-l-o-v-e-l-s-g-o-g-r-o-u-p">#</a> ['I', ' ', 'L', 'o', 'v', 'e', ' ', 'L', 's', 'g', 'o', 'G', 'r', 'o', 'u', 'p']</h1>
+<p>​<br />
+c = (1, 1, 2, 3, 5, 8)<br />
+c = list(c)<br />
+print(c)  # [1, 1, 2, 3, 5, 8]<br />
+[]<br />
+['I', ' ', 'L', 'o', 'v', 'e', ' ', 'L', 's', 'g', 'o', 'G', 'r', 'o', 'u', 'p']<br />
+[1, 1, 2, 3, 5, 8]<br />
+ tuple (sub) 把一个可迭代对象转换为元组。<br />
+【例子】</p>
+<p>a = tuple()<br />
+print(a)  # ()<br />
+​<br />
+b = 'I Love LsgoGroup'<br />
+b = tuple(b)<br />
+print(b)</p>
+<h1 id="i-l-o-v-e-l-s-g-o-g-r-o-u-p-2"><a class="anchor" href="#i-l-o-v-e-l-s-g-o-g-r-o-u-p-2">#</a> ('I', ' ', 'L', 'o', 'v', 'e', ' ', 'L', 's', 'g', 'o', 'G', 'r', 'o', 'u', 'p')</h1>
+<p>​<br />
+c = [1, 1, 2, 3, 5, 8]<br />
+c = tuple(c)<br />
+print(c)  # (1, 1, 2, 3, 5, 8)<br />
+()<br />
+('I', ' ', 'L', 'o', 'v', 'e', ' ', 'L', 's', 'g', 'o', 'G', 'r', 'o', 'u', 'p')<br />
+(1, 1, 2, 3, 5, 8)<br />
+ str (obj) 把 obj 对象转换为字符串<br />
+【例子】</p>
+<p>a = 123<br />
+a = str(a)<br />
+print(a)  # 123<br />
+123<br />
+len (s) 返回对象（字符、列表、元组等）长度或元素个数。<br />
+s -- 对象。<br />
+【例子】</p>
+<p>a = list()<br />
+print(len(a))  # 0<br />
+​<br />
+b = ('I', ' ', 'L', 'o', 'v', 'e', ' ', 'L', 's', 'g', 'o', 'G', 'r', 'o', 'u', 'p')<br />
+print(len(b))  # 16<br />
+​<br />
+c = 'I Love LsgoGroup'<br />
+print(len(c))  # 16<br />
+0<br />
+16<br />
+16<br />
+max (sub) 返回序列或者参数集合中的最大值<br />
+【例子】</p>
+<p>print(max(1, 2, 3, 4, 5))  # 5<br />
+print(max([-8, 99, 3, 7, 83]))  # 99<br />
+print(max('IloveLsgoGroup'))  # v<br />
+5<br />
+99<br />
+v<br />
+min (sub) 返回序列或参数集合中的最小值<br />
+【例子】</p>
+<p>print(min(1, 2, 3, 4, 5))  # 1<br />
+print(min([-8, 99, 3, 7, 83]))  # -8<br />
+print(min('IloveLsgoGroup'))  # G<br />
+1<br />
+-8<br />
+G<br />
+sum (iterable [, start=0]) 返回序列 iterable 与可选参数 start 的总和。<br />
+【例子】</p>
+<p>print(sum([1, 3, 5, 7, 9]))  # 25<br />
+print(sum([1, 3, 5, 7, 9], 10))  # 35<br />
+print(sum((1, 3, 5, 7, 9)))  # 25<br />
+print(sum((1, 3, 5, 7, 9), 20))  # 45<br />
+25<br />
+35<br />
+25<br />
+45<br />
+sorted (iterable, key=None, reverse=False) 对所有可迭代的对象进行排序操作。<br />
+iterable -- 可迭代对象。<br />
+key -- 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。<br />
+reverse -- 排序规则，reverse = True 降序 ， reverse = False 升序（默认）。<br />
+返回重新排序的列表。<br />
+【例子】</p>
+<p>x = [-8, 99, 3, 7, 83]<br />
+print(sorted(x))  # [-8, 3, 7, 83, 99]<br />
+print(sorted(x, reverse=True))  # [99, 83, 7, 3, -8]<br />
+​<br />
+t = ({&quot;age&quot;: 20, &quot;name&quot;: &quot;a&quot;}, {&quot;age&quot;: 25, &quot;name&quot;: &quot;b&quot;}, {&quot;age&quot;: 10, &quot;name&quot;: &quot;c&quot;})<br />
+x = sorted(t, key=lambda a: a[&quot;age&quot;])<br />
+print(x)</p>
+<h1 id="age-10-name-c-age-20-name-a-age-25-name-b"><a class="anchor" href="#age-10-name-c-age-20-name-a-age-25-name-b">#</a> [{'age': 10, 'name': 'c'}, {'age': 20, 'name': 'a'}, {'age': 25, 'name': 'b'}]</h1>
+<p>[-8, 3, 7, 83, 99]<br />
+[99, 83, 7, 3, -8]<br />
+[{'age': 10, 'name': 'c'}, {'age': 20, 'name': 'a'}, {'age': 25, 'name': 'b'}]<br />
+ reversed (seq) 函数返回一个反转的迭代器。<br />
+seq -- 要转换的序列，可以是 tuple, string, list 或 range。<br />
+【例子】</p>
+<p>s = 'lsgogroup'<br />
+x = reversed(s)<br />
+print(type(x))  # &lt;class 'reversed'&gt;<br />
+print(x)  # &lt;reversed object at 0x000002507E8EC2C8&gt;<br />
+print(list(x))</p>
+<h1 id="p-u-o-r-g-o-g-s-l"><a class="anchor" href="#p-u-o-r-g-o-g-s-l">#</a> ['p', 'u', 'o', 'r', 'g', 'o', 'g', 's', 'l']</h1>
+<p>​<br />
+t = ('l', 's', 'g', 'o', 'g', 'r', 'o', 'u', 'p')<br />
+print(list(reversed(t)))</p>
+<h1 id="p-u-o-r-g-o-g-s-l-2"><a class="anchor" href="#p-u-o-r-g-o-g-s-l-2">#</a> ['p', 'u', 'o', 'r', 'g', 'o', 'g', 's', 'l']</h1>
+<p>​<br />
+r = range(5, 9)<br />
+print(list(reversed(r)))</p>
+<h1 id="8-7-6-5"><a class="anchor" href="#8-7-6-5">#</a> [8, 7, 6, 5]</h1>
+<p>​<br />
+x = [-8, 99, 3, 7, 83]<br />
+print(list(reversed(x)))</p>
+<h1 id="83-7-3-99-8"><a class="anchor" href="#83-7-3-99-8">#</a> [83, 7, 3, 99, -8]</h1>
+<p>&lt;class 'reversed'&gt;<br />
+&lt;reversed object at 0x000001F0517DFD68&gt;<br />
+['p', 'u', 'o', 'r', 'g', 'o', 'g', 's', 'l']<br />
+['p', 'u', 'o', 'r', 'g', 'o', 'g', 's', 'l']<br />
+[8, 7, 6, 5]<br />
+[83, 7, 3, 99, -8]<br />
+enumerate(sequence, [start=0])<br />
+【例子】用于将一个可遍历的数据对象 (如列表、元组或字符串) 组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。</p>
+<p>seasons = ['Spring', 'Summer', 'Fall', 'Winter']<br />
+a = list(enumerate(seasons))<br />
+print(a)</p>
+<h1 id="0-spring-1-summer-2-fall-3-winter"><a class="anchor" href="#0-spring-1-summer-2-fall-3-winter">#</a> [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]</h1>
+<p>​<br />
+b = list(enumerate(seasons, 1))<br />
+print(b)</p>
+<h1 id="1-spring-2-summer-3-fall-4-winter"><a class="anchor" href="#1-spring-2-summer-3-fall-4-winter">#</a> [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]</h1>
+<p>​<br />
+for i, element in a:<br />
+print('{0},{1}'.format(i, element))</p>
+<h1 id="0spring"><a class="anchor" href="#0spring">#</a> 0,Spring</h1>
+<h1 id="1summer"><a class="anchor" href="#1summer">#</a> 1,Summer</h1>
+<h1 id="2fall"><a class="anchor" href="#2fall">#</a> 2,Fall</h1>
+<h1 id="3winter"><a class="anchor" href="#3winter">#</a> 3,Winter</h1>
+<p>[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]<br />
+[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]<br />
+0,Spring<br />
+1,Summer<br />
+2,Fall<br />
+3,Winter<br />
+zip(iter1 [,iter2 [...]])<br />
+ 用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的对象，这样做的好处是节约了不少的内存。<br />
+我们可以使用 list () 转换来输出列表。<br />
+如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。<br />
+【例子】</p>
+<p>a = [1, 2, 3]<br />
+b = [4, 5, 6]<br />
+c = [4, 5, 6, 7, 8]<br />
+​<br />
+zipped = zip(a, b)<br />
+print(zipped)  # &lt;zip object at 0x000000C5D89EDD88&gt;<br />
+print(list(zipped))  # [(1, 4), (2, 5), (3, 6)]<br />
+zipped = zip(a, c)<br />
+print(list(zipped))  # [(1, 4), (2, 5), (3, 6)]<br />
+​<br />
+a1, a2 = zip(*zip(a, b))<br />
+print(list(a1))  # [1, 2, 3]<br />
+print(list(a2))  # [4, 5, 6]<br />
+&lt;zip object at 0x000001F0517E38C8&gt;<br />
+[(1, 4), (2, 5), (3, 6)]<br />
+[(1, 4), (2, 5), (3, 6)]<br />
+[1, 2, 3]<br />
+[4, 5, 6]</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-02-01 11:20:30" itemprop="dateModified" datetime="2021-02-01T11:20:30+08:00">2021-02-01</time>
+  </span>
+  <span id="2021/01/29/python-2-day/" class="item leancloud_visitors" data-flag-title="python_2_day" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.jpg" alt="John Doe 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.jpg" alt="John Doe 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文博主： </strong>John Doe <i class="ic i-at"><em>@</em></i>Alan
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://47.97.229.110/2021/01/29/python-2-day/" title="python_2_day">https://47.97.229.110/2021/01/29/python-2-day/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/01/29/python-6-day/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewf5l51j20zk0m8b29.jpg" title="python_6_day">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> python</span>
+  <h3>python_6_day</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/01/29/python-1-day/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj9410cj20zk0m8h12.jpg" title="python_1_day">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> python</span>
+  <h3>python_1_day</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-3-5-7-9-class-list"><span class="toc-number">1.</span> <span class="toc-text"> [1, 3, 5, 7, 9] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-8-6-4-2-class-list"><span class="toc-number">2.</span> <span class="toc-text"> [10, 8, 6, 4, 2] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-4-9-16-25-36-49-64-81-class-list"><span class="toc-number">3.</span> <span class="toc-text"> [1, 4, 9, 16, 25, 36, 49, 64, 81] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-9-15-21-27-33-39"><span class="toc-number">4.</span> <span class="toc-text"> [3, 9, 15, 21, 27, 33, 39,</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0-0-0-0-0-0-0-0-0-0-0-0-class-list"><span class="toc-number">5.</span> <span class="toc-text"> [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-0-0-1-0-0-1-0-0-1-0-0-class-list"><span class="toc-number">6.</span> <span class="toc-text"> [[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0-0-0-0-0-0-0-0-0-0-0-0-class-list-2"><span class="toc-number">7.</span> <span class="toc-text"> [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-0-0-1-0-0-1-0-0-1-0-0-class-list-2"><span class="toc-number">8.</span> <span class="toc-text"> [[1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-lsgo-314-1-2-3-class-list"><span class="toc-number">9.</span> <span class="toc-text"> [1, &#39;lsgo&#39;, 3.14, [1, 2, 3]] &lt;class &#39;list&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#monday-tuesday-wednesday-thursday-friday-thursday"><span class="toc-number">10.</span> <span class="toc-text"> [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Thursday&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#monday-tuesday-wednesday-thursday-friday-thursday-sunday"><span class="toc-number">11.</span> <span class="toc-text"> [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, [&#39;Thursday&#39;, &#39;Sunday&#39;]]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#monday-tuesday-wednesday-thursday-friday-thursday-sunday-2"><span class="toc-number">12.</span> <span class="toc-text"> [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Thursday&#39;, &#39;Sunday&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#monday-tuesday-sunday-wednesday-thursday-friday"><span class="toc-number">13.</span> <span class="toc-text"> [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Sunday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#friday-thursday-wednesday-tuesday-monday"><span class="toc-number">14.</span> <span class="toc-text"> [&#39;Friday&#39;, &#39;Thursday&#39;, &#39;Wednesday&#39;, &#39;Tuesday&#39;, &#39;Monday&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#monday-tuesday-wednesday-thursday-friday"><span class="toc-number">15.</span> <span class="toc-text"> [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#123-213-456-789"><span class="toc-number">16.</span> <span class="toc-text"> [123, 213, 456, 789]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#789-456-213-123"><span class="toc-number">17.</span> <span class="toc-text"> [789, 456, 213, 123]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%88%97%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="toc-number">18.</span> <span class="toc-text"> 获取列表的第二个元素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-1-2-2-1-3-3-4"><span class="toc-number">19.</span> <span class="toc-text"> [(4, 1), (2, 2), (1, 3), (3, 4)]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-3-2-2-3-4-4-1"><span class="toc-number">20.</span> <span class="toc-text"> [(1, 3), (2, 2), (3, 4), (4, 1)]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031-python-class-tuple"><span class="toc-number">21.</span> <span class="toc-text"> (1, 10.31, &#39;python&#39;) &lt;class &#39;tuple&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031-python-class-tuple-2"><span class="toc-number">22.</span> <span class="toc-text"> (1, 10.31, &#39;python&#39;) &lt;class &#39;tuple&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031-python-data-11"><span class="toc-number">23.</span> <span class="toc-text"> ((1, 10.31, &#39;python&#39;), (&#39;data&#39;, 11))</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031-python"><span class="toc-number">24.</span> <span class="toc-text"> (1, 10.31, &#39;python&#39;)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031-python-2"><span class="toc-number">25.</span> <span class="toc-text"> 1 10.31 python</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031"><span class="toc-number">26.</span> <span class="toc-text"> (1, 10.31)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031-python-3"><span class="toc-number">27.</span> <span class="toc-text"> 1 10.31 python</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1031-ok-python"><span class="toc-number">28.</span> <span class="toc-text"> 1 10.31 OK python</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#i-love-python-class-str"><span class="toc-number">29.</span> <span class="toc-text"> i love Python! &lt;class &#39;str&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#i-love-python-class-str-2"><span class="toc-number">30.</span> <span class="toc-text"> I love Python! &lt;class &#39;str&#39;&gt;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cprogram-filesintelwifihelp"><span class="toc-number">31.</span> <span class="toc-text"> C:\Program Files\Intel\Wifi\Help</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cprogram-filesintelwifihelp-2"><span class="toc-number">32.</span> <span class="toc-text"> C:\Program Files\Intel\Wifi\Help</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="toc-number">33.</span> <span class="toc-text"> 这是一个多行字符串的实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E5%88%B6%E8%A1%A8%E7%AC%A6"><span class="toc-number">34.</span> <span class="toc-text"> 多行字符串可以使用制表符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tab"><span class="toc-number">35.</span> <span class="toc-text"> TAB (    )。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E6%8D%A2%E8%A1%8C%E7%AC%A6"><span class="toc-number">36.</span> <span class="toc-text"> 也可以使用换行符 [</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">37.</span> <span class="toc-text"> ]。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">38.</span> <span class="toc-text"> 这是一个多行字符串的实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E5%88%B6%E8%A1%A8%E7%AC%A6-2"><span class="toc-number">39.</span> <span class="toc-text"> 多行字符串可以使用制表符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tab-2"><span class="toc-number">40.</span> <span class="toc-text"> TAB (      )。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E6%8D%A2%E8%A1%8C%E7%AC%A6-2"><span class="toc-number">41.</span> <span class="toc-text"> 也可以使用换行符 [</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-2"><span class="toc-number">42.</span> <span class="toc-text"> ]。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#i-love-%E6%8F%92%E5%85%A5%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-lsgogroup"><span class="toc-number">43.</span> <span class="toc-text"> I Love 插入的字符串  LsgoGroup</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">44.</span> <span class="toc-text"> 使用默认分隔符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E4%B8%BA%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">45.</span> <span class="toc-text"> 以 &quot;.&quot; 为分隔符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%89%B20%E6%AC%A1"><span class="toc-number">46.</span> <span class="toc-text"> 分割 0 次</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E4%B8%80%E6%AC%A1"><span class="toc-number">47.</span> <span class="toc-text"> 分割一次</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E4%B8%A4%E6%AC%A1"><span class="toc-number">48.</span> <span class="toc-text"> 分割两次</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E4%B8%A4%E6%AC%A1%E5%B9%B6%E5%8F%96%E5%BA%8F%E5%88%97%E4%B8%BA1%E7%9A%84%E9%A1%B9"><span class="toc-number">49.</span> <span class="toc-text"> 分割两次，并取序列为 1 的项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E4%B8%A4%E6%AC%A1%E5%B9%B6%E6%8A%8A%E5%88%86%E5%89%B2%E5%90%8E%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86%E4%BF%9D%E5%AD%98%E5%88%B0%E4%B8%89%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="toc-number">50.</span> <span class="toc-text"> 分割两次，并把分割后的三个部分保存到三个变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#say"><span class="toc-number">51.</span> <span class="toc-text"> say</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hello"><span class="toc-number">52.</span> <span class="toc-text"> hello</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#baby"><span class="toc-number">53.</span> <span class="toc-text"> baby</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E5%85%AB%E8%BF%9B%E5%88%B6%E6%95%B0%E5%89%8D%E9%9D%A2%E6%98%BE%E7%A4%BA%E9%9B%B60%E5%9C%A8%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%89%8D%E9%9D%A2%E6%98%BE%E7%A4%BA0x%E6%88%96%E8%80%850x%E5%8F%96%E5%86%B3%E4%BA%8E%E7%94%A8%E7%9A%84%E6%98%AFx%E8%BF%98%E6%98%AFx"><span class="toc-number">54.</span> <span class="toc-text"> 在八进制数前面显示零 (&#39;0&#39;)，在十六进制前面显示 &#39;0x&#39; 或者 &#39;0X&#39;(取决于用的是 &#39;x&#39; 还是 &#39;X&#39;)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#typeerror-unhashable-type-list"><span class="toc-number">55.</span> <span class="toc-text"> TypeError: unhashable type: &#39;list&#39;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#-6668157630988609386-1857436431894091236"><span class="toc-number">55.1.</span> <span class="toc-text"> ​
+
+​
+
+-6668157630988609386
+
+-1857436431894091236</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#typeerror-unhashable-type-set"><span class="toc-number">56.</span> <span class="toc-text"> TypeError: unhashable type: &#39;set&#39;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%80%90%E5%85%8B%E7%9A%84%E5%8F%A3%E5%8F%B7%E6%98%AF-just-do-it"><span class="toc-number">57.</span> <span class="toc-text"> 耐克的口号是: Just do it</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%80%90%E5%85%8B%E7%9A%84%E5%8F%A3%E5%8F%B7%E6%98%AF-just-do-it-2"><span class="toc-number">58.</span> <span class="toc-text"> 耐克的口号是: Just do it</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dic1-1-one-2-two-3-threeprintdic1-1-one-2-two-3-threeprintdic11-oneprintdic14-keyerror-41-one-2-two-3-threeone"><span class="toc-number">58.1.</span> <span class="toc-text"> dic1 &#x3D; {1: &#39;one&#39;, 2: &#39;two&#39;, 3: &#39;three&#39;}
+
+print(dic1)  # {1: &#39;one&#39;, 2: &#39;two&#39;, 3: &#39;three&#39;}
+
+print(dic1[1])  # one
+
+print(dic1[4])  # KeyError: 4
+
+​
+
+{1: &#39;one&#39;, 2: &#39;two&#39;, 3: &#39;three&#39;}
+
+one</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-3"><span class="toc-number">59.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-4"><span class="toc-number">60.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-5"><span class="toc-number">61.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-6"><span class="toc-number">62.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-7"><span class="toc-number">63.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-8"><span class="toc-number">64.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dict_valuesfemale-7-zara"><span class="toc-number">65.</span> <span class="toc-text"> dict_values([&#39;female&#39;, 7, &#39;Zara&#39;])</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-female-zara"><span class="toc-number">66.</span> <span class="toc-text"> [7, &#39;female&#39;, &#39;Zara&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dict_itemsname-lsgogroup-age-7"><span class="toc-number">67.</span> <span class="toc-text"> dict_items([(&#39;Name&#39;, &#39;Lsgogroup&#39;), (&#39;Age&#39;, 7)])</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#name-lsgogroup-age-7"><span class="toc-number">68.</span> <span class="toc-text"> ((&#39;Name&#39;, &#39;Lsgogroup&#39;), (&#39;Age&#39;, 7))</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#name-lsgogroup-age-7-2"><span class="toc-number">69.</span> <span class="toc-text"> [(&#39;Name&#39;, &#39;Lsgogroup&#39;), (&#39;Age&#39;, 7)]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-9"><span class="toc-number">70.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#in-%E6%A3%80%E6%B5%8B%E9%94%AE-age-%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-number">71.</span> <span class="toc-text"> in 检测键 Age 是否存在</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E9%94%AE-sex-%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-number">72.</span> <span class="toc-text"> 检测键 Sex 是否存在</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#not-in-%E6%A3%80%E6%B5%8B%E9%94%AE-age-%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-number">73.</span> <span class="toc-text"> not in 检测键 Age 是否存在</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%AE-age-%E5%AD%98%E5%9C%A8"><span class="toc-number">74.</span> <span class="toc-text"> 键 Age 存在</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%AE-sex-%E4%B8%8D%E5%AD%98%E5%9C%A8"><span class="toc-number">75.</span> <span class="toc-text"> 键 Sex 不存在</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%AE-age-%E5%AD%98%E5%9C%A8-2"><span class="toc-number">76.</span> <span class="toc-text"> 键 Age 存在</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%80%BC%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%90%A6%E5%88%99%E6%8A%A5%E9%94%99"><span class="toc-number">77.</span> <span class="toc-text"> 设置默认值，必须添加，否则报错</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E5%88%A0%E9%99%A4%E5%90%8E%E9%95%BF%E5%BA%A6-0"><span class="toc-number">78.</span> <span class="toc-text"> 字典删除后长度 : 0</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-10"><span class="toc-number">79.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">80.</span> <span class="toc-text"> 引用对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%88%B6%E5%AF%B9%E8%B1%A1%E4%B8%80%E7%BA%A7%E7%9B%AE%E5%BD%95%E5%AD%90%E5%AF%B9%E8%B1%A1%E4%BA%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E4%B8%8D%E6%8B%B7%E8%B4%9D%E8%BF%98%E6%98%AF%E5%BC%95%E7%94%A8"><span class="toc-number">81.</span> <span class="toc-text"> 浅拷贝父对象（一级目录），子对象（二级目录）不拷贝，还是引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-data-%E6%95%B0%E6%8D%AE"><span class="toc-number">82.</span> <span class="toc-text"> 修改 data 数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">83.</span> <span class="toc-text"> 输出结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-11"><span class="toc-number">84.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-12"><span class="toc-number">85.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-13"><span class="toc-number">86.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-14"><span class="toc-number">87.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#baidu"><span class="toc-number">88.</span> <span class="toc-text"> Baidu</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#google"><span class="toc-number">89.</span> <span class="toc-text"> Google</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#taobao"><span class="toc-number">90.</span> <span class="toc-text"> Taobao</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-15"><span class="toc-number">91.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-16"><span class="toc-number">92.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-17"><span class="toc-number">93.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-18"><span class="toc-number">94.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-19"><span class="toc-number">95.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-20"><span class="toc-number">96.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#frozenset0-1-2-3-4-5-6-7-8-9"><span class="toc-number">97.</span> <span class="toc-text"> frozenset({0, 1, 2, 3, 4, 5, 6, 7, 8, 9})</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#frozensetg-s-p-r-u-o-l"><span class="toc-number">98.</span> <span class="toc-text"> frozenset({&#39;g&#39;, &#39;s&#39;, &#39;p&#39;, &#39;r&#39;, &#39;u&#39;, &#39;o&#39;, &#39;l&#39;})</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#i-l-o-v-e-l-s-g-o-g-r-o-u-p"><span class="toc-number">99.</span> <span class="toc-text"> [&#39;I&#39;, &#39; &#39;, &#39;L&#39;, &#39;o&#39;, &#39;v&#39;, &#39;e&#39;, &#39; &#39;, &#39;L&#39;, &#39;s&#39;, &#39;g&#39;, &#39;o&#39;, &#39;G&#39;, &#39;r&#39;, &#39;o&#39;, &#39;u&#39;, &#39;p&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#i-l-o-v-e-l-s-g-o-g-r-o-u-p-2"><span class="toc-number">100.</span> <span class="toc-text"> (&#39;I&#39;, &#39; &#39;, &#39;L&#39;, &#39;o&#39;, &#39;v&#39;, &#39;e&#39;, &#39; &#39;, &#39;L&#39;, &#39;s&#39;, &#39;g&#39;, &#39;o&#39;, &#39;G&#39;, &#39;r&#39;, &#39;o&#39;, &#39;u&#39;, &#39;p&#39;)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#age-10-name-c-age-20-name-a-age-25-name-b"><span class="toc-number">101.</span> <span class="toc-text"> [{&#39;age&#39;: 10, &#39;name&#39;: &#39;c&#39;}, {&#39;age&#39;: 20, &#39;name&#39;: &#39;a&#39;}, {&#39;age&#39;: 25, &#39;name&#39;: &#39;b&#39;}]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#p-u-o-r-g-o-g-s-l"><span class="toc-number">102.</span> <span class="toc-text"> [&#39;p&#39;, &#39;u&#39;, &#39;o&#39;, &#39;r&#39;, &#39;g&#39;, &#39;o&#39;, &#39;g&#39;, &#39;s&#39;, &#39;l&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#p-u-o-r-g-o-g-s-l-2"><span class="toc-number">103.</span> <span class="toc-text"> [&#39;p&#39;, &#39;u&#39;, &#39;o&#39;, &#39;r&#39;, &#39;g&#39;, &#39;o&#39;, &#39;g&#39;, &#39;s&#39;, &#39;l&#39;]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-7-6-5"><span class="toc-number">104.</span> <span class="toc-text"> [8, 7, 6, 5]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#83-7-3-99-8"><span class="toc-number">105.</span> <span class="toc-text"> [83, 7, 3, 99, -8]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0-spring-1-summer-2-fall-3-winter"><span class="toc-number">106.</span> <span class="toc-text"> [(0, &#39;Spring&#39;), (1, &#39;Summer&#39;), (2, &#39;Fall&#39;), (3, &#39;Winter&#39;)]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-spring-2-summer-3-fall-4-winter"><span class="toc-number">107.</span> <span class="toc-text"> [(1, &#39;Spring&#39;), (2, &#39;Summer&#39;), (3, &#39;Fall&#39;), (4, &#39;Winter&#39;)]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0spring"><span class="toc-number">108.</span> <span class="toc-text"> 0,Spring</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1summer"><span class="toc-number">109.</span> <span class="toc-text"> 1,Summer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2fall"><span class="toc-number">110.</span> <span class="toc-text"> 2,Fall</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3winter"><span class="toc-number">111.</span> <span class="toc-text"> 3,Winter</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2021/01/29/python-6-day/" rel="bookmark" title="python_6_day">python_6_day</a></li><li><a href="/2021/01/29/python_4_day/" rel="bookmark" title="python_4_day">python_4_day</a></li><li><a href="/2021/01/29/python_5_day/" rel="bookmark" title="python_5_day">python_5_day</a></li><li><a href="/2021/01/29/python-3-day/" rel="bookmark" title="python_3_day">python_3_day</a></li><li class="active"><a href="/2021/01/29/python-2-day/" rel="bookmark" title="python_2_day">python_2_day</a></li><li><a href="/2021/01/29/python-1-day/" rel="bookmark" title="python_1_day">python_1_day</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="John Doe"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">John Doe</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">12</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FsYW5vc3k=" title="https:&#x2F;&#x2F;github.com&#x2F;Alanosy"><i class="ic i-github"></i></span>
+      <span class="exturl item weixin" data-url="aHR0cHM6Ly91LndlY2hhdC5jb20vTURaVGpyZmItYkRfQ0piLS1hTVBPWVk=" title="https:&#x2F;&#x2F;u.wechat.com&#x2F;MDZTjrfb-bD_CJb--aMPOYY"><i class="ic i-weixin"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cDovL3d3dy56aGlodS5jb20vcGVvcGxlL3dhbmctemhlbmctODEtNDQtOTM=" title="http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-zheng-81-44-93"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOkFsYW5vc0BhbGl5dW4uY29t" title="mailto:Alanos@aliyun.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/01/29/python-6-day/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/01/29/python-1-day/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2021/01/26/hello-world/" title="Hello Hexo">Hello Hexo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python-6-day/" title="python_6_day">python_6_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/26/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC/" title="关于我们">关于我们</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2021/01/25/Linux%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="Linux搭建博客">Linux搭建博客</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python_5_day/" title="python_5_day">python_5_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python-3-day/" title="python_3_day">python_3_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python-2-day/" title="python_2_day">python_2_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2021/01/26/%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD/" title="特殊功能">特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python-1-day/" title="python_1_day">python_1_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python_4_day/" title="python_4_day">python_4_day</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">John Doe @ Yume Shoka</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">129k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:57</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/01/29/python-2-day/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

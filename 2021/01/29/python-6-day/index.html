@@ -1,0 +1,981 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/imageshttps:/tenadmin.oss-cn-chengdu.aliyuncs.com/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Alan" href="https://47.97.229.110/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Alan" href="https://47.97.229.110/atom.xml" />
+<link rel="alternate" type="application/json" title="Alan" href="https://47.97.229.110/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC%E2%80%99:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://47.97.229.110/2021/01/29/python-6-day/">
+
+
+
+  <title>
+python_6_day - python |
+Yume Shoka = Alan</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">python_6_day
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-01-29 21:38:29">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-01-29T21:38:29+08:00">2021-01-29</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>10k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>9 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/python/" itemprop="item" rel="index" title="分类于 python"><span itemprop="name">python</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://47.97.229.110/2021/01/29/python-6-day/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="John Doe">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Alan">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>基于人脸的常见表情识别 —— 模型搭建、训练与测试<br />
+模型搭建与训练</p>
+<ol>
+<li>数据接口准备</li>
+<li>模型定义</li>
+<li>模型训练</li>
+</ol>
+<p>模型测试</p>
+<p>本 Task 是『基于人脸的常见表情识别』训练营的第 3 课，如果你未学习前面的课程，请从 Task1 开始学习，本 Task 需要使用到数据集，在 Task2 中提供下载的渠道。</p>
+<p>在完成了数据准备后，接下来就是卷积神经网络一展身手的时候了，通过本次任务，您将学到如何使用 PyTorch 深度学习框架，实现卷积神经网络的定义、训练和预测。</p>
+<p>模型搭建与训练<br />
+得到了数据之后，接下来咱们使用 PyTorch 这个框架来进行模型的训练。整个训练流程包括数据接口准备、模型定义、结果保存与分析。</p>
+<ol>
+<li>数据接口准备<br />
+ PyTorch 图像分类直接利用文件夹作为输入，只需要把不同类的数据放到不同的文件夹中。数据读取的完整代码如下：</li>
+</ol>
+<p>data_transforms = {<br />
+'train': transforms.Compose([<br />
+transforms.RandomSizedCrop(48),<br />
+transforms.RandomHorizontalFlip(),<br />
+transforms.ToTensor(),<br />
+transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])<br />
+]),<br />
+'val': transforms.Compose([<br />
+transforms.Scale(64),<br />
+transforms.CenterCrop(48),<br />
+transforms.ToTensor(),<br />
+transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])<br />
+]),<br />
+}</p>
+<p>data_dir = './train_val_data/'<br />
+image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),<br />
+data_transforms[x]) for x in ['train', 'val']}<br />
+dataloders = {x: torch.utils.data.DataLoader(image_datasets[x],<br />
+batch_size=16,<br />
+shuffle=True,<br />
+num_workers=4) for x in ['train', 'val']}<br />
+ 上面脚本中的函数，输入一个文件夹，输出图片路径以及标签，在开始训练之前需要将数据集进行拆分，拆分成训练集 (train) 和验证集 (val)，训练集和测试集的比例为 9:1，train_val_data 文件结构如下所示，其中 0 代表 none、 1 代表 pouting、2 代表 smile、3 代表 openmouth：</p>
+<ul>
+<li>train_val_data
+<ul>
+<li>
+<p>train</p>
+<ul>
+<li>0</li>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+</li>
+<li>
+<p>val</p>
+<ul>
+<li>0</li>
+<li>1</li>
+<li>2</li>
+<li>3<br />
+ 到此，数据接口就定义完毕了，接下来在训练代码中看如何使用迭代器进行数据读取就可以了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>模型定义<br />
+创建数据接⼝后，我们开始定义⼀个⽹络 simpleconv3</li>
+</ol>
+<p>import torch.nn as nn<br />
+import torch.nn.functional as F<br />
+​<br />
+class simpleconv3(nn.Module):<br />
+def <strong>init</strong>(self):<br />
+super(simpleconv3,self).<strong>init</strong>()<br />
+self.conv1 = nn.Conv2d(3, 12, 3, 2)<br />
+self.bn1 = nn.BatchNorm2d(12)<br />
+self.conv2 = nn.Conv2d(12, 24, 3, 2)<br />
+self.bn2 = nn.BatchNorm2d(24)<br />
+self.conv3 = nn.Conv2d(24, 48, 3, 2)<br />
+self.bn3 = nn.BatchNorm2d(48)<br />
+self.fc1 = nn.Linear(48 * 5 * 5 , 1200)<br />
+self.fc2 = nn.Linear(1200 , 128)<br />
+self.fc3 = nn.Linear(128 , 4)<br />
+​<br />
+def forward(self , x):<br />
+x = F.relu(self.bn1(self.conv1(x)))<br />
+#print &quot;bn1 shape&quot;,x.shape<br />
+x = F.relu(self.bn2(self.conv2(x)))<br />
+x = F.relu(self.bn3(self.conv3(x)))<br />
+x = x.view(-1 , 48 * 5 * 5)<br />
+x = F.relu(self.fc1(x))<br />
+x = F.relu(self.fc2(x))<br />
+x = self.fc3(x)<br />
+return x<br />
+ 上面就是我们定义的网络，是一个简单的 3 层卷积。在 torch.nn 下，有各种网络层，这里就用到了 nn.Conv2d，nn.BatchNorm2d 和 nn.Linear，分别是卷积层，BN 层和全连接层。我们以一个卷积层为例：</p>
+<p>conv1 = nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=2)<br />
+bn1 = nn.BatchNorm2d(num_features=12)<br />
+ in_channels：输入通道数<br />
+ out_channels：输出通道数<br />
+ kernel_size：卷积核的大小<br />
+ stride：卷积核的移动步长<br />
+更全面的参数，请自查 API：<span class="exturl" data-url="aHR0cHM6Ly9weXRvcmNoLm9yZy8=">https://pytorch.org/</span></p>
+<ol start="3">
+<li>模型训练<br />
+这里准备好了数据集，可以直接使用</li>
+</ol>
+<p>深度学习一般使用 GPU 进行训练，大家可以根据下图的操作，将设备切换至 GPU 状态，再运行下面的程序，切换过程需要一定时间，请耐心等待</p>
+<p>Image</p>
+<p>#coding:utf8<br />
+from <strong>future</strong> import print_function, division<br />
+​<br />
+import torch<br />
+import torch.nn as nn<br />
+import torch.optim as optim<br />
+from torch.optim import lr_scheduler<br />
+from torch.autograd import Variable<br />
+import torchvision<br />
+from torchvision import datasets, models, transforms<br />
+import time<br />
+import os<br />
+from tensorboardX import SummaryWriter<br />
+import torch.nn.functional as F<br />
+import numpy as np<br />
+​<br />
+import warnings<br />
+​<br />
+warnings.filterwarnings('ignore')<br />
+​<br />
+writer = SummaryWriter()<br />
+​<br />
+def train_model(model, criterion, optimizer, scheduler, num_epochs=25):<br />
+for epoch in range(num_epochs):<br />
+print('Epoch {}/{}'.format(epoch, num_epochs - 1))<br />
+for phase in ['train', 'val']:<br />
+if phase == 'train':<br />
+scheduler.step()<br />
+model.train(True)  # Set model to training mode<br />
+else:<br />
+model.train(False)  # Set model to evaluate mode<br />
+​<br />
+running_loss = 0.0<br />
+running_corrects = 0.0<br />
+​<br />
+for data in dataloders[phase]:<br />
+inputs, labels = data<br />
+if use_gpu:<br />
+inputs = Variable(inputs.cuda())<br />
+labels = Variable(labels.cuda())<br />
+else:<br />
+inputs, labels = Variable(inputs), Variable(labels)<br />
+​<br />
+optimizer.zero_grad()<br />
+outputs = model(inputs)<br />
+_, preds = torch.max(outputs.data, 1)<br />
+loss = criterion(outputs, labels)<br />
+if phase == 'train':<br />
+loss.backward()<br />
+optimizer.step()<br />
+​<br />
+running_loss += loss.data.item()<br />
+running_corrects += torch.sum(preds == labels).item()<br />
+​<br />
+epoch_loss = running_loss / dataset_sizes[phase]<br />
+epoch_acc = running_corrects / dataset_sizes[phase]</p>
+<pre><code>        if phase == 'train':
+            writer.add_scalar('data/trainloss', epoch_loss, epoch)
+            writer.add_scalar('data/trainacc', epoch_acc, epoch)
+        else:
+            writer.add_scalar('data/valloss', epoch_loss, epoch)
+            writer.add_scalar('data/valacc', epoch_acc, epoch)
+</code></pre>
+<p>​<br />
+print('{} Loss: {:.4f} Acc: {:.4f}'.format(<br />
+phase, epoch_loss, epoch_acc))<br />
+​<br />
+writer.export_scalars_to_json(&quot;./all_scalars.json&quot;)<br />
+writer.close()<br />
+return model<br />
+​<br />
+if <strong>name</strong> == '<strong>main</strong>':<br />
+​<br />
+data_transforms = {<br />
+'train': transforms.Compose([<br />
+transforms.RandomSizedCrop(48),<br />
+transforms.RandomHorizontalFlip(),<br />
+transforms.ToTensor(),<br />
+transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])<br />
+]),<br />
+'val': transforms.Compose([<br />
+transforms.Scale(64),<br />
+transforms.CenterCrop(48),<br />
+transforms.ToTensor(),<br />
+transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])<br />
+]),<br />
+}<br />
+​<br />
+data_dir = './Emotion_Recognition_File/train_val_data/' # 数据集所在的位置<br />
+ image_datasets = {x: datasets.ImageFolder (os.path.join (data_dir, x),<br />
+data_transforms[x]) for x in ['train', 'val']}<br />
+dataloders = {x: torch.utils.data.DataLoader(image_datasets[x],<br />
+batch_size=64,<br />
+shuffle=True if x==&quot;train&quot; else False,<br />
+num_workers=8) for x in ['train', 'val']}<br />
+​<br />
+dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'val']}<br />
+​<br />
+use_gpu = torch.cuda.is_available()<br />
+ print (&quot;是否使用 GPU&quot;, use_gpu)<br />
+modelclc = simpleconv3()<br />
+print(modelclc)<br />
+if use_gpu:<br />
+modelclc = modelclc.cuda()<br />
+​<br />
+criterion = nn.CrossEntropyLoss()<br />
+optimizer_ft = optim.SGD(modelclc.parameters(), lr=0.1, momentum=0.9)<br />
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=100, gamma=0.1)<br />
+​<br />
+modelclc = train_model(model=modelclc,<br />
+criterion=criterion,<br />
+optimizer=optimizer_ft,<br />
+scheduler=exp_lr_scheduler,<br />
+num_epochs=10)  # 这里可以调节训练的轮次<br />
+ if not os.path.exists (&quot;models&quot;):<br />
+os.mkdir('models')<br />
+torch.save(modelclc.state_dict(),'models/model.ckpt')<br />
+ 训练的过程需要注意几个参数，第一个是数据加载器 (dataloders) 中的 batch_size，这个代表的含义是每次送入模型训练的图片数量，这个需要根据 GPU 的显存来设置，显存越大，可以设置越大，这个数一般设置为 2 的整数次幂（如 4、8、16、32 等）</p>
+<p>dataloders = {x: torch.utils.data.DataLoader(image_datasets[x],<br />
+batch_size=64,<br />
+shuffle=True if x==&quot;train&quot; else False,<br />
+num_workers=8) for x in ['train', 'val']}<br />
+ 第二个需要注意的参数是训练函数的 num_epochs，这个参数代表的意义是，模型训练的轮次。</p>
+<p>modelclc = train_model(model=modelclc,<br />
+criterion=criterion,<br />
+optimizer=optimizer_ft,<br />
+scheduler=exp_lr_scheduler,<br />
+num_epochs=10)  # 这里可以调节训练的轮次<br />
+模型测试<br />
+上⾯已经训练好了模型，我们接下来的⽬标，就是要⽤它来做推理，真正把模型⽤起来，下⾯我们载⼊⼀个图⽚，⽤模型进⾏测试。 结果在 results 文件夹中</p>
+<h1 id="codingutf8"><a class="anchor" href="#codingutf8">#</a> coding:utf8</h1>
+<p>​<br />
+import sys<br />
+import numpy as np<br />
+import cv2<br />
+import os<br />
+import dlib<br />
+​<br />
+import torch<br />
+import torch.nn as nn<br />
+import torch.optim as optim<br />
+from torch.optim import lr_scheduler<br />
+from torch.autograd import Variable<br />
+import torchvision<br />
+from torchvision import datasets, models, transforms<br />
+import time<br />
+from PIL import Image<br />
+import torch.nn.functional as F<br />
+​<br />
+import matplotlib.pyplot as plt<br />
+import warnings<br />
+​<br />
+warnings.filterwarnings('ignore')<br />
+​<br />
+​<br />
+PREDICTOR_PATH = &quot;./Emotion_Recognition_File/face_detect_model/shape_predictor_68_face_landmarks.dat&quot;<br />
+predictor = dlib.shape_predictor(PREDICTOR_PATH)<br />
+cascade_path = './Emotion_Recognition_File/face_detect_model/haarcascade_frontalface_default.xml'<br />
+cascade = cv2.CascadeClassifier(cascade_path)<br />
+​<br />
+if not os.path.exists(&quot;results&quot;):<br />
+os.mkdir(&quot;results&quot;)</p>
+<p>​<br />
+def standardization(data):<br />
+mu = np.mean(data, axis=0)<br />
+sigma = np.std(data, axis=0)<br />
+return (data - mu) / sigma<br />
+​<br />
+​<br />
+def get_landmarks(im):<br />
+rects = cascade.detectMultiScale(im, 1.3, 5)<br />
+x, y, w, h = rects[0]<br />
+rect = dlib.rectangle(int(x), int(y), int(x + w), int(y + h))<br />
+return np.matrix([[p.x, p.y] for p in predictor(im, rect).parts()])<br />
+​<br />
+​<br />
+def annotate_landmarks(im, landmarks):<br />
+im = im.copy()<br />
+for idx, point in enumerate(landmarks):<br />
+pos = (point[0, 0], point[0, 1])<br />
+cv2.putText(im,<br />
+str(idx),<br />
+pos,<br />
+fontFace=cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,<br />
+fontScale=0.4,<br />
+color=(0, 0, 255))<br />
+cv2.circle(im, pos, 3, color=(0, 255, 255))<br />
+return im<br />
+​<br />
+​<br />
+testsize = 48  # 测试图大小<br />
+​<br />
+data_transforms = transforms.Compose([<br />
+transforms.ToTensor(),<br />
+transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])<br />
+])<br />
+net = simpleconv3()<br />
+net.eval()<br />
+ modelpath = &quot;./models/model.ckpt&quot;  # 模型路径<br />
+ net.load_state_dict (<br />
+torch.load(modelpath, map_location=lambda storage, loc: storage))<br />
+​</p>
+<h1 id="一次测试一个文件"><a class="anchor" href="#一次测试一个文件">#</a> 一次测试一个文件</h1>
+<p>img_path = &quot;./Emotion_Recognition_File/find_face_img/&quot;<br />
+imagepaths = os.listdir (img_path)  # 图像文件夹<br />
+ for imagepath in imagepaths:<br />
+im = cv2.imread(os.path.join(img_path, imagepath), 1)<br />
+try:<br />
+rects = cascade.detectMultiScale(im, 1.3, 5)<br />
+x, y, w, h = rects[0]<br />
+rect = dlib.rectangle(int(x), int(y), int(x + w), int(y + h))<br />
+landmarks = np.matrix([[p.x, p.y]<br />
+for p in predictor(im, rect).parts()])<br />
+except:</p>
+<h1 id="print没有检测到人脸"><a class="anchor" href="#print没有检测到人脸">#</a> print (&quot;没有检测到人脸&quot;)</h1>
+<pre><code>    continue  # 没有检测到人脸
+</code></pre>
+<p>​<br />
+xmin = 10000<br />
+xmax = 0<br />
+ymin = 10000<br />
+ymax = 0<br />
+​<br />
+for i in range(48, 67):<br />
+x = landmarks[i, 0]<br />
+y = landmarks[i, 1]<br />
+if x &lt; xmin:<br />
+xmin = x<br />
+if x &gt; xmax:<br />
+xmax = x<br />
+if y &lt; ymin:<br />
+ymin = y<br />
+if y &gt; ymax:<br />
+ymax = y<br />
+​<br />
+roiwidth = xmax - xmin<br />
+roiheight = ymax - ymin<br />
+​<br />
+roi = im[ymin:ymax, xmin:xmax, 0:3]<br />
+​<br />
+if roiwidth &gt; roiheight:<br />
+dstlen = 1.5 * roiwidth<br />
+else:<br />
+dstlen = 1.5 * roiheight<br />
+​<br />
+diff_xlen = dstlen - roiwidth<br />
+diff_ylen = dstlen - roiheight<br />
+​<br />
+newx = xmin<br />
+newy = ymin<br />
+​<br />
+imagerows, imagecols, channel = im.shape<br />
+if newx &gt;= diff_xlen / 2 and newx + roiwidth + diff_xlen / 2 &lt; imagecols:<br />
+newx = newx - diff_xlen / 2<br />
+elif newx &lt; diff_xlen / 2:<br />
+newx = 0<br />
+else:<br />
+newx = imagecols - dstlen<br />
+​<br />
+if newy &gt;= diff_ylen / 2 and newy + roiheight + diff_ylen / 2 &lt; imagerows:<br />
+newy = newy - diff_ylen / 2<br />
+elif newy &lt; diff_ylen / 2:<br />
+newy = 0<br />
+else:<br />
+newy = imagecols - dstlen<br />
+​<br />
+roi = im[int(newy):int(newy + dstlen), int(newx):int(newx + dstlen), 0:3]<br />
+roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)<br />
+roiresized = cv2.resize(roi,<br />
+(testsize, testsize)).astype(np.float32) / 255.0<br />
+imgblob = data_transforms(roiresized).unsqueeze(0)<br />
+imgblob.requires_grad = False<br />
+imgblob = Variable(imgblob)<br />
+torch.no_grad()<br />
+predict = F.softmax(net(imgblob))<br />
+print(predict)<br />
+index = np.argmax(predict.detach().numpy())<br />
+​<br />
+im_show = cv2.imread(os.path.join(img_path, imagepath), 1)<br />
+im_h, im_w, im_c = im_show.shape<br />
+pos_x = int(newx + dstlen)<br />
+pos_y = int(newy + dstlen)<br />
+font = cv2.FONT_HERSHEY_SIMPLEX<br />
+cv2.rectangle(im_show, (int(newx), int(newy)),<br />
+(int(newx + dstlen), int(newy + dstlen)), (0, 255, 255), 2)<br />
+if index == 0:<br />
+cv2.putText(im_show, 'none', (pos_x, pos_y), font, 1.5, (0, 0, 255), 2)<br />
+if index == 1:<br />
+cv2.putText(im_show, 'pout', (pos_x, pos_y), font, 1.5, (0, 0, 255), 2)<br />
+if index == 2:<br />
+cv2.putText(im_show, 'smile', (pos_x, pos_y), font, 1.5, (0, 0, 255), 2)<br />
+if index == 3:<br />
+cv2.putText(im_show, 'open', (pos_x, pos_y), font, 1.5, (0, 0, 255), 2)</p>
+<h1 id="cv2namedwindowresult-0"><a class="anchor" href="#cv2namedwindowresult-0">#</a> cv2.namedWindow('result', 0)</h1>
+<h1 id="cv2imshowresult-im_show"><a class="anchor" href="#cv2imshowresult-im_show">#</a> cv2.imshow('result', im_show)</h1>
+<pre><code>cv2.imwrite(os.path.join('results', imagepath), im_show)
+</code></pre>
+<h1 id="printospathjoinresults-imagepath"><a class="anchor" href="#printospathjoinresults-imagepath">#</a> print(os.path.join('results', imagepath))</h1>
+<pre><code>plt.imshow(im_show[:, :, ::-1])  # 这里需要交换通道，因为 matplotlib 保存图片的通道顺序是 RGB，而在 OpenCV 中是 BGR
+plt.show()
+</code></pre>
+<h1 id="cv2waitkey0"><a class="anchor" href="#cv2waitkey0">#</a> cv2.waitKey(0)</h1>
+<h1 id="cv2destroyallwindows"><a class="anchor" href="#cv2destroyallwindows">#</a> cv2.destroyAllWindows()</h1>
+<p>tensor([[8.1330e-03, 6.7033e-04, 9.8497e-01, 6.2311e-03]],<br />
+grad_fn=&lt;SoftmaxBackward&gt;)</p>
+<p>tensor([[1.0822e-06, 1.9005e-09, 1.0000e+00, 2.3623e-07]],<br />
+grad_fn=&lt;SoftmaxBackward&gt;)</p>
+<p>tensor([[9.9190e-01, 3.7207e-03, 4.3589e-03, 1.5936e-05]],<br />
+grad_fn=&lt;SoftmaxBackward&gt;)</p>
+<p>tensor([[4.3434e-07, 1.2525e-06, 1.1251e-05, 9.9999e-01]],<br />
+grad_fn=&lt;SoftmaxBackward&gt;)</p>
+<p>tensor([[0.0899, 0.8970, 0.0115, 0.0016]], grad_fn=&lt;SoftmaxBackward&gt;)</p>
+<p>再次说明：0 代表 none、 1 代表 pouting、2 代表 smile、3 代表 openmouth</p>
+<p>上面展示的图片上方会有一个输出，如：tensor ([[8.1330e-03, 6.7033e-04, 9.8497e-01, 6.2311e-03]])</p>
+<p>这个代表的含义是，该图片在这个模型预测下，是该类别的可能性，比如上面这个例子 9.8497e-01 是四个值最大的，它的索引是 2（从 0 开始算），所以预测该图片为 smile</p>
+<p>以上就是本训练营的全部内容了，希望通过本次训练营，可以帮助大家搭建起一个深度学习项目的框架，然后将所学的知识应用到自己的项目、工作中。谢谢！</p>
+<p>-- By：有三 AI 团队</p>
+<p>聚焦于让大家能够系统性地完成 AI 各个领域所需的专业知识的学习，实现三人行必有 AI，三人行必有我师的愿景。</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-01-29 21:59:31" itemprop="dateModified" datetime="2021-01-29T21:59:31+08:00">2021-01-29</time>
+  </span>
+  <span id="2021/01/29/python-6-day/" class="item leancloud_visitors" data-flag-title="python_6_day" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.jpg" alt="John Doe 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.jpg" alt="John Doe 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文博主： </strong>John Doe <i class="ic i-at"><em>@</em></i>Alan
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://47.97.229.110/2021/01/29/python-6-day/" title="python_6_day">https://47.97.229.110/2021/01/29/python-6-day/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/01/29/python_4_day/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfdu6exj20zk0m87hw.jpg" title="python_4_day">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> python</span>
+  <h3>python_4_day</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/01/29/python-2-day/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfb3vzhj20zk0m8wny.jpg" title="python_2_day">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> python</span>
+  <h3>python_2_day</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#codingutf8"><span class="toc-number">1.</span> <span class="toc-text"> coding:utf8</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text"> 一次测试一个文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#print%E6%B2%A1%E6%9C%89%E6%A3%80%E6%B5%8B%E5%88%B0%E4%BA%BA%E8%84%B8"><span class="toc-number">3.</span> <span class="toc-text"> print (&quot;没有检测到人脸&quot;)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cv2namedwindowresult-0"><span class="toc-number">4.</span> <span class="toc-text"> cv2.namedWindow(&#39;result&#39;, 0)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cv2imshowresult-im_show"><span class="toc-number">5.</span> <span class="toc-text"> cv2.imshow(&#39;result&#39;, im_show)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#printospathjoinresults-imagepath"><span class="toc-number">6.</span> <span class="toc-text"> print(os.path.join(&#39;results&#39;, imagepath))</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cv2waitkey0"><span class="toc-number">7.</span> <span class="toc-text"> cv2.waitKey(0)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cv2destroyallwindows"><span class="toc-number">8.</span> <span class="toc-text"> cv2.destroyAllWindows()</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2021/01/29/python-6-day/" rel="bookmark" title="python_6_day">python_6_day</a></li><li><a href="/2021/01/29/python_4_day/" rel="bookmark" title="python_4_day">python_4_day</a></li><li><a href="/2021/01/29/python_5_day/" rel="bookmark" title="python_5_day">python_5_day</a></li><li><a href="/2021/01/29/python-3-day/" rel="bookmark" title="python_3_day">python_3_day</a></li><li><a href="/2021/01/29/python-2-day/" rel="bookmark" title="python_2_day">python_2_day</a></li><li><a href="/2021/01/29/python-1-day/" rel="bookmark" title="python_1_day">python_1_day</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="John Doe"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">John Doe</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">12</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FsYW5vc3k=" title="https:&#x2F;&#x2F;github.com&#x2F;Alanosy"><i class="ic i-github"></i></span>
+      <span class="exturl item weixin" data-url="aHR0cHM6Ly91LndlY2hhdC5jb20vTURaVGpyZmItYkRfQ0piLS1hTVBPWVk=" title="https:&#x2F;&#x2F;u.wechat.com&#x2F;MDZTjrfb-bD_CJb--aMPOYY"><i class="ic i-weixin"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cDovL3d3dy56aGlodS5jb20vcGVvcGxlL3dhbmctemhlbmctODEtNDQtOTM=" title="http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;wang-zheng-81-44-93"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOkFsYW5vc0BhbGl5dW4uY29t" title="mailto:Alanos@aliyun.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/01/29/python_4_day/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/01/29/python-2-day/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python_4_day/" title="python_4_day">python_4_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python_5_day/" title="python_5_day">python_5_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%97%A5%E5%BF%97/" title="分类于 日志">日志</a>
+</div>
+
+    <span><a href="/2021/01/26/2020-1-26/" title="2020-1-26">2020-1-26</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python-2-day/" title="python_2_day">python_2_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/01/26/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC/" title="关于我们">关于我们</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2021/01/26/%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD/" title="特殊功能">特殊功能</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2021/01/26/hello-world/" title="Hello Hexo">Hello Hexo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2021/01/25/Linux%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="Linux搭建博客">Linux搭建博客</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/python/" title="分类于 python">python</a>
+</div>
+
+    <span><a href="/2021/01/29/python-6-day/" title="python_6_day">python_6_day</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/02/15/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" title="测试文章">测试文章</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">John Doe @ Yume Shoka</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">129k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:57</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/01/29/python-6-day/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
