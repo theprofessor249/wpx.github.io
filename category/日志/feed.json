@@ -1,12 +1,12 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Alan • All posts by \"日志\" category",
+    "title": "培新 • All posts by \"日志\" category",
     "description": "",
-    "home_page_url": "https://47.97.229.110",
+    "home_page_url": "https://theprofessor249.github.io",
     "items": [
         {
-            "id": "https://47.97.229.110/2021/01/26/2020-1-26/",
-            "url": "https://47.97.229.110/2021/01/26/2020-1-26/",
+            "id": "https://theprofessor249.github.io/2021/01/26/2020-1-26/",
+            "url": "https://theprofessor249.github.io/2021/01/26/2020-1-26/",
             "title": "2020-1-26",
             "date_published": "2021-01-26T02:55:39.000Z",
             "content_html": "<p>2020-1-26<br />\n 开发出了 Hexo 站点</p>\n",
