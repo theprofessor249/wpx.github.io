@@ -1,0 +1,689 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/wpx.github.io/imageshttps:/tenadmin.oss-cn-chengdu.aliyuncs.com/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/wpx.github.io/images/favicon.ico">
+  <link rel="mask-icon" href="/wpx.github.io/images/logo.svg" color="">
+  <link rel="manifest" href="/wpx.github.io/images/manifest.json">
+  <meta name="msapplication-config" content="/wpx.github.io/images/browserconfig.xml">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="培新" href="https://theprofessor249.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="培新" href="https://theprofessor249.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="培新" href="https://theprofessor249.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC%E2%80%99:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/wpx.github.io/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://theprofessor249.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/">
+
+
+
+  <title>
+第一部分     认识Linux及Linux主机规划与安装 - 笔记类 |
+培新</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">第一部分     认识Linux及Linux主机规划与安装
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-06-24 14:19:15">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-06-24T14:19:15+08:00">2021-06-24</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>3.8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>3 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/wpx.github.io/" rel="start">培新</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9eavyxm1j30dw099mxl.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr9eakuadlj60hs08r0t102.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9e9f4zcuj30e108cjrt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr9eabjtd6j30et08cdfz.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9eadw8jbj30dw09xjrt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93a82b6gj30bu06o74p.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/wpx.github.io/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" itemprop="item" rel="index" title="分类于 笔记类"><span itemprop="name">笔记类</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://theprofessor249.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/wpx.github.io/images/avatar.jpg">
+    <meta itemprop="name" content="WengPeiXin">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="培新">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="第一部分-认识Linux及Linux主机规划与安装"><a href="#第一部分-认识Linux及Linux主机规划与安装" class="headerlink" title="第一部分     认识Linux及Linux主机规划与安装"></a>第一部分     认识Linux及Linux主机规划与安装</h1><h2 id="什么是linux"><a href="#什么是linux" class="headerlink" title="什么是linux"></a>什么是linux</h2><ul>
+<li>什么时Linux</li>
+</ul>
+<p>超级计算机：超级计算机是运行速度最快的计算机，主要用于需要有高速计算的项目中，如国防军事，气象预测，太空科技等</p>
+<p>大型机：大型机具有数个高速CPU，功能上虽不及超级计算机，但可用来处理大量数据与复杂的运算</p>
+<p>小型机:小型机具有大型机同时支持多用户的特性，通常用于科学研究，工程分析与工厂的流程管理</p>
+<p>微机：又称个人计算机，微机体积小，价格低，但功能完备</p>
+<ul>
+<li> 什么是操作系统</li>
+</ul>
+<p>操作系统能正确地控制硬件工作，该系统就称为操作系统。操作系统可以管理整台计算机的硬件，可以控制CPU进行正确的计算，可以分辨硬盘里的数据并进行读取，它还必须能够识别所有的适配卡，这样才能正确地使用所有的硬件。<br>比肩完整的操作系统包含两个组件，一个是核心与其提供的接口工具，另一个是利用核心提供的接口工具所开发的软件。</p>
+<ul>
+<li>什么是核心 </li>
+</ul>
+<p>核心就是Kernel，它是操作系统最底层的东西，每个操作系统都有自己的核心，由它来掌管整个硬件资源的工作状态。当有新的硬件加入到系统中时，若核心并没有支持它，这个新硬件就无法工作，因为控制它的核心并不认识它，</p>
+<p><strong>核心所要管理的事项：</strong></p>
+<p>系统调用接口：通过接口，程序开发人员可以轻松地与核心沟通，进一步利用硬件资源</p>
+<p>进程控制：在多任务环境中，一台计算机可能同时有很多地作业等待CPU运算处理，核心这时必须能够控制这些作业并有效地分配CPU地资源</p>
+<p>内存管理：控制整个系统地内存，如果内存不足，核心还能提供虚拟内存地功能</p>
+<p>文件系统管理：文件系统地管理，如果核心不能识别某个文件系统，那么将无法使用该文件格式地文件</p>
+<p>设备驱动程序：”可加载模块“功能可以将驱动程序编辑成模块，而不需要重新编译核心</p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjui0sasej30iv0bcjst.jpg"></p>
+<ul>
+<li>下面为主要地Linux版本地发行者网址</li>
+</ul>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjv6ra23yj30nv0joadz.jpg"></p>
+<ul>
+<li>其他相关信息</li>
+</ul>
+<p><strong>各个版本也都要遵循LSB地规范，硬软件开发人员也会遵照LSB，                                  LSB：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51eGJhc2Uub3JnLw==">http://www.linuxbase.org/</span></strong></p>
+<p>服务器：提供Internet一种以上网络服务地主机，自己架设一台邮件服务器也是小型地服务器</p>
+<p>工作站：仅提供给一组特定人员进行数值分析，科学研究。只要是没有对Internet提供网络服务地，那就是工作站，当然也包括所谓地终端</p>
+<p>终端：就是最终用户地那台计算机。例如笔者使用地机器连接上主机来工作，那么，这台计算机就可以称为终端</p>
+<h2 id="如何学习Linux"><a href="#如何学习Linux" class="headerlink" title="如何学习Linux"></a>如何学习Linux</h2><ul>
+<li>Linux地应用</li>
+</ul>
+<p><strong>网络服务器</strong>：承袭了Unix地高稳定性，Linux地网络功能特别稳定与强大。作为网络服务器，例如WWW，邮件服务器，文件服务器，FTP服务器等</p>
+<p><strong>工作站计算机</strong>：工作站不提供Internet服务，工作站计算机与台式计算机不太一样，工作站通常面对比较重要地应用，如工程界流体力学地数值模式运算，娱乐界地特效处理，软件开发人员地工作平台。Linux有强大地运算能力，支持相当广泛地GCC编译软件，在工作站中，它也是相当不错地一个操作系统。</p>
+<p><strong>台式计算机</strong>：办公室使用地。工作包括如下几种：</p>
+<p>上网浏览</p>
+<p>文字处理</p>
+<p>网络接口地文字处理系统</p>
+<p>办公软件处理数据</p>
+<p>手法电子邮件</p>
+<p><strong>嵌入式系统：</strong> 小型电脑地开发。例如家电产品，PDA，手机，数字相机以及其他微型地计算机设备。这些计算机设备都是需要操作系统来控制，操作系统直接嵌入产品中。</p>
+<ul>
+<li>基础学习</li>
+</ul>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjw6g1zbvj30mo07n40k.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grjw9qu5v9j30o50g241v.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grjwbwqy4qj30m002sq3n.jpg"></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjwhzpumhj30op07zdhx.jpg"></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grjwknr4avj30mk06k0uk.jpg"></p>
+<h2 id="Linux主机地规划"><a href="#Linux主机地规划" class="headerlink" title="Linux主机地规划"></a>Linux主机地规划</h2><ul>
+<li>认识主机硬件主件</li>
+</ul>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjwqsupd0j30o00nddj9.jpg"></p>
+<ul>
+<li>电脑槽口图</li>
+</ul>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjwwx42mcj30dn0d70ts.jpg"></p>
+<p><strong>1.中央处理器</strong></p>
+<p>（</p>
+<p><strong>双核心</strong>：是指在一个CPU里有两个运算单元，该双核心地CPU有两个可以运算地实体CPU</p>
+<p><strong>频率</strong>:就是单位时间地运算次数。频率越高，表示设备地运算次数越多，速度就会越快</p>
+<p>）</p>
+<blockquote>
+<p>CPU有倍频与外频之分，外频是指CPU与接口设备进行数据传输/运算地速度，倍频则是指CPU本身运算时地运算速度。两者相乘才是CPU地频率。与外频有关的是内存与主板芯片集。</p>
+</blockquote>
+<p>-CPU外频与倍频：：133（外频）*7（倍频）MHZ；</p>
+<p>-RAM频率：通常与CPU的外频相同，为133MHz；</p>
+<p>-PCI接口（包括网卡，声卡等的接口）133/4=33MHz；</p>
+<p>-AGP接口：133/2=66MHz（这是AGP正常的频率）</p>
+<blockquote>
+<p>外频是可以超频的。如果CPU外部频率是133.通过工具，就可以将133提升到比较高的频率，就叫超频。如果超频高出正常值很多，虽然设备的运行频率都会提升，但是也可能会造成系统不稳定，常常死机，或者造成某些组件的寿命减短。</p>
+</blockquote>
+<p><strong>2.内存</strong></p>
+<blockquote>
+<p>操作系统的核心，软硬件的驱动程序，所有要读取的文件，都需要先读入内存之后，才传输给CPU来运行；也会将常用的文件或程序等数据存储在内存中，而不直接删除，如此一来，下次访问这些数据时，不需要访问外部设备就能读取，提高了系统的运行速度；内存规格主要有两种：SDRAM与DDR。</p>
+</blockquote>
+<p><strong>3.显卡VGA卡</strong></p>
+<blockquote>
+<p>为了避免由于大量的3D画面造成CPU的负载过大，显卡开发商在显卡上安装了一个可以处理这些很耗CPU运算时间的硬件GPU，来处理画面数据；当前显卡有两种规格：一种是以传统的AGP接口来进行影像数据的传输，另一种则是以更快的PCI Express接口来传输数据；VGA卡上也有一个内存，该内存大小可以影响屏幕输出的分辨率与画面质量，它是直接嵌入在显卡上的。</p>
+</blockquote>
+<p><strong>4.硬盘与访问设备</strong></p>
+<blockquote>
+<p>主机需要加载数据，这些数据就存放在主机的硬盘上。我们可以通过便携式存储媒体，例如光盘，Zip磁盘，软盘等来传递数据。主流的硬盘访问接口应该是SATA与IDE；当选购硬盘是，除了注意硬盘的容量大小之外，还要知道硬盘的转速以及缓存的大小。我们要求是，转速至少为7200转，缓存最好选择8MB。</p>
+</blockquote>
+<p><strong>5.PCI适配卡</strong></p>
+<blockquote>
+</blockquote>
+<p>网卡，声卡，特数功能卡等，都是通过PCI插槽来安装的</p>
+<p>网卡：目前采用的是RJ-45的接口插孔，这种接口有点像电话线插孔，不过要稍微大一些。由于网络需求提高，最高网卡速度已达到吉比特（Gbit/s）。也可以选购10/100/1000Mbit/s的网卡。</p>
+<p>SCSI适配卡：可以用来连接SCSI接口的设备。由于SCSI接口的设备比较稳定，而且设备运行速度较快，耗费CPU资源较少。SCSI适配卡是大型服务器主机的硬盘传输接口，如果是个人计算机，采用IDE/SATA接口就够了，SCSI接口的硬盘很贵。</p>
+<p><strong>6.主板</strong></p>
+<p> <img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grk3ecgjwij30fn0argmc.jpg"></p>
+<blockquote>
+<p>芯片集：就是负责与CPU，RAM，输出与输入设备通信；CPU的外频就是指芯片集与其他设备通信的速度；芯片集只能支持集中规格，无法支持所有的规格，所以在选购时，需要一起考虑。</p>
+</blockquote>
+<blockquote>
+<p>I/O地址与IRQ中断：既然主板是负责各个计算机系统组件之间的通信，有输入输出，又有不同的储存设备，所以利用I/O与IRQ，使得每台设备都有自己的地址，如若发生端口之间的冲突，可以手动设置各台设备的I/O,还可利用IRQ中断。</p>
+</blockquote>
+<blockquote>
+<p>BIOS：是Basic Input/Output System（基本输入/输出系统）的缩写，上面提到的I/O,IRQ等，都可以通过操作系统，亦可以通过主板提供的BIOS功能来设置。启动的时候，屏幕出现的版本信息就是BIOS的设置。可以在机器启动时按下DEL，来设置启动顺序，I/O以及IRQ。</p>
+</blockquote>
+<blockquote>
+<p>其他输出输入接口：<strong>PS2接口</strong>：键盘与鼠标的接口，插孔为圆形的；<strong>9针串行端口：</strong>以前用来连接鼠标的接口，常称为coml；<strong>25针并行端口：</strong>通常用来连接打印机，LPT1；<strong>声音输出，输入与麦克风：</strong>圆形插孔，主板上必须装有内置音效芯片，才会有这三个设备；<strong>USB：</strong>支持即插即用。</p>
+</blockquote>
+<blockquote>
+<p>电源：电源至少也要300W以上才能够主机使用，有些特殊的主机要求至少400-500W以上的电源。</p>
+</blockquote>
+<blockquote>
+<p>关于速度/稳定性的问题：<strong>系统超频；</strong> <strong>电源不稳定；</strong> <strong>内存负荷；</strong> <strong>系统过热；</strong></p>
+</blockquote>
+<ul>
+<li>适合主机的硬件配置</li>
+</ul>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grk4e7ljnsj30o60kntcc.jpg"></p>
+<ul>
+<li><p>Linux中的硬件设备号</p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk4dj6cdqj30o80k2766.jpg"></p>
+</li>
+<li><p>选择适当的版本</p>
+</li>
+</ul>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grk4hfc652j30nl0800vq.jpg"></p>
+<ul>
+<li>双系统安装步骤</li>
+</ul>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0NjI0NTM5L2FydGljbGUvZGV0YWlscy84MTc3NTYzNT9vcHNfcmVxdWVzdF9taXNjPSZhbXA7cmVxdWVzdF9pZD0mYW1wO2Jpel9pZD0xMDImYW1wO3V0bV90ZXJtPXVidW50dSVFNSU4RiU4QyVFNyVCMyVCQiVFNyVCQiU5RiVFNSVBRSU4OSVFOCVBMyU4NSZhbXA7dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3NlYXJjaF9yZXN1bHQubm9uZS10YXNrLWJsb2ctMn5hbGx+c29iYWlkdXdlYn5kZWZhdWx0LTEtLm5vbmVjYXNlJmFtcDtzcG09MTAxOC4yMjI2LjMwMDEuNDE4Nw==">https://blog.csdn.net/qq_24624539/article/details/81775635?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-.nonecase&amp;spm=1018.2226.3001.4187</span></p>
+<h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><ul>
+<li>Ctrl Alt Backspace：<strong>重新启动</strong></li>
+<li>Ctrl Alt 【F1】<del>【F6】：**命令登入tty1</del>tty6终端**</li>
+<li>Ctrl Alt 【7】：<strong>图形界面桌面</strong></li>
+<li>startx:<strong>启动图形界面</strong></li>
+<li><strong>默认root的提示符为#；一般身份用户的提示符为$</strong></li>
+<li>exit:<strong>注销</strong></li>
+<li>date +%Y%m%d：<strong>显示日期</strong></li>
+<li>cal  month  year：<strong>列出月份的月历</strong></li>
+<li>bc:<strong>计算器</strong>（quit离开计算器）</li>
+<li>Tab：<strong>大小写切换键，且具有命令补全与文件补齐的功能</strong></li>
+<li>Ctrl  C：<strong>中止当前程序</strong></li>
+<li>Ctrl  d：<strong>文件结束或输入结束，可用来取代exit的输入</strong></li>
+<li>man  命令：<strong>命令使用指南</strong> </li>
+</ul>
+<blockquote>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk6cv0b1kj30of0lamzm.jpg"><br>man -f  命令：获取关于命令的信息</p>
+</blockquote>
+<blockquote>
+<p>man 数字  命令：获取man N page页中的文件数据</p>
+</blockquote>
+<blockquote>
+<p>man -k  命令：找到更多的帮助文件数据</p>
+</blockquote>
+<ul>
+<li><p>who：<strong>看谁在线</strong></p>
+</li>
+<li><p>netstat -a：<strong>查看网络的联机状态</strong></p>
+</li>
+<li><p>ps  -aux：<strong>查看后台执行的程序</strong></p>
+</li>
+<li><p>shutdown</p>
+<blockquote>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk6tpdxsyj30ni0hd426.jpg"></p>
+</blockquote>
+</li>
+<li><p>sync：<strong>在内存中尚未更新的数据就会写入硬盘中</strong></p>
+</li>
+<li><p>reboot:<strong>重启</strong></p>
+</li>
+<li><p>halt,poweroff：<strong>关机</strong></p>
+</li>
+</ul>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-06-25 08:51:20" itemprop="dateModified" datetime="2021-06-25T08:51:20+08:00">2021-06-25</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/wpx.github.io/images/wechatpay.jpg" alt="WengPeiXin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/wpx.github.io/images/alipay.jpg" alt="WengPeiXin 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文博主： </strong>WengPeiXin <i class="ic i-at"><em>@</em></i>培新
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://theprofessor249.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" title="第一部分     认识Linux及Linux主机规划与安装">https://theprofessor249.github.io/2021/06/24/笔记类/第一部分     认识Linux及Linux主机规划与安装/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+    </div>
+    <div class="item right">
+      
+
+  <a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr93anasctj31hc0u077s.jpg" title="第二部分    Linux文件，目录与磁盘格式">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 笔记类</span>
+  <h3>第二部分    Linux文件，目录与磁盘格式</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">第一部分     认识Linux及Linux主机规划与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">1.1.</span> <span class="toc-text">什么是linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0Linux"><span class="toc-number">1.2.</span> <span class="toc-text">如何学习Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%BB%E6%9C%BA%E5%9C%B0%E8%A7%84%E5%88%92"><span class="toc-number">1.3.</span> <span class="toc-text">Linux主机地规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">命令行模式</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="第一部分     认识Linux及Linux主机规划与安装">第一部分     认识Linux及Linux主机规划与安装</a></li><li><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" rel="bookmark" title="第二部分    Linux文件，目录与磁盘格式">第二部分    Linux文件，目录与磁盘格式</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="WengPeiXin"
+      data-src="/wpx.github.io/images/avatar.jpg">
+  <p class="name" itemprop="name">WengPeiXin</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/wpx.github.io/archives/">
+        <span class="count">8</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/wpx.github.io/categories/">
+        <span class="count">7</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZXByb2Zlc3NvcjI0OS93ZW5ncGVpeGluLmdpdGh1Yi5pby5naXQ=" title="https:&#x2F;&#x2F;github.com&#x2F;theprofessor249&#x2F;wengpeixin.github.io.git"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/wpx.github.io/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/wpx.github.io/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/wpx.github.io/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/wpx.github.io/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/wpx.github.io/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/wpx.github.io/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/wpx.github.io/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E6%95%B0%E5%AD%A6/" title="分类于 数学">数学</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E6%95%B0%E5%AD%A6/4/" title="数学">数学</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/" title="分类于 嵌入式类">嵌入式类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/2/" title="嵌入式">嵌入式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E9%80%9A%E4%BF%A1%E7%B1%BB/" title="分类于 通信类">通信类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E9%80%9A%E4%BF%A1%E7%B1%BB/5/" title="通信类">通信类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" title="第二部分    Linux文件，目录与磁盘格式">第二部分    Linux文件，目录与磁盘格式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" title="第一部分     认识Linux及Linux主机规划与安装">第一部分     认识Linux及Linux主机规划与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E6%97%A5%E8%AE%B0/" title="分类于 日记">日记</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E6%97%A5%E8%AE%B0/3/" title="日记">日记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E8%8B%B1%E8%AF%AD%E7%B1%BB/" title="分类于 英语类">英语类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E8%8B%B1%E8%AF%AD%E7%B1%BB/6/" title="英语类">英语类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AF%AE%E7%90%83%E7%B1%BB/" title="分类于 篮球类">篮球类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AF%AE%E7%90%83%E7%B1%BB/1/" title="篮球类">篮球类</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">WengPeiXin @ 培新</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">9k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/06/24/笔记类/第一部分     认识Linux及Linux主机规划与安装/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/wpx.github.io/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
