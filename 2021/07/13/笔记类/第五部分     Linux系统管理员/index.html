@@ -1,0 +1,741 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/wpx.github.io/imageshttps:/tenadmin.oss-cn-chengdu.aliyuncs.com/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/wpx.github.io/images/favicon.ico">
+  <link rel="mask-icon" href="/wpx.github.io/images/logo.svg" color="">
+  <link rel="manifest" href="/wpx.github.io/images/manifest.json">
+  <meta name="msapplication-config" content="/wpx.github.io/images/browserconfig.xml">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="培新" href="https://theprofessor249.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="培新" href="https://theprofessor249.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="培新" href="https://theprofessor249.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC%E2%80%99:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/wpx.github.io/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://theprofessor249.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/">
+
+
+
+  <title>
+第五部分   Linux系统管理员 - 笔记类 |
+培新</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">第五部分   Linux系统管理员
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-07-13 14:15:12">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-13T14:15:12+08:00">2021-07-13</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5.6k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/wpx.github.io/" rel="start">培新</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93a9b705j31hc0u0jui.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9eadw8jbj30dw09xjrt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr9eabjtd6j30et08cdfz.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93actdnfj618g0p0acp02.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9e9f4zcuj30e108cjrt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr9eacfk4fj30dw08pmxs.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/wpx.github.io/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" itemprop="item" rel="index" title="分类于 笔记类"><span itemprop="name">笔记类</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://theprofessor249.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/wpx.github.io/images/avatar.jpg">
+    <meta itemprop="name" content="WengPeiXin">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="培新">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="启动关机的流程与加载程序"><a href="#启动关机的流程与加载程序" class="headerlink" title="启动关机的流程与加载程序"></a>启动关机的流程与加载程序</h1><h2 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h2><p><strong>启动过程需要加载核心，让核心来驱动整个硬件，启动过程如下：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/9c0d8c3d51f6a189978aade18172391c"></p>
+<h3 id="引导加载程序与核心载入"><a href="#引导加载程序与核心载入" class="headerlink" title="引导加载程序与核心载入"></a>引导加载程序与核心载入</h3><p><strong>整个主机启动后，第一个读取的地方是BIOS，BIOS里记录了主机板的芯片集与相关的设置，如CPU与接口设备的通信频率、启动设备的搜索顺序、硬盘的大小与类型、系统时间、外部总线是否启动即插即用、各接口设备的I/O地址，以及与CPU通信的IRQ中断等信息；获取BIOS设置值后，系统会根据BIOS的数据，进行加电自检，然后初始化硬件检测，并设置PnP设备，确定可启动的设备后，开始读取启动设备的数据；启动流程读到硬盘的过程中，第一个要读取的就是该硬盘的主引导记录，系统可以由主要启动区安装的引导加载程序开始执行核心识别的工作。</strong></p>
+<p><strong>选择以grub程序启动，系统就会到该记录区去读取该操作系统的核心。良好的引导加载程序会具有如下两项功能：</strong></p>
+<ul>
+<li><p>菜单功能</p>
+</li>
+<li><p>指向功能</p>
+</li>
+</ul>
+<p><strong>通过引导加载程序的管理而开始读取核心文件后，Linux就会将核心解压缩到主存储器中，并且利用核心的功能，开始测试与驱动各台外部设备，包括存储设备、CPU、网卡、声卡等。一般核心文件会放置/boot里，并且取名为/boot/vmlinux</strong></p>
+<p><strong>在加载核心的过程中，系统只会载入根目录，而且是以只读方式载入；有时为了某些功能可以用文件方式来读取；有时系统启动时，会建立虚拟盘，这就需要使用initrd以及linuxrc，利用引导加载程序的功能，可以在加载核心的时候，一起加载initrd的映像文件，系统会主动以initrd来建立虚拟盘，并且利用linuxrc程序来加载模块，linuxrc主要特点：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8828554dba19d37c988b6450f5c03fc6"></p>
+<h3 id="第一个程序init及设置文件-etc-inittab与runlevel"><a href="#第一个程序init及设置文件-etc-inittab与runlevel" class="headerlink" title="第一个程序init及设置文件/etc/inittab与runlevel"></a>第一个程序init及设置文件/etc/inittab与runlevel</h3><p><strong>第一个执行的程序就是/sbin/init，它除了利用设置文件/etc/inittab来获取运行等级之外，还会通过运行等级的设置值启动不同的服务项目</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/744e67e69b45925055d78718e451ceec"></p>
+<p><strong>运算等级：就是通过设置运行等级，来规定系统用不同的服务来启动；根据有无网络与有无XWindow，分为6个运行等级</strong></p>
+<ul>
+<li>/etc/inittab的信息</li>
+</ul>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/8052a22e1a3fb3b9b08e29b010f7166b"></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/c23b8a52a02e2c2086412253591040d5"></p>
+<p><strong>结论</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/1eb89494bb05f7e9346b87bc479265cf"></p>
+<h3 id="init处理系统初始化流程（-etc-rc-d-rc-sysinit）"><a href="#init处理系统初始化流程（-etc-rc-d-rc-sysinit）" class="headerlink" title="init处理系统初始化流程（/etc/rc.d/rc.sysinit）"></a>init处理系统初始化流程（/etc/rc.d/rc.sysinit）</h3><p><strong>主要用于设置系统环境</strong></p>
+<p><strong>/etc/rc.d/rc.sysinit的主要工作：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/05b15ca9f58e2ebaa1e9ef5eae47cc95"><br><img data-src="https://img02.sogoucdn.com/app/a/100520146/cd85aa507effc2879697835c97c3f96f"></p>
+<h3 id="启动系统服务与相关启动设置文件"><a href="#启动系统服务与相关启动设置文件" class="headerlink" title="启动系统服务与相关启动设置文件"></a>启动系统服务与相关启动设置文件</h3><p><strong>加载核心让整个系统准备接受命令，然后再经过/etc/rc.d/rc.sysinit的系统模块与相关硬件信息的初始化。还需我们启动系统所需要的各项服务，主机才能提供相关的网络或主机功能。根据再/etc/inittab里提到的运行等级设置值，就可以决定启动的服务项目。</strong></p>
+<p><strong>各种不同的服务其实还是相互关联的</strong></p>
+<p><strong>S或K后面接的数字就是执行的顺序：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/be2d2d160b60a5e26239faeb0d3b9bf1"></p>
+<h3 id="用户自定义引导启动程序"><a href="#用户自定义引导启动程序" class="headerlink" title="用户自定义引导启动程序"></a>用户自定义引导启动程序</h3><p><strong>任何想要再启动时就执行的工作，直接写入/etc/rc.d/rc.local，那么该工作就会再启动的时候自动加载，而不等我们登录系统去启动；把自己制作的shell脚本的完整文件名写入/etc/rc.d/rc.local，启动时就睡执行我的shell脚本</strong></p>
+<h3 id="根据-etc-inittab设置加载终端或X-Window界面"><a href="#根据-etc-inittab设置加载终端或X-Window界面" class="headerlink" title="根据/etc/inittab设置加载终端或X-Window界面"></a>根据/etc/inittab设置加载终端或X-Window界面</h3><p><strong>在完成了系统所有服务的启动后，接下来Linux就会启动终端或X Window来等待用户登录，实际参考内容是/etc/inittab内的</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ecc28e9606cb4da74596689a9a09d84e"></p>
+<h3 id="其他启动相关事项"><a href="#其他启动相关事项" class="headerlink" title="其他启动相关事项"></a>其他启动相关事项</h3><p>1.关于模块：/etc/modprobe.conf</p>
+<p><strong>对核心提供的默认模块进行一些参数的设计</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/23e745b012127a32e82304b17587fdef"></p>
+<p>2./etc/sysconfig/*</p>
+<p><strong>整个启动过程中，读取的服务相关设置文件都记录在/etc/sysconfig目录下</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9588b4872993b0925e3af95f85892981"></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/18635106d182a9e035cceb85ced7e11b"></p>
+<h3 id="变换运行等级"><a href="#变换运行等级" class="headerlink" title="变换运行等级"></a>变换运行等级</h3><p><strong>运行等级的不同仅是/etc/rc.d/rc[0-6].d里启动的服务不同而已；根据启动是否自动进入不同运行等级的设置：</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/4e4c05bdf37c415695622638485f3d02"></p>
+<p>如何将运行等级5切换至等级3</p>
+<p><strong>当执行init3时，系统会：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/6be449d26e6b626f12c5d0acf5c31092"></p>
+<p><strong>之后直接在bash中输入runlevel即可</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/cb849ae011ed659a42b646e0ecf96fe2"></p>
+<h2 id="核心与核心模块"><a href="#核心与核心模块" class="headerlink" title="核心与核心模块"></a>核心与核心模块</h2><p><strong>在整个启动过程中，能否成功地驱动主机的硬件设备，是核心的工作，而核心一般都是压缩文件，因此在使用核心之前，就要将它解压缩后，才加载到主存储器中</strong></p>
+<p><strong>由于硬件的不断更新，当前核心都具有可读取模块化驱动程序的功能，可以将模块化想成是一个外挂程序，该外挂程序可能由硬件开发厂商提供</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ec7aefe8722f26ac4bb593fb0169f078"><br><img data-src="https://img01.sogoucdn.com/app/a/100520146/671e9824296085539083ccd7a5be187c"></p>
+<h3 id="核心模块与依赖性"><a href="#核心模块与依赖性" class="headerlink" title="核心模块与依赖性"></a>核心模块与依赖性</h3><p><strong>核心房子啊/lib/modules/‘uname -r’/kernel中</strong></p>
+<p>1<strong>Linux提供一些模块依赖性的解决方案，就是检查/lib/moduless/‘uname-r’/modules.dep文件，它记录了在核心支持的模块的各项依赖性</strong></p>
+<ul>
+<li>使用depmod命令建立该文件</li>
+</ul>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/2beb12b271b31268b8b07e0a56561d8f"></p>
+<h3 id="核心模块的观察：lsmod、modinfo"><a href="#核心模块的观察：lsmod、modinfo" class="headerlink" title="核心模块的观察：lsmod、modinfo"></a>核心模块的观察：lsmod、modinfo</h3><p><strong>查看核心内的模块：</strong></p>
+<p><strong>即可查看核心模块，亦可检查模块文件</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/6c2cdfd5686441ae774f6081ed5f5fed"></p>
+<h3 id="核心模块的加载与删除：insmod、modprobe、rmmod"><a href="#核心模块的加载与删除：insmod、modprobe、rmmod" class="headerlink" title="核心模块的加载与删除：insmod、modprobe、rmmod"></a>核心模块的加载与删除：insmod、modprobe、rmmod</h3><p>1.insmod</p>
+<p><strong>手动加载模块；insmod完全由用户自行加载一个完整文件名的模块，并不会主动地分析模块的依赖性</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/efff98efab91bedbe73e9c57b730eb68"></p>
+<p>2.rmmod</p>
+<p><strong>删除模块</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/44de937618b8ed2d572db3228c59c159"></p>
+<p>3.modprobe</p>
+<p><strong>modprobe会主动搜索modules.dep的内容，先解决了模块的依赖性后，才决定需要加载的模块</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/75f83239722c9e4d77183173b36204d0"></p>
+<h3 id="核心模块的额外参数设置：-etc-modprobe-conf"><a href="#核心模块的额外参数设置：-etc-modprobe-conf" class="headerlink" title="核心模块的额外参数设置：/etc/modprobe.conf"></a>核心模块的额外参数设置：/etc/modprobe.conf</h3><p><strong>若想修改某些模块的额外参数设置，就在这个文件内设置，对于I/O与IRQ的设置</strong></p>
+<h2 id="引导加载程序：Grub"><a href="#引导加载程序：Grub" class="headerlink" title="引导加载程序：Grub"></a>引导加载程序：Grub</h2><h3 id="引导加载程序的功能与意义"><a href="#引导加载程序的功能与意义" class="headerlink" title="引导加载程序的功能与意义"></a>引导加载程序的功能与意义</h3><p><strong>在BIOS读完信息后，接下来到第一个启动设备的MBR去读取引导加载程序，这个引导加载程序可以具有菜单功能，而且还能辨识硬盘的文件系统，并且指向核心文件，以将它读入主存储器中</strong></p>
+<p><strong>MBR是整个硬盘的第一个扇区，整个大小不可能超过512KB，加载程序功能这么强，不仅仅占用少量的容量；是因为我们将引导加载程序分成两个阶段来执行：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8712a299d6a236b8fefcec9f41d7c9e2"></p>
+<p><strong>我们可以将引导加载程序安装在超级块</strong></p>
+<p><strong>引导加载程序可以做到：</strong></p>
+<ul>
+<li><p>引导加载程序可以直接指定并取用核心文件，加载到主存储器中</p>
+</li>
+<li><p>也可以将加载程序的控制权移交给下一个加载程序</p>
+</li>
+</ul>
+<p><strong>引导加载程序除了可以直接指定核心文件来启动之外，也可以指定某个超级快中的引导加载程序</strong></p>
+<p><strong>Linxu可以选择将引导加载程序安装在MBR或超级快中，但是，Windows系统则几乎默认强制会同时安装在MBR与超级块中，所以，我们说要安装多重操作系统时，最好先安装Windows再安装Linux，因为若先安装Linux，则后安装Windows时，会强制将MBR的引导加载程序覆盖掉，这样将无法以Windows的引导加载程序进入Linux</strong></p>
+<h3 id="grub的设置文件-boot-grub-menu-lst与安装类型"><a href="#grub的设置文件-boot-grub-menu-lst与安装类型" class="headerlink" title="grub的设置文件/boot/grub/menu.lst与安装类型"></a>grub的设置文件/boot/grub/menu.lst与安装类型</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9c8fa3b22f4981a4cc040783e0fd79dc"></p>
+<p>1.与硬盘的关系</p>
+<p><strong>grub主程序是安装在MBR中，并且动态地搜索设置文件的信息，它必须认识硬盘</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/1208e0d1f42758d3f986494369e228f4"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/e8321b599b2b0ae080363cb189f861b4"></p>
+<p>2./boot/grup/menu.lst设置文件</p>
+<p><strong>grub的设置文件内容/boot/grub/menu.lst</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/1f0e71d5810dd419e3b66d880ce6f438"></p>
+<p>(1)直接指定核心启动</p>
+<p><strong>指定核心启动，就需要用到initrd的RAM  Disk设置文件（通常放在/boot下面）；以grub的硬盘识别方式，找出完整的kernel与initrd文件名</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ed6ee205b0765123b141eb7509ce5c27"></p>
+<p>（2）利用链式加载程序（chain loader）的方式</p>
+<p><strong>所谓链式加载程序，仅是将控制权交给下一个引导加载程序而已，所以grub并不需要认识与找出核心文件，它只是将boot的控制权交给下一个超级快或者是MBR内的引导加载程序</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9241b8f5d29db4dfef02935611d48569"></p>
+<h3 id="测试与安装grub"><a href="#测试与安装grub" class="headerlink" title="测试与安装grub"></a>测试与安装grub</h3><p><strong>必须使用grub-install将一些必要的文件复制到/boot/grub</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/d5e10dd26c2026ae78cf28307680a155"></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/309d74ae44a1bceaca4bc57940d987c2"></p>
+<p><strong>介绍几个有用的命令及安装步骤</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/2e681844b5db9d4edc9138013da01c05"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/fdc960dcffb0b6dfcd42e0bd4d6db478"></p>
+<h3 id="启动前的额外功能修改"><a href="#启动前的额外功能修改" class="headerlink" title="启动前的额外功能修改"></a>启动前的额外功能修改</h3><p><strong>当Linux正在进行启动，我们按下任意键，就可以进行grub的在线编辑功能</strong></p>
+<ul>
+<li>若按如下按键</li>
+</ul>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/b1fd375c629eb395de3ac4e040214cfc"></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/28589a73b503411f8ae881f4f8606ad1"></p>
+<h3 id="核心功能的vga设置"><a href="#核心功能的vga设置" class="headerlink" title="核心功能的vga设置"></a>核心功能的vga设置</h3><p><strong>vga：主要设置终端tty1-tty6的分辨率与颜色质量；   对应表如下：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/869b479671a2024112feb2a895714adc"></p>
+<h2 id="引导加载程序：LILO"><a href="#引导加载程序：LILO" class="headerlink" title="引导加载程序：LILO"></a>引导加载程序：LILO</h2><p><strong>LILO是Linux最早的引导加载程序。主要使用/etc/lilo.conf设置文件，然后再以lilo主程序将该设置内容写入启动区中</strong></p>
+<h3 id="LILO的设置文件-etc-lilo-conf"><a href="#LILO的设置文件-etc-lilo-conf" class="headerlink" title="LILO的设置文件/etc/lilo.conf"></a>LILO的设置文件/etc/lilo.conf</h3><p>设置文件/etc/lilo.conf同样分为两部分，分别是LILO整体环境设置部分，与每个启动项目核心文件名称规范部分</p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/37cf9a1bc57352e5108596eb4b3a4a65"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/bed7372f7f21a8f8b2867d5b7e358f57"></p>
+<h3 id="测试与安装LILO引导加载程序"><a href="#测试与安装LILO引导加载程序" class="headerlink" title="测试与安装LILO引导加载程序"></a>测试与安装LILO引导加载程序</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/130c874283068f74126564c8559d7ee8"></p>
+<p><strong>lilo的安装</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/c6aad9967b68c53da98c537d5f40d8f8"></p>
+<h2 id="解决启动过程的问题"><a href="#解决启动过程的问题" class="headerlink" title="解决启动过程的问题"></a>解决启动过程的问题</h2><h3 id="忘记root密码的解决方案"><a href="#忘记root密码的解决方案" class="headerlink" title="忘记root密码的解决方案"></a>忘记root密码的解决方案</h3><p><strong>忘记root密码：只要能够进入并且载入（/），然后修改/etc/shadow内的root密码栏重新启动后，root就不需要密码即可登录。过程如下：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/08225195c011dac805ab3e63912e99e8"></p>
+<h3 id="利用chroot切换到另一个硬盘"><a href="#利用chroot切换到另一个硬盘" class="headerlink" title="利用chroot切换到另一个硬盘"></a>利用chroot切换到另一个硬盘</h3><p><strong>chroot：可以暂时将根目录移到某个目录中，然后区处理某个问题，最后再离开该根目录而回到原来的系统中</strong></p>
+<p><strong>同样可以将Linux硬盘拔到另一台Linux主机上，然后用这个chroot来切换，以处理硬盘问题，做法如下：</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/2dee28ac8f890d2f6d4a93748993afa1"></p>
+<h1 id="源码与Tarball套件管理程序"><a href="#源码与Tarball套件管理程序" class="headerlink" title="源码与Tarball套件管理程序"></a>源码与Tarball套件管理程序</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>如果想在Linux服务器上运行网页服务器，一定要安装网页服务器的套件；Linux上的套件几乎都是经过GPL的授权，所以每个套件均提供源码，可以自行修改该程序代码</strong></p>
+<h3 id="什么是开放源码、编译器与可执行文件"><a href="#什么是开放源码、编译器与可执行文件" class="headerlink" title="什么是开放源码、编译器与可执行文件"></a>什么是开放源码、编译器与可执行文件</h3><p><img data-src="https://img03.sogoucdn.com/app/a/100520146/24a7f7578809c50bf625fdd6863dee64"></p>
+<h3 id="什么是函数库"><a href="#什么是函数库" class="headerlink" title="什么是函数库"></a>什么是函数库</h3><p><strong>Linux系统通常已提供一个可以进行身份验证的模块，称为PAM，这个PAM提供的功能可以让很多程序在执行的时候，除了可以验证用户登录的信息外，还可以将身份确定的数据记录在登陆文件；函数库分为动态函数库与静态函数库</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/0c8baf2319fab57e47537bd8d977a428"></p>
+<p><strong>Linux的核心提供很多的核心相关函数库与外部参数，这些核心相关信息大多数放在/usr/include、/lib、/usr/lib中</strong></p>
+<h3 id="什么是make与configure"><a href="#什么是make与configure" class="headerlink" title="什么是make与configure"></a>什么是make与configure</h3><p><strong>使用类似gcc的编译器进行编译的过程中，除了每个主程序与子程序需要写上编译过程的命令外，还需要写上最终的连接程序。当代码比较复杂时，可以使用make命令的相关功能来简化编译过程的命令</strong></p>
+<h3 id="什么是Tarball的套件"><a href="#什么是Tarball的套件" class="headerlink" title="什么是Tarball的套件"></a>什么是Tarball的套件</h3><p>** 由于纯文本文件是很浪费硬盘空间的一种文件格式，如果想去下载一个核心文件，应该将这些源码通过文件的打包与压缩，将文件的数量与容量减小，而Tarball就是将套件的所有源码文件先以tar打包，然后再压缩，最常见的就是gzip来压缩。因为使用了tar与gzip的功能，tarball文件一般的扩展名就会写成*.tar.gz或简单写为*.tgz,Tarball套件解压缩后，里面的文件通常会有: **</p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/5f6bf24ee2f22e7623e3f2039c1f58da"></p>
+<h3 id="安装与升级套件"><a href="#安装与升级套件" class="headerlink" title="安装与升级套件"></a>安装与升级套件</h3><p><strong>为什么升级Tarball的套件</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/631f861b701351e5d1b7499656257625"></p>
+<p><strong>Tarball的基本安装流程</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/484eff772d2793001edbf769862a0f86"></p>
+<h2 id="一个简单的范例"><a href="#一个简单的范例" class="headerlink" title="一个简单的范例"></a>一个简单的范例</h2><p><strong>生成动态库</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/5ad5d00416c34f36cac4e1855a17ec93"></p>
+<p><strong>生成静态库</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/ce764c52fe9415effdce33f1588a0240"></p>
+<p><strong>完整调试</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/d7036f36abb406f3389c6a3151ea4621"></p>
+<h3 id="显示Hello-World"><a href="#显示Hello-World" class="headerlink" title="显示Hello  World"></a>显示Hello  World</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/cff71a3d8f955f431d57fe91565b66a6"></p>
+<p><strong>hello.c就是源码，gcc就是编译器，a.out就是编译成功的可执行二进制文件</strong></p>
+<h3 id="编译子程序"><a href="#编译子程序" class="headerlink" title="编译子程序"></a>编译子程序</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/108ff62589cb16cc8022fcf26578f6c6"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/fa8559dc949fe8523c975193f12a0324"></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8a334354ab6aaf8bbb7ccc1bbbbbd64c"></p>
+<h3 id="加入函数库"><a href="#加入函数库" class="headerlink" title="加入函数库"></a>加入函数库</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/a73137d77f326a2a2b1517a74069095c"></p>
+<p><strong>直接编译，会显示错误消息，表示没有sin的相关定义参考值，这是因为再C语言里的sin函数是写在libm.so函数库中，而我们并没有源码里加入相关的说明，所以需要在编译与连接的时候，将这个函数库连接进执行文件</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/4894f5a06f2534e9c7e48b5346ee877c"></p>
+<p><strong>由于Linux默认是将函数库放在/lib与/usr/lib中，所以不写-L/lib和-L/usr/lib也没有关系。不过，如果使用的函数库并非放在这两个目录下，那么-L/path就很重要，否则找不到函数库</strong></p>
+<h3 id="使用gcc"><a href="#使用gcc" class="headerlink" title="使用gcc"></a>使用gcc</h3><p><strong>gcc为Linux最标准的编译器，gcc是由GNU维护；下面为比较常见的参数：</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/67c4660bafcf81c9791e2a53844cf017"></p>
+<h2 id="make的简单用法"><a href="#make的简单用法" class="headerlink" title="make的简单用法"></a>make的简单用法</h2><p><strong>make可以简化编译过程执行的命令</strong></p>
+<h3 id="为社么要用make"><a href="#为社么要用make" class="headerlink" title="为社么要用make"></a>为社么要用make</h3><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/a6b8a1162bd17f19d26bbed4366362b3"></p>
+<p><strong>仅写出main需要的目标文件，结果make会主动去判断每个目标文件相关的源码文件，并直接编译，最后再直接进行连接</strong></p>
+<p><strong>make的好处：</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/b1f15eb05d0a4a10ed02e4321baf2fee"></p>
+<h3 id="make的基本语法与变量"><a href="#make的基本语法与变量" class="headerlink" title="make的基本语法与变量"></a>make的基本语法与变量</h3><p><img data-src="https://img03.sogoucdn.com/app/a/100520146/dbc38ca29dbb311c9423e61a336b73c6"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/7caddb4442ee504ae582aaa990b15c43"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/d27906e2d66ca47b77d98a1edb2e6be1"></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/5b2f56123c9bdacae7764512dbcd5472"></p>
+<h2 id="Tarball的管理与建议"><a href="#Tarball的管理与建议" class="headerlink" title="Tarball的管理与建议"></a>Tarball的管理与建议</h2><p><strong>知道了源码的相关信息之后，还需要了解如何使用具有源码的Tarball来建立属于自己的套件；Tarball源码程序应该可以再大部分环境安装成功</strong></p>
+<h3 id="使用源码管理套件所需要的基础套件"><a href="#使用源码管理套件所需要的基础套件" class="headerlink" title="使用源码管理套件所需要的基础套件"></a>使用源码管理套件所需要的基础套件</h3><p><strong>创建一个二进制执行文件需要很多的文件，包括下面的基础套件：</strong></p>
+<ul>
+<li><p>gcc或cc等C语言编译器</p>
+</li>
+<li><p>make及autoconfig等套件</p>
+</li>
+<li><p>需要核心提供的函数库文件以及相关的包含文件</p>
+</li>
+</ul>
+<p><strong>很多套件再开发时都直接取用系统核心提供的函数库与包含文件，这样才可以与操作系统兼容，尤其是驱动程序方面的套件，常常需要核心提供的相关信息</strong></p>
+<h3 id="Tarball安装的基本步骤"><a href="#Tarball安装的基本步骤" class="headerlink" title="Tarball安装的基本步骤"></a>Tarball安装的基本步骤</h3><p><strong>安装的基本操作步骤如下：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/37bbd6a848f1f5cc07bc5164ab1143a8"><br><img data-src="!%5B%5D(https://img04.sogoucdn.com/app/a/100520146/ccdb14a2538f6d3eb687ae1dd8a0c7f0)"></p>
+<p><strong>上面只要有一个步骤无法成功，那么后续的步骤就完全没有办法进行</strong></p>
+<h3 id="Tarball套件安装的注意事项（如何删除、升级）"><a href="#Tarball套件安装的注意事项（如何删除、升级）" class="headerlink" title="Tarball套件安装的注意事项（如何删除、升级）"></a>Tarball套件安装的注意事项（如何删除、升级）</h3><p><strong>etc、lib、man、bin等目录中，分别表示“设置文件、函数库、执行文件、在线帮助文件”</strong></p>
+<p><img data-src="!%5B%5D(https://img02.sogoucdn.com/app/a/100520146/d52d04278b35893a9cee0c96a97910da)"></p>
+<p><strong>单一套件的文件都在同一个目录之下，要删除该套件就简单多了。只要将该目录删除，即可视为该套件已被删除。</strong></p>
+<h3 id="简单的范例：使用ntp"><a href="#简单的范例：使用ntp" class="headerlink" title="简单的范例：使用ntp"></a>简单的范例：使用ntp</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/ecfe44c20135788e89aaef11ed7c69dc"><br><img data-src="https://img03.sogoucdn.com/app/a/100520146/e2f5c8fbbc40df511f6e1f4beeffacc9"></p>
+<h3 id="使用patch更新源码"><a href="#使用patch更新源码" class="headerlink" title="使用patch更新源码"></a>使用patch更新源码</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/69a578ff16cd88f411128b70692c9fbd"></p>
+<h2 id="函数库管理"><a href="#函数库管理" class="headerlink" title="函数库管理"></a>函数库管理</h2><p><strong>很多套件之间都会互相采用彼此提供的函数库来运行特殊功能，函数库根据是否被编译到程序内部而分为动态与静态函数库</strong></p>
+<h3 id="动态与静态函数库"><a href="#动态与静态函数库" class="headerlink" title="动态与静态函数库"></a>动态与静态函数库</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/878480086d788786346d7b89cd2a2060"></p>
+<p><strong>在linux版本中，比较倾向于使用动态函数库；如果使用太多的静态函数库，那么升级一个函数库时，都会对整个系统造成很大的冲击。如果其他相关的执行文件也要同时重新编译，动态函数库就有用得多，只要升级动态函数库，其他套件根本无须变动</strong></p>
+<p><strong>绝大多数的函数库都放在：</strong></p>
+<ul>
+<li><p>/usr/lib</p>
+</li>
+<li><p>/lib</p>
+</li>
+</ul>
+<h3 id="ldconfig与-etc-ld-so-conf"><a href="#ldconfig与-etc-ld-so-conf" class="headerlink" title="ldconfig与/etc/ld.so.conf"></a>ldconfig与/etc/ld.so.conf</h3><p><strong>将常用的动态函数库加载到内存中（高速缓存，cache），当软件套件要采用动态函数库时，就不需要重新从硬盘里读出，这样可以提高动态函数库的读取速度。这时候需要idconfig与/etc/ld.so.conf的帮助</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/5330f235be104a2d92053c1336144ee7"></p>
+<h3 id="ldd"><a href="#ldd" class="headerlink" title="ldd"></a>ldd</h3><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/9453bd441350f6ebf474af7875227b99"></p>
+<h2 id="检测软件正确性：md5sum"><a href="#检测软件正确性：md5sum" class="headerlink" title="检测软件正确性：md5sum"></a>检测软件正确性：md5sum</h2><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/1ee537fec32c9337453f328c7d468bc9"><br><img data-src="https://img03.sogoucdn.com/app/a/100520146/46f1ddb5e0e37f64d3c735a3d6a34be9"></p>
+<p><strong>这几个文件容易被修改，因外很多木马程序在执行的时候，还是会执行PID，为了不被root追查出来，所以会修改这些价差任务分配的文件。如果可以替这些文件建立指纹数据库（就是使用md5sum检查一次，将该文件指纹记录下来，然后以shell脚本的方式由程序自行来检查指纹表是否不同），那么文件系统就会比较安全</strong></p>
+<h2 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h2><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/93719747a52ced4bee42cff62103fd70"></p>
+<h1 id="RPM与SRPM套件管理程序"><a href="#RPM与SRPM套件管理程序" class="headerlink" title="RPM与SRPM套件管理程序"></a>RPM与SRPM套件管理程序</h1><h1 id="认识与分析登录文件"><a href="#认识与分析登录文件" class="headerlink" title="认识与分析登录文件"></a>认识与分析登录文件</h1><h1 id="Linux备份策略"><a href="#Linux备份策略" class="headerlink" title="Linux备份策略"></a>Linux备份策略</h1><h1 id="Linux硬件检测与维护"><a href="#Linux硬件检测与维护" class="headerlink" title="Linux硬件检测与维护"></a>Linux硬件检测与维护</h1><h1 id="Linux核心编译与管理"><a href="#Linux核心编译与管理" class="headerlink" title="Linux核心编译与管理"></a>Linux核心编译与管理</h1>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-07-13 14:08:17" itemprop="dateModified" datetime="2021-07-13T14:08:17+08:00">2021-07-13</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/wpx.github.io/images/wechatpay.jpg" alt="WengPeiXin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/wpx.github.io/images/alipay.jpg" alt="WengPeiXin 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文博主： </strong>WengPeiXin <i class="ic i-at"><em>@</em></i>培新
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://theprofessor249.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" title="第五部分   Linux系统管理员">https://theprofessor249.github.io/2021/07/13/笔记类/第五部分     Linux系统管理员/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr93anasctj31hc0u077s.jpg" title="第四部分   Linux用户管理">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 笔记类</span>
+  <h3>第四部分   Linux用户管理</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr9e9f4zcuj30e108cjrt.jpg" title="Linux 共享文件夹">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 笔记类</span>
+  <h3>Linux 共享文件夹</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%85%B3%E6%9C%BA%E7%9A%84%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">启动关机的流程与加载程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">启动流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%E4%B8%8E%E6%A0%B8%E5%BF%83%E8%BD%BD%E5%85%A5"><span class="toc-number">1.1.1.</span> <span class="toc-text">引导加载程序与核心载入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Finit%E5%8F%8A%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6-etc-inittab%E4%B8%8Erunlevel"><span class="toc-number">1.1.2.</span> <span class="toc-text">第一个程序init及设置文件&#x2F;etc&#x2F;inittab与runlevel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8B%EF%BC%88-etc-rc-d-rc-sysinit%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">init处理系统初始化流程（&#x2F;etc&#x2F;rc.d&#x2F;rc.sysinit）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.4.</span> <span class="toc-text">启动系统服务与相关启动设置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E5%AF%BC%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.5.</span> <span class="toc-text">用户自定义引导启动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE-etc-inittab%E8%AE%BE%E7%BD%AE%E5%8A%A0%E8%BD%BD%E7%BB%88%E7%AB%AF%E6%88%96X-Window%E7%95%8C%E9%9D%A2"><span class="toc-number">1.1.6.</span> <span class="toc-text">根据&#x2F;etc&#x2F;inittab设置加载终端或X-Window界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%90%AF%E5%8A%A8%E7%9B%B8%E5%85%B3%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.7.</span> <span class="toc-text">其他启动相关事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E8%BF%90%E8%A1%8C%E7%AD%89%E7%BA%A7"><span class="toc-number">1.1.8.</span> <span class="toc-text">变换运行等级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%B8%8E%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">核心与核心模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">核心模块与依赖性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E8%A7%82%E5%AF%9F%EF%BC%9Alsmod%E3%80%81modinfo"><span class="toc-number">1.2.2.</span> <span class="toc-text">核心模块的观察：lsmod、modinfo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%A0%E9%99%A4%EF%BC%9Ainsmod%E3%80%81modprobe%E3%80%81rmmod"><span class="toc-number">1.2.3.</span> <span class="toc-text">核心模块的加载与删除：insmod、modprobe、rmmod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E9%A2%9D%E5%A4%96%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE%EF%BC%9A-etc-modprobe-conf"><span class="toc-number">1.2.4.</span> <span class="toc-text">核心模块的额外参数设置：&#x2F;etc&#x2F;modprobe.conf</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%EF%BC%9AGrub"><span class="toc-number">1.3.</span> <span class="toc-text">引导加载程序：Grub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8A%9F%E8%83%BD%E4%B8%8E%E6%84%8F%E4%B9%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">引导加载程序的功能与意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grub%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6-boot-grub-menu-lst%E4%B8%8E%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">grub的设置文件&#x2F;boot&#x2F;grub&#x2F;menu.lst与安装类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%AE%89%E8%A3%85grub"><span class="toc-number">1.3.3.</span> <span class="toc-text">测试与安装grub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%89%8D%E7%9A%84%E9%A2%9D%E5%A4%96%E5%8A%9F%E8%83%BD%E4%BF%AE%E6%94%B9"><span class="toc-number">1.3.4.</span> <span class="toc-text">启动前的额外功能修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E7%9A%84vga%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.3.5.</span> <span class="toc-text">核心功能的vga设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%EF%BC%9ALILO"><span class="toc-number">1.4.</span> <span class="toc-text">引导加载程序：LILO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LILO%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6-etc-lilo-conf"><span class="toc-number">1.4.1.</span> <span class="toc-text">LILO的设置文件&#x2F;etc&#x2F;lilo.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%AE%89%E8%A3%85LILO%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.4.2.</span> <span class="toc-text">测试与安装LILO引导加载程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">解决启动过程的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%98%E8%AE%B0root%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.5.1.</span> <span class="toc-text">忘记root密码的解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8chroot%E5%88%87%E6%8D%A2%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%A1%AC%E7%9B%98"><span class="toc-number">1.5.2.</span> <span class="toc-text">利用chroot切换到另一个硬盘</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E4%B8%8ETarball%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text">源码与Tarball套件管理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%8E%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.1.</span> <span class="toc-text">什么是开放源码、编译器与可执行文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.1.2.</span> <span class="toc-text">什么是函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFmake%E4%B8%8Econfigure"><span class="toc-number">2.1.3.</span> <span class="toc-text">什么是make与configure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTarball%E7%9A%84%E5%A5%97%E4%BB%B6"><span class="toc-number">2.1.4.</span> <span class="toc-text">什么是Tarball的套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%87%E7%BA%A7%E5%A5%97%E4%BB%B6"><span class="toc-number">2.1.5.</span> <span class="toc-text">安装与升级套件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E8%8C%83%E4%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">一个简单的范例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BAHello-World"><span class="toc-number">2.2.1.</span> <span class="toc-text">显示Hello  World</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%AD%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.2.2.</span> <span class="toc-text">编译子程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.2.3.</span> <span class="toc-text">加入函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gcc"><span class="toc-number">2.2.4.</span> <span class="toc-text">使用gcc</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#make%E7%9A%84%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">make的简单用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%A4%BE%E4%B9%88%E8%A6%81%E7%94%A8make"><span class="toc-number">2.3.1.</span> <span class="toc-text">为社么要用make</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#make%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">make的基本语法与变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tarball%E7%9A%84%E7%AE%A1%E7%90%86%E4%B8%8E%E5%BB%BA%E8%AE%AE"><span class="toc-number">2.4.</span> <span class="toc-text">Tarball的管理与建议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%BA%90%E7%A0%81%E7%AE%A1%E7%90%86%E5%A5%97%E4%BB%B6%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%9F%BA%E7%A1%80%E5%A5%97%E4%BB%B6"><span class="toc-number">2.4.1.</span> <span class="toc-text">使用源码管理套件所需要的基础套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tarball%E5%AE%89%E8%A3%85%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.4.2.</span> <span class="toc-text">Tarball安装的基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tarball%E5%A5%97%E4%BB%B6%E5%AE%89%E8%A3%85%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%88%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E3%80%81%E5%8D%87%E7%BA%A7%EF%BC%89"><span class="toc-number">2.4.3.</span> <span class="toc-text">Tarball套件安装的注意事项（如何删除、升级）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E8%8C%83%E4%BE%8B%EF%BC%9A%E4%BD%BF%E7%94%A8ntp"><span class="toc-number">2.4.4.</span> <span class="toc-text">简单的范例：使用ntp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8patch%E6%9B%B4%E6%96%B0%E6%BA%90%E7%A0%81"><span class="toc-number">2.4.5.</span> <span class="toc-text">使用patch更新源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BA%93%E7%AE%A1%E7%90%86"><span class="toc-number">2.5.</span> <span class="toc-text">函数库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%B8%8E%E9%9D%99%E6%80%81%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.5.1.</span> <span class="toc-text">动态与静态函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ldconfig%E4%B8%8E-etc-ld-so-conf"><span class="toc-number">2.5.2.</span> <span class="toc-text">ldconfig与&#x2F;etc&#x2F;ld.so.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ldd"><span class="toc-number">2.5.3.</span> <span class="toc-text">ldd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6%E6%AD%A3%E7%A1%AE%E6%80%A7%EF%BC%9Amd5sum"><span class="toc-number">2.6.</span> <span class="toc-text">检测软件正确性：md5sum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE"><span class="toc-number">2.7.</span> <span class="toc-text">重点回顾</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RPM%E4%B8%8ESRPM%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">RPM与SRPM套件管理程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E4%B8%8E%E5%88%86%E6%9E%90%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">认识与分析登录文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%A4%87%E4%BB%BD%E7%AD%96%E7%95%A5"><span class="toc-number">5.</span> <span class="toc-text">Linux备份策略</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A1%AC%E4%BB%B6%E6%A3%80%E6%B5%8B%E4%B8%8E%E7%BB%B4%E6%8A%A4"><span class="toc-number">6.</span> <span class="toc-text">Linux硬件检测与维护</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%A0%B8%E5%BF%83%E7%BC%96%E8%AF%91%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">Linux核心编译与管理</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" rel="bookmark" title="第一部分     认识Linux及Linux主机规划与安装">第一部分     认识Linux及Linux主机规划与安装</a></li><li><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" rel="bookmark" title="第二部分    Linux文件，目录与磁盘格式">第二部分    Linux文件，目录与磁盘格式</a></li><li><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%20%20%20%E5%AD%A6%E4%B9%A0Shell%E5%92%8CShell%E8%84%9A%E6%9C%AC/" rel="bookmark" title="第三部分   学习Shell和Shell脚本">第三部分   学习Shell和Shell脚本</a></li><li><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" rel="bookmark" title="第四部分   Linux用户管理">第四部分   Linux用户管理</a></li><li class="active"><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" rel="bookmark" title="第五部分   Linux系统管理员">第五部分   Linux系统管理员</a></li><li><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" rel="bookmark" title="Linux 共享文件夹">Linux 共享文件夹</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="WengPeiXin"
+      data-src="/wpx.github.io/images/avatar.jpg">
+  <p class="name" itemprop="name">WengPeiXin</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/wpx.github.io/archives/">
+        <span class="count">12</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/wpx.github.io/categories/">
+        <span class="count">7</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZXByb2Zlc3NvcjI0OS93ZW5ncGVpeGluLmdpdGh1Yi5pby5naXQ=" title="https:&#x2F;&#x2F;github.com&#x2F;theprofessor249&#x2F;wengpeixin.github.io.git"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/wpx.github.io/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/wpx.github.io/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/wpx.github.io/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/wpx.github.io/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/wpx.github.io/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/wpx.github.io/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/wpx.github.io/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E9%80%9A%E4%BF%A1%E7%B1%BB/" title="分类于 通信类">通信类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E9%80%9A%E4%BF%A1%E7%B1%BB/5/" title="通信类">通信类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AF%AE%E7%90%83%E7%B1%BB/" title="分类于 篮球类">篮球类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AF%AE%E7%90%83%E7%B1%BB/1/" title="篮球类">篮球类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/" title="分类于 嵌入式类">嵌入式类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/2/" title="嵌入式">嵌入式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E6%97%A5%E8%AE%B0/" title="分类于 日记">日记</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E6%97%A5%E8%AE%B0/3/" title="日记">日记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%20%20%20%E5%AD%A6%E4%B9%A0Shell%E5%92%8CShell%E8%84%9A%E6%9C%AC/" title="第三部分   学习Shell和Shell脚本">第三部分   学习Shell和Shell脚本</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" title="第二部分    Linux文件，目录与磁盘格式">第二部分    Linux文件，目录与磁盘格式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E6%95%B0%E5%AD%A6/" title="分类于 数学">数学</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E6%95%B0%E5%AD%A6/4/" title="数学">数学</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" title="Linux 共享文件夹">Linux 共享文件夹</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E8%8B%B1%E8%AF%AD%E7%B1%BB/" title="分类于 英语类">英语类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E8%8B%B1%E8%AF%AD%E7%B1%BB/6/" title="英语类">英语类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" title="第一部分     认识Linux及Linux主机规划与安装">第一部分     认识Linux及Linux主机规划与安装</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">WengPeiXin @ 培新</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">37k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">34 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/07/13/笔记类/第五部分     Linux系统管理员/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/wpx.github.io/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
