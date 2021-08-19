@@ -118,12 +118,12 @@ Linux 共享文件夹 - 笔记类 |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9eadw8jbj30dw09xjrt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr9eaqc9byj30eu08c74g.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr93aa5hgvj31hc0u076z.jpg"></li>
           <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9eavyxm1j30dw099mxl.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr93abz7d5j31c00u0qb9.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93anasctj31hc0u077s.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr9eacfk4fj30dw08pmxs.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr93aa5hgvj31hc0u076z.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr9eaqc9byj30eu08c74g.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr93abz7d5j31c00u0qb9.jpg"></li>
         </ul>
       </div>
     </header>
@@ -170,36 +170,34 @@ Linux 共享文件夹 - 笔记类 |
     
 
     <p><strong>Linux 共享文件夹</strong></p>
-<p>1. 打开虚拟机，编辑虚拟机设置，选择选项中的共享文件夹；在右侧点击始终启用，选择好后点击添加按钮<br />
-，在弹口中，点击浏览，并在主机磁盘中建立一个文件夹，做为共享文件夹，选择启用该共享，点击完成。</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gse60gkm6vj318g0p0k6f.jpg" alt="" /></p>
-<p>2. 进入 ubuntu，安装 VMwave  Tool<br />
-<img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gse60nlk3ej30gr0b5td6.jpg" alt="" /></p>
-<p>3. 通过下列命令解压、执行，分别是下面的 tar 和 sudo 的两行</p>
+<p>1.打开虚拟机，编辑虚拟机设置，选择选项中的共享文件夹；在右侧点击始终启用，选择好后点击添加按钮<br>，在弹口中，点击浏览，并在主机磁盘中建立一个文件夹，做为共享文件夹，选择启用该共享，点击完成。</p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gse60gkm6vj318g0p0k6f.jpg"></p>
+<p>2.进入ubuntu，安装VMwave  Tool<br><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gse60nlk3ej30gr0b5td6.jpg"></p>
+<p>3.通过下列命令解压、执行，分别是下面的tar和sudo的两行</p>
 <p><strong>复制、压缩命令：</strong></p>
 <blockquote>
-<p>tar -czvf dir.tar.gz dir/          将 dir 目录打包成 dir.tar.gz</p>
+<p>tar -czvf dir.tar.gz dir/          将dir目录打包成dir.tar.gz</p>
 </blockquote>
 <blockquote>
-<p>tar -cjvf dir.tar.bz2 dir/         将 dir 目录打包成 dir.tar.bz2</p>
+<p>tar -cjvf dir.tar.bz2 dir/         将dir目录打包成dir.tar.bz2</p>
 </blockquote>
 <blockquote>
-<p>tar -zxvf dir.tar.gz                解压缩 dir.tar.gz</p>
+<p>tar -zxvf dir.tar.gz                解压缩dir.tar.gz</p>
 </blockquote>
 <blockquote>
-<p>tar -jxvf dir.tar.bz2               解压缩 dir.tar.bz2</p>
+<p>tar -jxvf dir.tar.bz2               解压缩dir.tar.bz2</p>
 </blockquote>
 <blockquote>
-<p>注意 “-” 前面有空格</p>
+<p>注意“-”前面有空格</p>
 </blockquote>
 <blockquote>
-<p>cp 命令</p>
+<p>cp命令</p>
 </blockquote>
 <blockquote>
 <p>语法： cp [选项] 源文件或目录 目标文件或目录</p>
 </blockquote>
 <ul>
-<li>a 该选项通常在拷贝目录时使用。它保留链接、文件属性，并递归地拷贝目录，其作用等于 dpR 选项的组合。</li>
+<li>a 该选项通常在拷贝目录时使用。它保留链接、文件属性，并递归地拷贝目录，其作用等于dpR选项的组合。</li>
 </ul>
 <blockquote>
 <ul>
@@ -213,17 +211,17 @@ Linux 共享文件夹 - 笔记类 |
 </blockquote>
 <blockquote>
 <ul>
-<li>i 和 f 选项相反，在覆盖目标文件之前将给出提示要求用户确认。回答 y 时目标文件将被覆盖，是交互式拷贝。</li>
+<li>i 和f选项相反，在覆盖目标文件之前将给出提示要求用户确认。回答y时目标文件将被覆盖，是交互式拷贝。</li>
 </ul>
 </blockquote>
 <blockquote>
 <ul>
-<li>p 此时 cp 除复制源文件的内容外，还将把其修改时间和访问权限也复制到新文件中。</li>
+<li>p 此时cp除复制源文件的内容外，还将把其修改时间和访问权限也复制到新文件中。</li>
 </ul>
 </blockquote>
 <blockquote>
 <ul>
-<li>r 若给出的源文件是一目录文件，此时 cp 将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名。</li>
+<li>r 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名。</li>
 </ul>
 </blockquote>
 <blockquote>
@@ -232,7 +230,7 @@ Linux 共享文件夹 - 笔记类 |
 </ul>
 </blockquote>
 <blockquote>
-<p>例如：将 /home/wally/test 中 test.c 的文件复制到 /local/arm 中，命令为：</p>
+<p>例如：将/home/wally/test中 test.c 的文件复制到/local/arm 中，命令为：</p>
 </blockquote>
 <blockquote>
 <p>cd /wally/test</p>
@@ -241,11 +239,11 @@ Linux 共享文件夹 - 笔记类 |
 <p>ls</p>
 <p>sudo cp -i test.c  /local/arm</p>
 </blockquote>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gse60qpm84j30gp0b4qaw.jpg" alt="" /></p>
-<p>4. 一路按 Enter，最后得到</p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gse60tkml1j30go0b5455.jpg" alt="" /></p>
-<p>5. 执行 mount 命令，之后 mnt/hgfs 里就可以看到前面设置的共享目录</p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gse60whifpj30gq0b4qbl.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gse60qpm84j30gp0b4qaw.jpg"></p>
+<p>4.一路按Enter，最后得到</p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gse60tkml1j30go0b5455.jpg"></p>
+<p>5.执行mount命令，之后mnt/hgfs里就可以看到前面设置的共享目录</p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gse60whifpj30gq0b4qbl.jpg"></p>
 
   </div>
 
@@ -307,7 +305,7 @@ Linux 共享文件夹 - 笔记类 |
     <div class="item left">
       
 
-  <a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr9eaqc9byj30eu08c74g.jpg" title="第五部分   Linux系统管理员">
+  <a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr9eadw8jbj30dw09xjrt.jpg" title="第五部分   Linux系统管理员">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 笔记类</span>
   <h3>第五部分   Linux系统管理员</h3>
@@ -315,6 +313,14 @@ Linux 共享文件夹 - 笔记类 |
 
     </div>
     <div class="item right">
+      
+
+  <a href="/wpx.github.io/2021/07/20/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/%E5%88%A9%E7%94%A8Bing%E7%BF%BB%E5%A2%99/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr93abz7d5j31c00u0qb9.jpg" title="1.利用bing进行翻墙">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 文献神器</span>
+  <h3>1.利用bing进行翻墙</h3>
+  </a>
+
     </div>
 </div>
 
@@ -348,7 +354,7 @@ Linux 共享文件夹 - 笔记类 |
 <nav class="state">
     <div class="item posts">
       <a href="/wpx.github.io/archives/">
-        <span class="count">12</span>
+        <span class="count">18</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -416,10 +422,12 @@ Linux 共享文件夹 - 笔记类 |
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/wpx.github.io/2021/07/20/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/%E5%88%A9%E7%94%A8Bing%E7%BF%BB%E5%A2%99/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -441,40 +449,20 @@ Linux 共享文件夹 - 笔记类 |
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/ubuntu/" title="分类于 ubuntu">ubuntu</a>
-</div>
-
-    <span><a href="/wpx.github.io/2021/06/24/ubuntu/1/" title="ubuntu">ubuntu</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/" title="分类于 嵌入式类">嵌入式类</a>
-</div>
-
-    <span><a href="/wpx.github.io/2021/06/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/2/" title="嵌入式">嵌入式</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" title="Linux 共享文件夹">Linux 共享文件夹</a></span>
+    <span><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" title="第五部分   Linux系统管理员">第五部分   Linux系统管理员</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+<a href="/wpx.github.io/categories/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/" title="分类于 文献神器">文献神器</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" title="第一部分     认识Linux及Linux主机规划与安装">第一部分     认识Linux及Linux主机规划与安装</a></span>
+    <span><a href="/wpx.github.io/2021/07/20/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/%E5%88%A9%E7%94%A8Bing%E7%BF%BB%E5%A2%99/" title="1.利用bing进行翻墙">1.利用bing进行翻墙</a></span>
   </li>
 
       
@@ -491,6 +479,16 @@ Linux 共享文件夹 - 笔记类 |
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" title="第四部分   Linux用户管理">第四部分   Linux用户管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/wpx.github.io/categories/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/" title="分类于 文献神器">文献神器</a>
 </div>
 
@@ -501,20 +499,20 @@ Linux 共享文件夹 - 笔记类 |
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E9%80%9A%E4%BF%A1%E7%B1%BB/" title="分类于 通信类">通信类</a>
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E9%80%9A%E4%BF%A1%E7%B1%BB/5/" title="通信类">通信类</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" title="第一部分     认识Linux及Linux主机规划与安装">第一部分     认识Linux及Linux主机规划与安装</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+<a href="/wpx.github.io/categories/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/" title="分类于 文献神器">文献神器</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" title="第五部分   Linux系统管理员">第五部分   Linux系统管理员</a></span>
+    <span><a href="/wpx.github.io/2021/07/20/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E3%80%90%E6%AD%A4%E5%8F%B7%E7%A0%81%E6%97%A0%E6%B3%95%E7%94%A8%E4%BA%8E%E9%AA%8C%E8%AF%81%E3%80%91/" title="3.解决谷歌账号注册问题【此号码无法用于验证】">3.解决谷歌账号注册问题【此号码无法用于验证】</a></span>
   </li>
 
       
@@ -531,10 +529,19 @@ Linux 共享文件夹 - 笔记类 |
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E6%97%A5%E8%AE%B0/" title="分类于 日记">日记</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E6%97%A5%E8%AE%B0/3/" title="日记">日记</a></span>
+    <span><a href="/wpx.github.io/2021/08/19/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/C%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/" title="分类于 嵌入式类">嵌入式类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/06/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/2/" title="嵌入式">嵌入式</a></span>
   </li>
 
   </ul>
@@ -559,13 +566,13 @@ Linux 共享文件夹 - 笔记类 |
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">46k 字</span>
+    <span title="站点总字数">49k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 分钟</span>
+    <span title="站点阅读时长">44 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

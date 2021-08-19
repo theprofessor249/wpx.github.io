@@ -118,12 +118,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr9eabjtd6j30et08cdfz.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr9eakuadlj60hs08r0t102.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93a82b6gj30bu06o74p.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr9eaqc9byj30eu08c74g.jpg"></li>
           <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9eavyxm1j30dw099mxl.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9e9f4zcuj30e108cjrt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93a9b705j31hc0u0jui.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr9eakuadlj60hs08r0t102.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr93aa5hgvj31hc0u076z.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr93abz7d5j31c00u0qb9.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9eadw8jbj30dw09xjrt.jpg"></li>
         </ul>
       </div>
     </header>
@@ -169,36 +169,26 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="第一部分-认识linux及linux主机规划与安装"><a class="anchor" href="#第一部分-认识linux及linux主机规划与安装">#</a> 第一部分     认识 Linux 及 Linux 主机规划与安装</h1>
-<h2 id="什么是linux"><a class="anchor" href="#什么是linux">#</a> 什么是 linux</h2>
-<h3 id="什么时linux"><a class="anchor" href="#什么时linux">#</a> 什么时 Linux</h3>
-<p>超级计算机：超级计算机是运行速度最快的计算机，主要用于需要有高速计算的项目中，如国防军事，气象预测，太空科技等</p>
-<p>大型机：大型机具有数个高速 CPU，功能上虽不及超级计算机，但可用来处理大量数据与复杂的运算</p>
-<p>小型机：小型机具有大型机同时支持多用户的特性，通常用于科学研究，工程分析与工厂的流程管理</p>
+    <h1 id="第一部分-认识Linux及Linux主机规划与安装"><a href="#第一部分-认识Linux及Linux主机规划与安装" class="headerlink" title="第一部分     认识Linux及Linux主机规划与安装"></a>第一部分     认识Linux及Linux主机规划与安装</h1><h2 id="什么是linux"><a href="#什么是linux" class="headerlink" title="什么是linux"></a>什么是linux</h2><h3 id="什么时Linux"><a href="#什么时Linux" class="headerlink" title="什么时Linux"></a>什么时Linux</h3><p>超级计算机：超级计算机是运行速度最快的计算机，主要用于需要有高速计算的项目中，如国防军事，气象预测，太空科技等</p>
+<p>大型机：大型机具有数个高速CPU，功能上虽不及超级计算机，但可用来处理大量数据与复杂的运算</p>
+<p>小型机:小型机具有大型机同时支持多用户的特性，通常用于科学研究，工程分析与工厂的流程管理</p>
 <p>微机：又称个人计算机，微机体积小，价格低，但功能完备</p>
-<h3 id="什么是操作系统"><a class="anchor" href="#什么是操作系统">#</a> 什么是操作系统</h3>
-<p>操作系统能正确地控制硬件工作，该系统就称为操作系统。操作系统可以管理整台计算机的硬件，可以控制 CPU 进行正确的计算，可以分辨硬盘里的数据并进行读取，它还必须能够识别所有的适配卡，这样才能正确地使用所有的硬件。<br />
-比肩完整的操作系统包含两个组件，一个是核心与其提供的接口工具，另一个是利用核心提供的接口工具所开发的软件。</p>
-<h3 id="什么是核心"><a class="anchor" href="#什么是核心">#</a> 什么是核心</h3>
-<p>核心就是 Kernel，它是操作系统最底层的东西，每个操作系统都有自己的核心，由它来掌管整个硬件资源的工作状态。当有新的硬件加入到系统中时，若核心并没有支持它，这个新硬件就无法工作，因为控制它的核心并不认识它，</p>
+<h3 id="什么是操作系统"><a href="#什么是操作系统" class="headerlink" title="什么是操作系统"></a>什么是操作系统</h3><p>操作系统能正确地控制硬件工作，该系统就称为操作系统。操作系统可以管理整台计算机的硬件，可以控制CPU进行正确的计算，可以分辨硬盘里的数据并进行读取，它还必须能够识别所有的适配卡，这样才能正确地使用所有的硬件。<br>比肩完整的操作系统包含两个组件，一个是核心与其提供的接口工具，另一个是利用核心提供的接口工具所开发的软件。</p>
+<h3 id="什么是核心"><a href="#什么是核心" class="headerlink" title="什么是核心"></a>什么是核心</h3><p>核心就是Kernel，它是操作系统最底层的东西，每个操作系统都有自己的核心，由它来掌管整个硬件资源的工作状态。当有新的硬件加入到系统中时，若核心并没有支持它，这个新硬件就无法工作，因为控制它的核心并不认识它，</p>
 <p><strong>核心所要管理的事项：</strong></p>
 <p>系统调用接口：通过接口，程序开发人员可以轻松地与核心沟通，进一步利用硬件资源</p>
-<p>进程控制：在多任务环境中，一台计算机可能同时有很多地作业等待 CPU 运算处理，核心这时必须能够控制这些作业并有效地分配 CPU 地资源</p>
+<p>进程控制：在多任务环境中，一台计算机可能同时有很多地作业等待CPU运算处理，核心这时必须能够控制这些作业并有效地分配CPU地资源</p>
 <p>内存管理：控制整个系统地内存，如果内存不足，核心还能提供虚拟内存地功能</p>
 <p>文件系统管理：文件系统地管理，如果核心不能识别某个文件系统，那么将无法使用该文件格式地文件</p>
-<p>设备驱动程序：” 可加载模块 “功能可以将驱动程序编辑成模块，而不需要重新编译核心</p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjui0sasej30iv0bcjst.jpg" alt="" /></p>
-<h3 id="下面为主要地linux版本地发行者网址"><a class="anchor" href="#下面为主要地linux版本地发行者网址">#</a> 下面为主要地 Linux 版本地发行者网址</h3>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjv6ra23yj30nv0joadz.jpg" alt="" /></p>
-<h3 id="其他相关信息"><a class="anchor" href="#其他相关信息">#</a> 其他相关信息</h3>
-<p><strong>各个版本也都要遵循 LSB 地规范，硬软件开发人员也会遵照 LSB，                                  LSB：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51eGJhc2Uub3JnLw==">http://www.linuxbase.org/</span></strong></p>
-<p>服务器：提供 Internet 一种以上网络服务地主机，自己架设一台邮件服务器也是小型地服务器</p>
-<p>工作站：仅提供给一组特定人员进行数值分析，科学研究。只要是没有对 Internet 提供网络服务地，那就是工作站，当然也包括所谓地终端</p>
+<p>设备驱动程序：”可加载模块“功能可以将驱动程序编辑成模块，而不需要重新编译核心</p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjui0sasej30iv0bcjst.jpg"></p>
+<h3 id="下面为主要地Linux版本地发行者网址"><a href="#下面为主要地Linux版本地发行者网址" class="headerlink" title="下面为主要地Linux版本地发行者网址"></a>下面为主要地Linux版本地发行者网址</h3><p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjv6ra23yj30nv0joadz.jpg"></p>
+<h3 id="其他相关信息"><a href="#其他相关信息" class="headerlink" title="其他相关信息"></a>其他相关信息</h3><p><strong>各个版本也都要遵循LSB地规范，硬软件开发人员也会遵照LSB，                                  LSB：<span class="exturl" data-url="aHR0cDovL3d3dy5saW51eGJhc2Uub3JnLw==">http://www.linuxbase.org/</span></strong></p>
+<p>服务器：提供Internet一种以上网络服务地主机，自己架设一台邮件服务器也是小型地服务器</p>
+<p>工作站：仅提供给一组特定人员进行数值分析，科学研究。只要是没有对Internet提供网络服务地，那就是工作站，当然也包括所谓地终端</p>
 <p>终端：就是最终用户地那台计算机。例如笔者使用地机器连接上主机来工作，那么，这台计算机就可以称为终端</p>
-<h2 id="如何学习linux"><a class="anchor" href="#如何学习linux">#</a> 如何学习 Linux</h2>
-<h3 id="linux地应用"><a class="anchor" href="#linux地应用">#</a> Linux 地应用</h3>
-<p><strong>网络服务器</strong>：承袭了 Unix 地高稳定性，Linux 地网络功能特别稳定与强大。作为网络服务器，例如 WWW，邮件服务器，文件服务器，FTP 服务器等</p>
-<p><strong>工作站计算机</strong>：工作站不提供 Internet 服务，工作站计算机与台式计算机不太一样，工作站通常面对比较重要地应用，如工程界流体力学地数值模式运算，娱乐界地特效处理，软件开发人员地工作平台。Linux 有强大地运算能力，支持相当广泛地 GCC 编译软件，在工作站中，它也是相当不错地一个操作系统。</p>
+<h2 id="如何学习Linux"><a href="#如何学习Linux" class="headerlink" title="如何学习Linux"></a>如何学习Linux</h2><h3 id="Linux地应用"><a href="#Linux地应用" class="headerlink" title="Linux地应用"></a>Linux地应用</h3><p><strong>网络服务器</strong>：承袭了Unix地高稳定性，Linux地网络功能特别稳定与强大。作为网络服务器，例如WWW，邮件服务器，文件服务器，FTP服务器等</p>
+<p><strong>工作站计算机</strong>：工作站不提供Internet服务，工作站计算机与台式计算机不太一样，工作站通常面对比较重要地应用，如工程界流体力学地数值模式运算，娱乐界地特效处理，软件开发人员地工作平台。Linux有强大地运算能力，支持相当广泛地GCC编译软件，在工作站中，它也是相当不错地一个操作系统。</p>
 <p><strong>台式计算机</strong>：办公室使用地。工作包括如下几种：</p>
 <p>上网浏览</p>
 <p>文字处理</p>
@@ -206,116 +196,112 @@
 <p>办公软件处理数据</p>
 <p>手法电子邮件</p>
 <p><strong>嵌入式系统：</strong> 小型电脑地开发。例如家电产品，PDA，手机，数字相机以及其他微型地计算机设备。这些计算机设备都是需要操作系统来控制，操作系统直接嵌入产品中。</p>
-<h3 id="基础学习"><a class="anchor" href="#基础学习">#</a> 基础学习</h3>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjw6g1zbvj30mo07n40k.jpg" alt="" /></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grjw9qu5v9j30o50g241v.jpg" alt="" /></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grjwbwqy4qj30m002sq3n.jpg" alt="" /></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjwhzpumhj30op07zdhx.jpg" alt="" /></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grjwknr4avj30mk06k0uk.jpg" alt="" /></p>
-<h2 id="linux主机地规划"><a class="anchor" href="#linux主机地规划">#</a> Linux 主机地规划</h2>
-<h3 id="认识主机硬件主件"><a class="anchor" href="#认识主机硬件主件">#</a> 认识主机硬件主件</h3>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjwqsupd0j30o00nddj9.jpg" alt="" /></p>
-<h3 id="电脑槽口图"><a class="anchor" href="#电脑槽口图">#</a> 电脑槽口图</h3>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjwwx42mcj30dn0d70ts.jpg" alt="" /></p>
-<p><strong>1. 中央处理器</strong></p>
+<h3 id="基础学习"><a href="#基础学习" class="headerlink" title="基础学习"></a>基础学习</h3><p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjw6g1zbvj30mo07n40k.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grjw9qu5v9j30o50g241v.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grjwbwqy4qj30m002sq3n.jpg"></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grjwhzpumhj30op07zdhx.jpg"></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grjwknr4avj30mk06k0uk.jpg"></p>
+<h2 id="Linux主机地规划"><a href="#Linux主机地规划" class="headerlink" title="Linux主机地规划"></a>Linux主机地规划</h2><h3 id="认识主机硬件主件"><a href="#认识主机硬件主件" class="headerlink" title="认识主机硬件主件"></a>认识主机硬件主件</h3><p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjwqsupd0j30o00nddj9.jpg"></p>
+<h3 id="电脑槽口图"><a href="#电脑槽口图" class="headerlink" title="电脑槽口图"></a>电脑槽口图</h3><p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8grjwwx42mcj30dn0d70ts.jpg"></p>
+<p><strong>1.中央处理器</strong></p>
 <p>（</p>
-<p><strong>双核心</strong>：是指在一个 CPU 里有两个运算单元，该双核心地 CPU 有两个可以运算地实体 CPU</p>
-<p><strong>频率</strong>：就是单位时间地运算次数。频率越高，表示设备地运算次数越多，速度就会越快</p>
+<p><strong>双核心</strong>：是指在一个CPU里有两个运算单元，该双核心地CPU有两个可以运算地实体CPU</p>
+<p><strong>频率</strong>:就是单位时间地运算次数。频率越高，表示设备地运算次数越多，速度就会越快</p>
 <p>）</p>
 <blockquote>
-<p>CPU 有倍频与外频之分，外频是指 CPU 与接口设备进行数据传输 / 运算地速度，倍频则是指 CPU 本身运算时地运算速度。两者相乘才是 CPU 地频率。与外频有关的是内存与主板芯片集。</p>
+<p>CPU有倍频与外频之分，外频是指CPU与接口设备进行数据传输/运算地速度，倍频则是指CPU本身运算时地运算速度。两者相乘才是CPU地频率。与外频有关的是内存与主板芯片集。</p>
 </blockquote>
-<p>-CPU 外频与倍频：：133（外频）*7（倍频）MHZ；</p>
-<p>-RAM 频率：通常与 CPU 的外频相同，为 133MHz；</p>
-<p>-PCI 接口（包括网卡，声卡等的接口）133/4=33MHz；</p>
-<p>-AGP 接口：133/2=66MHz（这是 AGP 正常的频率）</p>
+<p>-CPU外频与倍频：：133（外频）*7（倍频）MHZ；</p>
+<p>-RAM频率：通常与CPU的外频相同，为133MHz；</p>
+<p>-PCI接口（包括网卡，声卡等的接口）133/4=33MHz；</p>
+<p>-AGP接口：133/2=66MHz（这是AGP正常的频率）</p>
 <blockquote>
-<p>外频是可以超频的。如果 CPU 外部频率是 133. 通过工具，就可以将 133 提升到比较高的频率，就叫超频。如果超频高出正常值很多，虽然设备的运行频率都会提升，但是也可能会造成系统不稳定，常常死机，或者造成某些组件的寿命减短。</p>
+<p>外频是可以超频的。如果CPU外部频率是133.通过工具，就可以将133提升到比较高的频率，就叫超频。如果超频高出正常值很多，虽然设备的运行频率都会提升，但是也可能会造成系统不稳定，常常死机，或者造成某些组件的寿命减短。</p>
 </blockquote>
-<p><strong>2. 内存</strong></p>
+<p><strong>2.内存</strong></p>
 <blockquote>
-<p>操作系统的核心，软硬件的驱动程序，所有要读取的文件，都需要先读入内存之后，才传输给 CPU 来运行；也会将常用的文件或程序等数据存储在内存中，而不直接删除，如此一来，下次访问这些数据时，不需要访问外部设备就能读取，提高了系统的运行速度；内存规格主要有两种：SDRAM 与 DDR。</p>
+<p>操作系统的核心，软硬件的驱动程序，所有要读取的文件，都需要先读入内存之后，才传输给CPU来运行；也会将常用的文件或程序等数据存储在内存中，而不直接删除，如此一来，下次访问这些数据时，不需要访问外部设备就能读取，提高了系统的运行速度；内存规格主要有两种：SDRAM与DDR。</p>
 </blockquote>
-<p><strong>3. 显卡 VGA 卡</strong></p>
+<p><strong>3.显卡VGA卡</strong></p>
 <blockquote>
-<p>为了避免由于大量的 3D 画面造成 CPU 的负载过大，显卡开发商在显卡上安装了一个可以处理这些很耗 CPU 运算时间的硬件 GPU，来处理画面数据；当前显卡有两种规格：一种是以传统的 AGP 接口来进行影像数据的传输，另一种则是以更快的 PCI Express 接口来传输数据；VGA 卡上也有一个内存，该内存大小可以影响屏幕输出的分辨率与画面质量，它是直接嵌入在显卡上的。</p>
+<p>为了避免由于大量的3D画面造成CPU的负载过大，显卡开发商在显卡上安装了一个可以处理这些很耗CPU运算时间的硬件GPU，来处理画面数据；当前显卡有两种规格：一种是以传统的AGP接口来进行影像数据的传输，另一种则是以更快的PCI Express接口来传输数据；VGA卡上也有一个内存，该内存大小可以影响屏幕输出的分辨率与画面质量，它是直接嵌入在显卡上的。</p>
 </blockquote>
-<p><strong>4. 硬盘与访问设备</strong></p>
+<p><strong>4.硬盘与访问设备</strong></p>
 <blockquote>
-<p>主机需要加载数据，这些数据就存放在主机的硬盘上。我们可以通过便携式存储媒体，例如光盘，Zip 磁盘，软盘等来传递数据。主流的硬盘访问接口应该是 SATA 与 IDE；当选购硬盘是，除了注意硬盘的容量大小之外，还要知道硬盘的转速以及缓存的大小。我们要求是，转速至少为 7200 转，缓存最好选择 8MB。</p>
+<p>主机需要加载数据，这些数据就存放在主机的硬盘上。我们可以通过便携式存储媒体，例如光盘，Zip磁盘，软盘等来传递数据。主流的硬盘访问接口应该是SATA与IDE；当选购硬盘是，除了注意硬盘的容量大小之外，还要知道硬盘的转速以及缓存的大小。我们要求是，转速至少为7200转，缓存最好选择8MB。</p>
 </blockquote>
-<p><strong>5.PCI 适配卡</strong></p>
-<blockquote></blockquote>
-<p>网卡，声卡，特数功能卡等，都是通过 PCI 插槽来安装的</p>
-<p>网卡：目前采用的是 RJ-45 的接口插孔，这种接口有点像电话线插孔，不过要稍微大一些。由于网络需求提高，最高网卡速度已达到吉比特（Gbit/s）。也可以选购 10/100/1000Mbit/s 的网卡。</p>
-<p>SCSI 适配卡：可以用来连接 SCSI 接口的设备。由于 SCSI 接口的设备比较稳定，而且设备运行速度较快，耗费 CPU 资源较少。SCSI 适配卡是大型服务器主机的硬盘传输接口，如果是个人计算机，采用 IDE/SATA 接口就够了，SCSI 接口的硬盘很贵。</p>
-<p><strong>6. 主板</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grk3ecgjwij30fn0argmc.jpg" alt="" /></p>
+<p><strong>5.PCI适配卡</strong></p>
 <blockquote>
-<p>芯片集：就是负责与 CPU，RAM，输出与输入设备通信；CPU 的外频就是指芯片集与其他设备通信的速度；芯片集只能支持集中规格，无法支持所有的规格，所以在选购时，需要一起考虑。</p>
 </blockquote>
+<p>网卡，声卡，特数功能卡等，都是通过PCI插槽来安装的</p>
+<p>网卡：目前采用的是RJ-45的接口插孔，这种接口有点像电话线插孔，不过要稍微大一些。由于网络需求提高，最高网卡速度已达到吉比特（Gbit/s）。也可以选购10/100/1000Mbit/s的网卡。</p>
+<p>SCSI适配卡：可以用来连接SCSI接口的设备。由于SCSI接口的设备比较稳定，而且设备运行速度较快，耗费CPU资源较少。SCSI适配卡是大型服务器主机的硬盘传输接口，如果是个人计算机，采用IDE/SATA接口就够了，SCSI接口的硬盘很贵。</p>
+<p><strong>6.主板</strong></p>
+<p> <img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grk3ecgjwij30fn0argmc.jpg"></p>
 <blockquote>
-<p>I/O 地址与 IRQ 中断：既然主板是负责各个计算机系统组件之间的通信，有输入输出，又有不同的储存设备，所以利用 I/O 与 IRQ，使得每台设备都有自己的地址，如若发生端口之间的冲突，可以手动设置各台设备的 I/O, 还可利用 IRQ 中断。</p>
+<p>芯片集：就是负责与CPU，RAM，输出与输入设备通信；CPU的外频就是指芯片集与其他设备通信的速度；芯片集只能支持集中规格，无法支持所有的规格，所以在选购时，需要一起考虑。</p>
 </blockquote>
 <blockquote>
-<p>BIOS：是 Basic Input/Output System（基本输入 / 输出系统）的缩写，上面提到的 I/O,IRQ 等，都可以通过操作系统，亦可以通过主板提供的 BIOS 功能来设置。启动的时候，屏幕出现的版本信息就是 BIOS 的设置。可以在机器启动时按下 DEL，来设置启动顺序，I/O 以及 IRQ。</p>
+<p>I/O地址与IRQ中断：既然主板是负责各个计算机系统组件之间的通信，有输入输出，又有不同的储存设备，所以利用I/O与IRQ，使得每台设备都有自己的地址，如若发生端口之间的冲突，可以手动设置各台设备的I/O,还可利用IRQ中断。</p>
 </blockquote>
 <blockquote>
-<p>其他输出输入接口：<strong>PS2 接口</strong>：键盘与鼠标的接口，插孔为圆形的；**9 针串行端口：** 以前用来连接鼠标的接口，常称为 coml；**25 针并行端口：** 通常用来连接打印机，LPT1；** 声音输出，输入与麦克风：** 圆形插孔，主板上必须装有内置音效芯片，才会有这三个设备；**USB：** 支持即插即用。</p>
+<p>BIOS：是Basic Input/Output System（基本输入/输出系统）的缩写，上面提到的I/O,IRQ等，都可以通过操作系统，亦可以通过主板提供的BIOS功能来设置。启动的时候，屏幕出现的版本信息就是BIOS的设置。可以在机器启动时按下DEL，来设置启动顺序，I/O以及IRQ。</p>
 </blockquote>
 <blockquote>
-<p>电源：电源至少也要 300W 以上才能够主机使用，有些特殊的主机要求至少 400-500W 以上的电源。</p>
+<p>其他输出输入接口：<strong>PS2接口</strong>：键盘与鼠标的接口，插孔为圆形的；<strong>9针串行端口：</strong>以前用来连接鼠标的接口，常称为coml；<strong>25针并行端口：</strong>通常用来连接打印机，LPT1；<strong>声音输出，输入与麦克风：</strong>圆形插孔，主板上必须装有内置音效芯片，才会有这三个设备；<strong>USB：</strong>支持即插即用。</p>
 </blockquote>
 <blockquote>
-<p>关于速度 / 稳定性的问题：<strong>系统超频；</strong> <strong>电源不稳定；</strong> <strong>内存负荷；</strong> <strong>系统过热；</strong></p>
+<p>电源：电源至少也要300W以上才能够主机使用，有些特殊的主机要求至少400-500W以上的电源。</p>
 </blockquote>
-<h3 id="适合主机的硬件配置"><a class="anchor" href="#适合主机的硬件配置">#</a> 适合主机的硬件配置</h3>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grk4e7ljnsj30o60kntcc.jpg" alt="" /></p>
-<h3 id="linux中的硬件设备号"><a class="anchor" href="#linux中的硬件设备号">#</a> Linux 中的硬件设备号</h3>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk4dj6cdqj30o80k2766.jpg" alt="" /></p>
-<h3 id="选择适当的版本"><a class="anchor" href="#选择适当的版本">#</a> 选择适当的版本</h3>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grk4hfc652j30nl0800vq.jpg" alt="" /></p>
-<h3 id="双系统安装步骤"><a class="anchor" href="#双系统安装步骤">#</a> 双系统安装步骤</h3>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0NjI0NTM5L2FydGljbGUvZGV0YWlscy84MTc3NTYzNT9vcHNfcmVxdWVzdF9taXNjPSZhbXA7cmVxdWVzdF9pZD0mYW1wO2Jpel9pZD0xMDImYW1wO3V0bV90ZXJtPXVidW50dSVFNSU4RiU4QyVFNyVCMyVCQiVFNyVCQiU5RiVFNSVBRSU4OSVFOCVBMyU4NSZhbXA7dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3NlYXJjaF9yZXN1bHQubm9uZS10YXNrLWJsb2ctMg==">https://blog.csdn.net/qq_24624539/article/details/81775635?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=ubuntu 双系统安装 &amp; utm_medium=distribute.pc_search_result.none-task-blog-2</span><sub>all</sub>sobaiduweb~default-1-.nonecase&amp;spm=1018.2226.3001.4187</p>
-<h2 id="命令行模式"><a class="anchor" href="#命令行模式">#</a> 命令行模式</h2>
-<ul>
+<blockquote>
+<p>关于速度/稳定性的问题：<strong>系统超频；</strong> <strong>电源不稳定；</strong> <strong>内存负荷；</strong> <strong>系统过热；</strong></p>
+</blockquote>
+<h3 id="适合主机的硬件配置"><a href="#适合主机的硬件配置" class="headerlink" title="适合主机的硬件配置"></a>适合主机的硬件配置</h3><p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8grk4e7ljnsj30o60kntcc.jpg"></p>
+<h3 id="Linux中的硬件设备号"><a href="#Linux中的硬件设备号" class="headerlink" title="Linux中的硬件设备号"></a>Linux中的硬件设备号</h3><p> <img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk4dj6cdqj30o80k2766.jpg"></p>
+<h3 id="选择适当的版本"><a href="#选择适当的版本" class="headerlink" title="选择适当的版本"></a>选择适当的版本</h3><p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8grk4hfc652j30nl0800vq.jpg"></p>
+<h3 id="双系统安装步骤"><a href="#双系统安装步骤" class="headerlink" title="双系统安装步骤"></a>双系统安装步骤</h3><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0NjI0NTM5L2FydGljbGUvZGV0YWlscy84MTc3NTYzNT9vcHNfcmVxdWVzdF9taXNjPSZhbXA7cmVxdWVzdF9pZD0mYW1wO2Jpel9pZD0xMDImYW1wO3V0bV90ZXJtPXVidW50dSVFNSU4RiU4QyVFNyVCMyVCQiVFNyVCQiU5RiVFNSVBRSU4OSVFOCVBMyU4NSZhbXA7dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3NlYXJjaF9yZXN1bHQubm9uZS10YXNrLWJsb2ctMn5hbGx+c29iYWlkdXdlYn5kZWZhdWx0LTEtLm5vbmVjYXNlJmFtcDtzcG09MTAxOC4yMjI2LjMwMDEuNDE4Nw==">https://blog.csdn.net/qq_24624539/article/details/81775635?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-.nonecase&amp;spm=1018.2226.3001.4187</span></p>
+<h2 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h2><ul>
 <li>Ctrl Alt Backspace：<strong>重新启动</strong></li>
-<li>Ctrl Alt 【F1】<sub>【F6】：** 命令登入 tty1</sub>tty6 终端 **</li>
+<li>Ctrl Alt 【F1】<del>【F6】：**命令登入tty1</del>tty6终端**</li>
 <li>Ctrl Alt 【7】：<strong>图形界面桌面</strong></li>
-<li>startx:<strong> 启动图形界面</strong></li>
-<li><strong>默认 root 的提示符为 #；一般身份用户的提示符为 $</strong></li>
-<li>exit:<strong> 注销</strong></li>
+<li>startx:<strong>启动图形界面</strong></li>
+<li><strong>默认root的提示符为#；一般身份用户的提示符为$</strong></li>
+<li>exit:<strong>注销</strong></li>
 <li>date +%Y%m%d：<strong>显示日期</strong></li>
 <li>cal  month  year：<strong>列出月份的月历</strong></li>
-<li>bc:<strong> 计算器</strong>（quit 离开计算器）</li>
+<li>bc:<strong>计算器</strong>（quit离开计算器）</li>
 <li>Tab：<strong>大小写切换键，且具有命令补全与文件补齐的功能</strong></li>
 <li>Ctrl  C：<strong>中止当前程序</strong></li>
-<li>Ctrl  d：<strong>文件结束或输入结束，可用来取代 exit 的输入</strong></li>
-<li>man  命令：<strong>命令使用指南</strong></li>
+<li>Ctrl  d：<strong>文件结束或输入结束，可用来取代exit的输入</strong></li>
+<li>man  命令：<strong>命令使用指南</strong> </li>
 </ul>
 <blockquote>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk6cv0b1kj30of0lamzm.jpg" alt="" /><br />
-man -f  命令：获取关于命令的信息</p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk6cv0b1kj30of0lamzm.jpg"><br>man -f  命令：获取关于命令的信息</p>
 </blockquote>
 <blockquote>
-<p>man 数字  命令：获取 man N page 页中的文件数据</p>
+<p>man 数字  命令：获取man N page页中的文件数据</p>
 </blockquote>
 <blockquote>
 <p>man -k  命令：找到更多的帮助文件数据</p>
 </blockquote>
 <ul>
-<li>who：<strong>看谁在线</strong></li>
-<li>netstat -a：<strong>查看网络的联机状态</strong></li>
-<li>ps  -aux：<strong>查看后台执行的程序</strong></li>
-<li>shutdown</li>
-</ul>
+<li><p>who：<strong>看谁在线</strong></p>
+</li>
+<li><p>netstat -a：<strong>查看网络的联机状态</strong></p>
+</li>
+<li><p>ps  -aux：<strong>查看后台执行的程序</strong></p>
+</li>
+<li><p>shutdown</p>
 <blockquote>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk6tpdxsyj30ni0hd426.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8grk6tpdxsyj30ni0hd426.jpg"></p>
 </blockquote>
-<ul>
-<li>sync：<strong>在内存中尚未更新的数据就会写入硬盘中</strong></li>
-<li>reboot:<strong> 重启</strong></li>
-<li>halt,poweroff：<strong>关机</strong></li>
+</li>
+<li><p>sync：<strong>在内存中尚未更新的数据就会写入硬盘中</strong></p>
+</li>
+<li><p>reboot:<strong>重启</strong></p>
+</li>
+<li><p>halt,poweroff：<strong>关机</strong></p>
+</li>
 </ul>
 
   </div>
@@ -380,7 +366,7 @@ man -f  命令：获取关于命令的信息</p>
     <div class="item right">
       
 
-  <a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr9eaqc9byj30eu08c74g.jpg" title="第二部分    Linux文件，目录与磁盘格式">
+  <a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr9eacfk4fj30dw08pmxs.jpg" title="第二部分    Linux文件，目录与磁盘格式">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 笔记类</span>
   <h3>第二部分    Linux文件，目录与磁盘格式</h3>
@@ -402,7 +388,7 @@ man -f  命令：获取关于命令的信息</p>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E8%AE%A4%E8%AF%86linux%E5%8F%8Alinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 第一部分     认识 Linux 及 Linux 主机规划与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">1.1.</span> <span class="toc-text"> 什么是 linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6linux"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 什么时 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 什么是操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A0%B8%E5%BF%83"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 什么是核心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E9%9D%A2%E4%B8%BA%E4%B8%BB%E8%A6%81%E5%9C%B0linux%E7%89%88%E6%9C%AC%E5%9C%B0%E5%8F%91%E8%A1%8C%E8%80%85%E7%BD%91%E5%9D%80"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 下面为主要地 Linux 版本地发行者网址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 其他相关信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0linux"><span class="toc-number">1.2.</span> <span class="toc-text"> 如何学习 Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E5%9C%B0%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text"> Linux 地应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 基础学习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E4%B8%BB%E6%9C%BA%E5%9C%B0%E8%A7%84%E5%88%92"><span class="toc-number">1.3.</span> <span class="toc-text"> Linux 主机地规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E4%B8%BB%E6%9C%BA%E7%A1%AC%E4%BB%B6%E4%B8%BB%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 认识主机硬件主件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E6%A7%BD%E5%8F%A3%E5%9B%BE"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 电脑槽口图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%82%E5%90%88%E4%B8%BB%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 适合主机的硬件配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E4%B8%AD%E7%9A%84%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87%E5%8F%B7"><span class="toc-number">1.3.4.</span> <span class="toc-text"> Linux 中的硬件设备号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%80%82%E5%BD%93%E7%9A%84%E7%89%88%E6%9C%AC"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 选择适当的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 双系统安装步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text"> 命令行模式</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">第一部分     认识Linux及Linux主机规划与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">1.1.</span> <span class="toc-text">什么是linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6Linux"><span class="toc-number">1.1.1.</span> <span class="toc-text">什么时Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.2.</span> <span class="toc-text">什么是操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A0%B8%E5%BF%83"><span class="toc-number">1.1.3.</span> <span class="toc-text">什么是核心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E9%9D%A2%E4%B8%BA%E4%B8%BB%E8%A6%81%E5%9C%B0Linux%E7%89%88%E6%9C%AC%E5%9C%B0%E5%8F%91%E8%A1%8C%E8%80%85%E7%BD%91%E5%9D%80"><span class="toc-number">1.1.4.</span> <span class="toc-text">下面为主要地Linux版本地发行者网址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.5.</span> <span class="toc-text">其他相关信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0Linux"><span class="toc-number">1.2.</span> <span class="toc-text">如何学习Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%9C%B0%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">Linux地应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">基础学习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%BB%E6%9C%BA%E5%9C%B0%E8%A7%84%E5%88%92"><span class="toc-number">1.3.</span> <span class="toc-text">Linux主机地规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E4%B8%BB%E6%9C%BA%E7%A1%AC%E4%BB%B6%E4%B8%BB%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">认识主机硬件主件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E6%A7%BD%E5%8F%A3%E5%9B%BE"><span class="toc-number">1.3.2.</span> <span class="toc-text">电脑槽口图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%82%E5%90%88%E4%B8%BB%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.3.</span> <span class="toc-text">适合主机的硬件配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87%E5%8F%B7"><span class="toc-number">1.3.4.</span> <span class="toc-text">Linux中的硬件设备号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%80%82%E5%BD%93%E7%9A%84%E7%89%88%E6%9C%AC"><span class="toc-number">1.3.5.</span> <span class="toc-text">选择适当的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.3.6.</span> <span class="toc-text">双系统安装步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">命令行模式</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -420,7 +406,7 @@ man -f  命令：获取关于命令的信息</p>
 <nav class="state">
     <div class="item posts">
       <a href="/wpx.github.io/archives/">
-        <span class="count">12</span>
+        <span class="count">18</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -513,10 +499,29 @@ man -f  命令：获取关于命令的信息</p>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+<a href="/wpx.github.io/categories/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/" title="分类于 海思疑解">海思疑解</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" title="第二部分    Linux文件，目录与磁盘格式">第二部分    Linux文件，目录与磁盘格式</a></span>
+    <span><a href="/wpx.github.io/2021/07/21/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/XShell%E8%BF%9E%E6%8E%A5%E4%B8%B2%E5%8F%A3/" title="2.XShell连接串口">2.XShell连接串口</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/" title="分类于 海思疑解">海思疑解</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/07/21/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/%E6%B5%B7%E6%80%9D%E8%A7%82%E7%9C%8B%E6%B5%81%E7%A8%8B/" title="海思观看流程">海思观看流程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/wpx.github.io/2021/08/19/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/C%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B/" title="未命名">未命名</a></span>
   </li>
 
       
@@ -533,10 +538,10 @@ man -f  命令：获取关于命令的信息</p>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E9%80%9A%E4%BF%A1%E7%B1%BB/" title="分类于 通信类">通信类</a>
+<a href="/wpx.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%B1%BB/" title="分类于 网络编程类">网络编程类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E9%80%9A%E4%BF%A1%E7%B1%BB/5/" title="通信类">通信类</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%B1%BB/6/" title="简单的server-client程序">简单的server-client程序</a></span>
   </li>
 
       
@@ -546,7 +551,7 @@ man -f  命令：获取关于命令的信息</p>
 <a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/" title="第五部分   Linux系统管理员">第五部分   Linux系统管理员</a></span>
+    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" title="第四部分   Linux用户管理">第四部分   Linux用户管理</a></span>
   </li>
 
       
@@ -556,17 +561,7 @@ man -f  命令：获取关于命令的信息</p>
 <a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%20%20%20%20%E8%AE%A4%E8%AF%86Linux%E5%8F%8ALinux%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E4%B8%8E%E5%AE%89%E8%A3%85/" title="第一部分     认识Linux及Linux主机规划与安装">第一部分     认识Linux及Linux主机规划与安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E6%97%A5%E8%AE%B0/" title="分类于 日记">日记</a>
-</div>
-
-    <span><a href="/wpx.github.io/2021/06/24/%E6%97%A5%E8%AE%B0/3/" title="日记">日记</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" title="第二部分    Linux文件，目录与磁盘格式">第二部分    Linux文件，目录与磁盘格式</a></span>
   </li>
 
       
@@ -583,30 +578,20 @@ man -f  命令：获取关于命令的信息</p>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+<a href="/wpx.github.io/categories/%E9%80%9A%E4%BF%A1%E7%B1%BB/" title="分类于 通信类">通信类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" title="Linux 共享文件夹">Linux 共享文件夹</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/%E9%80%9A%E4%BF%A1%E7%B1%BB/5/" title="通信类">通信类</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+<a href="/wpx.github.io/categories/ubuntu/" title="分类于 ubuntu">ubuntu</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%20%20%20%E5%AD%A6%E4%B9%A0Shell%E5%92%8CShell%E8%84%9A%E6%9C%AC/" title="第三部分   学习Shell和Shell脚本">第三部分   学习Shell和Shell脚本</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E8%8B%B1%E8%AF%AD%E7%B1%BB/" title="分类于 英语类">英语类</a>
-</div>
-
-    <span><a href="/wpx.github.io/2021/06/24/%E8%8B%B1%E8%AF%AD%E7%B1%BB/6/" title="英语类">英语类</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/ubuntu/1/" title="ubuntu">ubuntu</a></span>
   </li>
 
   </ul>
@@ -631,13 +616,13 @@ man -f  命令：获取关于命令的信息</p>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">46k 字</span>
+    <span title="站点总字数">49k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 分钟</span>
+    <span title="站点阅读时长">44 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
