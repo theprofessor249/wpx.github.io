@@ -77,7 +77,7 @@
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>14k</span>
+    <span>15k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -118,12 +118,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/006vONQWly8gr9eacfk4fj30dw08pmxs.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr9eaqc9byj30eu08c74g.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9e9f4zcuj30e108cjrt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr9eakuadlj60hs08r0t102.jpg"></li>
           <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93a82b6gj30bu06o74p.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93anasctj31hc0u077s.jpg"></li>
           <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006vONQWly8gr93actdnfj618g0p0acp02.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr93as28fzj30zk0k0q3u.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/006vONQWly8gr9e9f4zcuj30e108cjrt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006vONQWly8gr9eaqc9byj30eu08c74g.jpg"></li>
         </ul>
       </div>
     </header>
@@ -169,549 +169,706 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="启动关机的流程与加载程序"><a href="#启动关机的流程与加载程序" class="headerlink" title="启动关机的流程与加载程序"></a>启动关机的流程与加载程序</h1><h2 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h2><p><strong>启动过程需要加载核心，让核心来驱动整个硬件，启动过程如下：</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/9c0d8c3d51f6a189978aade18172391c"></p>
-<h3 id="引导加载程序与核心载入"><a href="#引导加载程序与核心载入" class="headerlink" title="引导加载程序与核心载入"></a>引导加载程序与核心载入</h3><p><strong>整个主机启动后，第一个读取的地方是BIOS，BIOS里记录了主机板的芯片集与相关的设置，如CPU与接口设备的通信频率、启动设备的搜索顺序、硬盘的大小与类型、系统时间、外部总线是否启动即插即用、各接口设备的I/O地址，以及与CPU通信的IRQ中断等信息；获取BIOS设置值后，系统会根据BIOS的数据，进行加电自检，然后初始化硬件检测，并设置PnP设备，确定可启动的设备后，开始读取启动设备的数据；启动流程读到硬盘的过程中，第一个要读取的就是该硬盘的主引导记录，系统可以由主要启动区安装的引导加载程序开始执行核心识别的工作。</strong></p>
-<p><strong>选择以grub程序启动，系统就会到该记录区去读取该操作系统的核心。良好的引导加载程序会具有如下两项功能：</strong></p>
+    <h1 id="启动关机的流程与加载程序"><a class="anchor" href="#启动关机的流程与加载程序">#</a> 启动关机的流程与加载程序</h1>
+<h2 id="启动流程"><a class="anchor" href="#启动流程">#</a> 启动流程</h2>
+<p><strong>启动过程需要加载核心，让核心来驱动整个硬件，启动过程如下：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/9c0d8c3d51f6a189978aade18172391c" alt="" /></p>
+<h3 id="引导加载程序与核心载入"><a class="anchor" href="#引导加载程序与核心载入">#</a> 引导加载程序与核心载入</h3>
+<p><strong>整个主机启动后，第一个读取的地方是 BIOS，BIOS 里记录了主机板的芯片集与相关的设置，如 CPU 与接口设备的通信频率、启动设备的搜索顺序、硬盘的大小与类型、系统时间、外部总线是否启动即插即用、各接口设备的 I/O 地址，以及与 CPU 通信的 IRQ 中断等信息；获取 BIOS 设置值后，系统会根据 BIOS 的数据，进行加电自检，然后初始化硬件检测，并设置 PnP 设备，确定可启动的设备后，开始读取启动设备的数据；启动流程读到硬盘的过程中，第一个要读取的就是该硬盘的主引导记录，系统可以由主要启动区安装的引导加载程序开始执行核心识别的工作。</strong></p>
+<p><strong>选择以 grub 程序启动，系统就会到该记录区去读取该操作系统的核心。良好的引导加载程序会具有如下两项功能：</strong></p>
 <ul>
-<li><p>菜单功能</p>
+<li>
+<p>菜单功能</p>
 </li>
-<li><p>指向功能</p>
+<li>
+<p>指向功能</p>
 </li>
 </ul>
-<p><strong>通过引导加载程序的管理而开始读取核心文件后，Linux就会将核心解压缩到主存储器中，并且利用核心的功能，开始测试与驱动各台外部设备，包括存储设备、CPU、网卡、声卡等。一般核心文件会放置/boot里，并且取名为/boot/vmlinux</strong></p>
-<p><strong>在加载核心的过程中，系统只会载入根目录，而且是以只读方式载入；有时为了某些功能可以用文件方式来读取；有时系统启动时，会建立虚拟盘，这就需要使用initrd以及linuxrc，利用引导加载程序的功能，可以在加载核心的时候，一起加载initrd的映像文件，系统会主动以initrd来建立虚拟盘，并且利用linuxrc程序来加载模块，linuxrc主要特点：</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8828554dba19d37c988b6450f5c03fc6"></p>
-<h3 id="第一个程序init及设置文件-etc-inittab与runlevel"><a href="#第一个程序init及设置文件-etc-inittab与runlevel" class="headerlink" title="第一个程序init及设置文件/etc/inittab与runlevel"></a>第一个程序init及设置文件/etc/inittab与runlevel</h3><p><strong>第一个执行的程序就是/sbin/init，它除了利用设置文件/etc/inittab来获取运行等级之外，还会通过运行等级的设置值启动不同的服务项目</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/744e67e69b45925055d78718e451ceec"></p>
-<p><strong>运算等级：就是通过设置运行等级，来规定系统用不同的服务来启动；根据有无网络与有无XWindow，分为6个运行等级</strong></p>
+<p><strong>通过引导加载程序的管理而开始读取核心文件后，Linux 就会将核心解压缩到主存储器中，并且利用核心的功能，开始测试与驱动各台外部设备，包括存储设备、CPU、网卡、声卡等。一般核心文件会放置 /boot 里，并且取名为 /boot/vmlinux</strong></p>
+<p><strong>在加载核心的过程中，系统只会载入根目录，而且是以只读方式载入；有时为了某些功能可以用文件方式来读取；有时系统启动时，会建立虚拟盘，这就需要使用 initrd 以及 linuxrc，利用引导加载程序的功能，可以在加载核心的时候，一起加载 initrd 的映像文件，系统会主动以 initrd 来建立虚拟盘，并且利用 linuxrc 程序来加载模块，linuxrc 主要特点：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8828554dba19d37c988b6450f5c03fc6" alt="" /></p>
+<h3 id="第一个程序init及设置文件etcinittab与runlevel"><a class="anchor" href="#第一个程序init及设置文件etcinittab与runlevel">#</a> 第一个程序 init 及设置文件 /etc/inittab 与 runlevel</h3>
+<p><strong>第一个执行的程序就是 /sbin/init，它除了利用设置文件 /etc/inittab 来获取运行等级之外，还会通过运行等级的设置值启动不同的服务项目</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/744e67e69b45925055d78718e451ceec" alt="" /></p>
+<p><strong>运算等级：就是通过设置运行等级，来规定系统用不同的服务来启动；根据有无网络与有无 XWindow，分为 6 个运行等级</strong></p>
 <ul>
-<li>/etc/inittab的信息</li>
+<li>/etc/inittab 的信息</li>
 </ul>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/8052a22e1a3fb3b9b08e29b010f7166b"></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/c23b8a52a02e2c2086412253591040d5"></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/8052a22e1a3fb3b9b08e29b010f7166b" alt="" /></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/c23b8a52a02e2c2086412253591040d5" alt="" /></p>
 <p><strong>结论</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/1eb89494bb05f7e9346b87bc479265cf"></p>
-<h3 id="init处理系统初始化流程（-etc-rc-d-rc-sysinit）"><a href="#init处理系统初始化流程（-etc-rc-d-rc-sysinit）" class="headerlink" title="init处理系统初始化流程（/etc/rc.d/rc.sysinit）"></a>init处理系统初始化流程（/etc/rc.d/rc.sysinit）</h3><p><strong>主要用于设置系统环境</strong></p>
-<p><strong>/etc/rc.d/rc.sysinit的主要工作：</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/05b15ca9f58e2ebaa1e9ef5eae47cc95"><br><img data-src="https://img02.sogoucdn.com/app/a/100520146/cd85aa507effc2879697835c97c3f96f"></p>
-<h3 id="启动系统服务与相关启动设置文件"><a href="#启动系统服务与相关启动设置文件" class="headerlink" title="启动系统服务与相关启动设置文件"></a>启动系统服务与相关启动设置文件</h3><p><strong>加载核心让整个系统准备接受命令，然后再经过/etc/rc.d/rc.sysinit的系统模块与相关硬件信息的初始化。还需我们启动系统所需要的各项服务，主机才能提供相关的网络或主机功能。根据再/etc/inittab里提到的运行等级设置值，就可以决定启动的服务项目。</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/1eb89494bb05f7e9346b87bc479265cf" alt="" /></p>
+<h3 id="init处理系统初始化流程etcrcdrcsysinit"><a class="anchor" href="#init处理系统初始化流程etcrcdrcsysinit">#</a> init 处理系统初始化流程（/etc/rc.d/rc.sysinit）</h3>
+<p><strong>主要用于设置系统环境</strong></p>
+<p><strong>/etc/rc.d/rc.sysinit 的主要工作：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/05b15ca9f58e2ebaa1e9ef5eae47cc95" alt="" /><br />
+<img data-src="https://img02.sogoucdn.com/app/a/100520146/cd85aa507effc2879697835c97c3f96f" alt="" /></p>
+<h3 id="启动系统服务与相关启动设置文件"><a class="anchor" href="#启动系统服务与相关启动设置文件">#</a> 启动系统服务与相关启动设置文件</h3>
+<p><strong>加载核心让整个系统准备接受命令，然后再经过 /etc/rc.d/rc.sysinit 的系统模块与相关硬件信息的初始化。还需我们启动系统所需要的各项服务，主机才能提供相关的网络或主机功能。根据再 /etc/inittab 里提到的运行等级设置值，就可以决定启动的服务项目。</strong></p>
 <p><strong>各种不同的服务其实还是相互关联的</strong></p>
-<p><strong>S或K后面接的数字就是执行的顺序：</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/be2d2d160b60a5e26239faeb0d3b9bf1"></p>
-<h3 id="用户自定义引导启动程序"><a href="#用户自定义引导启动程序" class="headerlink" title="用户自定义引导启动程序"></a>用户自定义引导启动程序</h3><p><strong>任何想要再启动时就执行的工作，直接写入/etc/rc.d/rc.local，那么该工作就会再启动的时候自动加载，而不等我们登录系统去启动；把自己制作的shell脚本的完整文件名写入/etc/rc.d/rc.local，启动时就睡执行我的shell脚本</strong></p>
-<h3 id="根据-etc-inittab设置加载终端或X-Window界面"><a href="#根据-etc-inittab设置加载终端或X-Window界面" class="headerlink" title="根据/etc/inittab设置加载终端或X-Window界面"></a>根据/etc/inittab设置加载终端或X-Window界面</h3><p><strong>在完成了系统所有服务的启动后，接下来Linux就会启动终端或X Window来等待用户登录，实际参考内容是/etc/inittab内的</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ecc28e9606cb4da74596689a9a09d84e"></p>
-<h3 id="其他启动相关事项"><a href="#其他启动相关事项" class="headerlink" title="其他启动相关事项"></a>其他启动相关事项</h3><p>1.关于模块：/etc/modprobe.conf</p>
+<p><strong>S 或 K 后面接的数字就是执行的顺序：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/be2d2d160b60a5e26239faeb0d3b9bf1" alt="" /></p>
+<h3 id="用户自定义引导启动程序"><a class="anchor" href="#用户自定义引导启动程序">#</a> 用户自定义引导启动程序</h3>
+<p><strong>任何想要再启动时就执行的工作，直接写入 /etc/rc.d/rc.local，那么该工作就会再启动的时候自动加载，而不等我们登录系统去启动；把自己制作的 shell 脚本的完整文件名写入 /etc/rc.d/rc.local，启动时就睡执行我的 shell 脚本</strong></p>
+<h3 id="根据etcinittab设置加载终端或x-window界面"><a class="anchor" href="#根据etcinittab设置加载终端或x-window界面">#</a> 根据 /etc/inittab 设置加载终端或 X-Window 界面</h3>
+<p><strong>在完成了系统所有服务的启动后，接下来 Linux 就会启动终端或 X Window 来等待用户登录，实际参考内容是 /etc/inittab 内的</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ecc28e9606cb4da74596689a9a09d84e" alt="" /></p>
+<h3 id="其他启动相关事项"><a class="anchor" href="#其他启动相关事项">#</a> 其他启动相关事项</h3>
+<p>1. 关于模块：/etc/modprobe.conf</p>
 <p><strong>对核心提供的默认模块进行一些参数的设计</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/23e745b012127a32e82304b17587fdef"></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/23e745b012127a32e82304b17587fdef" alt="" /></p>
 <p>2./etc/sysconfig/*</p>
-<p><strong>整个启动过程中，读取的服务相关设置文件都记录在/etc/sysconfig目录下</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9588b4872993b0925e3af95f85892981"></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/18635106d182a9e035cceb85ced7e11b"></p>
-<h3 id="变换运行等级"><a href="#变换运行等级" class="headerlink" title="变换运行等级"></a>变换运行等级</h3><p><strong>运行等级的不同仅是/etc/rc.d/rc[0-6].d里启动的服务不同而已；根据启动是否自动进入不同运行等级的设置：</strong></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/4e4c05bdf37c415695622638485f3d02"></p>
-<p>如何将运行等级5切换至等级3</p>
-<p><strong>当执行init3时，系统会：</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/6be449d26e6b626f12c5d0acf5c31092"></p>
-<p><strong>之后直接在bash中输入runlevel即可</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/cb849ae011ed659a42b646e0ecf96fe2"></p>
-<h2 id="核心与核心模块"><a href="#核心与核心模块" class="headerlink" title="核心与核心模块"></a>核心与核心模块</h2><p><strong>在整个启动过程中，能否成功地驱动主机的硬件设备，是核心的工作，而核心一般都是压缩文件，因此在使用核心之前，就要将它解压缩后，才加载到主存储器中</strong></p>
+<p><strong>整个启动过程中，读取的服务相关设置文件都记录在 /etc/sysconfig 目录下</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9588b4872993b0925e3af95f85892981" alt="" /></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/18635106d182a9e035cceb85ced7e11b" alt="" /></p>
+<h3 id="变换运行等级"><a class="anchor" href="#变换运行等级">#</a> 变换运行等级</h3>
+<p><strong>运行等级的不同仅是 /etc/rc.d/rc [0-6].d 里启动的服务不同而已；根据启动是否自动进入不同运行等级的设置：</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/4e4c05bdf37c415695622638485f3d02" alt="" /></p>
+<p>如何将运行等级 5 切换至等级 3</p>
+<p><strong>当执行 init3 时，系统会：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/6be449d26e6b626f12c5d0acf5c31092" alt="" /></p>
+<p><strong>之后直接在 bash 中输入 runlevel 即可</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/cb849ae011ed659a42b646e0ecf96fe2" alt="" /></p>
+<h2 id="核心与核心模块"><a class="anchor" href="#核心与核心模块">#</a> 核心与核心模块</h2>
+<p><strong>在整个启动过程中，能否成功地驱动主机的硬件设备，是核心的工作，而核心一般都是压缩文件，因此在使用核心之前，就要将它解压缩后，才加载到主存储器中</strong></p>
 <p><strong>由于硬件的不断更新，当前核心都具有可读取模块化驱动程序的功能，可以将模块化想成是一个外挂程序，该外挂程序可能由硬件开发厂商提供</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ec7aefe8722f26ac4bb593fb0169f078"><br><img data-src="https://img01.sogoucdn.com/app/a/100520146/671e9824296085539083ccd7a5be187c"></p>
-<h3 id="核心模块与依赖性"><a href="#核心模块与依赖性" class="headerlink" title="核心模块与依赖性"></a>核心模块与依赖性</h3><p><strong>核心房子啊/lib/modules/‘uname -r’/kernel中</strong></p>
-<p>1<strong>Linux提供一些模块依赖性的解决方案，就是检查/lib/moduless/‘uname-r’/modules.dep文件，它记录了在核心支持的模块的各项依赖性</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ec7aefe8722f26ac4bb593fb0169f078" alt="" /><br />
+<img data-src="https://img01.sogoucdn.com/app/a/100520146/671e9824296085539083ccd7a5be187c" alt="" /></p>
+<h3 id="核心模块与依赖性"><a class="anchor" href="#核心模块与依赖性">#</a> 核心模块与依赖性</h3>
+<p><strong>核心房子啊 /lib/modules/'uname -r'/kernel 中</strong></p>
+<p>1<strong>Linux 提供一些模块依赖性的解决方案，就是检查 /lib/moduless/'uname-r'/modules.dep 文件，它记录了在核心支持的模块的各项依赖性</strong></p>
 <ul>
-<li>使用depmod命令建立该文件</li>
+<li>使用 depmod 命令建立该文件</li>
 </ul>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/2beb12b271b31268b8b07e0a56561d8f"></p>
-<h3 id="核心模块的观察：lsmod、modinfo"><a href="#核心模块的观察：lsmod、modinfo" class="headerlink" title="核心模块的观察：lsmod、modinfo"></a>核心模块的观察：lsmod、modinfo</h3><p><strong>查看核心内的模块：</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/2beb12b271b31268b8b07e0a56561d8f" alt="" /></p>
+<h3 id="核心模块的观察lsmod-modinfo"><a class="anchor" href="#核心模块的观察lsmod-modinfo">#</a> 核心模块的观察：lsmod、modinfo</h3>
+<p><strong>查看核心内的模块：</strong></p>
 <p><strong>即可查看核心模块，亦可检查模块文件</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/6c2cdfd5686441ae774f6081ed5f5fed"></p>
-<h3 id="核心模块的加载与删除：insmod、modprobe、rmmod"><a href="#核心模块的加载与删除：insmod、modprobe、rmmod" class="headerlink" title="核心模块的加载与删除：insmod、modprobe、rmmod"></a>核心模块的加载与删除：insmod、modprobe、rmmod</h3><p>1.insmod</p>
-<p><strong>手动加载模块；insmod完全由用户自行加载一个完整文件名的模块，并不会主动地分析模块的依赖性</strong></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/efff98efab91bedbe73e9c57b730eb68"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/6c2cdfd5686441ae774f6081ed5f5fed" alt="" /></p>
+<h3 id="核心模块的加载与删除insmod-modprobe-rmmod"><a class="anchor" href="#核心模块的加载与删除insmod-modprobe-rmmod">#</a> 核心模块的加载与删除：insmod、modprobe、rmmod</h3>
+<p>1.insmod</p>
+<p><strong>手动加载模块；insmod 完全由用户自行加载一个完整文件名的模块，并不会主动地分析模块的依赖性</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/efff98efab91bedbe73e9c57b730eb68" alt="" /></p>
 <p>2.rmmod</p>
 <p><strong>删除模块</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/44de937618b8ed2d572db3228c59c159"></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/44de937618b8ed2d572db3228c59c159" alt="" /></p>
 <p>3.modprobe</p>
-<p><strong>modprobe会主动搜索modules.dep的内容，先解决了模块的依赖性后，才决定需要加载的模块</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/75f83239722c9e4d77183173b36204d0"></p>
-<h3 id="核心模块的额外参数设置：-etc-modprobe-conf"><a href="#核心模块的额外参数设置：-etc-modprobe-conf" class="headerlink" title="核心模块的额外参数设置：/etc/modprobe.conf"></a>核心模块的额外参数设置：/etc/modprobe.conf</h3><p><strong>若想修改某些模块的额外参数设置，就在这个文件内设置，对于I/O与IRQ的设置</strong></p>
-<h2 id="引导加载程序：Grub"><a href="#引导加载程序：Grub" class="headerlink" title="引导加载程序：Grub"></a>引导加载程序：Grub</h2><h3 id="引导加载程序的功能与意义"><a href="#引导加载程序的功能与意义" class="headerlink" title="引导加载程序的功能与意义"></a>引导加载程序的功能与意义</h3><p><strong>在BIOS读完信息后，接下来到第一个启动设备的MBR去读取引导加载程序，这个引导加载程序可以具有菜单功能，而且还能辨识硬盘的文件系统，并且指向核心文件，以将它读入主存储器中</strong></p>
-<p><strong>MBR是整个硬盘的第一个扇区，整个大小不可能超过512KB，加载程序功能这么强，不仅仅占用少量的容量；是因为我们将引导加载程序分成两个阶段来执行：</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8712a299d6a236b8fefcec9f41d7c9e2"></p>
+<p><strong>modprobe 会主动搜索 modules.dep 的内容，先解决了模块的依赖性后，才决定需要加载的模块</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/75f83239722c9e4d77183173b36204d0" alt="" /></p>
+<h3 id="核心模块的额外参数设置etcmodprobeconf"><a class="anchor" href="#核心模块的额外参数设置etcmodprobeconf">#</a> 核心模块的额外参数设置：/etc/modprobe.conf</h3>
+<p><strong>若想修改某些模块的额外参数设置，就在这个文件内设置，对于 I/O 与 IRQ 的设置</strong></p>
+<h2 id="引导加载程序grub"><a class="anchor" href="#引导加载程序grub">#</a> 引导加载程序：Grub</h2>
+<h3 id="引导加载程序的功能与意义"><a class="anchor" href="#引导加载程序的功能与意义">#</a> 引导加载程序的功能与意义</h3>
+<p><strong>在 BIOS 读完信息后，接下来到第一个启动设备的 MBR 去读取引导加载程序，这个引导加载程序可以具有菜单功能，而且还能辨识硬盘的文件系统，并且指向核心文件，以将它读入主存储器中</strong></p>
+<p><strong>MBR 是整个硬盘的第一个扇区，整个大小不可能超过 512KB，加载程序功能这么强，不仅仅占用少量的容量；是因为我们将引导加载程序分成两个阶段来执行：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8712a299d6a236b8fefcec9f41d7c9e2" alt="" /></p>
 <p><strong>我们可以将引导加载程序安装在超级块</strong></p>
 <p><strong>引导加载程序可以做到：</strong></p>
 <ul>
-<li><p>引导加载程序可以直接指定并取用核心文件，加载到主存储器中</p>
+<li>
+<p>引导加载程序可以直接指定并取用核心文件，加载到主存储器中</p>
 </li>
-<li><p>也可以将加载程序的控制权移交给下一个加载程序</p>
+<li>
+<p>也可以将加载程序的控制权移交给下一个加载程序</p>
 </li>
 </ul>
 <p><strong>引导加载程序除了可以直接指定核心文件来启动之外，也可以指定某个超级快中的引导加载程序</strong></p>
-<p><strong>Linxu可以选择将引导加载程序安装在MBR或超级快中，但是，Windows系统则几乎默认强制会同时安装在MBR与超级块中，所以，我们说要安装多重操作系统时，最好先安装Windows再安装Linux，因为若先安装Linux，则后安装Windows时，会强制将MBR的引导加载程序覆盖掉，这样将无法以Windows的引导加载程序进入Linux</strong></p>
-<h3 id="grub的设置文件-boot-grub-menu-lst与安装类型"><a href="#grub的设置文件-boot-grub-menu-lst与安装类型" class="headerlink" title="grub的设置文件/boot/grub/menu.lst与安装类型"></a>grub的设置文件/boot/grub/menu.lst与安装类型</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9c8fa3b22f4981a4cc040783e0fd79dc"></p>
-<p>1.与硬盘的关系</p>
-<p><strong>grub主程序是安装在MBR中，并且动态地搜索设置文件的信息，它必须认识硬盘</strong></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/1208e0d1f42758d3f986494369e228f4"></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/e8321b599b2b0ae080363cb189f861b4"></p>
-<p>2./boot/grup/menu.lst设置文件</p>
-<p><strong>grub的设置文件内容/boot/grub/menu.lst</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/1f0e71d5810dd419e3b66d880ce6f438"></p>
-<p>(1)直接指定核心启动</p>
-<p><strong>指定核心启动，就需要用到initrd的RAM  Disk设置文件（通常放在/boot下面）；以grub的硬盘识别方式，找出完整的kernel与initrd文件名</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ed6ee205b0765123b141eb7509ce5c27"></p>
+<p><strong>Linxu 可以选择将引导加载程序安装在 MBR 或超级快中，但是，Windows 系统则几乎默认强制会同时安装在 MBR 与超级块中，所以，我们说要安装多重操作系统时，最好先安装 Windows 再安装 Linux，因为若先安装 Linux，则后安装 Windows 时，会强制将 MBR 的引导加载程序覆盖掉，这样将无法以 Windows 的引导加载程序进入 Linux</strong></p>
+<h3 id="grub的设置文件bootgrubmenulst与安装类型"><a class="anchor" href="#grub的设置文件bootgrubmenulst与安装类型">#</a> grub 的设置文件 /boot/grub/menu.lst 与安装类型</h3>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9c8fa3b22f4981a4cc040783e0fd79dc" alt="" /></p>
+<p>1. 与硬盘的关系</p>
+<p><strong>grub 主程序是安装在 MBR 中，并且动态地搜索设置文件的信息，它必须认识硬盘</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/1208e0d1f42758d3f986494369e228f4" alt="" /></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/e8321b599b2b0ae080363cb189f861b4" alt="" /></p>
+<p>2./boot/grup/menu.lst 设置文件</p>
+<p><strong>grub 的设置文件内容 /boot/grub/menu.lst</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/1f0e71d5810dd419e3b66d880ce6f438" alt="" /></p>
+<p>(1) 直接指定核心启动</p>
+<p><strong>指定核心启动，就需要用到 initrd 的 RAM  Disk 设置文件（通常放在 /boot 下面）；以 grub 的硬盘识别方式，找出完整的 kernel 与 initrd 文件名</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/ed6ee205b0765123b141eb7509ce5c27" alt="" /></p>
 <p>（2）利用链式加载程序（chain loader）的方式</p>
-<p><strong>所谓链式加载程序，仅是将控制权交给下一个引导加载程序而已，所以grub并不需要认识与找出核心文件，它只是将boot的控制权交给下一个超级快或者是MBR内的引导加载程序</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9241b8f5d29db4dfef02935611d48569"></p>
-<h3 id="测试与安装grub"><a href="#测试与安装grub" class="headerlink" title="测试与安装grub"></a>测试与安装grub</h3><p><strong>必须使用grub-install将一些必要的文件复制到/boot/grub</strong></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/d5e10dd26c2026ae78cf28307680a155"></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/309d74ae44a1bceaca4bc57940d987c2"></p>
+<p><strong>所谓链式加载程序，仅是将控制权交给下一个引导加载程序而已，所以 grub 并不需要认识与找出核心文件，它只是将 boot 的控制权交给下一个超级快或者是 MBR 内的引导加载程序</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/9241b8f5d29db4dfef02935611d48569" alt="" /></p>
+<h3 id="测试与安装grub"><a class="anchor" href="#测试与安装grub">#</a> 测试与安装 grub</h3>
+<p><strong>必须使用 grub-install 将一些必要的文件复制到 /boot/grub</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/d5e10dd26c2026ae78cf28307680a155" alt="" /></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/309d74ae44a1bceaca4bc57940d987c2" alt="" /></p>
 <p><strong>介绍几个有用的命令及安装步骤</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/2e681844b5db9d4edc9138013da01c05"></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/fdc960dcffb0b6dfcd42e0bd4d6db478"></p>
-<h3 id="启动前的额外功能修改"><a href="#启动前的额外功能修改" class="headerlink" title="启动前的额外功能修改"></a>启动前的额外功能修改</h3><p><strong>当Linux正在进行启动，我们按下任意键，就可以进行grub的在线编辑功能</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/2e681844b5db9d4edc9138013da01c05" alt="" /></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/fdc960dcffb0b6dfcd42e0bd4d6db478" alt="" /></p>
+<h3 id="启动前的额外功能修改"><a class="anchor" href="#启动前的额外功能修改">#</a> 启动前的额外功能修改</h3>
+<p><strong>当 Linux 正在进行启动，我们按下任意键，就可以进行 grub 的在线编辑功能</strong></p>
 <ul>
 <li>若按如下按键</li>
 </ul>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/b1fd375c629eb395de3ac4e040214cfc"></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/28589a73b503411f8ae881f4f8606ad1"></p>
-<h3 id="核心功能的vga设置"><a href="#核心功能的vga设置" class="headerlink" title="核心功能的vga设置"></a>核心功能的vga设置</h3><p><strong>vga：主要设置终端tty1-tty6的分辨率与颜色质量；   对应表如下：</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/869b479671a2024112feb2a895714adc"></p>
-<h2 id="引导加载程序：LILO"><a href="#引导加载程序：LILO" class="headerlink" title="引导加载程序：LILO"></a>引导加载程序：LILO</h2><p><strong>LILO是Linux最早的引导加载程序。主要使用/etc/lilo.conf设置文件，然后再以lilo主程序将该设置内容写入启动区中</strong></p>
-<h3 id="LILO的设置文件-etc-lilo-conf"><a href="#LILO的设置文件-etc-lilo-conf" class="headerlink" title="LILO的设置文件/etc/lilo.conf"></a>LILO的设置文件/etc/lilo.conf</h3><p>设置文件/etc/lilo.conf同样分为两部分，分别是LILO整体环境设置部分，与每个启动项目核心文件名称规范部分</p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/37cf9a1bc57352e5108596eb4b3a4a65"></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/bed7372f7f21a8f8b2867d5b7e358f57"></p>
-<h3 id="测试与安装LILO引导加载程序"><a href="#测试与安装LILO引导加载程序" class="headerlink" title="测试与安装LILO引导加载程序"></a>测试与安装LILO引导加载程序</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/130c874283068f74126564c8559d7ee8"></p>
-<p><strong>lilo的安装</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/c6aad9967b68c53da98c537d5f40d8f8"></p>
-<h2 id="解决启动过程的问题"><a href="#解决启动过程的问题" class="headerlink" title="解决启动过程的问题"></a>解决启动过程的问题</h2><h3 id="忘记root密码的解决方案"><a href="#忘记root密码的解决方案" class="headerlink" title="忘记root密码的解决方案"></a>忘记root密码的解决方案</h3><p><strong>忘记root密码：只要能够进入并且载入（/），然后修改/etc/shadow内的root密码栏重新启动后，root就不需要密码即可登录。过程如下：</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/08225195c011dac805ab3e63912e99e8"></p>
-<h3 id="利用chroot切换到另一个硬盘"><a href="#利用chroot切换到另一个硬盘" class="headerlink" title="利用chroot切换到另一个硬盘"></a>利用chroot切换到另一个硬盘</h3><p><strong>chroot：可以暂时将根目录移到某个目录中，然后区处理某个问题，最后再离开该根目录而回到原来的系统中</strong></p>
-<p><strong>同样可以将Linux硬盘拔到另一台Linux主机上，然后用这个chroot来切换，以处理硬盘问题，做法如下：</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/2dee28ac8f890d2f6d4a93748993afa1"></p>
-<h1 id="源码与Tarball套件管理程序"><a href="#源码与Tarball套件管理程序" class="headerlink" title="源码与Tarball套件管理程序"></a>源码与Tarball套件管理程序</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>如果想在Linux服务器上运行网页服务器，一定要安装网页服务器的套件；Linux上的套件几乎都是经过GPL的授权，所以每个套件均提供源码，可以自行修改该程序代码</strong></p>
-<h3 id="什么是开放源码、编译器与可执行文件"><a href="#什么是开放源码、编译器与可执行文件" class="headerlink" title="什么是开放源码、编译器与可执行文件"></a>什么是开放源码、编译器与可执行文件</h3><p><img data-src="https://img03.sogoucdn.com/app/a/100520146/24a7f7578809c50bf625fdd6863dee64"></p>
-<h3 id="什么是函数库"><a href="#什么是函数库" class="headerlink" title="什么是函数库"></a>什么是函数库</h3><p><strong>Linux系统通常已提供一个可以进行身份验证的模块，称为PAM，这个PAM提供的功能可以让很多程序在执行的时候，除了可以验证用户登录的信息外，还可以将身份确定的数据记录在登陆文件；函数库分为动态函数库与静态函数库</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/0c8baf2319fab57e47537bd8d977a428"></p>
-<p><strong>Linux的核心提供很多的核心相关函数库与外部参数，这些核心相关信息大多数放在/usr/include、/lib、/usr/lib中</strong></p>
-<h3 id="什么是make与configure"><a href="#什么是make与configure" class="headerlink" title="什么是make与configure"></a>什么是make与configure</h3><p><strong>使用类似gcc的编译器进行编译的过程中，除了每个主程序与子程序需要写上编译过程的命令外，还需要写上最终的连接程序。当代码比较复杂时，可以使用make命令的相关功能来简化编译过程的命令</strong></p>
-<h3 id="什么是Tarball的套件"><a href="#什么是Tarball的套件" class="headerlink" title="什么是Tarball的套件"></a>什么是Tarball的套件</h3><p>** 由于纯文本文件是很浪费硬盘空间的一种文件格式，如果想去下载一个核心文件，应该将这些源码通过文件的打包与压缩，将文件的数量与容量减小，而Tarball就是将套件的所有源码文件先以tar打包，然后再压缩，最常见的就是gzip来压缩。因为使用了tar与gzip的功能，tarball文件一般的扩展名就会写成*.tar.gz或简单写为*.tgz,Tarball套件解压缩后，里面的文件通常会有: **</p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/5f6bf24ee2f22e7623e3f2039c1f58da"></p>
-<h3 id="安装与升级套件"><a href="#安装与升级套件" class="headerlink" title="安装与升级套件"></a>安装与升级套件</h3><p><strong>为什么升级Tarball的套件</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/631f861b701351e5d1b7499656257625"></p>
-<p><strong>Tarball的基本安装流程</strong></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/484eff772d2793001edbf769862a0f86"></p>
-<h2 id="一个简单的范例"><a href="#一个简单的范例" class="headerlink" title="一个简单的范例"></a>一个简单的范例</h2><p><strong>生成动态库</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/5ad5d00416c34f36cac4e1855a17ec93"></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/b1fd375c629eb395de3ac4e040214cfc" alt="" /></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/28589a73b503411f8ae881f4f8606ad1" alt="" /></p>
+<h3 id="核心功能的vga设置"><a class="anchor" href="#核心功能的vga设置">#</a> 核心功能的 vga 设置</h3>
+<p><strong>vga：主要设置终端 tty1-tty6 的分辨率与颜色质量；   对应表如下：</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/869b479671a2024112feb2a895714adc" alt="" /></p>
+<h2 id="引导加载程序lilo"><a class="anchor" href="#引导加载程序lilo">#</a> 引导加载程序：LILO</h2>
+<p><strong>LILO 是 Linux 最早的引导加载程序。主要使用 /etc/lilo.conf 设置文件，然后再以 lilo 主程序将该设置内容写入启动区中</strong></p>
+<h3 id="lilo的设置文件etcliloconf"><a class="anchor" href="#lilo的设置文件etcliloconf">#</a> LILO 的设置文件 /etc/lilo.conf</h3>
+<p>设置文件 /etc/lilo.conf 同样分为两部分，分别是 LILO 整体环境设置部分，与每个启动项目核心文件名称规范部分</p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/37cf9a1bc57352e5108596eb4b3a4a65" alt="" /></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/bed7372f7f21a8f8b2867d5b7e358f57" alt="" /></p>
+<h3 id="测试与安装lilo引导加载程序"><a class="anchor" href="#测试与安装lilo引导加载程序">#</a> 测试与安装 LILO 引导加载程序</h3>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/130c874283068f74126564c8559d7ee8" alt="" /></p>
+<p><strong>lilo 的安装</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/c6aad9967b68c53da98c537d5f40d8f8" alt="" /></p>
+<h2 id="解决启动过程的问题"><a class="anchor" href="#解决启动过程的问题">#</a> 解决启动过程的问题</h2>
+<h3 id="忘记root密码的解决方案"><a class="anchor" href="#忘记root密码的解决方案">#</a> 忘记 root 密码的解决方案</h3>
+<p><strong>忘记 root 密码：只要能够进入并且载入（/），然后修改 /etc/shadow 内的 root 密码栏重新启动后，root 就不需要密码即可登录。过程如下：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/08225195c011dac805ab3e63912e99e8" alt="" /></p>
+<h3 id="利用chroot切换到另一个硬盘"><a class="anchor" href="#利用chroot切换到另一个硬盘">#</a> 利用 chroot 切换到另一个硬盘</h3>
+<p><strong>chroot：可以暂时将根目录移到某个目录中，然后区处理某个问题，最后再离开该根目录而回到原来的系统中</strong></p>
+<p><strong>同样可以将 Linux 硬盘拔到另一台 Linux 主机上，然后用这个 chroot 来切换，以处理硬盘问题，做法如下：</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/2dee28ac8f890d2f6d4a93748993afa1" alt="" /></p>
+<h1 id="源码与tarball套件管理程序"><a class="anchor" href="#源码与tarball套件管理程序">#</a> 源码与 Tarball 套件管理程序</h1>
+<h2 id="简介"><a class="anchor" href="#简介">#</a> 简介</h2>
+<p><strong>如果想在 Linux 服务器上运行网页服务器，一定要安装网页服务器的套件；Linux 上的套件几乎都是经过 GPL 的授权，所以每个套件均提供源码，可以自行修改该程序代码</strong></p>
+<h3 id="什么是开放源码-编译器与可执行文件"><a class="anchor" href="#什么是开放源码-编译器与可执行文件">#</a> 什么是开放源码、编译器与可执行文件</h3>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/24a7f7578809c50bf625fdd6863dee64" alt="" /></p>
+<h3 id="什么是函数库"><a class="anchor" href="#什么是函数库">#</a> 什么是函数库</h3>
+<p><strong>Linux 系统通常已提供一个可以进行身份验证的模块，称为 PAM，这个 PAM 提供的功能可以让很多程序在执行的时候，除了可以验证用户登录的信息外，还可以将身份确定的数据记录在登陆文件；函数库分为动态函数库与静态函数库</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/0c8baf2319fab57e47537bd8d977a428" alt="" /></p>
+<p><strong>Linux 的核心提供很多的核心相关函数库与外部参数，这些核心相关信息大多数放在 /usr/include、/lib、/usr/lib 中</strong></p>
+<h3 id="什么是make与configure"><a class="anchor" href="#什么是make与configure">#</a> 什么是 make 与 configure</h3>
+<p><strong>使用类似 gcc 的编译器进行编译的过程中，除了每个主程序与子程序需要写上编译过程的命令外，还需要写上最终的连接程序。当代码比较复杂时，可以使用 make 命令的相关功能来简化编译过程的命令</strong></p>
+<h3 id="什么是tarball的套件"><a class="anchor" href="#什么是tarball的套件">#</a> 什么是 Tarball 的套件</h3>
+<p>** 由于纯文本文件是很浪费硬盘空间的一种文件格式，如果想去下载一个核心文件，应该将这些源码通过文件的打包与压缩，将文件的数量与容量减小，而 Tarball 就是将套件的所有源码文件先以 tar 打包，然后再压缩，最常见的就是 gzip 来压缩。因为使用了 tar 与 gzip 的功能，tarball 文件一般的扩展名就会写成 *.tar.gz 或简单写为 *.tgz,Tarball 套件解压缩后，里面的文件通常会有: **</p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/5f6bf24ee2f22e7623e3f2039c1f58da" alt="" /></p>
+<h3 id="安装与升级套件"><a class="anchor" href="#安装与升级套件">#</a> 安装与升级套件</h3>
+<p><strong>为什么升级 Tarball 的套件</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/631f861b701351e5d1b7499656257625" alt="" /></p>
+<p><strong>Tarball 的基本安装流程</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/484eff772d2793001edbf769862a0f86" alt="" /></p>
+<h2 id="一个简单的范例"><a class="anchor" href="#一个简单的范例">#</a> 一个简单的范例</h2>
+<p><strong>生成动态库</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/5ad5d00416c34f36cac4e1855a17ec93" alt="" /></p>
 <p><strong>生成静态库</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/ce764c52fe9415effdce33f1588a0240"></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/ce764c52fe9415effdce33f1588a0240" alt="" /></p>
 <p><strong>完整调试</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/d7036f36abb406f3389c6a3151ea4621"></p>
-<h3 id="显示Hello-World"><a href="#显示Hello-World" class="headerlink" title="显示Hello  World"></a>显示Hello  World</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/cff71a3d8f955f431d57fe91565b66a6"></p>
-<p><strong>hello.c就是源码，gcc就是编译器，a.out就是编译成功的可执行二进制文件</strong></p>
-<h3 id="编译子程序"><a href="#编译子程序" class="headerlink" title="编译子程序"></a>编译子程序</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/108ff62589cb16cc8022fcf26578f6c6"></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/fa8559dc949fe8523c975193f12a0324"></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8a334354ab6aaf8bbb7ccc1bbbbbd64c"></p>
-<h3 id="加入函数库"><a href="#加入函数库" class="headerlink" title="加入函数库"></a>加入函数库</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/a73137d77f326a2a2b1517a74069095c"></p>
-<p><strong>直接编译，会显示错误消息，表示没有sin的相关定义参考值，这是因为再C语言里的sin函数是写在libm.so函数库中，而我们并没有源码里加入相关的说明，所以需要在编译与连接的时候，将这个函数库连接进执行文件</strong></p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/4894f5a06f2534e9c7e48b5346ee877c"></p>
-<p><strong>由于Linux默认是将函数库放在/lib与/usr/lib中，所以不写-L/lib和-L/usr/lib也没有关系。不过，如果使用的函数库并非放在这两个目录下，那么-L/path就很重要，否则找不到函数库</strong></p>
-<h3 id="使用gcc"><a href="#使用gcc" class="headerlink" title="使用gcc"></a>使用gcc</h3><p><strong>gcc为Linux最标准的编译器，gcc是由GNU维护；下面为比较常见的参数：</strong></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/67c4660bafcf81c9791e2a53844cf017"></p>
-<h2 id="make的简单用法"><a href="#make的简单用法" class="headerlink" title="make的简单用法"></a>make的简单用法</h2><p><strong>make可以简化编译过程执行的命令</strong></p>
-<h3 id="为社么要用make"><a href="#为社么要用make" class="headerlink" title="为社么要用make"></a>为社么要用make</h3><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/a6b8a1162bd17f19d26bbed4366362b3"></p>
-<p><strong>仅写出main需要的目标文件，结果make会主动去判断每个目标文件相关的源码文件，并直接编译，最后再直接进行连接</strong></p>
-<p><strong>make的好处：</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/b1f15eb05d0a4a10ed02e4321baf2fee"></p>
-<h3 id="make的基本语法与变量"><a href="#make的基本语法与变量" class="headerlink" title="make的基本语法与变量"></a>make的基本语法与变量</h3><p><img data-src="https://img03.sogoucdn.com/app/a/100520146/dbc38ca29dbb311c9423e61a336b73c6"></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/7caddb4442ee504ae582aaa990b15c43"></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/d27906e2d66ca47b77d98a1edb2e6be1"></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/5b2f56123c9bdacae7764512dbcd5472"></p>
-<h2 id="Tarball的管理与建议"><a href="#Tarball的管理与建议" class="headerlink" title="Tarball的管理与建议"></a>Tarball的管理与建议</h2><p><strong>知道了源码的相关信息之后，还需要了解如何使用具有源码的Tarball来建立属于自己的套件；Tarball源码程序应该可以再大部分环境安装成功</strong></p>
-<h3 id="使用源码管理套件所需要的基础套件"><a href="#使用源码管理套件所需要的基础套件" class="headerlink" title="使用源码管理套件所需要的基础套件"></a>使用源码管理套件所需要的基础套件</h3><p><strong>创建一个二进制执行文件需要很多的文件，包括下面的基础套件：</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/d7036f36abb406f3389c6a3151ea4621" alt="" /></p>
+<h3 id="显示hello-world"><a class="anchor" href="#显示hello-world">#</a> 显示 Hello  World</h3>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/cff71a3d8f955f431d57fe91565b66a6" alt="" /></p>
+<p><strong>hello.c 就是源码，gcc 就是编译器，a.out 就是编译成功的可执行二进制文件</strong></p>
+<h3 id="编译子程序"><a class="anchor" href="#编译子程序">#</a> 编译子程序</h3>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/108ff62589cb16cc8022fcf26578f6c6" alt="" /></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/fa8559dc949fe8523c975193f12a0324" alt="" /></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/8a334354ab6aaf8bbb7ccc1bbbbbd64c" alt="" /></p>
+<h3 id="加入函数库"><a class="anchor" href="#加入函数库">#</a> 加入函数库</h3>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/a73137d77f326a2a2b1517a74069095c" alt="" /></p>
+<p><strong>直接编译，会显示错误消息，表示没有 sin 的相关定义参考值，这是因为再 C 语言里的 sin 函数是写在 libm.so 函数库中，而我们并没有源码里加入相关的说明，所以需要在编译与连接的时候，将这个函数库连接进执行文件</strong></p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/4894f5a06f2534e9c7e48b5346ee877c" alt="" /></p>
+<p><strong>由于 Linux 默认是将函数库放在 /lib 与 /usr/lib 中，所以不写 - L/lib 和 - L/usr/lib 也没有关系。不过，如果使用的函数库并非放在这两个目录下，那么 - L/path 就很重要，否则找不到函数库</strong></p>
+<h3 id="使用gcc"><a class="anchor" href="#使用gcc">#</a> 使用 gcc</h3>
+<p><strong>gcc 为 Linux 最标准的编译器，gcc 是由 GNU 维护；下面为比较常见的参数：</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/67c4660bafcf81c9791e2a53844cf017" alt="" /></p>
+<h2 id="make的简单用法"><a class="anchor" href="#make的简单用法">#</a> make 的简单用法</h2>
+<p><strong>make 可以简化编译过程执行的命令</strong></p>
+<h3 id="为社么要用make"><a class="anchor" href="#为社么要用make">#</a> 为社么要用 make</h3>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/a6b8a1162bd17f19d26bbed4366362b3" alt="" /></p>
+<p><strong>仅写出 main 需要的目标文件，结果 make 会主动去判断每个目标文件相关的源码文件，并直接编译，最后再直接进行连接</strong></p>
+<p><strong>make 的好处：</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/b1f15eb05d0a4a10ed02e4321baf2fee" alt="" /></p>
+<h3 id="make的基本语法与变量"><a class="anchor" href="#make的基本语法与变量">#</a> make 的基本语法与变量</h3>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/dbc38ca29dbb311c9423e61a336b73c6" alt="" /></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/7caddb4442ee504ae582aaa990b15c43" alt="" /></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/d27906e2d66ca47b77d98a1edb2e6be1" alt="" /></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/5b2f56123c9bdacae7764512dbcd5472" alt="" /></p>
+<h2 id="tarball的管理与建议"><a class="anchor" href="#tarball的管理与建议">#</a> Tarball 的管理与建议</h2>
+<p><strong>知道了源码的相关信息之后，还需要了解如何使用具有源码的 Tarball 来建立属于自己的套件；Tarball 源码程序应该可以再大部分环境安装成功</strong></p>
+<h3 id="使用源码管理套件所需要的基础套件"><a class="anchor" href="#使用源码管理套件所需要的基础套件">#</a> 使用源码管理套件所需要的基础套件</h3>
+<p><strong>创建一个二进制执行文件需要很多的文件，包括下面的基础套件：</strong></p>
 <ul>
-<li><p>gcc或cc等C语言编译器</p>
+<li>
+<p>gcc 或 cc 等 C 语言编译器</p>
 </li>
-<li><p>make及autoconfig等套件</p>
+<li>
+<p>make 及 autoconfig 等套件</p>
 </li>
-<li><p>需要核心提供的函数库文件以及相关的包含文件</p>
+<li>
+<p>需要核心提供的函数库文件以及相关的包含文件</p>
 </li>
 </ul>
 <p><strong>很多套件再开发时都直接取用系统核心提供的函数库与包含文件，这样才可以与操作系统兼容，尤其是驱动程序方面的套件，常常需要核心提供的相关信息</strong></p>
-<h3 id="Tarball安装的基本步骤"><a href="#Tarball安装的基本步骤" class="headerlink" title="Tarball安装的基本步骤"></a>Tarball安装的基本步骤</h3><p><strong>安装的基本操作步骤如下：</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/37bbd6a848f1f5cc07bc5164ab1143a8"><br><img data-src="!%5B%5D(https://img04.sogoucdn.com/app/a/100520146/ccdb14a2538f6d3eb687ae1dd8a0c7f0)"></p>
+<h3 id="tarball安装的基本步骤"><a class="anchor" href="#tarball安装的基本步骤">#</a> Tarball 安装的基本步骤</h3>
+<p><strong>安装的基本操作步骤如下：</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/37bbd6a848f1f5cc07bc5164ab1143a8" alt="" /><br />
+<img data-src="!%5B%5D(https://img04.sogoucdn.com/app/a/100520146/ccdb14a2538f6d3eb687ae1dd8a0c7f0)" alt="" /></p>
 <p><strong>上面只要有一个步骤无法成功，那么后续的步骤就完全没有办法进行</strong></p>
-<h3 id="Tarball套件安装的注意事项（如何删除、升级）"><a href="#Tarball套件安装的注意事项（如何删除、升级）" class="headerlink" title="Tarball套件安装的注意事项（如何删除、升级）"></a>Tarball套件安装的注意事项（如何删除、升级）</h3><p><strong>etc、lib、man、bin等目录中，分别表示“设置文件、函数库、执行文件、在线帮助文件”</strong></p>
-<p><img data-src="!%5B%5D(https://img02.sogoucdn.com/app/a/100520146/d52d04278b35893a9cee0c96a97910da)"></p>
+<h3 id="tarball套件安装的注意事项如何删除-升级"><a class="anchor" href="#tarball套件安装的注意事项如何删除-升级">#</a> Tarball 套件安装的注意事项（如何删除、升级）</h3>
+<p><strong>etc、lib、man、bin 等目录中，分别表示 “设置文件、函数库、执行文件、在线帮助文件”</strong></p>
+<p><img data-src="!%5B%5D(https://img02.sogoucdn.com/app/a/100520146/d52d04278b35893a9cee0c96a97910da)" alt="" /></p>
 <p><strong>单一套件的文件都在同一个目录之下，要删除该套件就简单多了。只要将该目录删除，即可视为该套件已被删除。</strong></p>
-<h3 id="简单的范例：使用ntp"><a href="#简单的范例：使用ntp" class="headerlink" title="简单的范例：使用ntp"></a>简单的范例：使用ntp</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/ecfe44c20135788e89aaef11ed7c69dc"><br><img data-src="https://img03.sogoucdn.com/app/a/100520146/e2f5c8fbbc40df511f6e1f4beeffacc9"></p>
-<h3 id="使用patch更新源码"><a href="#使用patch更新源码" class="headerlink" title="使用patch更新源码"></a>使用patch更新源码</h3><p><img data-src="https://img01.sogoucdn.com/app/a/100520146/69a578ff16cd88f411128b70692c9fbd"></p>
-<h2 id="函数库管理"><a href="#函数库管理" class="headerlink" title="函数库管理"></a>函数库管理</h2><p><strong>很多套件之间都会互相采用彼此提供的函数库来运行特殊功能，函数库根据是否被编译到程序内部而分为动态与静态函数库</strong></p>
-<h3 id="动态与静态函数库"><a href="#动态与静态函数库" class="headerlink" title="动态与静态函数库"></a>动态与静态函数库</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/878480086d788786346d7b89cd2a2060"></p>
-<p><strong>在linux版本中，比较倾向于使用动态函数库；如果使用太多的静态函数库，那么升级一个函数库时，都会对整个系统造成很大的冲击。如果其他相关的执行文件也要同时重新编译，动态函数库就有用得多，只要升级动态函数库，其他套件根本无须变动</strong></p>
+<h3 id="简单的范例使用ntp"><a class="anchor" href="#简单的范例使用ntp">#</a> 简单的范例：使用 ntp</h3>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/ecfe44c20135788e89aaef11ed7c69dc" alt="" /><br />
+<img data-src="https://img03.sogoucdn.com/app/a/100520146/e2f5c8fbbc40df511f6e1f4beeffacc9" alt="" /></p>
+<h3 id="使用patch更新源码"><a class="anchor" href="#使用patch更新源码">#</a> 使用 patch 更新源码</h3>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/69a578ff16cd88f411128b70692c9fbd" alt="" /></p>
+<h2 id="函数库管理"><a class="anchor" href="#函数库管理">#</a> 函数库管理</h2>
+<p><strong>很多套件之间都会互相采用彼此提供的函数库来运行特殊功能，函数库根据是否被编译到程序内部而分为动态与静态函数库</strong></p>
+<h3 id="动态与静态函数库"><a class="anchor" href="#动态与静态函数库">#</a> 动态与静态函数库</h3>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/878480086d788786346d7b89cd2a2060" alt="" /></p>
+<p><strong>在 linux 版本中，比较倾向于使用动态函数库；如果使用太多的静态函数库，那么升级一个函数库时，都会对整个系统造成很大的冲击。如果其他相关的执行文件也要同时重新编译，动态函数库就有用得多，只要升级动态函数库，其他套件根本无须变动</strong></p>
 <p><strong>绝大多数的函数库都放在：</strong></p>
 <ul>
-<li><p>/usr/lib</p>
+<li>
+<p>/usr/lib</p>
 </li>
-<li><p>/lib</p>
+<li>
+<p>/lib</p>
 </li>
 </ul>
-<h3 id="ldconfig与-etc-ld-so-conf"><a href="#ldconfig与-etc-ld-so-conf" class="headerlink" title="ldconfig与/etc/ld.so.conf"></a>ldconfig与/etc/ld.so.conf</h3><p><strong>将常用的动态函数库加载到内存中（高速缓存，cache），当软件套件要采用动态函数库时，就不需要重新从硬盘里读出，这样可以提高动态函数库的读取速度。这时候需要idconfig与/etc/ld.so.conf的帮助</strong></p>
-<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/5330f235be104a2d92053c1336144ee7"></p>
-<h3 id="ldd"><a href="#ldd" class="headerlink" title="ldd"></a>ldd</h3><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/9453bd441350f6ebf474af7875227b99"></p>
-<h2 id="检测软件正确性：md5sum"><a href="#检测软件正确性：md5sum" class="headerlink" title="检测软件正确性：md5sum"></a>检测软件正确性：md5sum</h2><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/1ee537fec32c9337453f328c7d468bc9"><br><img data-src="https://img03.sogoucdn.com/app/a/100520146/46f1ddb5e0e37f64d3c735a3d6a34be9"></p>
-<p><strong>这几个文件容易被修改，因外很多木马程序在执行的时候，还是会执行PID，为了不被root追查出来，所以会修改这些价差任务分配的文件。如果可以替这些文件建立指纹数据库（就是使用md5sum检查一次，将该文件指纹记录下来，然后以shell脚本的方式由程序自行来检查指纹表是否不同），那么文件系统就会比较安全</strong></p>
-<h2 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h2><p><img data-src="https://img02.sogoucdn.com/app/a/100520146/93719747a52ced4bee42cff62103fd70"></p>
-<h1 id="RPM与SRPM套件管理程序"><a href="#RPM与SRPM套件管理程序" class="headerlink" title="RPM与SRPM套件管理程序"></a>RPM与SRPM套件管理程序</h1><h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><h3 id="什么是RPM与SRPM"><a href="#什么是RPM与SRPM" class="headerlink" title="什么是RPM与SRPM"></a>什么是RPM与SRPM</h3><p><strong>RPM是以一种数据库记录的方式将所需的套件安装到Linux主机的一套管理程序。它最大的特点就是将要安装的套件先编译并打包，通过包装好的套件中默认的数据库记录，记录这个套件在安装的时候需要的依赖属性模块</strong></p>
-<h3 id="什么是i386、i586、i686、noarch"><a href="#什么是i386、i586、i686、noarch" class="headerlink" title="什么是i386、i586、i686、noarch"></a>什么是i386、i586、i686、noarch</h3><p><strong>RPM与SRPM的格式分别为：</strong></p>
-<p><strong>**</strong>.rpm     &lt;==RPM的格式，已经经过编译包装完成的rpm文件</p>
-<p><strong>**</strong>.src.rpm  &lt;==SRPM的格式、包含未编译的源码信息</p>
+<h3 id="ldconfig与etcldsoconf"><a class="anchor" href="#ldconfig与etcldsoconf">#</a> ldconfig 与 /etc/ld.so.conf</h3>
+<p><strong>将常用的动态函数库加载到内存中（高速缓存，cache），当软件套件要采用动态函数库时，就不需要重新从硬盘里读出，这样可以提高动态函数库的读取速度。这时候需要 idconfig 与 /etc/ld.so.conf 的帮助</strong></p>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/5330f235be104a2d92053c1336144ee7" alt="" /></p>
+<h3 id="ldd"><a class="anchor" href="#ldd">#</a> ldd</h3>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/9453bd441350f6ebf474af7875227b99" alt="" /></p>
+<h2 id="检测软件正确性md5sum"><a class="anchor" href="#检测软件正确性md5sum">#</a> 检测软件正确性：md5sum</h2>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/1ee537fec32c9337453f328c7d468bc9" alt="" /><br />
+<img data-src="https://img03.sogoucdn.com/app/a/100520146/46f1ddb5e0e37f64d3c735a3d6a34be9" alt="" /></p>
+<p><strong>这几个文件容易被修改，因外很多木马程序在执行的时候，还是会执行 PID，为了不被 root 追查出来，所以会修改这些价差任务分配的文件。如果可以替这些文件建立指纹数据库（就是使用 md5sum 检查一次，将该文件指纹记录下来，然后以 shell 脚本的方式由程序自行来检查指纹表是否不同），那么文件系统就会比较安全</strong></p>
+<h2 id="重点回顾"><a class="anchor" href="#重点回顾">#</a> 重点回顾</h2>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/93719747a52ced4bee42cff62103fd70" alt="" /></p>
+<h1 id="rpm与srpm套件管理程序"><a class="anchor" href="#rpm与srpm套件管理程序">#</a> RPM 与 SRPM 套件管理程序</h1>
+<h2 id="简介-2"><a class="anchor" href="#简介-2">#</a> 简介</h2>
+<h3 id="什么是rpm与srpm"><a class="anchor" href="#什么是rpm与srpm">#</a> 什么是 RPM 与 SRPM</h3>
+<p><strong>RPM 是以一种数据库记录的方式将所需的套件安装到 Linux 主机的一套管理程序。它最大的特点就是将要安装的套件先编译并打包，通过包装好的套件中默认的数据库记录，记录这个套件在安装的时候需要的依赖属性模块</strong></p>
+<h3 id="什么是i386-i586-i686-noarch"><a class="anchor" href="#什么是i386-i586-i686-noarch">#</a> 什么是 i386、i586、i686、noarch</h3>
+<p><strong>RPM 与 SRPM 的格式分别为：</strong></p>
+<p>******.rpm     &lt;==RPM 的格式，已经经过编译包装完成的 rpm 文件</p>
+<p>******.src.rpm  &lt;==SRPM 的格式、包含未编译的源码信息</p>
 <p><strong>套件版本信息：</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcmqwexzj30m70ksq9m.jpg"></p>
-<h3 id="RPM的优点"><a href="#RPM的优点" class="headerlink" title="RPM的优点"></a>RPM的优点</h3><p>RPM的优点：</p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcmqwexzj30m70ksq9m.jpg" alt="" /></p>
+<h3 id="rpm的优点"><a class="anchor" href="#rpm的优点">#</a> RPM 的优点</h3>
+<p>RPM 的优点：</p>
 <ul>
-<li><p>RPM文件本身为已经编译过的二进制文件，可以让客户端的用户免除重新编译的麻烦</p>
+<li>
+<p>RPM 文件本身为已经编译过的二进制文件，可以让客户端的用户免除重新编译的麻烦</p>
 </li>
-<li><p>RPM文件在安装之前，RPM会先检查系统的硬盘容量、操作系统版本等，避免文件安装错误</p>
+<li>
+<p>RPM 文件在安装之前，RPM 会先检查系统的硬盘容量、操作系统版本等，避免文件安装错误</p>
 </li>
-<li><p>RPM文件本身提供套件版本信息、相关套件名称、套件用途说明、套件所含文件等信息，便于了解套件</p>
+<li>
+<p>RPM 文件本身提供套件版本信息、相关套件名称、套件用途说明、套件所含文件等信息，便于了解套件</p>
 </li>
-<li><p>RPM使用数据库记录RPM文件的相关参数，便于升级、删除、查询与验证</p>
+<li>
+<p>RPM 使用数据库记录 RPM 文件的相关参数，便于升级、删除、查询与验证</p>
 </li>
 </ul>
-<h3 id="解决RPM属性依赖问题"><a href="#解决RPM属性依赖问题" class="headerlink" title="解决RPM属性依赖问题"></a>解决RPM属性依赖问题</h3><p><strong>由于RPM类型的文件里含有属性相关的消息，如果我们通过分析这些消息，再让程序自行去寻找未安装的前驱套件，并事先安装，这样就解决了属性相关的问题。这就是当前urpmi/apt/yum等服务的由来。这些服务都是通过分析RPM文件的依赖信息，然后自行取得相关的套件并完成安装</strong></p>
-<h2 id="RPM套件管理程序"><a href="#RPM套件管理程序" class="headerlink" title="RPM套件管理程序"></a>RPM套件管理程序</h2><h3 id="RPM的默认安装路径"><a href="#RPM的默认安装路径" class="headerlink" title="RPM的默认安装路径"></a>RPM的默认安装路径</h3><p><strong>RPM类型的文件在安装的时候，会先去读取文件中记载的配置参数内容，然后将该数据用来比较Linux系统的环境。例如要安装SSH，需先安装OpenSSL，如果没有安装OpenSSl的话，SSH就不能安装。这些都是RPM环境的要求，如果环境相符就给予安装，如果不符会显示出不符合的内容。等到安装完毕之后，rpm就会将套件的信息写入/var/lib/rpm目录，以后在进行查询或预计要升级的时候，相关信息就会由/var/lib/rpm目录的内容数据来提供</strong></p>
-<p><strong>由于RPM有数据库来记录套件相关的信息，所以RPM类型的套件所拥有的文件都放在系统默认放置的目录下，如下：</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcn0qv3oj30l106i752.jpg"></p>
-<h3 id="RPM安装"><a href="#RPM安装" class="headerlink" title="RPM安装"></a>RPM安装</h3><p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcng57yrj30ls0dlwh5.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfcnp3ot7j30km0j5q8g.jpg"></p>
-<h3 id="RPM升级与更新"><a href="#RPM升级与更新" class="headerlink" title="RPM升级与更新"></a>RPM升级与更新</h3><p><strong>两种升级方式：</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfcnp3ot7j30km0j5q8g.jpg"></p>
-<h3 id="RPM查询"><a href="#RPM查询" class="headerlink" title="RPM查询"></a>RPM查询</h3><p><strong>RPM查询的地方是在/var/lib/rpm目录下的数据库文件，另外RPM也可以查询文件内的信息</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfcoefb83j30jp0jwaf5.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfcohg28hj30k4051q3v.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfconz4sqj30ka0jwn25.jpg"></p>
-<h3 id="RPM验证与数字签名"><a href="#RPM验证与数字签名" class="headerlink" title="RPM验证与数字签名"></a>RPM验证与数字签名</h3><p><strong>验证功能主要是向系统管理员提供一种有用的管理机制。其方式是使用/var/lib/rpm下面的数据库内容，来比较当前Linux系统环境的所有套件文件。当有数据丢失，或因为误删了某个套件的文件，或不小心修改了某个套件的文件内容，就用这种简单方法来验证原来的文件系统，以了解这到底是修改了那些文件数据</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfcp1vlorj30l00bpgo2.jpg"></p>
-<h3 id="RPM卸载与重建数据库"><a href="#RPM卸载与重建数据库" class="headerlink" title="RPM卸载与重建数据库"></a>RPM卸载与重建数据库</h3><p><strong>卸载就是将套件解除安装，卸载过程一定要自上而下。以rp-pppoe为例，这个套件主要根据ppp套件来安装，要卸载ppp的时候，就必须要先卸载rp-pppoe，否则就会发生结构问题</strong></p>
-<p><strong>由于我们一直修改一些文件内容，导致系统数据库有点乱，这时候可以使用-rebuilddb来重建rpm的数据库</strong></p>
+<h3 id="解决rpm属性依赖问题"><a class="anchor" href="#解决rpm属性依赖问题">#</a> 解决 RPM 属性依赖问题</h3>
+<p><strong>由于 RPM 类型的文件里含有属性相关的消息，如果我们通过分析这些消息，再让程序自行去寻找未安装的前驱套件，并事先安装，这样就解决了属性相关的问题。这就是当前 urpmi/apt/yum 等服务的由来。这些服务都是通过分析 RPM 文件的依赖信息，然后自行取得相关的套件并完成安装</strong></p>
+<h2 id="rpm套件管理程序"><a class="anchor" href="#rpm套件管理程序">#</a> RPM 套件管理程序</h2>
+<h3 id="rpm的默认安装路径"><a class="anchor" href="#rpm的默认安装路径">#</a> RPM 的默认安装路径</h3>
+<p><strong>RPM 类型的文件在安装的时候，会先去读取文件中记载的配置参数内容，然后将该数据用来比较 Linux 系统的环境。例如要安装 SSH，需先安装 OpenSSL，如果没有安装 OpenSSl 的话，SSH 就不能安装。这些都是 RPM 环境的要求，如果环境相符就给予安装，如果不符会显示出不符合的内容。等到安装完毕之后，rpm 就会将套件的信息写入 /var/lib/rpm 目录，以后在进行查询或预计要升级的时候，相关信息就会由 /var/lib/rpm 目录的内容数据来提供</strong></p>
+<p><strong>由于 RPM 有数据库来记录套件相关的信息，所以 RPM 类型的套件所拥有的文件都放在系统默认放置的目录下，如下：</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcn0qv3oj30l106i752.jpg" alt="" /></p>
+<h3 id="rpm安装"><a class="anchor" href="#rpm安装">#</a> RPM 安装</h3>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcng57yrj30ls0dlwh5.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfcnp3ot7j30km0j5q8g.jpg" alt="" /></p>
+<h3 id="rpm升级与更新"><a class="anchor" href="#rpm升级与更新">#</a> RPM 升级与更新</h3>
+<p><strong>两种升级方式：</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfcnp3ot7j30km0j5q8g.jpg" alt="" /></p>
+<h3 id="rpm查询"><a class="anchor" href="#rpm查询">#</a> RPM 查询</h3>
+<p><strong>RPM 查询的地方是在 /var/lib/rpm 目录下的数据库文件，另外 RPM 也可以查询文件内的信息</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfcoefb83j30jp0jwaf5.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfcohg28hj30k4051q3v.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfconz4sqj30ka0jwn25.jpg" alt="" /></p>
+<h3 id="rpm验证与数字签名"><a class="anchor" href="#rpm验证与数字签名">#</a> RPM 验证与数字签名</h3>
+<p><strong>验证功能主要是向系统管理员提供一种有用的管理机制。其方式是使用 /var/lib/rpm 下面的数据库内容，来比较当前 Linux 系统环境的所有套件文件。当有数据丢失，或因为误删了某个套件的文件，或不小心修改了某个套件的文件内容，就用这种简单方法来验证原来的文件系统，以了解这到底是修改了那些文件数据</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfcp1vlorj30l00bpgo2.jpg" alt="" /></p>
+<h3 id="rpm卸载与重建数据库"><a class="anchor" href="#rpm卸载与重建数据库">#</a> RPM 卸载与重建数据库</h3>
+<p><strong>卸载就是将套件解除安装，卸载过程一定要自上而下。以 rp-pppoe 为例，这个套件主要根据 ppp 套件来安装，要卸载 ppp 的时候，就必须要先卸载 rp-pppoe，否则就会发生结构问题</strong></p>
+<p><strong>由于我们一直修改一些文件内容，导致系统数据库有点乱，这时候可以使用 - rebuilddb 来重建 rpm 的数据库</strong></p>
 <p><strong>两种方法如下：</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcpaouisj30kb01yt8t.jpg"></p>
-<h1 id="认识与分析登录文件"><a href="#认识与分析登录文件" class="headerlink" title="认识与分析登录文件"></a>认识与分析登录文件</h1><h2 id="什么是登录文件"><a href="#什么是登录文件" class="headerlink" title="什么是登录文件"></a>什么是登录文件</h2><p><strong>详细而准确地记录或备份系统的登录文件，就是记录系统活动记录的文件。Linux主机在后台有相当多的守护程序在进行，这些程序总会有一些显示信息，这些信息就记录在登录文件中</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfcpaouisj30kb01yt8t.jpg" alt="" /></p>
+<h1 id="认识与分析登录文件"><a class="anchor" href="#认识与分析登录文件">#</a> 认识与分析登录文件</h1>
+<h2 id="什么是登录文件"><a class="anchor" href="#什么是登录文件">#</a> 什么是登录文件</h2>
+<p><strong>详细而准确地记录或备份系统的登录文件，就是记录系统活动记录的文件。Linux 主机在后台有相当多的守护程序在进行，这些程序总会有一些显示信息，这些信息就记录在登录文件中</strong></p>
 <p><strong>登录文件的重要功能：</strong></p>
 <ul>
-<li><p>解决系统故障</p>
+<li>
+<p>解决系统故障</p>
 </li>
-<li><p>解决网络服务问题</p>
+<li>
+<p>解决网络服务问题</p>
 </li>
-<li><p>记录登录信息</p>
+<li>
+<p>记录登录信息</p>
 </li>
 </ul>
 <p><strong>常见的登录文件：</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg2g9agxj30ka06s40w.jpg"></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg2nvrfzj30ko02fgmb.jpg"></p>
-<h2 id="登录文件的记录：syslogd"><a href="#登录文件的记录：syslogd" class="headerlink" title="登录文件的记录：syslogd"></a>登录文件的记录：syslogd</h2><p><strong>Linux开机启动，检查syslogd是否启动命令：</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg2uecjaj30kk04xdgr.jpg"></p>
-<h3 id="登录文件内容的一般格式"><a href="#登录文件内容的一般格式" class="headerlink" title="登录文件内容的一般格式"></a>登录文件内容的一般格式</h3><p><strong>sysylog记录下来的数据主要有：</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg31pzf7j30k102fdg8.jpg"></p>
-<p><strong>查看/var/log/secure内容</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg3ammonj30lw0d00vr.jpg"></p>
-<h3 id="登录文件的配置文件：-etc-syslog-conf"><a href="#登录文件的配置文件：-etc-syslog-conf" class="headerlink" title="登录文件的配置文件：/etc/syslog.conf"></a>登录文件的配置文件：/etc/syslog.conf</h3><p><strong>syslogd可以负责记录主机产生的所有信息，而这些信息本身是有严重等级之分的</strong></p>
-<p>/etc/syslog.conf的语法如下：</p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg3konp8j30kb0bowgy.jpg"></p>
-<p><strong>为了让不同的信息放到不同文件中，以便分门别类地进行登录文件的管理，将各种类别的服务登录文件记录在不同的文件里，就是/etc/syslog.conf所要做的工作</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg44y8rvj30ma0ewdmb.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg4kzx9ej30lw06idhi.jpg"></p>
-<p><strong>设置syslogd的案例：</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsfg4rrpjmj30im07djtd.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg52iycij30il0b8wha.jpg"></p>
-<p><strong>/etc/syslog.conf文件的默认内容</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg5e281rj30k70imjvp.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg5k0edbj30k701w74a.jpg"></p>
-<p><strong>将所有信息都额外写入到/var/log/admin.log</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg5u1a46j30ku0ccjsm.jpg"></p>
-<h3 id="登录文件的安全性设置"><a href="#登录文件的安全性设置" class="headerlink" title="登录文件的安全性设置"></a>登录文件的安全性设置</h3><p><strong>1.我们通过隐藏的属性来设置登录文件，使之只可以增加数据，但不能被删除，或许可以达到保护的作用；2.设置基本的隐藏属性，就是在Linux文件属性提过的lsattr与chattr。如果将一个文件以chattr设置i属性，那么，该文件连root都不能删掉，而且也不能新增数据，真安全，但是，如此一来登陆文件的功能也就消失了，因为没有办法写入；如果我们使用a属性，登录文件如果设置了这个属性，那么它将只能增加，而不能删除，这项非常符合登录文件的需求。</strong></p>
-<p><strong>设置与删除—文件从此就只能增加，而不能删除，只有root能执行删除-a命令</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg61yueij30ki02c74e.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg7aqtiyj30km01cdfp.jpg"></p>
-<h3 id="登录文件主机的简单设置"><a href="#登录文件主机的简单设置" class="headerlink" title="登录文件主机的简单设置"></a>登录文件主机的简单设置</h3><p><strong>如何实现让一台主机成为登录文件主机，用它记录所有10台Linux主机的信息</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsfg7nzducj30lg0c80vf.jpg"></p>
-<p><strong>通过这个操作，Linux主机可以接受来自其他主机的登录信息</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsfg7i4q09j30ld04r0u0.jpg"></p>
-<h1 id="Linux备份策略"><a href="#Linux备份策略" class="headerlink" title="Linux备份策略"></a>Linux备份策略</h1><h2 id="谁需要备份数据"><a href="#谁需要备份数据" class="headerlink" title="谁需要备份数据"></a>谁需要备份数据</h2><p><strong>备份时应考虑的因素有：</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsgguuztrnj30kj04kdhb.jpg"></p>
-<h2 id="备份哪些Linux数据"><a href="#备份哪些Linux数据" class="headerlink" title="备份哪些Linux数据"></a>备份哪些Linux数据</h2><ul>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg2g9agxj30ka06s40w.jpg" alt="" /></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg2nvrfzj30ko02fgmb.jpg" alt="" /></p>
+<h2 id="登录文件的记录syslogd"><a class="anchor" href="#登录文件的记录syslogd">#</a> 登录文件的记录：syslogd</h2>
+<p><strong>Linux 开机启动，检查 syslogd 是否启动命令：</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg2uecjaj30kk04xdgr.jpg" alt="" /></p>
+<h3 id="登录文件内容的一般格式"><a class="anchor" href="#登录文件内容的一般格式">#</a> 登录文件内容的一般格式</h3>
+<p><strong>sysylog 记录下来的数据主要有：</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg31pzf7j30k102fdg8.jpg" alt="" /></p>
+<p><strong>查看 /var/log/secure 内容</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg3ammonj30lw0d00vr.jpg" alt="" /></p>
+<h3 id="登录文件的配置文件etcsyslogconf"><a class="anchor" href="#登录文件的配置文件etcsyslogconf">#</a> 登录文件的配置文件：/etc/syslog.conf</h3>
+<p><strong>syslogd 可以负责记录主机产生的所有信息，而这些信息本身是有严重等级之分的</strong></p>
+<p>/etc/syslog.conf 的语法如下：</p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg3konp8j30kb0bowgy.jpg" alt="" /></p>
+<p><strong>为了让不同的信息放到不同文件中，以便分门别类地进行登录文件的管理，将各种类别的服务登录文件记录在不同的文件里，就是 /etc/syslog.conf 所要做的工作</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg44y8rvj30ma0ewdmb.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg4kzx9ej30lw06idhi.jpg" alt="" /></p>
+<p><strong>设置 syslogd 的案例：</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsfg4rrpjmj30im07djtd.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg52iycij30il0b8wha.jpg" alt="" /></p>
+<p><strong>/etc/syslog.conf 文件的默认内容</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg5e281rj30k70imjvp.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg5k0edbj30k701w74a.jpg" alt="" /></p>
+<p><strong>将所有信息都额外写入到 /var/log/admin.log</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsfg5u1a46j30ku0ccjsm.jpg" alt="" /></p>
+<h3 id="登录文件的安全性设置"><a class="anchor" href="#登录文件的安全性设置">#</a> 登录文件的安全性设置</h3>
+<p><strong>1. 我们通过隐藏的属性来设置登录文件，使之只可以增加数据，但不能被删除，或许可以达到保护的作用；2. 设置基本的隐藏属性，就是在 Linux 文件属性提过的 lsattr 与 chattr。如果将一个文件以 chattr 设置 i 属性，那么，该文件连 root 都不能删掉，而且也不能新增数据，真安全，但是，如此一来登陆文件的功能也就消失了，因为没有办法写入；如果我们使用 a 属性，登录文件如果设置了这个属性，那么它将只能增加，而不能删除，这项非常符合登录文件的需求。</strong></p>
+<p><strong>设置与删除 --- 文件从此就只能增加，而不能删除，只有 root 能执行删除 - a 命令</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsfg61yueij30ki02c74e.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsfg7aqtiyj30km01cdfp.jpg" alt="" /></p>
+<h3 id="登录文件主机的简单设置"><a class="anchor" href="#登录文件主机的简单设置">#</a> 登录文件主机的简单设置</h3>
+<p><strong>如何实现让一台主机成为登录文件主机，用它记录所有 10 台 Linux 主机的信息</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsfg7nzducj30lg0c80vf.jpg" alt="" /></p>
+<p><strong>通过这个操作，Linux 主机可以接受来自其他主机的登录信息</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsfg7i4q09j30ld04r0u0.jpg" alt="" /></p>
+<h1 id="linux备份策略"><a class="anchor" href="#linux备份策略">#</a> Linux 备份策略</h1>
+<h2 id="谁需要备份数据"><a class="anchor" href="#谁需要备份数据">#</a> 谁需要备份数据</h2>
+<p><strong>备份时应考虑的因素有：</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsgguuztrnj30kj04kdhb.jpg" alt="" /></p>
+<h2 id="备份哪些linux数据"><a class="anchor" href="#备份哪些linux数据">#</a> 备份哪些 Linux 数据</h2>
+<ul>
 <li>主机系统需要备份的文件</li>
 </ul>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsggvephg6j30j1042q38.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsggvephg6j30j1042q38.jpg" alt="" /></p>
 <ul>
 <li>网络服务的数据库方面</li>
 </ul>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsggvn8ei7j30j303s74z.jpg"></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsggvn8ei7j30j303s74z.jpg" alt="" /></p>
 <ul>
 <li>推荐备份的目录</li>
 </ul>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsggvuu71dj30j403q3yp.jpg"></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsggvuu71dj30j403q3yp.jpg" alt="" /></p>
 <ul>
 <li>不需要备份的目录</li>
 </ul>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsggw38w76j30j203lmxo.jpg"></p>
-<h2 id="选择备份设备"><a href="#选择备份设备" class="headerlink" title="选择备份设备"></a>选择备份设备</h2><p><strong>由于主机被盗，所有的数据将会丢失，会造成严重的后果，远程备份系统就显得尤为重要，远程备份，就是将系统数据备份到其他地方，通常使用Tap、Zip、CD-RW、CD-RW以及备份用抽取式硬盘与携带式硬盘等。注意事项如下：</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsggw38w76j30j203lmxo.jpg" alt="" /></p>
+<h2 id="选择备份设备"><a class="anchor" href="#选择备份设备">#</a> 选择备份设备</h2>
+<p><strong>由于主机被盗，所有的数据将会丢失，会造成严重的后果，远程备份系统就显得尤为重要，远程备份，就是将系统数据备份到其他地方，通常使用 Tap、Zip、CD-RW、CD-RW 以及备份用抽取式硬盘与携带式硬盘等。注意事项如下：</strong></p>
 <ul>
-<li><p>速度要求：在Linux主机上备份也很消耗系统资源，需要将系统数据复制到其他设备</p>
+<li>
+<p>速度要求：在 Linux 主机上备份也很消耗系统资源，需要将系统数据复制到其他设备</p>
 </li>
-<li><p>存储容量：抽取式硬盘需要将系统冷启动，而系统内的硬盘不安全，携带式硬盘不容易保存，所以大容量的Tape颇具优势，携带方便，存放容易</p>
+<li>
+<p>存储容量：抽取式硬盘需要将系统冷启动，而系统内的硬盘不安全，携带式硬盘不容易保存，所以大容量的 Tape 颇具优势，携带方便，存放容易</p>
 </li>
-<li><p>经费与数据可靠性</p>
+<li>
+<p>经费与数据可靠性</p>
 </li>
 </ul>
 <p><strong>常见的设备号：</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsggwdcnzsj30jx03r0tg.jpg"></p>
-<h2 id="备份的种类"><a href="#备份的种类" class="headerlink" title="备份的种类"></a>备份的种类</h2><ul>
-<li><p>完全备份：就是将根目录/里的所有数据都备份下来；刚刚完成的系统应当先做备份。可以对系统进行最干净的还原。有时候系统被入侵，但root并不知道，这时候拿最近的备份数据来还原是没用的，因为连同被怪客修改过的文件也被我们备份下来了。所以，将最原始系统的数据备份下来很重要</p>
-</li>
-<li><p>部分备份：部分备份只备份最重要的数据。系统出问题时，只要重新安装即可，只要妥善备份中重点数据，还原系统就可以很快。只需备份账号、服务设置、原来系统的数据库等就可以</p>
-</li>
-</ul>
-<h2 id="选择备份工具"><a href="#选择备份工具" class="headerlink" title="选择备份工具"></a>选择备份工具</h2><p>1.完整备份的工具 </p>
-<p><strong>一般用cpio进行完整备份是很好的选择，注意的是配合find才可以正常操作。另外，使用cpio时需要配合另一个完全用来备份的硬盘或磁带机</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgh1ihh7sj30k4071ab8.jpg"></p>
-<p>2.部分备份的基础工具</p>
-<p><strong>想将每天的数据都保存为不同的文件，通过日期分辨文件的新旧，可以这样做：</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsggwqbsekj30jj035mxq.jpg"></p>
-<p><strong>这样就能将mysql的数据库压缩备份至mysql.2005-10-25.tgz文件中，并且日期会每天都不一样</strong></p>
-<h2 id="备份策略实例"><a href="#备份策略实例" class="headerlink" title="备份策略实例"></a>备份策略实例</h2><p><strong>编写两个简单的脚本，分别存储自己的数据，其备份策略是：</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgh2rhml2j30jf040gmp.jpg"></p>
-<h3 id="日常备份行为"><a href="#日常备份行为" class="headerlink" title="日常备份行为"></a>日常备份行为</h3><p><strong>（1）先将所有数据都放到/disk2/backup中；（2）进行压缩打包，并且传送到内部的192.168.1.199主机上</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsggx2rzmyj30ju0gpado.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsggxiviidj30k60i2tbq.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsgh3zp1kqj30l70czjtj.jpg"></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgh4hrpisj30kd0gxdij.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgh6cfx1qj30l10dbq54.jpg"></p>
-<h3 id="每日备份数据脚本"><a href="#每日备份数据脚本" class="headerlink" title="每日备份数据脚本"></a>每日备份数据脚本</h3><p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgjhl7snfj30k40jc0wb.jpg"></p>
-<p><strong>每天MYSQL数据库就可以自动记录在/disk2/backup/daily中，而且文件名会自动改变。随后就是使用/etc/crontab开始让系统自己运行。相关设置如下：</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsgjhnzqi4j30kd03bjrt.jpg"></p>
-<p><strong>系统会自动在每天的2：30进行MySQL备份，而在每个星期日的3：30进行重要文件的备份，还要将/disk2中的数据复制出来</strong></p>
-<h3 id="远程备份系统"><a href="#远程备份系统" class="headerlink" title="远程备份系统"></a>远程备份系统</h3><p><strong>远程备份最简单的FTP就可以远程备份</strong></p>
-<p><strong>下面为简单的FTP脚本可以实现自动文件上传：</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgjhs7qdxj30jm0l2wi7.jpg"></p>
-<p><strong>不想用FTP而想使用其他方式的话，或许可以用man    rsync命令来实现</strong></p>
-<h2 id="还原系统的考虑因素"><a href="#还原系统的考虑因素" class="headerlink" title="还原系统的考虑因素"></a>还原系统的考虑因素</h2><h3 id="还原系统的考虑因素-1"><a href="#还原系统的考虑因素-1" class="headerlink" title="还原系统的考虑因素"></a>还原系统的考虑因素</h3><p>备份与还原的考虑因素：</p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsggwdcnzsj30jx03r0tg.jpg" alt="" /></p>
+<h2 id="备份的种类"><a class="anchor" href="#备份的种类">#</a> 备份的种类</h2>
 <ul>
-<li><p>主机需要在很短的时间内立刻还原上线</p>
+<li>
+<p>完全备份：就是将根目录 / 里的所有数据都备份下来；刚刚完成的系统应当先做备份。可以对系统进行最干净的还原。有时候系统被入侵，但 root 并不知道，这时候拿最近的备份数据来还原是没用的，因为连同被怪客修改过的文件也被我们备份下来了。所以，将最原始系统的数据备份下来很重要</p>
 </li>
-<li><p>主机希望能够在查询到问题的原因后才正式上线</p>
-</li>
-<li><p>关于存储架构的考虑</p>
+<li>
+<p>部分备份：部分备份只备份最重要的数据。系统出问题时，只要重新安装即可，只要妥善备份中重点数据，还原系统就可以很快。只需备份账号、服务设置、原来系统的数据库等就可以</p>
 </li>
 </ul>
-<h2 id="更新显卡驱动程序的范例：NVidia驱动程序"><a href="#更新显卡驱动程序的范例：NVidia驱动程序" class="headerlink" title="更新显卡驱动程序的范例：NVidia驱动程序"></a>更新显卡驱动程序的范例：NVidia驱动程序</h2><p>1.下载驱动程序</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgk60u87ej30ka00ya9x.jpg"></p>
+<h2 id="选择备份工具"><a class="anchor" href="#选择备份工具">#</a> 选择备份工具</h2>
+<p>1. 完整备份的工具</p>
+<p><strong>一般用 cpio 进行完整备份是很好的选择，注意的是配合 find 才可以正常操作。另外，使用 cpio 时需要配合另一个完全用来备份的硬盘或磁带机</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgh1ihh7sj30k4071ab8.jpg" alt="" /></p>
+<p>2. 部分备份的基础工具</p>
+<p><strong>想将每天的数据都保存为不同的文件，通过日期分辨文件的新旧，可以这样做：</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsggwqbsekj30jj035mxq.jpg" alt="" /></p>
+<p><strong>这样就能将 mysql 的数据库压缩备份至 mysql.2005-10-25.tgz 文件中，并且日期会每天都不一样</strong></p>
+<h2 id="备份策略实例"><a class="anchor" href="#备份策略实例">#</a> 备份策略实例</h2>
+<p><strong>编写两个简单的脚本，分别存储自己的数据，其备份策略是：</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgh2rhml2j30jf040gmp.jpg" alt="" /></p>
+<h3 id="日常备份行为"><a class="anchor" href="#日常备份行为">#</a> 日常备份行为</h3>
+<p><strong>（1）先将所有数据都放到 /disk2/backup 中；（2）进行压缩打包，并且传送到内部的 192.168.1.199 主机上</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsggx2rzmyj30ju0gpado.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsggxiviidj30k60i2tbq.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsgh3zp1kqj30l70czjtj.jpg" alt="" /></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgh4hrpisj30kd0gxdij.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgh6cfx1qj30l10dbq54.jpg" alt="" /></p>
+<h3 id="每日备份数据脚本"><a class="anchor" href="#每日备份数据脚本">#</a> 每日备份数据脚本</h3>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgjhl7snfj30k40jc0wb.jpg" alt="" /></p>
+<p><strong>每天 MYSQL 数据库就可以自动记录在 /disk2/backup/daily 中，而且文件名会自动改变。随后就是使用 /etc/crontab 开始让系统自己运行。相关设置如下：</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsgjhnzqi4j30kd03bjrt.jpg" alt="" /></p>
+<p><strong>系统会自动在每天的 2：30 进行 MySQL 备份，而在每个星期日的 3：30 进行重要文件的备份，还要将 /disk2 中的数据复制出来</strong></p>
+<h3 id="远程备份系统"><a class="anchor" href="#远程备份系统">#</a> 远程备份系统</h3>
+<p><strong>远程备份最简单的 FTP 就可以远程备份</strong></p>
+<p><strong>下面为简单的 FTP 脚本可以实现自动文件上传：</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgjhs7qdxj30jm0l2wi7.jpg" alt="" /></p>
+<p><strong>不想用 FTP 而想使用其他方式的话，或许可以用 man    rsync 命令来实现</strong></p>
+<h2 id="还原系统的考虑因素"><a class="anchor" href="#还原系统的考虑因素">#</a> 还原系统的考虑因素</h2>
+<h3 id="还原系统的考虑因素-2"><a class="anchor" href="#还原系统的考虑因素-2">#</a> 还原系统的考虑因素</h3>
+<p>备份与还原的考虑因素：</p>
+<ul>
+<li>
+<p>主机需要在很短的时间内立刻还原上线</p>
+</li>
+<li>
+<p>主机希望能够在查询到问题的原因后才正式上线</p>
+</li>
+<li>
+<p>关于存储架构的考虑</p>
+</li>
+</ul>
+<h2 id="更新显卡驱动程序的范例nvidia驱动程序"><a class="anchor" href="#更新显卡驱动程序的范例nvidia驱动程序">#</a> 更新显卡驱动程序的范例：NVidia 驱动程序</h2>
+<p>1. 下载驱动程序</p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgk60u87ej30ka00ya9x.jpg" alt="" /></p>
 <p><strong>在该网站中，还会有很多信息，里面会介绍如何正确地安装软件，并提供了排错解决方案</strong></p>
-<p>2.安装模块</p>
-<p>安装过程直接执行该下载文件即可。下载的文件名称应该是：NVIDIA-Linux-x86-pkgl.run。这是一个含有源码的shell脚本，既然是shell脚本，直接安装即可。</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgk62yuamj30k802waaq.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsgk64rm26j30la074dhp.jpg"></p>
-<p>3.修改主要设置文件内容</p>
-<p>接下来就是让X服务器去直接读取刚才安装的模块，所以，修改一下xorg.conf</p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgk66pc0ej30l30cygmx.jpg"></p>
-<h1 id="Linux硬件检测与维护"><a href="#Linux硬件检测与维护" class="headerlink" title="Linux硬件检测与维护"></a>Linux硬件检测与维护</h1><h2 id="准备硬件"><a href="#准备硬件" class="headerlink" title="准备硬件"></a>准备硬件</h2><p><strong>目的在于更深入了解Linux主机的硬件，汇总硬件信息，并进行一些检测与控制，所以我们要先准备号Linux主机的硬件，了解其硬件配置</strong></p>
-<h3 id="硬件信息的收集：lspci、iostat…"><a href="#硬件信息的收集：lspci、iostat…" class="headerlink" title="硬件信息的收集：lspci、iostat…"></a>硬件信息的收集：lspci、iostat…</h3><p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsglsxyj97j30k803agmg.jpg"></p>
+<p>2. 安装模块</p>
+<p>安装过程直接执行该下载文件即可。下载的文件名称应该是：NVIDIA-Linux-x86-pkgl.run。这是一个含有源码的 shell 脚本，既然是 shell 脚本，直接安装即可。</p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsgk62yuamj30k802waaq.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsgk64rm26j30la074dhp.jpg" alt="" /></p>
+<p>3. 修改主要设置文件内容</p>
+<p>接下来就是让 X 服务器去直接读取刚才安装的模块，所以，修改一下 xorg.conf</p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsgk66pc0ej30l30cygmx.jpg" alt="" /></p>
+<h1 id="linux硬件检测与维护"><a class="anchor" href="#linux硬件检测与维护">#</a> Linux 硬件检测与维护</h1>
+<h2 id="准备硬件"><a class="anchor" href="#准备硬件">#</a> 准备硬件</h2>
+<p><strong>目的在于更深入了解 Linux 主机的硬件，汇总硬件信息，并进行一些检测与控制，所以我们要先准备号 Linux 主机的硬件，了解其硬件配置</strong></p>
+<h3 id="硬件信息的收集lspci-iostat"><a class="anchor" href="#硬件信息的收集lspci-iostat">#</a> 硬件信息的收集：lspci、iostat...</h3>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsglsxyj97j30k803agmg.jpg" alt="" /></p>
 <p>1.lspci</p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsglt0zxqej30lv0g6ju6.jpg"></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsglt0zxqej30lv0g6ju6.jpg" alt="" /></p>
 <p>2.iostat</p>
 <p><strong>检测硬盘从启动到现在已经存取了多少数据</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsglt3d0vnj30jn0k9n1k.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsglt54ew4j30jj01yaaj.jpg"></p>
-<p><strong>通过lspci与iostat，可以简单了解当前系统的状态，以及当前的主机硬件数据</strong></p>
-<h3 id="驱动USB设备"><a href="#驱动USB设备" class="headerlink" title="驱动USB设备"></a>驱动USB设备</h3><p>1.USB的芯片版本</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsglt700upj30kp035wfj.jpg"></p>
-<p><strong>如果使用lsmod时发现HCI之类的模块，就表示Linux主机已经加载USB的驱动程序。如果USB设备比较多，那么可能还需要加载USB HID模块才行</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsglt97irtj30l70bpabt.jpg"></p>
-<p>2.启动USB打印机</p>
-<p><strong>先加载USB模块，建立USB打印机的设备代号，需要使用mkmod命令，以及USB打印机设备的主次，建立方法为：</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsgltbnh7rj30kd04kdgk.jpg"></p>
-<p><strong>其实除了早期的版本，较新版本已经帮我们建立好/dev/usb/lp0等文件设备</strong></p>
-<h3 id="使用lm-sensors取得温度、电压等信息"><a href="#使用lm-sensors取得温度、电压等信息" class="headerlink" title="使用lm_sensors取得温度、电压等信息"></a>使用lm_sensors取得温度、电压等信息</h3><p><strong>超频就是增加系统原有的运算频率，让CPU、PCI、AGI前端总线速度提升到非正规的频率，已取得较高的计算机性能；个大主要的主机板与芯片集，主机内都会有温度、压力的检测器，我们可以在主机板操作手册或在BIOS内的Monitor项中找到相关的温度、压力数据。在Windows系统中，广商推出相关的软件来检测，在Linux中是lm_sensors套件。</strong></p>
-<p><strong>lm_sensors提供不错的主机板芯片集检测程序，就是sensors-detect命令。检测到主机板芯片集后，将该信息写入设置文件中，就可以使用sensors命令直接读取但其那CPU、机壳、电源、风扇等信息</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshet9tcw3j30l10n3q7q.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshetiwkiej30lt0b8wfx.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshettvedcj30jh0mk43y.jpg"></p>
-<p><strong>VIA694D是适合双CPU的主机板，但lm_sensors假定仅有单CPU的显示状况，所以，显示的结果与实际数据有差异。此时或许就需要进行调整，调整步骤如下：</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshextdfrhj30ke0nlq7h.jpg"></p>
-<h2 id="PC4的系统操作：setup功能"><a href="#PC4的系统操作：setup功能" class="headerlink" title="PC4的系统操作：setup功能"></a>PC4的系统操作：setup功能</h2><p><strong>整个启动流程看/etc/inittab的规定项目，每个服务启动的脚本放在/etc/init.d/scriptname里，但启动设置文件则可能会包含在/etc/sysconfig内。lm_sensors模块就放在/etc/sysconfig/lm_sensors中</strong></p>
-<p><strong>Red Hat系统提供了工具，套件名称为setuptool，直接执行setup就能处理整个执行过程。直接使用命令或vi可以实现setup所提供的功能。以root身份执行setup后，会出现如下所示界面</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshez5lz8yj30kd0ip48a.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshezk19fgj30kf0ggdmn.jpg"></p>
-<h2 id="特殊文件系统：LVM"><a href="#特殊文件系统：LVM" class="headerlink" title="特殊文件系统：LVM"></a>特殊文件系统：LVM</h2><p><strong>LVM可以将多个物理分区整合在一起，让这些分区看起来就像是一个磁盘一样，还可以新增其他物理分区到LVM管理的磁盘中</strong></p>
-<h3 id="什么是LVM：PV、PE、VG、、LV"><a href="#什么是LVM：PV、PE、VG、、LV" class="headerlink" title="什么是LVM：PV、PE、VG、、LV"></a>什么是LVM：PV、PE、VG、、LV</h3><p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshezxfyqyj30li0ipadd.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshf05gq50j30l105idj3.jpg"></p>
-<h3 id="制作LVM磁盘的流程"><a href="#制作LVM磁盘的流程" class="headerlink" title="制作LVM磁盘的流程"></a>制作LVM磁盘的流程</h3><p><strong>环境是PC4，有一个30G的硬盘放在/etc/hdb中，这个硬盘已经分割成为三个分区。分别为/dev/hdb1、/dev/hdb2、/dev/hdb3,大约各有10G左右</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshf0um51mj30m00egk0b.jpg"></p>
-<p>1.建立PV与PV的查询</p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshf1fado6j30k30kpdsd.jpg"></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshf1rzdlaj30k60agq8j.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshf2648haj30ku04ogo5.jpg"></p>
-<p>2.开始建立VG</p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/31bfd0897fe34b7d01e5b3c71824cd1a">)</p>
-<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/af6f53074f4b6dd33f393b02e86626d8"></p>
-<p>3、建立LV</p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/0ab8fd6c6a0d5722b2751092f4efa741"></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/ba0d980bc70d6358a61758779ccea074"></p>
-<p>4.分区的格式化与载入</p>
-<p><img data-src="!%5B%5D(https://img03.sogoucdn.com/app/a/100520146/08ba11808865530de1162e0e6578b684)"></p>
-<h3 id="加大原有的LVM磁盘：resize2fs"><a href="#加大原有的LVM磁盘：resize2fs" class="headerlink" title="加大原有的LVM磁盘：resize2fs"></a>加大原有的LVM磁盘：resize2fs</h3><p><strong>将一个崭新的/dev/hdb3的物理分区加入到vbirdvg中，步骤如下：</strong></p>
-<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/2df33936988a54882e74cd14c26eb129"><br><img data-src="https://img03.sogoucdn.com/app/a/100520146/3c61fe1f0ae43ed46a1e686e6d4fef77"></p>
-<p><strong>LV增加，但/dev/vbirdvg/vbirdlv却没有加大；这是因为最初规划时ext3主要信息已经写入超级快，同时inode与块数量又是固定的，所以这个容量大小当然不会有变化。我们可以使用ext2、ext3的工具程序来处理。</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/d32664952a68d0e9b7395f53b284d7ca"></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p><img data-src="https://img04.sogoucdn.com/app/a/100520146/779fd7ce1bac9103e11a053a8cf18700">1</p>
-<p><strong>删除LVM</strong></p>
-<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/ea8d1dfad91b357384a041b79ab8663b"></p>
-<h2 id="额外的存储设备iSCSI协议的磁盘阵列"><a href="#额外的存储设备iSCSI协议的磁盘阵列" class="headerlink" title="额外的存储设备iSCSI协议的磁盘阵列"></a>额外的存储设备iSCSI协议的磁盘阵列</h2><p><strong>SAN（Storage Area Networks，存储区网络）与NAS（Network Attached Storage，网络连接存储），NAS主要使用一台主机专门存储数据，以现有的TCP/IP协议来提供类似文件服务器的用途，可以直接放在网络上，供用户访问数据。SAN则类似一台存储设备，通过光纤信道供某几台主机进行数据访问。它们的储存硬盘通常是以磁盘阵列RAID作为基础</strong></p>
-<h3 id="什么是磁盘阵列"><a href="#什么是磁盘阵列" class="headerlink" title="什么是磁盘阵列"></a>什么是磁盘阵列</h3><p><strong>磁盘阵列全名是Redundant Arrays of Inexpensive Disks,简写为RAID，是通过软件或硬件技术，将多个较小的磁盘整合成为较大的磁盘设备，而这个磁盘功能不止存储，还有数据保护的功能</strong></p>
-<p><strong>RAID常见的等级如下：</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsglt3d0vnj30jn0k9n1k.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsglt54ew4j30jj01yaaj.jpg" alt="" /></p>
+<p><strong>通过 lspci 与 iostat，可以简单了解当前系统的状态，以及当前的主机硬件数据</strong></p>
+<h3 id="驱动usb设备"><a class="anchor" href="#驱动usb设备">#</a> 驱动 USB 设备</h3>
+<p>1.USB 的芯片版本</p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsglt700upj30kp035wfj.jpg" alt="" /></p>
+<p><strong>如果使用 lsmod 时发现 HCI 之类的模块，就表示 Linux 主机已经加载 USB 的驱动程序。如果 USB 设备比较多，那么可能还需要加载 USB HID 模块才行</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsglt97irtj30l70bpabt.jpg" alt="" /></p>
+<p>2. 启动 USB 打印机</p>
+<p><strong>先加载 USB 模块，建立 USB 打印机的设备代号，需要使用 mkmod 命令，以及 USB 打印机设备的主次，建立方法为：</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsgltbnh7rj30kd04kdgk.jpg" alt="" /></p>
+<p><strong>其实除了早期的版本，较新版本已经帮我们建立好 /dev/usb/lp0 等文件设备</strong></p>
+<h3 id="使用lm_sensors取得温度-电压等信息"><a class="anchor" href="#使用lm_sensors取得温度-电压等信息">#</a> 使用 lm_sensors 取得温度、电压等信息</h3>
+<p><strong>超频就是增加系统原有的运算频率，让 CPU、PCI、AGI 前端总线速度提升到非正规的频率，已取得较高的计算机性能；个大主要的主机板与芯片集，主机内都会有温度、压力的检测器，我们可以在主机板操作手册或在 BIOS 内的 Monitor 项中找到相关的温度、压力数据。在 Windows 系统中，广商推出相关的软件来检测，在 Linux 中是 lm_sensors 套件。</strong></p>
+<p><strong>lm_sensors 提供不错的主机板芯片集检测程序，就是 sensors-detect 命令。检测到主机板芯片集后，将该信息写入设置文件中，就可以使用 sensors 命令直接读取但其那 CPU、机壳、电源、风扇等信息</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshet9tcw3j30l10n3q7q.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshetiwkiej30lt0b8wfx.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshettvedcj30jh0mk43y.jpg" alt="" /></p>
+<p><strong>VIA694D 是适合双 CPU 的主机板，但 lm_sensors 假定仅有单 CPU 的显示状况，所以，显示的结果与实际数据有差异。此时或许就需要进行调整，调整步骤如下：</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshextdfrhj30ke0nlq7h.jpg" alt="" /></p>
+<h2 id="pc4的系统操作setup功能"><a class="anchor" href="#pc4的系统操作setup功能">#</a> PC4 的系统操作：setup 功能</h2>
+<p><strong>整个启动流程看 /etc/inittab 的规定项目，每个服务启动的脚本放在 /etc/init.d/scriptname 里，但启动设置文件则可能会包含在 /etc/sysconfig 内。lm_sensors 模块就放在 /etc/sysconfig/lm_sensors 中</strong></p>
+<p><strong>Red Hat 系统提供了工具，套件名称为 setuptool，直接执行 setup 就能处理整个执行过程。直接使用命令或 vi 可以实现 setup 所提供的功能。以 root 身份执行 setup 后，会出现如下所示界面</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshez5lz8yj30kd0ip48a.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshezk19fgj30kf0ggdmn.jpg" alt="" /></p>
+<h2 id="特殊文件系统lvm"><a class="anchor" href="#特殊文件系统lvm">#</a> 特殊文件系统：LVM</h2>
+<p><strong>LVM 可以将多个物理分区整合在一起，让这些分区看起来就像是一个磁盘一样，还可以新增其他物理分区到 LVM 管理的磁盘中</strong></p>
+<h3 id="什么是lvmpv-pe-vg-lv"><a class="anchor" href="#什么是lvmpv-pe-vg-lv">#</a> 什么是 LVM：PV、PE、VG、、LV</h3>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshezxfyqyj30li0ipadd.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshf05gq50j30l105idj3.jpg" alt="" /></p>
+<h3 id="制作lvm磁盘的流程"><a class="anchor" href="#制作lvm磁盘的流程">#</a> 制作 LVM 磁盘的流程</h3>
+<p><strong>环境是 PC4，有一个 30G 的硬盘放在 /etc/hdb 中，这个硬盘已经分割成为三个分区。分别为 /dev/hdb1、/dev/hdb2、/dev/hdb3, 大约各有 10G 左右</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshf0um51mj30m00egk0b.jpg" alt="" /></p>
+<p>1. 建立 PV 与 PV 的查询</p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshf1fado6j30k30kpdsd.jpg" alt="" /></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshf1rzdlaj30k60agq8j.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshf2648haj30ku04ogo5.jpg" alt="" /></p>
+<p>2. 开始建立 VG</p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/31bfd0897fe34b7d01e5b3c71824cd1a" alt="" />)</p>
+<p><img data-src="https://img01.sogoucdn.com/app/a/100520146/af6f53074f4b6dd33f393b02e86626d8" alt="" /></p>
+<p>3、建立 LV</p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/0ab8fd6c6a0d5722b2751092f4efa741" alt="" /></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/ba0d980bc70d6358a61758779ccea074" alt="" /></p>
+<p>4. 分区的格式化与载入</p>
+<p><img data-src="!%5B%5D(https://img03.sogoucdn.com/app/a/100520146/08ba11808865530de1162e0e6578b684)" alt="" /></p>
+<h3 id="加大原有的lvm磁盘resize2fs"><a class="anchor" href="#加大原有的lvm磁盘resize2fs">#</a> 加大原有的 LVM 磁盘：resize2fs</h3>
+<p><strong>将一个崭新的 /dev/hdb3 的物理分区加入到 vbirdvg 中，步骤如下：</strong></p>
+<p><img data-src="https://img03.sogoucdn.com/app/a/100520146/2df33936988a54882e74cd14c26eb129" alt="" /><br />
+<img data-src="https://img03.sogoucdn.com/app/a/100520146/3c61fe1f0ae43ed46a1e686e6d4fef77" alt="" /></p>
+<p><strong>LV 增加，但 /dev/vbirdvg/vbirdlv 却没有加大；这是因为最初规划时 ext3 主要信息已经写入超级快，同时 inode 与块数量又是固定的，所以这个容量大小当然不会有变化。我们可以使用 ext2、ext3 的工具程序来处理。</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/d32664952a68d0e9b7395f53b284d7ca" alt="" /></p>
+<h3 id="注意事项"><a class="anchor" href="#注意事项">#</a> 注意事项</h3>
+<p><img data-src="https://img04.sogoucdn.com/app/a/100520146/779fd7ce1bac9103e11a053a8cf18700" alt="" />1</p>
+<p><strong>删除 LVM</strong></p>
+<p><img data-src="https://img02.sogoucdn.com/app/a/100520146/ea8d1dfad91b357384a041b79ab8663b" alt="" /></p>
+<h2 id="额外的存储设备iscsi协议的磁盘阵列"><a class="anchor" href="#额外的存储设备iscsi协议的磁盘阵列">#</a> 额外的存储设备 iSCSI 协议的磁盘阵列</h2>
+<p><strong>SAN（Storage Area Networks，存储区网络）与 NAS（Network Attached Storage，网络连接存储），NAS 主要使用一台主机专门存储数据，以现有的 TCP/IP 协议来提供类似文件服务器的用途，可以直接放在网络上，供用户访问数据。SAN 则类似一台存储设备，通过光纤信道供某几台主机进行数据访问。它们的储存硬盘通常是以磁盘阵列 RAID 作为基础</strong></p>
+<h3 id="什么是磁盘阵列"><a class="anchor" href="#什么是磁盘阵列">#</a> 什么是磁盘阵列</h3>
+<p><strong>磁盘阵列全名是 Redundant Arrays of Inexpensive Disks, 简写为 RAID，是通过软件或硬件技术，将多个较小的磁盘整合成为较大的磁盘设备，而这个磁盘功能不止存储，还有数据保护的功能</strong></p>
+<p><strong>RAID 常见的等级如下：</strong></p>
 <ul>
-<li><p>Linear Mode（线性模式）：两个以上的磁盘整合成一个物理存储设备；将一个一个填满后，才将数据继续写到写一个磁盘上；由于数据是一个一个写入到不同的硬盘中没并不会增加整个擦皮纳的读取性能；由于数据具有连续新，因此，若不小心有任何一个磁盘损坏时，您的数据就无可免回了；</p>
+<li>
+<p>Linear Mode（线性模式）：两个以上的磁盘整合成一个物理存储设备；将一个一个填满后，才将数据继续写到写一个磁盘上；由于数据是一个一个写入到不同的硬盘中没并不会增加整个擦皮纳的读取性能；由于数据具有连续新，因此，若不小心有任何一个磁盘损坏时，您的数据就无可免回了；</p>
 </li>
-<li><p>RAID-0（交错模式）：主要时利用容量相同的磁盘来实现，性能会比较好；交错表示文件数据时同步放到不同的磁盘上；</p>
+<li>
+<p>RAID-0（交错模式）：主要时利用容量相同的磁盘来实现，性能会比较好；交错表示文件数据时同步放到不同的磁盘上；</p>
 </li>
-<li><p>RAID-1（镜像模式）：这也是相同磁盘容量；这种模式这要是让同一份数据，完整地保存在两个磁盘上；这种模式最大的优点就是能进行备份，任何一个磁盘损坏，所有数据还都保存完好</p>
+<li>
+<p>RAID-1（镜像模式）：这也是相同磁盘容量；这种模式这要是让同一份数据，完整地保存在两个磁盘上；这种模式最大的优点就是能进行备份，任何一个磁盘损坏，所有数据还都保存完好</p>
 </li>
-<li><p>RAID-5：整合多个磁盘（通常需要3个以上），然后每个磁盘驱动器上都会记录少许其他磁盘驱动器的信息</p>
+<li>
+<p>RAID-5：整合多个磁盘（通常需要 3 个以上），然后每个磁盘驱动器上都会记录少许其他磁盘驱动器的信息</p>
 </li>
 </ul>
-<h1 id="Linux核心编译与管理"><a href="#Linux核心编译与管理" class="headerlink" title="Linux核心编译与管理"></a>Linux核心编译与管理</h1><p>1.核心</p>
-<p><strong>核心是整个操作系统的最底层，负责全部硬件的驱动，并提供各种核心工具及，包括防火墙机制、是否支持LVM或Quota等文件系统。因此，在启动过程中，除了MBR之外，第一个读取系统内存中的就是核心文件。</strong></p>
+<h1 id="linux核心编译与管理"><a class="anchor" href="#linux核心编译与管理">#</a> Linux 核心编译与管理</h1>
+<p>1. 核心</p>
+<p><strong>核心是整个操作系统的最底层，负责全部硬件的驱动，并提供各种核心工具及，包括防火墙机制、是否支持 LVM 或 Quota 等文件系统。因此，在启动过程中，除了 MBR 之外，第一个读取系统内存中的就是核心文件。</strong></p>
 <p><strong>不论您如何卖力地设置该网络套件，核心不支持，也是没法工作的</strong></p>
 <p><strong>核心读入主存储器的时机：</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr1sk49hj30kq04cdgl.jpg"></p>
-<p>2.核心模块</p>
-<p><strong>核心模块包含了硬件检测与驱动模块；Linux将一些不常用的类似驱动程序的东西独立出核心，编译成模块，然后，核心可以在运行过程中加载这个模块，让核心支持它，这样可在不需更改核心的前提之下，只要编译出适当的驱动模块，并加载它，Linux就可以使用这个硬件。</strong><br>模块放在/lib/modules/‘uname  -r’/</p>
-<p>3.核心编译</p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr1sk49hj30kq04cdgl.jpg" alt="" /></p>
+<p>2. 核心模块</p>
+<p><strong>核心模块包含了硬件检测与驱动模块；Linux 将一些不常用的类似驱动程序的东西独立出核心，编译成模块，然后，核心可以在运行过程中加载这个模块，让核心支持它，这样可在不需更改核心的前提之下，只要编译出适当的驱动模块，并加载它，Linux 就可以使用这个硬件。</strong><br />
+模块放在 /lib/modules/'uname  -r'/</p>
+<p>3. 核心编译</p>
 <p><strong>核心其实是一个文件，文件是通过源码编译而成的。因为核心是直接读入到主存储器中，所以要将它编译成系统可识别的数据；所以我们必须取得核心的源码，然后利用源码与编译方式来编译核心</strong></p>
-<p>4.驱动程序与核心的问题</p>
-<p><strong>Linux的核心相当灵活，它支持模块化的，只要新硬件推出搭配核心的驱动模块（驱动程序），我们就可将该模块挂载到核心上，核心就可以支持该硬件</strong></p>
-<h3 id="更新核心的原因"><a href="#更新核心的原因" class="headerlink" title="更新核心的原因"></a>更新核心的原因</h3><ul>
-<li><p>新功能的需求</p>
+<p>4. 驱动程序与核心的问题</p>
+<p><strong>Linux 的核心相当灵活，它支持模块化的，只要新硬件推出搭配核心的驱动模块（驱动程序），我们就可将该模块挂载到核心上，核心就可以支持该硬件</strong></p>
+<h3 id="更新核心的原因"><a class="anchor" href="#更新核心的原因">#</a> 更新核心的原因</h3>
+<ul>
+<li>
+<p>新功能的需求</p>
 </li>
-<li><p>原核心太过庞大</p>
+<li>
+<p>原核心太过庞大</p>
 </li>
-<li><p>与硬件搭配的稳定性</p>
+<li>
+<p>与硬件搭配的稳定性</p>
 </li>
-<li><p>由于特殊的环境需求，就需要自行设计核心</p>
+<li>
+<p>由于特殊的环境需求，就需要自行设计核心</p>
 </li>
 </ul>
-<h3 id="核心的版本与下载最新核心的位置"><a href="#核心的版本与下载最新核心的位置" class="headerlink" title="核心的版本与下载最新核心的位置"></a>核心的版本与下载最新核心的位置</h3><p>1.核心的版本</p>
-<p><strong>由于不同的核心版本之间使用的函数库并不相同，所以必须知道自己的Linxu核心版本之后，才能采用最新支持的核心版本来编译新的核心</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr2g2764j30kg025wei.jpg"></p>
+<h3 id="核心的版本与下载最新核心的位置"><a class="anchor" href="#核心的版本与下载最新核心的位置">#</a> 核心的版本与下载最新核心的位置</h3>
+<p>1. 核心的版本</p>
+<p><strong>由于不同的核心版本之间使用的函数库并不相同，所以必须知道自己的 Linxu 核心版本之后，才能采用最新支持的核心版本来编译新的核心</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr2g2764j30kg025wei.jpg" alt="" /></p>
 <p>核心版本分为：</p>
 <p>【主版本】.【次版本】.【发布版本（release）】-【修改版本】</p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshr2t0srlj30kc032q3o.jpg"></p>
-<p>核心下载地址：<span class="exturl" data-url="aHR0cDovL3d3dy5rZXJuZWwub3JnLw==">http://www.kernel.org</span></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr394t4hj30iq06ogmp.jpg"></p>
-<p>2.核心的下载地点</p>
-<p><strong>Linux的核心当前是由其发明者Linus Torvalds所属团队负责维护的，其网站在下面的网址上，在该网站可以找到最新的核心信息。</strong></p>
-<h2 id="核心源码的获取与升级"><a href="#核心源码的获取与升级" class="headerlink" title="核心源码的获取与升级"></a>核心源码的获取与升级</h2><h3 id="获取原版本提供的核心源码"><a href="#获取原版本提供的核心源码" class="headerlink" title="获取原版本提供的核心源码"></a>获取原版本提供的核心源码</h3><p><strong>如果已安装工具程序的话，那么就可以利用rpm找到名为kernel-devel的套件，那就是核心源码</strong></p>
-<h3 id="获取最新的核心"><a href="#获取最新的核心" class="headerlink" title="获取最新的核心"></a>获取最新的核心</h3><p><strong>使用源码来重新编译核心比较方便，但使得硬件所需要的新驱动程序无法通过原来的核心源码编译，所以如果要更新驱动程序，就是用最新的核心</strong></p>
-<h3 id="保留原设置：利用补丁升级核心源码"><a href="#保留原设置：利用补丁升级核心源码" class="headerlink" title="保留原设置：利用补丁升级核心源码"></a>保留原设置：利用补丁升级核心源码</h3><p><strong>如果自行以最新的核心版本来编译过核心，那么系统就应该存在几个版本的核心源码，以及上次自行编译的参数设置值；核心发布，除了发布完整的核心压缩文件之外，也会发布该版本与前一版本的差异性补丁文件，每个核心的补丁仅针对前一版的核心，想要由2.6.10升级到2.6.14，就要下载2.6.11、2.6.12、2.6.13及2.6.14的补丁文件，然后依次进行打补丁，才能升级到2.6.14；打完补丁之后，可以直接检查原设置值，如果没有问题，就可以直接编译，而不需要重新选择核心的参数值</strong></p>
-<h3 id="核心目录下的子目录信息"><a href="#核心目录下的子目录信息" class="headerlink" title="核心目录下的子目录信息"></a>核心目录下的子目录信息</h3><p>核心的源码默认放在/usr/src/kernels/2.6.11-1.1269_FC4-i686目录下：有几个目录</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr3hshavj30kh04e74s.jpg"></p>
-<p><strong>可以解压缩最新的核心文件之后，会有个Documentation目录，可以进去查看各个相关的说明</strong></p>
-<h2 id="设置核心的编译设置（Makefile）"><a href="#设置核心的编译设置（Makefile）" class="headerlink" title="设置核心的编译设置（Makefile）"></a>设置核心的编译设置（Makefile）</h2><p><strong>核心提供很多工具来让我们简单地设置参数</strong></p>
-<h3 id="编辑核心的生成文件"><a href="#编辑核心的生成文件" class="headerlink" title="编辑核心的生成文件"></a>编辑核心的生成文件</h3><p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr3wdx1ej30jd06d3z8.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr4d8cd6j30l303tjsh.jpg"></p>
-<p><strong>如何去建立生成文件，我们可以通过核心提供的功能，即用make menuconfig来实现</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr4q0xrmj30kh035gm9.jpg"></p>
-<p><strong>利用make  menuconfig来做类似图形界面的菜单模式，可以随时进行参数的选择，方便又好用。只要在/usr/src/linux-2.6.14.2目录下，输入make  menuconfig就可以出现图形菜单模式</strong></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr53qre7j30ml0lh0vd.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr5dum74j30la054js5.jpg"></p>
-<h3 id="设置核心内容与模式"><a href="#设置核心内容与模式" class="headerlink" title="设置核心内容与模式"></a>设置核心内容与模式</h3><p>1.Code Maturity Level Options（核心的代码开发维护）</p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshr2t0srlj30kc032q3o.jpg" alt="" /></p>
+<p>核心下载地址：<span class="exturl" data-url="aHR0cDovL3d3dy5rZXJuZWwub3Jn">http://www.kernel.org</span></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr394t4hj30iq06ogmp.jpg" alt="" /></p>
+<p>2. 核心的下载地点</p>
+<p><strong>Linux 的核心当前是由其发明者 Linus Torvalds 所属团队负责维护的，其网站在下面的网址上，在该网站可以找到最新的核心信息。</strong></p>
+<h2 id="核心源码的获取与升级"><a class="anchor" href="#核心源码的获取与升级">#</a> 核心源码的获取与升级</h2>
+<h3 id="获取原版本提供的核心源码"><a class="anchor" href="#获取原版本提供的核心源码">#</a> 获取原版本提供的核心源码</h3>
+<p><strong>如果已安装工具程序的话，那么就可以利用 rpm 找到名为 kernel-devel 的套件，那就是核心源码</strong></p>
+<h3 id="获取最新的核心"><a class="anchor" href="#获取最新的核心">#</a> 获取最新的核心</h3>
+<p><strong>使用源码来重新编译核心比较方便，但使得硬件所需要的新驱动程序无法通过原来的核心源码编译，所以如果要更新驱动程序，就是用最新的核心</strong></p>
+<h3 id="保留原设置利用补丁升级核心源码"><a class="anchor" href="#保留原设置利用补丁升级核心源码">#</a> 保留原设置：利用补丁升级核心源码</h3>
+<p><strong>如果自行以最新的核心版本来编译过核心，那么系统就应该存在几个版本的核心源码，以及上次自行编译的参数设置值；核心发布，除了发布完整的核心压缩文件之外，也会发布该版本与前一版本的差异性补丁文件，每个核心的补丁仅针对前一版的核心，想要由 2.6.10 升级到 2.6.14，就要下载 2.6.11、2.6.12、2.6.13 及 2.6.14 的补丁文件，然后依次进行打补丁，才能升级到 2.6.14；打完补丁之后，可以直接检查原设置值，如果没有问题，就可以直接编译，而不需要重新选择核心的参数值</strong></p>
+<h3 id="核心目录下的子目录信息"><a class="anchor" href="#核心目录下的子目录信息">#</a> 核心目录下的子目录信息</h3>
+<p>核心的源码默认放在 /usr/src/kernels/2.6.11-1.1269_FC4-i686 目录下：有几个目录</p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr3hshavj30kh04e74s.jpg" alt="" /></p>
+<p><strong>可以解压缩最新的核心文件之后，会有个 Documentation 目录，可以进去查看各个相关的说明</strong></p>
+<h2 id="设置核心的编译设置makefile"><a class="anchor" href="#设置核心的编译设置makefile">#</a> 设置核心的编译设置（Makefile）</h2>
+<p><strong>核心提供很多工具来让我们简单地设置参数</strong></p>
+<h3 id="编辑核心的生成文件"><a class="anchor" href="#编辑核心的生成文件">#</a> 编辑核心的生成文件</h3>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr3wdx1ej30jd06d3z8.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr4d8cd6j30l303tjsh.jpg" alt="" /></p>
+<p><strong>如何去建立生成文件，我们可以通过核心提供的功能，即用 make menuconfig 来实现</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr4q0xrmj30kh035gm9.jpg" alt="" /></p>
+<p><strong>利用 make  menuconfig 来做类似图形界面的菜单模式，可以随时进行参数的选择，方便又好用。只要在 /usr/src/linux-2.6.14.2 目录下，输入 make  menuconfig 就可以出现图形菜单模式</strong></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr53qre7j30ml0lh0vd.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr5dum74j30la054js5.jpg" alt="" /></p>
+<h3 id="设置核心内容与模式"><a class="anchor" href="#设置核心内容与模式">#</a> 设置核心内容与模式</h3>
+<p>1.Code Maturity Level Options（核心的代码开发维护）</p>
 <p><strong>用于确定核心是否要支持一些尚未测试的完整功能</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr5q0eftj30jz01sglm.jpg"></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshr5q0eftj30jz01sglm.jpg" alt="" /></p>
 <p>2.General Setup （常规设置）</p>
 <p><strong>这个项目是关于核心的一般设置，包括核心的附加版本信息</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshr6bj96lj30ku0j0zm9.jpg"></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshr6bj96lj30ku0j0zm9.jpg" alt="" /></p>
 <p><strong>这个主要针对核心与程序之间的相关性，基本上保留默认值即可</strong></p>
 <p>3.Loadable Module Support（可加载模块支持）</p>
 <p><strong>它涉及是否支持模块加载</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshr916u6yj30kw02caa5.jpg"></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshr916u6yj30kw02caa5.jpg" alt="" /></p>
 <p>4.Processor Type and Features（处理器类型和特征）</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr9qvn7kj30l5092my3.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshraaofh4j30kr0f8q4n.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshratl504j30kr0fwgns.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrbf98hlj30kz0a7wfz.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshr9qvn7kj30l5092my3.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshraaofh4j30kr0f8q4n.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshratl504j30kr0fwgns.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrbf98hlj30kz0a7wfz.jpg" alt="" /></p>
 <p>5.Power Management Options（ACPI、APM）（电源管理选项）</p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrbukw31j30l20oddjf.jpg"></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrbukw31j30l20oddjf.jpg" alt="" /></p>
 <p>6.Bus Options(PCI、PCMCIA、EISA、MCA、ISA)</p>
-<p><strong>这个项目与总线有关。分为最常见的PCI以及笔记本电脑常见的PCMCIA插卡</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrk3xarfj30ks0irjtu.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrc72monj30kh0i476g.jpg"></p>
-<p><strong>PCI插槽是最重要的，因为所有的适配卡都是插在PCI插槽上</strong></p>
+<p><strong>这个项目与总线有关。分为最常见的 PCI 以及笔记本电脑常见的 PCMCIA 插卡</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrk3xarfj30ks0irjtu.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrc72monj30kh0i476g.jpg" alt="" /></p>
+<p><strong>PCI 插槽是最重要的，因为所有的适配卡都是插在 PCI 插槽上</strong></p>
 <p>7.Executable File Formats（可执行文件格式）</p>
-<p><strong>是给Linux核心运行执行文件使用的数据，除了第一项必须要编译成核心功能之外，其他两项可以编译成模块</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrcow9a4j30kd022gln.jpg"></p>
+<p><strong>是给 Linux 核心运行执行文件使用的数据，除了第一项必须要编译成核心功能之外，其他两项可以编译成模块</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrcow9a4j30kd022gln.jpg" alt="" /></p>
 <p>8.Networking</p>
-<p><strong>包含了与防火墙相关的项目，即防火墙iptables</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrdhsdv7j30jv043mxf.jpg"></p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshrdrmz2zj30iv0msq5n.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshre0jie5j30j709eab0.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshrebp7bzj30jh0lntb1.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshreof68lj30m40ajt9n.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrezkgbij30lt0kb40u.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshrfbmqvjj30kl067mxt.jpg"></p>
+<p><strong>包含了与防火墙相关的项目，即防火墙 iptables</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrdhsdv7j30jv043mxf.jpg" alt="" /></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshrdrmz2zj30iv0msq5n.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshre0jie5j30j709eab0.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshrebp7bzj30jh0lntb1.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshreof68lj30m40ajt9n.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gshrezkgbij30lt0kb40u.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gshrfbmqvjj30kl067mxt.jpg" alt="" /></p>
 <p>9.Device Drivers（设备驱动程序）</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshrfmkan0j30lc0l1act.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrghgkccj30lf09hq3x.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrms9eu7j30ms0iddic.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrn5f1n2j30lw0dugnb.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsimxw71ooj30m20fgtag.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimy8l0m6j30lz0h0wgk.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsimyi5zivj30m60jujti.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimypfg3vj30lh0cmmyn.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsimyyw9idj30lo0e10u7.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimzbpo1fj30ko0hhwgn.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimzosqi8j30km0jydi4.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gshrfmkan0j30lc0l1act.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrghgkccj30lf09hq3x.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrms9eu7j30ms0iddic.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gshrn5f1n2j30lw0dugnb.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsimxw71ooj30m20fgtag.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimy8l0m6j30lz0h0wgk.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsimyi5zivj30m60jujti.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimypfg3vj30lh0cmmyn.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsimyyw9idj30lo0e10u7.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimzbpo1fj30ko0hhwgn.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsimzosqi8j30km0jydi4.jpg" alt="" /></p>
 <p>10.File  Systems（文件系统）</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsir8i3n7ij30kb05fgm1.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsir8t20fvj30jy0bf3zo.jpg"></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsir910iupj30k60jpgo3.jpg"></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsir9882y9j30m10h6go0.jpg"></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsir9e4veaj30jt05bjrp.jpg"></p>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsir8i3n7ij30kb05fgm1.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsir8t20fvj30jy0bf3zo.jpg" alt="" /></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsir910iupj30k60jpgo3.jpg" alt="" /></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsir9882y9j30m10h6go0.jpg" alt="" /></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsir9e4veaj30jt05bjrp.jpg" alt="" /></p>
 <p><strong>因为涉及核心是否能支持某些文件系统，以及某些操作系统支持的分区表项目</strong></p>
 <p>11.Security Options（安全选项）</p>
 <p><strong>这是一部与安全性有关，保留默认值即可</strong></p>
 <p>12.Cryptographic Options（加密选项）</p>
-<p><strong>这一部分是加密参数的设置。通过我们采用的账号密码登录，使用的就是MD5加密机制，要让核心支持，将所有项目都做成模块即可。不过MD5与SHA1必须要直接由核心支持</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsir9t250mj30mn0eb75t.jpg"></p>
-<p>13.采用旧数据与存储设置</p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsirbbaqipj30kl01ut8o.jpg"></p>
+<p><strong>这一部分是加密参数的设置。通过我们采用的账号密码登录，使用的就是 MD5 加密机制，要让核心支持，将所有项目都做成模块即可。不过 MD5 与 SHA1 必须要直接由核心支持</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsir9t250mj30mn0eb75t.jpg" alt="" /></p>
+<p>13. 采用旧数据与存储设置</p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsirbbaqipj30kl01ut8o.jpg" alt="" /></p>
 <p><strong>这两项分别存储刚才做好的所有项目的设置数据</strong></p>
-<h2 id="核心的编译与安装"><a href="#核心的编译与安装" class="headerlink" title="核心的编译与安装"></a>核心的编译与安装</h2><h3 id="编译的流程"><a href="#编译的流程" class="headerlink" title="编译的流程"></a>编译的流程</h3><p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsivkt1snmj30ki05ygm4.jpg"></p>
-<p><strong>只需要3个操作，核心与模块就都创建出来了。数据放在/usr/src/linux-2.6.14.2目录下。并没有放在系统的相关路径中；注意执行了make bzlmage后，最后结果如下：</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsivl8hun5j30k904aq39.jpg"></p>
-<h3 id="模块安装注意事项"><a href="#模块安装注意事项" class="headerlink" title="模块安装注意事项"></a>模块安装注意事项</h3><p><strong>如果同一个版本的核心被编译两次以上的话，那么请将/lib/modules里面的该版核心先移开</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsivm4cjafj30lx06fwfd.jpg"></p>
-<h3 id="安装旧版与新版的核心成多重启动系统"><a href="#安装旧版与新版的核心成多重启动系统" class="headerlink" title="安装旧版与新版的核心成多重启动系统"></a>安装旧版与新版的核心成多重启动系统</h3><p><strong>我们知道核心文件放在/usr/src/linux-2.6.14.2/arch/i3486/boot/bzlmage中，也知道一台主机是可以做成多重启动系统的。在编译好核心之后，将同时保留旧版的核心，并且在主机上新增新版的核心</strong></p>
+<h2 id="核心的编译与安装"><a class="anchor" href="#核心的编译与安装">#</a> 核心的编译与安装</h2>
+<h3 id="编译的流程"><a class="anchor" href="#编译的流程">#</a> 编译的流程</h3>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsivkt1snmj30ki05ygm4.jpg" alt="" /></p>
+<p><strong>只需要 3 个操作，核心与模块就都创建出来了。数据放在 /usr/src/linux-2.6.14.2 目录下。并没有放在系统的相关路径中；注意执行了 make bzlmage 后，最后结果如下：</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsivl8hun5j30k904aq39.jpg" alt="" /></p>
+<h3 id="模块安装注意事项"><a class="anchor" href="#模块安装注意事项">#</a> 模块安装注意事项</h3>
+<p><strong>如果同一个版本的核心被编译两次以上的话，那么请将 /lib/modules 里面的该版核心先移开</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsivm4cjafj30lx06fwfd.jpg" alt="" /></p>
+<h3 id="安装旧版与新版的核心成多重启动系统"><a class="anchor" href="#安装旧版与新版的核心成多重启动系统">#</a> 安装旧版与新版的核心成多重启动系统</h3>
+<p><strong>我们知道核心文件放在 /usr/src/linux-2.6.14.2/arch/i3486/boot/bzlmage 中，也知道一台主机是可以做成多重启动系统的。在编译好核心之后，将同时保留旧版的核心，并且在主机上新增新版的核心</strong></p>
 <p><strong>核心编译成功后，并不保证我们刚刚选择的核心项目完全适于当前这台主机系统，可能有某些地方我们忘记选择，将会导致新核心无法顺利驱动整个主机系统，此时，如果保留旧的核心，若新核心测试不通过，用旧核心来启动即可</strong></p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsivmvbl0gj30lx0dujt7.jpg"></p>
-<h2 id="额外（单一）模块编译"><a href="#额外（单一）模块编译" class="headerlink" title="额外（单一）模块编译"></a>额外（单一）模块编译</h2><p><strong>核心所支持的功能中，有直接编译到核心内部的，也有使用外挂模式的，外挂模块可以简单地想成是驱动程序。这些核心模块根据不同的版本，分别放到/lib/modules/‘uname -r’/目录中，各硬件的驱动程序则放到/lib/modules/‘uname -r’/kernel/drivers/中，这些模块与设备代号的对应，就必须写入/etc/modprobe.conf文件中。</strong></p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsivmvbl0gj30lx0dujt7.jpg" alt="" /></p>
+<h2 id="额外单一模块编译"><a class="anchor" href="#额外单一模块编译">#</a> 额外（单一）模块编译</h2>
+<p><strong>核心所支持的功能中，有直接编译到核心内部的，也有使用外挂模式的，外挂模块可以简单地想成是驱动程序。这些核心模块根据不同的版本，分别放到 /lib/modules/'uname -r'/ 目录中，各硬件的驱动程序则放到 /lib/modules/'uname -r'/kernel/drivers/ 中，这些模块与设备代号的对应，就必须写入 /etc/modprobe.conf 文件中。</strong></p>
 <p><strong>由于核心原来就提供了很多核心工具给硬件开发商使用，而硬件开发商也需要针对核心所提供的功能来设计驱动程序模块，因此如果要自行使用硬件开发商所提供的模块进行编译，就需要使用核心所提供的原始文件中的头文件，来获取驱动模块所需要的一些函数库或文件头的定义</strong></p>
-<p><strong>早期的核心源码要求要放到/usr/src/linux、目录下，由于如果Linux系统中有多个核心，而且使用的源码并不相同，问题就大了。所以，就以/lib/modules/‘uname -r’/build和/lib/modules/‘uname -r’/source这两个连接文件来指向正确的核心源码放置目录，核心模块目录如下：</strong></p>
-<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsivnl9v9cj30ke07kabd.jpg"></p>
-<h3 id="单一模块编译"><a href="#单一模块编译" class="headerlink" title="单一模块编译"></a>单一模块编译</h3><p>两种情况：</p>
-<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsivocyfiwj30kn02j3yz.jpg"></p>
-<p><strong>去获取源码，重新编译成为系统可以加载的模块，都需要make、gcc以及核心所提供的include头文件与函数库</strong></p>
-<p>1.硬件开发商提供的额外模块</p>
-<p><strong>可以使用各种方法下载文件，假设把它放到/root，直接解压缩。读一读INSTALL/README，然后查找生成文件，就能编译了，整体流程如下：</strong></p>
-<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsivon9e5zj30kz0fumzj.jpg"></p>
-<p><strong>这样就可以轻松编译模块，并且将它直接放到核心模块目录中，同时通过depmod对模块建立关联，就能利用modprobe来直接采用了。若自行编译模块时，若核心有更新，则必须要重新编译该模块一次，重复上面的步骤</strong></p>
-<p>2.利用旧有的核心源码进行编译</p>
-<p>在当前的核心源码所在目录执行make menuconfig，然后将NTFS的选项这支撑模块，之后执行：</p>
+<p><strong>早期的核心源码要求要放到 /usr/src/linux、目录下，由于如果 Linux 系统中有多个核心，而且使用的源码并不相同，问题就大了。所以，就以 /lib/modules/'uname -r'/build 和 /lib/modules/'uname -r'/source 这两个连接文件来指向正确的核心源码放置目录，核心模块目录如下：</strong></p>
+<p><img data-src="https://tva2.sinaimg.cn/large/008jSNE7ly8gsivnl9v9cj30ke07kabd.jpg" alt="" /></p>
+<h3 id="单一模块编译"><a class="anchor" href="#单一模块编译">#</a> 单一模块编译</h3>
+<p>两种情况：</p>
+<p><img data-src="https://tva4.sinaimg.cn/large/008jSNE7ly8gsivocyfiwj30kn02j3yz.jpg" alt="" /></p>
+<p><strong>去获取源码，重新编译成为系统可以加载的模块，都需要 make、gcc 以及核心所提供的 include 头文件与函数库</strong></p>
+<p>1. 硬件开发商提供的额外模块</p>
+<p><strong>可以使用各种方法下载文件，假设把它放到 /root，直接解压缩。读一读 INSTALL/README，然后查找生成文件，就能编译了，整体流程如下：</strong></p>
+<p><img data-src="https://tva3.sinaimg.cn/large/008jSNE7ly8gsivon9e5zj30kz0fumzj.jpg" alt="" /></p>
+<p><strong>这样就可以轻松编译模块，并且将它直接放到核心模块目录中，同时通过 depmod 对模块建立关联，就能利用 modprobe 来直接采用了。若自行编译模块时，若核心有更新，则必须要重新编译该模块一次，重复上面的步骤</strong></p>
+<p>2. 利用旧有的核心源码进行编译</p>
+<p>在当前的核心源码所在目录执行 make menuconfig，然后将 NTFS 的选项这支撑模块，之后执行：</p>
 <p>make fs /ntfs/</p>
-<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsivouyajjj30lm02wgmb.jpg"></p>
-<h3 id="核心模块管理：lsmod、modinfo、modprobe、insmod、rmmod…"><a href="#核心模块管理：lsmod、modinfo、modprobe、insmod、rmmod…" class="headerlink" title="核心模块管理：lsmod、modinfo、modprobe、insmod、rmmod…"></a>核心模块管理：lsmod、modinfo、modprobe、insmod、rmmod…</h3>
+<p><img data-src="https://tva1.sinaimg.cn/large/008jSNE7ly8gsivouyajjj30lm02wgmb.jpg" alt="" /></p>
+<h3 id="核心模块管理lsmod-modinfo-modprobe-insmod-rmmod"><a class="anchor" href="#核心模块管理lsmod-modinfo-modprobe-insmod-rmmod">#</a> 核心模块管理：lsmod、modinfo、modprobe、insmod、rmmod...</h3>
+
   </div>
 
    <footer>
@@ -772,7 +929,7 @@
     <div class="item left">
       
 
-  <a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr93anasctj31hc0u077s.jpg" title="第四部分   Linux用户管理">
+  <a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr9e9f4zcuj30e108cjrt.jpg" title="第四部分   Linux用户管理">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 笔记类</span>
   <h3>第四部分   Linux用户管理</h3>
@@ -782,7 +939,7 @@
     <div class="item right">
       
 
-  <a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr9eacfk4fj30dw08pmxs.jpg" title="Linux 共享文件夹">
+  <a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;large&#x2F;006vONQWly8gr93as28fzj30zk0k0q3u.jpg" title="Linux 共享文件夹">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 笔记类</span>
   <h3>Linux 共享文件夹</h3>
@@ -804,7 +961,7 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%85%B3%E6%9C%BA%E7%9A%84%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">启动关机的流程与加载程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">启动流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%E4%B8%8E%E6%A0%B8%E5%BF%83%E8%BD%BD%E5%85%A5"><span class="toc-number">1.1.1.</span> <span class="toc-text">引导加载程序与核心载入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Finit%E5%8F%8A%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6-etc-inittab%E4%B8%8Erunlevel"><span class="toc-number">1.1.2.</span> <span class="toc-text">第一个程序init及设置文件&#x2F;etc&#x2F;inittab与runlevel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8B%EF%BC%88-etc-rc-d-rc-sysinit%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">init处理系统初始化流程（&#x2F;etc&#x2F;rc.d&#x2F;rc.sysinit）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.4.</span> <span class="toc-text">启动系统服务与相关启动设置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E5%AF%BC%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.5.</span> <span class="toc-text">用户自定义引导启动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE-etc-inittab%E8%AE%BE%E7%BD%AE%E5%8A%A0%E8%BD%BD%E7%BB%88%E7%AB%AF%E6%88%96X-Window%E7%95%8C%E9%9D%A2"><span class="toc-number">1.1.6.</span> <span class="toc-text">根据&#x2F;etc&#x2F;inittab设置加载终端或X-Window界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%90%AF%E5%8A%A8%E7%9B%B8%E5%85%B3%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.7.</span> <span class="toc-text">其他启动相关事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E8%BF%90%E8%A1%8C%E7%AD%89%E7%BA%A7"><span class="toc-number">1.1.8.</span> <span class="toc-text">变换运行等级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%B8%8E%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">核心与核心模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">核心模块与依赖性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E8%A7%82%E5%AF%9F%EF%BC%9Alsmod%E3%80%81modinfo"><span class="toc-number">1.2.2.</span> <span class="toc-text">核心模块的观察：lsmod、modinfo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%A0%E9%99%A4%EF%BC%9Ainsmod%E3%80%81modprobe%E3%80%81rmmod"><span class="toc-number">1.2.3.</span> <span class="toc-text">核心模块的加载与删除：insmod、modprobe、rmmod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E9%A2%9D%E5%A4%96%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE%EF%BC%9A-etc-modprobe-conf"><span class="toc-number">1.2.4.</span> <span class="toc-text">核心模块的额外参数设置：&#x2F;etc&#x2F;modprobe.conf</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%EF%BC%9AGrub"><span class="toc-number">1.3.</span> <span class="toc-text">引导加载程序：Grub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8A%9F%E8%83%BD%E4%B8%8E%E6%84%8F%E4%B9%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">引导加载程序的功能与意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grub%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6-boot-grub-menu-lst%E4%B8%8E%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">grub的设置文件&#x2F;boot&#x2F;grub&#x2F;menu.lst与安装类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%AE%89%E8%A3%85grub"><span class="toc-number">1.3.3.</span> <span class="toc-text">测试与安装grub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%89%8D%E7%9A%84%E9%A2%9D%E5%A4%96%E5%8A%9F%E8%83%BD%E4%BF%AE%E6%94%B9"><span class="toc-number">1.3.4.</span> <span class="toc-text">启动前的额外功能修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E7%9A%84vga%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.3.5.</span> <span class="toc-text">核心功能的vga设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%EF%BC%9ALILO"><span class="toc-number">1.4.</span> <span class="toc-text">引导加载程序：LILO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LILO%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6-etc-lilo-conf"><span class="toc-number">1.4.1.</span> <span class="toc-text">LILO的设置文件&#x2F;etc&#x2F;lilo.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%AE%89%E8%A3%85LILO%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.4.2.</span> <span class="toc-text">测试与安装LILO引导加载程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">解决启动过程的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%98%E8%AE%B0root%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.5.1.</span> <span class="toc-text">忘记root密码的解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8chroot%E5%88%87%E6%8D%A2%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%A1%AC%E7%9B%98"><span class="toc-number">1.5.2.</span> <span class="toc-text">利用chroot切换到另一个硬盘</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E4%B8%8ETarball%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text">源码与Tarball套件管理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81%E3%80%81%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%8E%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.1.</span> <span class="toc-text">什么是开放源码、编译器与可执行文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.1.2.</span> <span class="toc-text">什么是函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFmake%E4%B8%8Econfigure"><span class="toc-number">2.1.3.</span> <span class="toc-text">什么是make与configure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTarball%E7%9A%84%E5%A5%97%E4%BB%B6"><span class="toc-number">2.1.4.</span> <span class="toc-text">什么是Tarball的套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%87%E7%BA%A7%E5%A5%97%E4%BB%B6"><span class="toc-number">2.1.5.</span> <span class="toc-text">安装与升级套件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E8%8C%83%E4%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">一个简单的范例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BAHello-World"><span class="toc-number">2.2.1.</span> <span class="toc-text">显示Hello  World</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%AD%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.2.2.</span> <span class="toc-text">编译子程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.2.3.</span> <span class="toc-text">加入函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gcc"><span class="toc-number">2.2.4.</span> <span class="toc-text">使用gcc</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#make%E7%9A%84%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">make的简单用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%A4%BE%E4%B9%88%E8%A6%81%E7%94%A8make"><span class="toc-number">2.3.1.</span> <span class="toc-text">为社么要用make</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#make%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">make的基本语法与变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tarball%E7%9A%84%E7%AE%A1%E7%90%86%E4%B8%8E%E5%BB%BA%E8%AE%AE"><span class="toc-number">2.4.</span> <span class="toc-text">Tarball的管理与建议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%BA%90%E7%A0%81%E7%AE%A1%E7%90%86%E5%A5%97%E4%BB%B6%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%9F%BA%E7%A1%80%E5%A5%97%E4%BB%B6"><span class="toc-number">2.4.1.</span> <span class="toc-text">使用源码管理套件所需要的基础套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tarball%E5%AE%89%E8%A3%85%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.4.2.</span> <span class="toc-text">Tarball安装的基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tarball%E5%A5%97%E4%BB%B6%E5%AE%89%E8%A3%85%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%88%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E3%80%81%E5%8D%87%E7%BA%A7%EF%BC%89"><span class="toc-number">2.4.3.</span> <span class="toc-text">Tarball套件安装的注意事项（如何删除、升级）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E8%8C%83%E4%BE%8B%EF%BC%9A%E4%BD%BF%E7%94%A8ntp"><span class="toc-number">2.4.4.</span> <span class="toc-text">简单的范例：使用ntp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8patch%E6%9B%B4%E6%96%B0%E6%BA%90%E7%A0%81"><span class="toc-number">2.4.5.</span> <span class="toc-text">使用patch更新源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BA%93%E7%AE%A1%E7%90%86"><span class="toc-number">2.5.</span> <span class="toc-text">函数库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%B8%8E%E9%9D%99%E6%80%81%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.5.1.</span> <span class="toc-text">动态与静态函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ldconfig%E4%B8%8E-etc-ld-so-conf"><span class="toc-number">2.5.2.</span> <span class="toc-text">ldconfig与&#x2F;etc&#x2F;ld.so.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ldd"><span class="toc-number">2.5.3.</span> <span class="toc-text">ldd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6%E6%AD%A3%E7%A1%AE%E6%80%A7%EF%BC%9Amd5sum"><span class="toc-number">2.6.</span> <span class="toc-text">检测软件正确性：md5sum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE"><span class="toc-number">2.7.</span> <span class="toc-text">重点回顾</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RPM%E4%B8%8ESRPM%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">RPM与SRPM套件管理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-number">3.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFRPM%E4%B8%8ESRPM"><span class="toc-number">3.1.1.</span> <span class="toc-text">什么是RPM与SRPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFi386%E3%80%81i586%E3%80%81i686%E3%80%81noarch"><span class="toc-number">3.1.2.</span> <span class="toc-text">什么是i386、i586、i686、noarch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">3.1.3.</span> <span class="toc-text">RPM的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3RPM%E5%B1%9E%E6%80%A7%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="toc-number">3.1.4.</span> <span class="toc-text">解决RPM属性依赖问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPM%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.2.</span> <span class="toc-text">RPM套件管理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E7%9A%84%E9%BB%98%E8%AE%A4%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84"><span class="toc-number">3.2.1.</span> <span class="toc-text">RPM的默认安装路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.2.</span> <span class="toc-text">RPM安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E5%8D%87%E7%BA%A7%E4%B8%8E%E6%9B%B4%E6%96%B0"><span class="toc-number">3.2.3.</span> <span class="toc-text">RPM升级与更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.2.4.</span> <span class="toc-text">RPM查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E9%AA%8C%E8%AF%81%E4%B8%8E%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><span class="toc-number">3.2.5.</span> <span class="toc-text">RPM验证与数字签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM%E5%8D%B8%E8%BD%BD%E4%B8%8E%E9%87%8D%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.2.6.</span> <span class="toc-text">RPM卸载与重建数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E4%B8%8E%E5%88%86%E6%9E%90%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">认识与分析登录文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text">什么是登录文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95%EF%BC%9Asyslogd"><span class="toc-number">4.2.</span> <span class="toc-text">登录文件的记录：syslogd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%9A%84%E4%B8%80%E8%88%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.2.1.</span> <span class="toc-text">登录文件内容的一般格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A-etc-syslog-conf"><span class="toc-number">4.2.2.</span> <span class="toc-text">登录文件的配置文件：&#x2F;etc&#x2F;syslog.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.2.3.</span> <span class="toc-text">登录文件的安全性设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E4%B8%BB%E6%9C%BA%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.2.4.</span> <span class="toc-text">登录文件主机的简单设置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%A4%87%E4%BB%BD%E7%AD%96%E7%95%A5"><span class="toc-number">5.</span> <span class="toc-text">Linux备份策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%81%E9%9C%80%E8%A6%81%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE"><span class="toc-number">5.1.</span> <span class="toc-text">谁需要备份数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E5%93%AA%E4%BA%9BLinux%E6%95%B0%E6%8D%AE"><span class="toc-number">5.2.</span> <span class="toc-text">备份哪些Linux数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%A4%87%E4%BB%BD%E8%AE%BE%E5%A4%87"><span class="toc-number">5.3.</span> <span class="toc-text">选择备份设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-number">5.4.</span> <span class="toc-text">备份的种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7"><span class="toc-number">5.5.</span> <span class="toc-text">选择备份工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E7%AD%96%E7%95%A5%E5%AE%9E%E4%BE%8B"><span class="toc-number">5.6.</span> <span class="toc-text">备份策略实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E5%A4%87%E4%BB%BD%E8%A1%8C%E4%B8%BA"><span class="toc-number">5.6.1.</span> <span class="toc-text">日常备份行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E8%84%9A%E6%9C%AC"><span class="toc-number">5.6.2.</span> <span class="toc-text">每日备份数据脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.6.3.</span> <span class="toc-text">远程备份系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%83%E8%99%91%E5%9B%A0%E7%B4%A0"><span class="toc-number">5.7.</span> <span class="toc-text">还原系统的考虑因素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%83%E8%99%91%E5%9B%A0%E7%B4%A0-1"><span class="toc-number">5.7.1.</span> <span class="toc-text">还原系统的考虑因素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%8C%83%E4%BE%8B%EF%BC%9ANVidia%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">5.8.</span> <span class="toc-text">更新显卡驱动程序的范例：NVidia驱动程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%A1%AC%E4%BB%B6%E6%A3%80%E6%B5%8B%E4%B8%8E%E7%BB%B4%E6%8A%A4"><span class="toc-number">6.</span> <span class="toc-text">Linux硬件检测与维护</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E7%A1%AC%E4%BB%B6"><span class="toc-number">6.1.</span> <span class="toc-text">准备硬件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%BF%A1%E6%81%AF%E7%9A%84%E6%94%B6%E9%9B%86%EF%BC%9Alspci%E3%80%81iostat%E2%80%A6"><span class="toc-number">6.1.1.</span> <span class="toc-text">硬件信息的收集：lspci、iostat…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8USB%E8%AE%BE%E5%A4%87"><span class="toc-number">6.1.2.</span> <span class="toc-text">驱动USB设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8lm-sensors%E5%8F%96%E5%BE%97%E6%B8%A9%E5%BA%A6%E3%80%81%E7%94%B5%E5%8E%8B%E7%AD%89%E4%BF%A1%E6%81%AF"><span class="toc-number">6.1.3.</span> <span class="toc-text">使用lm_sensors取得温度、电压等信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PC4%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%EF%BC%9Asetup%E5%8A%9F%E8%83%BD"><span class="toc-number">6.2.</span> <span class="toc-text">PC4的系统操作：setup功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9ALVM"><span class="toc-number">6.3.</span> <span class="toc-text">特殊文件系统：LVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFLVM%EF%BC%9APV%E3%80%81PE%E3%80%81VG%E3%80%81%E3%80%81LV"><span class="toc-number">6.3.1.</span> <span class="toc-text">什么是LVM：PV、PE、VG、、LV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B6%E4%BD%9CLVM%E7%A3%81%E7%9B%98%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">6.3.2.</span> <span class="toc-text">制作LVM磁盘的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%A4%A7%E5%8E%9F%E6%9C%89%E7%9A%84LVM%E7%A3%81%E7%9B%98%EF%BC%9Aresize2fs"><span class="toc-number">6.3.3.</span> <span class="toc-text">加大原有的LVM磁盘：resize2fs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">6.3.4.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%E7%9A%84%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87iSCSI%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97"><span class="toc-number">6.4.</span> <span class="toc-text">额外的存储设备iSCSI协议的磁盘阵列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97"><span class="toc-number">6.4.1.</span> <span class="toc-text">什么是磁盘阵列</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%A0%B8%E5%BF%83%E7%BC%96%E8%AF%91%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">Linux核心编译与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%A0%B8%E5%BF%83%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">7.0.1.</span> <span class="toc-text">更新核心的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9A%84%E7%89%88%E6%9C%AC%E4%B8%8E%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E6%A0%B8%E5%BF%83%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">7.0.2.</span> <span class="toc-text">核心的版本与下载最新核心的位置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81%E7%9A%84%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%8D%87%E7%BA%A7"><span class="toc-number">7.1.</span> <span class="toc-text">核心源码的获取与升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%8E%9F%E7%89%88%E6%9C%AC%E6%8F%90%E4%BE%9B%E7%9A%84%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81"><span class="toc-number">7.1.1.</span> <span class="toc-text">获取原版本提供的核心源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E6%A0%B8%E5%BF%83"><span class="toc-number">7.1.2.</span> <span class="toc-text">获取最新的核心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E7%95%99%E5%8E%9F%E8%AE%BE%E7%BD%AE%EF%BC%9A%E5%88%A9%E7%94%A8%E8%A1%A5%E4%B8%81%E5%8D%87%E7%BA%A7%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81"><span class="toc-number">7.1.3.</span> <span class="toc-text">保留原设置：利用补丁升级核心源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">7.1.4.</span> <span class="toc-text">核心目录下的子目录信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%A0%B8%E5%BF%83%E7%9A%84%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE%EF%BC%88Makefile%EF%BC%89"><span class="toc-number">7.2.</span> <span class="toc-text">设置核心的编译设置（Makefile）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%A0%B8%E5%BF%83%E7%9A%84%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6"><span class="toc-number">7.2.1.</span> <span class="toc-text">编辑核心的生成文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9%E4%B8%8E%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.2.2.</span> <span class="toc-text">设置核心内容与模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">7.3.</span> <span class="toc-text">核心的编译与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">7.3.1.</span> <span class="toc-text">编译的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">7.3.2.</span> <span class="toc-text">模块安装注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%97%A7%E7%89%88%E4%B8%8E%E6%96%B0%E7%89%88%E7%9A%84%E6%A0%B8%E5%BF%83%E6%88%90%E5%A4%9A%E9%87%8D%E5%90%AF%E5%8A%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.3.3.</span> <span class="toc-text">安装旧版与新版的核心成多重启动系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%EF%BC%88%E5%8D%95%E4%B8%80%EF%BC%89%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91"><span class="toc-number">7.4.</span> <span class="toc-text">额外（单一）模块编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%80%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91"><span class="toc-number">7.4.1.</span> <span class="toc-text">单一模块编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86%EF%BC%9Alsmod%E3%80%81modinfo%E3%80%81modprobe%E3%80%81insmod%E3%80%81rmmod%E2%80%A6"><span class="toc-number">7.4.2.</span> <span class="toc-text">核心模块管理：lsmod、modinfo、modprobe、insmod、rmmod…</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%85%B3%E6%9C%BA%E7%9A%84%E6%B5%81%E7%A8%8B%E4%B8%8E%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text"> 启动关机的流程与加载程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 启动流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%E4%B8%8E%E6%A0%B8%E5%BF%83%E8%BD%BD%E5%85%A5"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 引导加载程序与核心载入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Finit%E5%8F%8A%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6etcinittab%E4%B8%8Erunlevel"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 第一个程序 init 及设置文件 &#x2F;etc&#x2F;inittab 与 runlevel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8Betcrcdrcsysinit"><span class="toc-number">1.1.3.</span> <span class="toc-text"> init 处理系统初始化流程（&#x2F;etc&#x2F;rc.d&#x2F;rc.sysinit）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 启动系统服务与相关启动设置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%95%E5%AF%BC%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 用户自定义引导启动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AEetcinittab%E8%AE%BE%E7%BD%AE%E5%8A%A0%E8%BD%BD%E7%BB%88%E7%AB%AF%E6%88%96x-window%E7%95%8C%E9%9D%A2"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 根据 &#x2F;etc&#x2F;inittab 设置加载终端或 X-Window 界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%90%AF%E5%8A%A8%E7%9B%B8%E5%85%B3%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 其他启动相关事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E8%BF%90%E8%A1%8C%E7%AD%89%E7%BA%A7"><span class="toc-number">1.1.8.</span> <span class="toc-text"> 变换运行等级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%B8%8E%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text"> 核心与核心模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 核心模块与依赖性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E8%A7%82%E5%AF%9Flsmod-modinfo"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 核心模块的观察：lsmod、modinfo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%88%A0%E9%99%A4insmod-modprobe-rmmod"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 核心模块的加载与删除：insmod、modprobe、rmmod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E9%A2%9D%E5%A4%96%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AEetcmodprobeconf"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 核心模块的额外参数设置：&#x2F;etc&#x2F;modprobe.conf</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8Fgrub"><span class="toc-number">1.3.</span> <span class="toc-text"> 引导加载程序：Grub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8A%9F%E8%83%BD%E4%B8%8E%E6%84%8F%E4%B9%89"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 引导加载程序的功能与意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grub%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6bootgrubmenulst%E4%B8%8E%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text"> grub 的设置文件 &#x2F;boot&#x2F;grub&#x2F;menu.lst 与安装类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%AE%89%E8%A3%85grub"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 测试与安装 grub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%89%8D%E7%9A%84%E9%A2%9D%E5%A4%96%E5%8A%9F%E8%83%BD%E4%BF%AE%E6%94%B9"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 启动前的额外功能修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E7%9A%84vga%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 核心功能的 vga 设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8Flilo"><span class="toc-number">1.4.</span> <span class="toc-text"> 引导加载程序：LILO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lilo%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6etcliloconf"><span class="toc-number">1.4.1.</span> <span class="toc-text"> LILO 的设置文件 &#x2F;etc&#x2F;lilo.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%AE%89%E8%A3%85lilo%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 测试与安装 LILO 引导加载程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text"> 解决启动过程的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%98%E8%AE%B0root%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 忘记 root 密码的解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8chroot%E5%88%87%E6%8D%A2%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%A1%AC%E7%9B%98"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 利用 chroot 切换到另一个硬盘</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E4%B8%8Etarball%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text"> 源码与 Tarball 套件管理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text"> 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81-%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%8E%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 什么是开放源码、编译器与可执行文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 什么是函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFmake%E4%B8%8Econfigure"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 什么是 make 与 configure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFtarball%E7%9A%84%E5%A5%97%E4%BB%B6"><span class="toc-number">2.1.4.</span> <span class="toc-text"> 什么是 Tarball 的套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%87%E7%BA%A7%E5%A5%97%E4%BB%B6"><span class="toc-number">2.1.5.</span> <span class="toc-text"> 安装与升级套件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E8%8C%83%E4%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text"> 一个简单的范例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BAhello-world"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 显示 Hello  World</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%AD%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 编译子程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 加入函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gcc"><span class="toc-number">2.2.4.</span> <span class="toc-text"> 使用 gcc</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#make%E7%9A%84%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text"> make 的简单用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%A4%BE%E4%B9%88%E8%A6%81%E7%94%A8make"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 为社么要用 make</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#make%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text"> make 的基本语法与变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tarball%E7%9A%84%E7%AE%A1%E7%90%86%E4%B8%8E%E5%BB%BA%E8%AE%AE"><span class="toc-number">2.4.</span> <span class="toc-text"> Tarball 的管理与建议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%BA%90%E7%A0%81%E7%AE%A1%E7%90%86%E5%A5%97%E4%BB%B6%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%9F%BA%E7%A1%80%E5%A5%97%E4%BB%B6"><span class="toc-number">2.4.1.</span> <span class="toc-text"> 使用源码管理套件所需要的基础套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tarball%E5%AE%89%E8%A3%85%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.4.2.</span> <span class="toc-text"> Tarball 安装的基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tarball%E5%A5%97%E4%BB%B6%E5%AE%89%E8%A3%85%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4-%E5%8D%87%E7%BA%A7"><span class="toc-number">2.4.3.</span> <span class="toc-text"> Tarball 套件安装的注意事项（如何删除、升级）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E8%8C%83%E4%BE%8B%E4%BD%BF%E7%94%A8ntp"><span class="toc-number">2.4.4.</span> <span class="toc-text"> 简单的范例：使用 ntp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8patch%E6%9B%B4%E6%96%B0%E6%BA%90%E7%A0%81"><span class="toc-number">2.4.5.</span> <span class="toc-text"> 使用 patch 更新源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BA%93%E7%AE%A1%E7%90%86"><span class="toc-number">2.5.</span> <span class="toc-text"> 函数库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%B8%8E%E9%9D%99%E6%80%81%E5%87%BD%E6%95%B0%E5%BA%93"><span class="toc-number">2.5.1.</span> <span class="toc-text"> 动态与静态函数库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ldconfig%E4%B8%8Eetcldsoconf"><span class="toc-number">2.5.2.</span> <span class="toc-text"> ldconfig 与 &#x2F;etc&#x2F;ld.so.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ldd"><span class="toc-number">2.5.3.</span> <span class="toc-text"> ldd</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E8%BD%AF%E4%BB%B6%E6%AD%A3%E7%A1%AE%E6%80%A7md5sum"><span class="toc-number">2.6.</span> <span class="toc-text"> 检测软件正确性：md5sum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE"><span class="toc-number">2.7.</span> <span class="toc-text"> 重点回顾</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rpm%E4%B8%8Esrpm%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text"> RPM 与 SRPM 套件管理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-2"><span class="toc-number">3.1.</span> <span class="toc-text"> 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFrpm%E4%B8%8Esrpm"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 什么是 RPM 与 SRPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFi386-i586-i686-noarch"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 什么是 i386、i586、i686、noarch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">3.1.3.</span> <span class="toc-text"> RPM 的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3rpm%E5%B1%9E%E6%80%A7%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="toc-number">3.1.4.</span> <span class="toc-text"> 解决 RPM 属性依赖问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.2.</span> <span class="toc-text"> RPM 套件管理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E7%9A%84%E9%BB%98%E8%AE%A4%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84"><span class="toc-number">3.2.1.</span> <span class="toc-text"> RPM 的默认安装路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.2.</span> <span class="toc-text"> RPM 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E5%8D%87%E7%BA%A7%E4%B8%8E%E6%9B%B4%E6%96%B0"><span class="toc-number">3.2.3.</span> <span class="toc-text"> RPM 升级与更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.2.4.</span> <span class="toc-text"> RPM 查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E9%AA%8C%E8%AF%81%E4%B8%8E%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><span class="toc-number">3.2.5.</span> <span class="toc-text"> RPM 验证与数字签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E5%8D%B8%E8%BD%BD%E4%B8%8E%E9%87%8D%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.2.6.</span> <span class="toc-text"> RPM 卸载与重建数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E4%B8%8E%E5%88%86%E6%9E%90%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text"> 认识与分析登录文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text"> 什么是登录文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E7%9A%84%E8%AE%B0%E5%BD%95syslogd"><span class="toc-number">4.2.</span> <span class="toc-text"> 登录文件的记录：syslogd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%9A%84%E4%B8%80%E8%88%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 登录文件内容的一般格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6etcsyslogconf"><span class="toc-number">4.2.2.</span> <span class="toc-text"> 登录文件的配置文件：&#x2F;etc&#x2F;syslog.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.2.3.</span> <span class="toc-text"> 登录文件的安全性设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%96%87%E4%BB%B6%E4%B8%BB%E6%9C%BA%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.2.4.</span> <span class="toc-text"> 登录文件主机的简单设置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E5%A4%87%E4%BB%BD%E7%AD%96%E7%95%A5"><span class="toc-number">5.</span> <span class="toc-text"> Linux 备份策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%81%E9%9C%80%E8%A6%81%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE"><span class="toc-number">5.1.</span> <span class="toc-text"> 谁需要备份数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E5%93%AA%E4%BA%9Blinux%E6%95%B0%E6%8D%AE"><span class="toc-number">5.2.</span> <span class="toc-text"> 备份哪些 Linux 数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%A4%87%E4%BB%BD%E8%AE%BE%E5%A4%87"><span class="toc-number">5.3.</span> <span class="toc-text"> 选择备份设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-number">5.4.</span> <span class="toc-text"> 备份的种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7"><span class="toc-number">5.5.</span> <span class="toc-text"> 选择备份工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E7%AD%96%E7%95%A5%E5%AE%9E%E4%BE%8B"><span class="toc-number">5.6.</span> <span class="toc-text"> 备份策略实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E5%A4%87%E4%BB%BD%E8%A1%8C%E4%B8%BA"><span class="toc-number">5.6.1.</span> <span class="toc-text"> 日常备份行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E8%84%9A%E6%9C%AC"><span class="toc-number">5.6.2.</span> <span class="toc-text"> 每日备份数据脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.6.3.</span> <span class="toc-text"> 远程备份系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%83%E8%99%91%E5%9B%A0%E7%B4%A0"><span class="toc-number">5.7.</span> <span class="toc-text"> 还原系统的考虑因素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%80%83%E8%99%91%E5%9B%A0%E7%B4%A0-2"><span class="toc-number">5.7.1.</span> <span class="toc-text"> 还原系统的考虑因素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%8C%83%E4%BE%8Bnvidia%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">5.8.</span> <span class="toc-text"> 更新显卡驱动程序的范例：NVidia 驱动程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E7%A1%AC%E4%BB%B6%E6%A3%80%E6%B5%8B%E4%B8%8E%E7%BB%B4%E6%8A%A4"><span class="toc-number">6.</span> <span class="toc-text"> Linux 硬件检测与维护</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E7%A1%AC%E4%BB%B6"><span class="toc-number">6.1.</span> <span class="toc-text"> 准备硬件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%BF%A1%E6%81%AF%E7%9A%84%E6%94%B6%E9%9B%86lspci-iostat"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 硬件信息的收集：lspci、iostat...</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8usb%E8%AE%BE%E5%A4%87"><span class="toc-number">6.1.2.</span> <span class="toc-text"> 驱动 USB 设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8lm_sensors%E5%8F%96%E5%BE%97%E6%B8%A9%E5%BA%A6-%E7%94%B5%E5%8E%8B%E7%AD%89%E4%BF%A1%E6%81%AF"><span class="toc-number">6.1.3.</span> <span class="toc-text"> 使用 lm_sensors 取得温度、电压等信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pc4%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9Csetup%E5%8A%9F%E8%83%BD"><span class="toc-number">6.2.</span> <span class="toc-text"> PC4 的系统操作：setup 功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9Flvm"><span class="toc-number">6.3.</span> <span class="toc-text"> 特殊文件系统：LVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlvmpv-pe-vg-lv"><span class="toc-number">6.3.1.</span> <span class="toc-text"> 什么是 LVM：PV、PE、VG、、LV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B6%E4%BD%9Clvm%E7%A3%81%E7%9B%98%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">6.3.2.</span> <span class="toc-text"> 制作 LVM 磁盘的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%A4%A7%E5%8E%9F%E6%9C%89%E7%9A%84lvm%E7%A3%81%E7%9B%98resize2fs"><span class="toc-number">6.3.3.</span> <span class="toc-text"> 加大原有的 LVM 磁盘：resize2fs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">6.3.4.</span> <span class="toc-text"> 注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%E7%9A%84%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87iscsi%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97"><span class="toc-number">6.4.</span> <span class="toc-text"> 额外的存储设备 iSCSI 协议的磁盘阵列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97"><span class="toc-number">6.4.1.</span> <span class="toc-text"> 什么是磁盘阵列</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E6%A0%B8%E5%BF%83%E7%BC%96%E8%AF%91%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text"> Linux 核心编译与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%A0%B8%E5%BF%83%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">7.0.1.</span> <span class="toc-text"> 更新核心的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9A%84%E7%89%88%E6%9C%AC%E4%B8%8E%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E6%A0%B8%E5%BF%83%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">7.0.2.</span> <span class="toc-text"> 核心的版本与下载最新核心的位置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81%E7%9A%84%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%8D%87%E7%BA%A7"><span class="toc-number">7.1.</span> <span class="toc-text"> 核心源码的获取与升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%8E%9F%E7%89%88%E6%9C%AC%E6%8F%90%E4%BE%9B%E7%9A%84%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81"><span class="toc-number">7.1.1.</span> <span class="toc-text"> 获取原版本提供的核心源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E6%A0%B8%E5%BF%83"><span class="toc-number">7.1.2.</span> <span class="toc-text"> 获取最新的核心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E7%95%99%E5%8E%9F%E8%AE%BE%E7%BD%AE%E5%88%A9%E7%94%A8%E8%A1%A5%E4%B8%81%E5%8D%87%E7%BA%A7%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81"><span class="toc-number">7.1.3.</span> <span class="toc-text"> 保留原设置：利用补丁升级核心源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">7.1.4.</span> <span class="toc-text"> 核心目录下的子目录信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%A0%B8%E5%BF%83%E7%9A%84%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AEmakefile"><span class="toc-number">7.2.</span> <span class="toc-text"> 设置核心的编译设置（Makefile）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%A0%B8%E5%BF%83%E7%9A%84%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6"><span class="toc-number">7.2.1.</span> <span class="toc-text"> 编辑核心的生成文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9%E4%B8%8E%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.2.2.</span> <span class="toc-text"> 设置核心内容与模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">7.3.</span> <span class="toc-text"> 核心的编译与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">7.3.1.</span> <span class="toc-text"> 编译的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">7.3.2.</span> <span class="toc-text"> 模块安装注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%97%A7%E7%89%88%E4%B8%8E%E6%96%B0%E7%89%88%E7%9A%84%E6%A0%B8%E5%BF%83%E6%88%90%E5%A4%9A%E9%87%8D%E5%90%AF%E5%8A%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.3.3.</span> <span class="toc-text"> 安装旧版与新版的核心成多重启动系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9D%E5%A4%96%E5%8D%95%E4%B8%80%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91"><span class="toc-number">7.4.</span> <span class="toc-text"> 额外（单一）模块编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%80%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91"><span class="toc-number">7.4.1.</span> <span class="toc-text"> 单一模块编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86lsmod-modinfo-modprobe-insmod-rmmod"><span class="toc-number">7.4.2.</span> <span class="toc-text"> 核心模块管理：lsmod、modinfo、modprobe、insmod、rmmod...</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -822,13 +979,13 @@
 <nav class="state">
     <div class="item posts">
       <a href="/wpx.github.io/archives/">
-        <span class="count">18</span>
+        <span class="count">19</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/wpx.github.io/categories/">
-        <span class="count">7</span>
+        <span class="count">8</span>
         <span class="name">分类</span>
       </a>
     </div>
@@ -917,10 +1074,10 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+<a href="/wpx.github.io/categories/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/" title="分类于 文献神器">文献神器</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%20%20%20%E5%AD%A6%E4%B9%A0Shell%E5%92%8CShell%E8%84%9A%E6%9C%AC/" title="第三部分   学习Shell和Shell脚本">第三部分   学习Shell和Shell脚本</a></span>
+    <span><a href="/wpx.github.io/2021/07/20/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/%E5%88%A9%E7%94%A8Bing%E7%BF%BB%E5%A2%99/" title="1.利用bing进行翻墙">1.利用bing进行翻墙</a></span>
   </li>
 
       
@@ -947,10 +1104,20 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E9%80%9A%E4%BF%A1%E7%B1%BB/" title="分类于 通信类">通信类</a>
+<a href="/wpx.github.io/categories/ubuntu/" title="分类于 ubuntu">ubuntu</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E9%80%9A%E4%BF%A1%E7%B1%BB/5/" title="通信类">通信类</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/ubuntu/1/" title="ubuntu">ubuntu</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%20%20%20%E5%AD%A6%E4%B9%A0Shell%E5%92%8CShell%E8%84%9A%E6%9C%AC/" title="第三部分   学习Shell和Shell脚本">第三部分   学习Shell和Shell脚本</a></span>
   </li>
 
       
@@ -967,30 +1134,10 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+<a href="/wpx.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%B1%BB/" title="分类于 网络编程类">网络编程类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" title="第四部分   Linux用户管理">第四部分   Linux用户管理</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/" title="分类于 嵌入式类">嵌入式类</a>
-</div>
-
-    <span><a href="/wpx.github.io/2021/06/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/2/" title="嵌入式">嵌入式</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/wpx.github.io/categories/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/" title="分类于 海思疑解">海思疑解</a>
-</div>
-
-    <span><a href="/wpx.github.io/2021/07/21/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/%E6%B5%B7%E6%80%9D%E8%A7%82%E7%9C%8B%E6%B5%81%E7%A8%8B/" title="海思观看流程">海思观看流程</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%B1%BB/6/" title="简单的server-client程序">简单的server-client程序</a></span>
   </li>
 
       
@@ -1000,7 +1147,7 @@
 <a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/06/24/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%20%20%20Linux%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/" title="第二部分    Linux文件，目录与磁盘格式">第二部分    Linux文件，目录与磁盘格式</a></span>
+    <span><a href="/wpx.github.io/2021/07/13/%E7%AC%94%E8%AE%B0%E7%B1%BB/linux%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" title="Linux 共享文件夹">Linux 共享文件夹</a></span>
   </li>
 
       
@@ -1010,7 +1157,17 @@
 <a href="/wpx.github.io/categories/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/" title="分类于 文献神器">文献神器</a>
 </div>
 
-    <span><a href="/wpx.github.io/2021/07/20/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98%E3%80%90%E6%AD%A4%E5%8F%B7%E7%A0%81%E6%97%A0%E6%B3%95%E7%94%A8%E4%BA%8E%E9%AA%8C%E8%AF%81%E3%80%91/" title="3.解决谷歌账号注册问题【此号码无法用于验证】">3.解决谷歌账号注册问题【此号码无法用于验证】</a></span>
+    <span><a href="/wpx.github.io/2021/06/24/%E6%96%87%E7%8C%AE%E7%A5%9E%E5%99%A8/4/" title="文献神器">文献神器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/wpx.github.io/categories/%E7%AC%94%E8%AE%B0%E7%B1%BB/" title="分类于 笔记类">笔记类</a>
+</div>
+
+    <span><a href="/wpx.github.io/2021/07/07/%E7%AC%94%E8%AE%B0%E7%B1%BB/%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86%20%20%20%20%20Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" title="第四部分   Linux用户管理">第四部分   Linux用户管理</a></span>
   </li>
 
   </ul>
@@ -1025,7 +1182,7 @@
   <div class="copyright">
     
     &copy; 2010 – 
-    <span itemprop="copyrightYear">2021</span>
+    <span itemprop="copyrightYear">2022</span>
     <span class="with-love">
       <i class="ic i-sakura rotate"></i>
     </span>
@@ -1041,7 +1198,7 @@
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">44 分钟</span>
+    <span title="站点阅读时长">45 分钟</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

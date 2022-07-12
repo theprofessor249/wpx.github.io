@@ -8,11 +8,13 @@
         <id>https://theprofessor249.github.io/2021/07/21/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/%E6%B5%B7%E6%80%9D%E8%A7%82%E7%9C%8B%E6%B5%81%E7%A8%8B/</id>
         <title>海思观看流程</title>
         <link rel="alternate" href="https://theprofessor249.github.io/2021/07/21/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/%E6%B5%B7%E6%80%9D%E8%A7%82%E7%9C%8B%E6%B5%81%E7%A8%8B/"/>
-        <content type="html">&lt;p&gt;1.观看C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\开发板使用说明(拿到开发板后先看这个文档！！！！)&lt;/p&gt;
-&lt;p&gt;2.C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\海思SDk\Hi3516ev200_SDK\Hi3516EV200R001C01SPC002\01.software\pc\HiTool\HiTool&lt;br&gt;开始烧入数据&lt;/p&gt;
-&lt;p&gt;C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\海思SDk\Hi3516ev200_SDK\ReleaseDoc\zh\01.software\pc\HiTool&lt;br&gt;海思HItool平台使用教程&lt;/p&gt;
-&lt;p&gt;3.关注C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\虚拟机及开发环境下的ubuntu版本&lt;/p&gt;
-&lt;p&gt;4.C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\海思SDk\Hi3516ev200_SDK\ReleaseDoc\zh\01.software\board\Hi3516EV200╱Hi3516EV300╱Hi3518EV300 Linux SDK 安装以及升级使用说明环境安装说明书&lt;/p&gt;
+        <content type="html">&lt;p&gt;1. 观看 C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\ 开发板使用说明 (拿到开发板后先看这个文档！！！！)&lt;/p&gt;
+&lt;p&gt;2.C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\ 海思 SDk\Hi3516ev200_SDK\Hi3516EV200R001C01SPC002\01.software\pc\HiTool\HiTool&lt;br /&gt;
+ 开始烧入数据&lt;/p&gt;
+&lt;p&gt;C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\ 海思 SDk\Hi3516ev200_SDK\ReleaseDoc\zh\01.software\pc\HiTool&lt;br /&gt;
+ 海思 HItool 平台使用教程&lt;/p&gt;
+&lt;p&gt;3. 关注 C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\ 虚拟机及开发环境下的 ubuntu 版本&lt;/p&gt;
+&lt;p&gt;4.C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\ 海思 SDk\Hi3516ev200_SDK\ReleaseDoc\zh\01.software\board\Hi3516EV200╱Hi3516EV300╱Hi3518EV300 Linux SDK 安装以及升级使用说明环境安装说明书&lt;/p&gt;
 &lt;p&gt;5.C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188\C:\Users\10124\Desktop\hi3516ev200+gc2053+rtl8188&lt;/p&gt;
 &lt;p&gt;讲环境的一个搭建&lt;/p&gt;
 </content>
@@ -23,14 +25,14 @@
         <title>2.XShell连接串口</title>
         <link rel="alternate" href="https://theprofessor249.github.io/2021/07/21/%E6%B5%B7%E6%80%9D%E7%96%91%E8%A7%A3/XShell%E8%BF%9E%E6%8E%A5%E4%B8%B2%E5%8F%A3/"/>
         <content type="html">&lt;p&gt;1、新建会话&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://tva3.sinaimg.cn/large/008jSNE7ly8gsont76x5kj30rc0l9tb3.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2、修改会话名称，选择协议为SERIAL，然后点击左侧的SERIAL&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/008jSNE7ly8gsonsj4yx8j30nt0k740i.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva3.sinaimg.cn/large/008jSNE7ly8gsont76x5kj30rc0l9tb3.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;2、修改会话名称，选择协议为 SERIAL，然后点击左侧的 SERIAL&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/008jSNE7ly8gsonsj4yx8j30nt0k740i.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;3、修改端口号，根据产品特点修改比特率等属性&lt;/p&gt;
-&lt;p&gt;查找使用的端口号：计算机右键–管理–设备管理器–端口&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/008jSNE7ly8gsonskwkqdj30nt0k7jt0.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;查找使用的端口号：计算机右键 -- 管理 -- 设备管理器 -- 端口&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/008jSNE7ly8gsonskwkqdj30nt0k7jt0.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;4、保存日志&lt;/p&gt;
-&lt;p&gt;文件–属性–日志记录&lt;/p&gt;
+&lt;p&gt;文件 -- 属性 -- 日志记录&lt;/p&gt;
 </content>
         <updated>2021-07-21T08:40:30.455Z</updated>
     </entry>

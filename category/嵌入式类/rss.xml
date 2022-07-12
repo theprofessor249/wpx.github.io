@@ -12,21 +12,26 @@
             <title>C代码变成可执行文件的过程</title>
             <link>https://theprofessor249.github.io/2021/08/19/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/C%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B/</link>
             <pubDate>Thu, 19 Aug 2021 11:22:37 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;C代码是如何变成程序的&#34;&gt;&lt;a href=&#34;#C代码是如何变成程序的&#34; class=&#34;headerlink&#34; title=&#34;C代码是如何变成程序的&#34;&gt;&lt;/a&gt;C代码是如何变成程序的&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;C语言是一门典型的编译语言，源代码文件需要编译成目标代码文件才能运行。可以认为程序文件就是编译好的目标代码文件。以GCC的编译过程为例。GCC的翻译过程可以分成四个阶段：预处理器、编译器、汇编器、链接器，执行这四个阶段的程序一起构成了一个编译系统。&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;c代码是如何变成程序的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#c代码是如何变成程序的&#34;&gt;#&lt;/a&gt; C 代码是如何变成程序的&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;C 语言是一门典型的编译语言，源代码文件需要编译成目标代码文件才能运行。可以认为程序文件就是编译好的目标代码文件。以 GCC 的编译过程为例。GCC 的翻译过程可以分成四个阶段：预处理器、编译器、汇编器、链接器，执行这四个阶段的程序一起构成了一个编译系统。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://s3.jpg.cm/2021/08/19/IUcYdD.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;预处理器&#34;&gt;&lt;a href=&#34;#预处理器&#34; class=&#34;headerlink&#34; title=&#34;预处理器&#34;&gt;&lt;/a&gt;预处理器&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;预处理器（cpp）负责对源代码进行文本处理。它根据以字符#开头的命令，修改原始的C代码。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s3.jpg.cm/2021/08/19/IUcYdD.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;预处理器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#预处理器&#34;&gt;#&lt;/a&gt; 预处理器&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;预处理器（cpp）负责对源代码进行文本处理。它根据以字符 #开头的命令，修改原始的 C 代码。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;编译阶段&#34;&gt;&lt;a href=&#34;#编译阶段&#34; class=&#34;headerlink&#34; title=&#34;编译阶段&#34;&gt;&lt;/a&gt;编译阶段&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;编译器（ccl）将文本文件hello.i翻译成文本文件hello.s，它包含一个汇编语言程序。汇编语言程序中的每条语句都以一种标准的文本格式确切地描述了一条低级机器语言指令。汇编语言为不同高级语言的不同编译器提供了通用的输出语言，例如C编译器和Fortran编译器产生的输出文件用的都是一样的汇编语言。 &lt;/p&gt;
+&lt;h2 id=&#34;编译阶段&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#编译阶段&#34;&gt;#&lt;/a&gt; 编译阶段&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编译器（ccl）将文本文件 hello.i 翻译成文本文件 hello.s，它包含一个汇编语言程序。汇编语言程序中的每条语句都以一种标准的文本格式确切地描述了一条低级机器语言指令。汇编语言为不同高级语言的不同编译器提供了通用的输出语言，例如 C 编译器和 Fortran 编译器产生的输出文件用的都是一样的汇编语言。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;汇编阶段&#34;&gt;&lt;a href=&#34;#汇编阶段&#34; class=&#34;headerlink&#34; title=&#34;汇编阶段&#34;&gt;&lt;/a&gt;汇编阶段&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;汇编器（as）将hello.s翻译成机器语言指令，把这些指令打包成一种叫做可重定位目标程序的格式，并将结果保存在目标文件hello.o中。hello.o文件是一个二进制文件，它的字节编码是机器语言指令而不是字符，如果我们在文本编辑器中打开hello.o文件，看到的将是一堆乱码。运行gcc –c hello.c可以得到hello.o文件，它是二进制格式，无法直接查看，可以用反汇编器来查看它的编码&lt;/p&gt;
+&lt;h2 id=&#34;汇编阶段&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#汇编阶段&#34;&gt;#&lt;/a&gt; 汇编阶段&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;汇编器（as）将 hello.s 翻译成机器语言指令，把这些指令打包成一种叫做可重定位目标程序的格式，并将结果保存在目标文件 hello.o 中。hello.o 文件是一个二进制文件，它的字节编码是机器语言指令而不是字符，如果我们在文本编辑器中打开 hello.o 文件，看到的将是一堆乱码。运行 gcc –c hello.c 可以得到 hello.o 文件，它是二进制格式，无法直接查看，可以用反汇编器来查看它的编码&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;链接阶段&#34;&gt;&lt;a href=&#34;#链接阶段&#34; class=&#34;headerlink&#34; title=&#34;链接阶段&#34;&gt;&lt;/a&gt;链接阶段&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;链接器（ld）负责将多个可重定位目标文件（.o文件）合并为一个可执行文件，如hello程序文件就是由hello.o和printf.o文件合并得来的。合并过程中链接器负责解析符号表，并修改不同编译模块间的引用信息，如hello.o的main函数调用printf函数时，机器代码的跳转位置直到链接阶段才会确定，链接器会将跳转位置修改为printf函数的入口位置。链接器解析本地符号的引用是非常简单的。编译器只允许每个模块中每个本地符号只有一个定义。不过，对全局符号的解析就很复杂。如果链接器在所有模块中都找不到某个符号时，它就输出”undefined reference”错误信息并终止。如果所有符号的解析都顺利完成，链接器最后会输出所有符号的引用位置都确定了的可执行文件。&lt;/p&gt;
+&lt;h2 id=&#34;链接阶段&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#链接阶段&#34;&gt;#&lt;/a&gt; 链接阶段&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;链接器（ld）负责将多个可重定位目标文件（.o 文件）合并为一个可执行文件，如 hello 程序文件就是由 hello.o 和 printf.o 文件合并得来的。合并过程中链接器负责解析符号表，并修改不同编译模块间的引用信息，如 hello.o 的 main 函数调用 printf 函数时，机器代码的跳转位置直到链接阶段才会确定，链接器会将跳转位置修改为 printf 函数的入口位置。链接器解析本地符号的引用是非常简单的。编译器只允许每个模块中每个本地符号只有一个定义。不过，对全局符号的解析就很复杂。如果链接器在所有模块中都找不到某个符号时，它就输出”undefined reference” 错误信息并终止。如果所有符号的解析都顺利完成，链接器最后会输出所有符号的引用位置都确定了的可执行文件。&lt;/p&gt;
 &lt;/blockquote&gt;
  ]]></description>
         </item>
@@ -36,14 +41,15 @@
             <link>https://theprofessor249.github.io/2021/06/24/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B1%BB/2/</link>
             <pubDate>Thu, 24 Jun 2021 15:43:37 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvLw==&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv&#34;&gt;documentation&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=&#34;&gt;troubleshooting&lt;/span&gt; or you can ask me on &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==&#34;&gt;GitHub&lt;/span&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;Quick-Start&#34;&gt;&lt;a href=&#34;#Quick-Start&#34; class=&#34;headerlink&#34; title=&#34;Quick Start&#34;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&#34;Create-a-new-post&#34;&gt;&lt;a href=&#34;#Create-a-new-post&#34; class=&#34;headerlink&#34; title=&#34;Create a new post&#34;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;bash&#34;&gt;$ hexo new &amp;quot;My New Post&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;Run-server&#34;&gt;&lt;a href=&#34;#Run-server&#34; class=&#34;headerlink&#34; title=&#34;Run server&#34;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;bash&#34;&gt;$ hexo server&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;Generate-static-files&#34;&gt;&lt;a href=&#34;#Generate-static-files&#34; class=&#34;headerlink&#34; title=&#34;Generate static files&#34;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;bash&#34;&gt;$ hexo generate&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;Deploy-to-remote-sites&#34;&gt;&lt;a href=&#34;#Deploy-to-remote-sites&#34; class=&#34;headerlink&#34; title=&#34;Deploy to remote sites&#34;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;bash&#34;&gt;$ hexo deploy&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
+&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

@@ -9,7 +9,7 @@
             "url": "https://theprofessor249.github.io/2021/07/20/ubuntu/%E5%88%9A%E5%88%9B%E5%BB%BA%E7%9A%84ubuntu%EF%BC%8C%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8root%E6%9D%83%E9%99%90/",
             "title": "刚创建的ubuntu，如何使用root权限",
             "date_published": "2021-07-20T08:12:57.922Z",
-            "content_html": "<h1 id=\"1-刚创建时的ubuntu\"><a href=\"#1-刚创建时的ubuntu\" class=\"headerlink\" title=\"1.刚创建时的ubuntu\"></a>1.刚创建时的ubuntu</h1><p>Ubuntu下使用su命令切换root时，密码总是出错，提示“su：认证失败”，这是由于Ubuntu默认禁用root账号，需解锁才能使用<br>$ sudo passwd root<br><strong>**</strong>       #输入当前普通用户的密码<br><strong>**</strong>       #为root用户创建密码<br><strong>**</strong>       #确认root用户密码<br>如果要再次锁定root帐号,那么可以执行<br>$ sudo passwd -l root</p>\n<h1 id=\"如果已经解锁了root帐号，而又忘记了密码，则按照下面步骤重置root密码\"><a href=\"#如果已经解锁了root帐号，而又忘记了密码，则按照下面步骤重置root密码\" class=\"headerlink\" title=\"如果已经解锁了root帐号，而又忘记了密码，则按照下面步骤重置root密码\"></a>如果已经解锁了root帐号，而又忘记了密码，则按照下面步骤重置root密码</h1><ol>\n<li>开机后进入GRUB系统选择列表，选择第二项“Advanced options for Ubuntu”</li>\n<li>按e[edit]键进入编辑界面，找到“ro recovery nomodeset”改为“rw single init=/bin/bash”</li>\n<li>按Ctrl+X或者F10返回系统选择列表</li>\n<li>选择“…（recovery mode)”即可进入单用户模式</li>\n<li>输入passwd root命令，修改root密码即可</li>\n</ol>\n",
+            "content_html": "<h1 id=\"1刚创建时的ubuntu\"><a class=\"anchor\" href=\"#1刚创建时的ubuntu\">#</a> 1. 刚创建时的 ubuntu</h1>\n<p>Ubuntu 下使用 su 命令切换 root 时，密码总是出错，提示 “su：认证失败”，这是由于 Ubuntu 默认禁用 root 账号，需解锁才能使用<br />\n $ sudo passwd root<br />\n******       #输入当前普通用户的密码<br />\n ******       #为 root 用户创建密码<br />\n ******       #确认 root 用户密码<br />\n如果要再次锁定 root 帐号，那么可以执行<br />\n $ sudo passwd -l root</p>\n<h1 id=\"如果已经解锁了root帐号而又忘记了密码则按照下面步骤重置root密码\"><a class=\"anchor\" href=\"#如果已经解锁了root帐号而又忘记了密码则按照下面步骤重置root密码\">#</a> 如果已经解锁了 root 帐号，而又忘记了密码，则按照下面步骤重置 root 密码</h1>\n<ol>\n<li>开机后进入 GRUB 系统选择列表，选择第二项 “Advanced options for Ubuntu”</li>\n<li>按 e [edit] 键进入编辑界面，找到 “ro recovery nomodeset” 改为 “rw single init=/bin/bash”</li>\n<li>按 Ctrl+X 或者 F10 返回系统选择列表</li>\n<li>选择 “...（recovery mode)” 即可进入单用户模式</li>\n<li>输入 passwd root 命令，修改 root 密码即可</li>\n</ol>\n",
             "tags": []
         },
         {
@@ -17,7 +17,7 @@
             "url": "https://theprofessor249.github.io/2021/06/24/ubuntu/1/",
             "title": "ubuntu",
             "date_published": "2021-06-24T07:43:37.617Z",
-            "content_html": "<p><strong>我喜欢你，是真的很喜欢</strong></p>\n<ul>\n<li><p>撒旦发射点</p>\n</li>\n<li><p>打发士大夫</p>\n<p><code>#include </code></p>\n</li>\n</ul>\n<h2 id=\"sdfsdfaf\"><a href=\"#sdfsdfaf\" class=\"headerlink\" title=\"sdfsdfaf\"></a>sdfsdfaf</h2><h2 id=\"sdfadfasd\"><a href=\"#sdfadfasd\" class=\"headerlink\" title=\"sdfadfasd\"></a>sdfadfasd</h2><h3 id=\"sadfasdfasd\"><a href=\"#sadfasdfasd\" class=\"headerlink\" title=\"sadfasdfasd\"></a>sadfasdfasd</h3><p>sdfasdf</p>\n",
+            "content_html": "<p><strong>我喜欢你，是真的很喜欢</strong></p>\n<ul>\n<li>\n<p>撒旦发射点</p>\n</li>\n<li>\n<p>打发士大夫</p>\n</li>\n</ul>\n<p><code>#include </code></p>\n<h2 id=\"sdfsdfaf\"><a class=\"anchor\" href=\"#sdfsdfaf\">#</a> sdfsdfaf</h2>\n<h2 id=\"sdfadfasd\"><a class=\"anchor\" href=\"#sdfadfasd\">#</a> sdfadfasd</h2>\n<h3 id=\"sadfasdfasd\"><a class=\"anchor\" href=\"#sadfasdfasd\">#</a> sadfasdfasd</h3>\n<p>sdfasdf</p>\n",
             "tags": []
         }
     ]
